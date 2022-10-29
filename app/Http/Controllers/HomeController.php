@@ -15,6 +15,9 @@ class HomeController extends Controller
         $bestSellers = Product::where('feature_id','=',2)->get();
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> show_feature_product
         $features = DB::table('features')->get();
         $products_feature =Product::where('feature_id','=',1)->Paginate(4);
         return view('/index')->with('newArrivals',$newArrivals)
@@ -39,6 +42,7 @@ class HomeController extends Controller
         }
         $related_product = DB::table('products')->join('protypes','protypes.type_id','=','products.type_id')->where('protypes.type_id',$type_id)->paginate(8);
         return view('shop-details',compact('detail', $detail)->with('related_product', $related_product));
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> layout_login_and_register
@@ -52,5 +56,7 @@ class HomeController extends Controller
 >>>>>>> function_login_and_logout
 =======
 >>>>>>> layout_login_and_register
+=======
+>>>>>>> show_feature_product
     }
 }

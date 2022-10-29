@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @extends('layout')
 @section('content')
 =======
@@ -149,6 +150,10 @@
     @extends('layout')
 	@section('content')
 >>>>>>> layout_login_and_register
+=======
+    @extends('layout')
+	@section('content')
+>>>>>>> show_feature_product
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel">
@@ -249,10 +254,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <li class="active" data-filter="*">Best Sellers</li>
                         <li data-filter=".new-arrivals">New Arrivals</li>
                         <li data-filter=".hot-sales">Hot Sales</li>
 =======
+=======
+>>>>>>> show_feature_product
                         @foreach($features as $feature)
                         <li class="active"  data-filter=".best-sellers">
                             <a href="{{ route('showproducthome',['feature_id' => $feature->feature_id]) }}">
@@ -260,6 +268,7 @@
                             </a>
                         </li>
                         @endforeach
+<<<<<<< HEAD
 >>>>>>> detail_and_related_product
 =======
                         <li class="active" data-filter=".best-sellers">Best Sellers</li>
@@ -271,10 +280,13 @@
                         <li data-filter=".new-arrivals">New Arrivals</li>
                         <li data-filter=".hot-sales">Hot Sales</li>
 >>>>>>> layout_login_and_register
+=======
+>>>>>>> show_feature_product
                     </ul>
                 </div>
             </div>
             <div class="row product__filter">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -554,6 +566,8 @@
                     </div>
                 </div>
 =======
+=======
+>>>>>>> show_feature_product
                     @foreach($products_feature as $row => $bestSellers)
                     <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix best-sellers">
                         <div class="product__item">
@@ -566,6 +580,7 @@
                             </div>
                             <div class="product__item__text">
                                 <h6>{{ $bestSellers->product_name }}</h6>
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> layout_login_and_register
@@ -581,6 +596,8 @@
                             </div>
                             <div class="product__item__text">
                                 <h6>{{ $bestSellers->product_name }}</h6>
+=======
+>>>>>>> show_feature_product
                                 <a href="#" class="add-cart">+ Add To Cart</a>
                                 <div class="rating">
                                     <i class="fa fa-star-o"></i>
@@ -605,6 +622,7 @@
                         </div>
                     </div>
                     @endforeach
+<<<<<<< HEAD
                     @foreach($newArrivals as $row => $newArrivals)
                     <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                         <div class="product__item">
@@ -696,6 +714,8 @@
 >>>>>>> function_login_and_logout
 =======
 >>>>>>> layout_login_and_register
+=======
+>>>>>>> show_feature_product
             </div>
         </div>
     </section>
@@ -825,6 +845,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 @endsection
@@ -931,3 +952,6 @@
 =======
     @endsection
 >>>>>>> layout_login_and_register
+=======
+    @endsection
+>>>>>>> show_feature_product

@@ -17,6 +17,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> function_login_and_logout
 =======
@@ -32,6 +33,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> show_feature_product
     <link rel="stylesheet" href="{{ url ('css/bootstrap.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url ('css/font-awesome.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url ('css/elegant-icons.css') }}" type="text/css">
@@ -40,11 +43,14 @@
     <link rel="stylesheet" href="{{ url ('css/owl.carousel.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url ('css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url ('css/style.css') }}" type="text/css">
+<<<<<<< HEAD
 >>>>>>> detail_and_related_product
 =======
 >>>>>>> function_login_and_logout
 =======
 >>>>>>> layout_login_and_register
+=======
+>>>>>>> show_feature_product
 </head>
 
 <body>
@@ -55,6 +61,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> detail_and_related_product
@@ -64,11 +71,14 @@
 =======
 
 >>>>>>> layout_login_and_register
+=======
+>>>>>>> show_feature_product
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__option">
             <div class="offcanvas__links">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 <a href="#">Sign in</a>
@@ -89,6 +99,9 @@
 >>>>>>> function_login_and_logout
 =======
 >>>>>>> layout_login_and_register
+=======
+                <a href="#">Sign in</a>
+>>>>>>> show_feature_product
                 <a href="#">FAQs</a>
             </div>
             <div class="offcanvas__top__hover">
@@ -129,12 +142,16 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <a href="#">Sign in</a>
 =======
+=======
+>>>>>>> show_feature_product
                                 <?php
                                     $name = Session::get('name');
                                     $id = Session::get('id');
                                     if($id){
+<<<<<<< HEAD
 =======
                                 <?php
                                     $name = Session::get('name');
@@ -145,6 +162,8 @@
                                     $name = Session::get('name');
                                     if($name){
 >>>>>>> layout_login_and_register
+=======
+>>>>>>> show_feature_product
                                         echo '<div class="header__top__hover">
                                                 <span>'.$name.'<i class="arrow_carrot-down"></i></span>
                                                 <ul>
@@ -158,11 +177,14 @@
                                 ?>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> detail_and_related_product
 =======
 >>>>>>> function_login_and_logout
 =======
 >>>>>>> layout_login_and_register
+=======
+>>>>>>> show_feature_product
                                 <a href="#">FAQs</a>
                             </div>
                             <div class="header__top__hover">
@@ -175,12 +197,15 @@
                             </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> function_login_and_logout
 =======
 
 >>>>>>> layout_login_and_register
+=======
+>>>>>>> show_feature_product
                         </div>
                     </div>
                 </div>
@@ -190,6 +215,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -203,12 +229,16 @@
 =======
                         <a href="{{ url ('index') }}"><img src="img/logo.png" alt=""></a>
 >>>>>>> layout_login_and_register
+=======
+                        <a href="{{ url ('index') }}"><img src="{{ asset ('/img/logo.png') }}" alt=""></a>
+>>>>>>> show_feature_product
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
                             <li class="active"><a href="/">Home</a></li>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -229,6 +259,8 @@
 >>>>>>> function_login_and_logout
 =======
 >>>>>>> layout_login_and_register
+=======
+>>>>>>> show_feature_product
                             <li><a href="/tat-ca-san-pham">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
@@ -243,16 +275,20 @@
                             <li><a href="{{ url ('contact') }}">Contacts</a></li>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> detail_and_related_product
 =======
 >>>>>>> function_login_and_logout
 =======
 >>>>>>> layout_login_and_register
+=======
+>>>>>>> show_feature_product
                         </ul>
                     </nav>
                 </div>
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -274,6 +310,11 @@
                         <a href="#"><img src="img/icon/heart.png" alt=""></a>
                         <a href="{{url ('shopping-cart') }}"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
 >>>>>>> layout_login_and_register
+=======
+                        <a href="#" class="search-switch"><img src="{{ asset ('img/icon/search.png') }}" alt=""></a>
+                        <a href="#"><img src="{{ asset ('img/icon/heart.png') }}" alt=""></a>
+                        <a href="{{url ('shopping-cart') }}"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+>>>>>>> show_feature_product
                         <div class="price">$0.00</div>
                     </div>
                 </div>
@@ -282,6 +323,7 @@
         </div>
     </header>
     <!-- Header Section End -->
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -296,6 +338,9 @@
 =======
     @yield('content');
 >>>>>>> layout_login_and_register
+=======
+    @yield('content');
+>>>>>>> show_feature_product
 
     <!-- Footer Section Begin -->
     <footer class="footer">
@@ -379,6 +424,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> function_login_and_logout
 =======
@@ -396,6 +442,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> show_feature_product
     <script src="{{ url ('js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ url ('js/bootstrap.min.js') }}"></script>
     <script src="{{ url ('js/jquery.nice-select.min.js') }}"></script>
@@ -406,6 +454,7 @@
     <!-- <script src="{{ url ('js/mixitup.min.js') }}"></script> -->
     <script src="{{ url ('js/owl.carousel.min.js') }}"></script>
     <script src="{{ url ('js/main.js') }}"></script>
+<<<<<<< HEAD
 >>>>>>> detail_and_related_product
 =======
 
@@ -415,6 +464,8 @@
 
 
 >>>>>>> layout_login_and_register
+=======
+>>>>>>> show_feature_product
 </body>
 
 </html>

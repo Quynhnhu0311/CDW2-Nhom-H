@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @extends('layout')
 @section('content')
 =======
@@ -148,6 +149,10 @@
 @extends('layout')
 	@section('content')
 >>>>>>> layout_login_and_register
+=======
+@extends('layout')
+	@section('content')
+>>>>>>> show_feature_product
 
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-option">
@@ -298,6 +303,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <a href="/checkout" class="primary-btn">Proceed to checkout</a>
 =======
                         <a href="#" class="primary-btn">Proceed to checkout</a>
@@ -311,6 +317,9 @@
 =======
                         <a href="#" class="primary-btn">Proceed to checkout</a>
 >>>>>>> layout_login_and_register
+=======
+                        <a href="#" class="primary-btn">Proceed to checkout</a>
+>>>>>>> show_feature_product
                     </div>
                 </div>
             </div>
@@ -318,6 +327,7 @@
     </section>
     <!-- Shopping Cart Section End -->
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -426,3 +436,6 @@
 =======
     @endsection
 >>>>>>> layout_login_and_register
+=======
+    @endsection
+>>>>>>> show_feature_product

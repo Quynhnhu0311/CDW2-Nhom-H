@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @extends('layout')
 @section('content')
 =======
@@ -139,10 +140,13 @@
 
     <!-- Shop Details Section Begin -->
 =======
+=======
+>>>>>>> show_feature_product
     @extends('layout')
 	@section('content')
     <!-- Shop Details Section Begin -->
     @foreach($detail as $product_detail)
+<<<<<<< HEAD
 >>>>>>> detail_and_related_product
 =======
 =======
@@ -155,12 +159,15 @@
 >>>>>>> function_login_and_logout
 =======
 >>>>>>> layout_login_and_register
+=======
+>>>>>>> show_feature_product
     <section class="shop-details">
         <div class="product__details__pic">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product__details__breadcrumb">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -178,6 +185,10 @@
                             <a href="./index.html">Home</a>
                             <a href="./shop.html">Shop</a>
 >>>>>>> layout_login_and_register
+=======
+                            <a href="{{ url ('index') }}">Home</a>
+                            <a href="{{ url ('shop') }}">Shop</a>
+>>>>>>> show_feature_product
                             <span>Product Details</span>
                         </div>
                     </div>
@@ -219,6 +230,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <img src="img/shop-details/product-big-2.png" alt="">
 =======
                                     <img src="{{ asset('./img/product/'.$product_detail->product_img) }}" alt="">
@@ -229,6 +241,9 @@
 =======
                                     <img src="img/shop-details/product-big-2.png" alt="">
 >>>>>>> layout_login_and_register
+=======
+                                    <img src="{{ asset('./img/product/'.$product_detail->product_img) }}" alt="">
+>>>>>>> show_feature_product
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-2" role="tabpanel">
@@ -236,6 +251,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <img src="img/shop-details/product-big-3.png" alt="">
 =======
                                     <img src="{{ asset('./img/product/'.$product_detail->product_img) }}" alt="">
@@ -246,6 +262,9 @@
 =======
                                     <img src="img/shop-details/product-big-3.png" alt="">
 >>>>>>> layout_login_and_register
+=======
+                                    <img src="{{ asset('./img/product/'.$product_detail->product_img) }}" alt="">
+>>>>>>> show_feature_product
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-3" role="tabpanel">
@@ -253,6 +272,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <img src="img/shop-details/product-big.png" alt="">
 =======
                                     <img src="{{ asset ('/product_detail->product_img') }}" alt="">
@@ -263,6 +283,9 @@
 =======
                                     <img src="img/shop-details/product-big.png" alt="">
 >>>>>>> layout_login_and_register
+=======
+                                    <img src="{{ asset ('/product_detail->product_img') }}" alt="">
+>>>>>>> show_feature_product
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-4" role="tabpanel">
@@ -270,6 +293,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <img src="img/shop-details/product-big-4.png" alt="">
 =======
                                     <img src="{{ asset ('/product_detail->product_img') }}" alt="">
@@ -280,6 +304,9 @@
 =======
                                     <img src="img/shop-details/product-big-4.png" alt="">
 >>>>>>> layout_login_and_register
+=======
+                                    <img src="{{ asset ('/product_detail->product_img') }}" alt="">
+>>>>>>> show_feature_product
                                     <a href="https://www.youtube.com/watch?v=8PJ3_p7VqHw&list=RD8PJ3_p7VqHw&start_radio=1" class="video-popup"><i class="fa fa-play"></i></a>
                                 </div>
                             </div>
@@ -296,6 +323,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <h4>Hooded thermal anorak</h4>
 =======
                             <h4>{{ $product_detail->product_name}}</h4>
@@ -306,6 +334,9 @@
 =======
                             <h4>Hooded thermal anorak</h4>
 >>>>>>> layout_login_and_register
+=======
+                            <h4>{{ $product_detail->product_name}}</h4>
+>>>>>>> show_feature_product
                             <div class="rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -314,6 +345,7 @@
                                 <i class="fa fa-star-o"></i>
                                 <span> - 5 Reviews</span>
                             </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -335,6 +367,10 @@
 >>>>>>> function_login_and_logout
 =======
 >>>>>>> layout_login_and_register
+=======
+                            <h3>{{ number_format($product_detail->product_price) }} VND <span>70.00</span></h3>
+                            <p>{{ $product_detail->product_description }}</p>
+>>>>>>> show_feature_product
                             <div class="product__details__option">
                                 <div class="product__details__option__size">
                                     <span>Size:</span>
@@ -394,6 +430,7 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -527,15 +564,20 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> show_feature_product
             </div>
         </div>
     </section>
     @endforeach
+<<<<<<< HEAD
 >>>>>>> detail_and_related_product
 =======
 >>>>>>> function_login_and_logout
 =======
 >>>>>>> layout_login_and_register
+=======
+>>>>>>> show_feature_product
     <!-- Shop Details Section End -->
 
     <!-- Related Section Begin -->
@@ -547,6 +589,7 @@
                 </div>
             </div>
             <div class="row">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -569,6 +612,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> show_feature_product
                 @foreach($related_product as $related)
                 <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
                     <div class="product__item">
@@ -582,11 +627,14 @@
                         </div>
                         <div class="product__item__text">
                             <h6>{{ $related->product_name }}</h6>
+<<<<<<< HEAD
 >>>>>>> detail_and_related_product
 =======
 >>>>>>> function_login_and_logout
 =======
 >>>>>>> layout_login_and_register
+=======
+>>>>>>> show_feature_product
                             <a href="#" class="add-cart">+ Add To Cart</a>
                             <div class="rating">
                                 <i class="fa fa-star-o"></i>
@@ -610,6 +658,7 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -729,10 +778,14 @@
 >>>>>>> function_login_and_logout
 =======
 >>>>>>> layout_login_and_register
+=======
+                @endforeach
+>>>>>>> show_feature_product
             </div>
         </div>
     </section>
     <!-- Related Section End -->
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -844,3 +897,6 @@
 
     @endsection
 >>>>>>> layout_login_and_register
+=======
+    @endsection
+>>>>>>> show_feature_product

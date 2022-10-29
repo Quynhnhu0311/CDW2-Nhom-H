@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @extends('layout')
 @section('content')
 =======
@@ -149,6 +150,10 @@
 @extends('layout')
 	@section('content')
 >>>>>>> layout_login_and_register
+=======
+@extends('layout')
+	@section('content')
+>>>>>>> show_feature_product
     <!-- Blog Details Hero Begin -->
     <section class="blog-hero spad">
         <div class="container">
@@ -280,6 +285,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 @endsection
@@ -386,3 +392,6 @@
 =======
     @endsection
 >>>>>>> layout_login_and_register
+=======
+    @endsection
+>>>>>>> show_feature_product

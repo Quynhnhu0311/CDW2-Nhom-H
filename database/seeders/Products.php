@@ -25,6 +25,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
@@ -32,6 +33,9 @@ class Products extends Seeder
 =======
             'manu_id' => 1,
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1,
+>>>>>>> show_feature_product
             'feature_id' => 1
         ]);
 
@@ -43,6 +47,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
@@ -50,6 +55,9 @@ class Products extends Seeder
 =======
             'manu_id' => 1,
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1,
+>>>>>>> show_feature_product
             'feature_id' => 2
         ]);
 
@@ -61,6 +69,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
@@ -68,6 +77,9 @@ class Products extends Seeder
 =======
             'manu_id' => 1,
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1,
+>>>>>>> show_feature_product
             'feature_id' => 3
         ]);
 
@@ -79,6 +91,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
@@ -86,6 +99,9 @@ class Products extends Seeder
 =======
             'manu_id' => 1,
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1,
+>>>>>>> show_feature_product
             'feature_id' => 3
         ]);
 
@@ -97,6 +113,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
@@ -104,6 +121,9 @@ class Products extends Seeder
 =======
             'manu_id' => 1,
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1,
+>>>>>>> show_feature_product
             'feature_id' => 2
         ]);
 
@@ -115,6 +135,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
@@ -122,6 +143,9 @@ class Products extends Seeder
 =======
             'manu_id' => 1,
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1,
+>>>>>>> show_feature_product
             'feature_id' => 1
         ]);
 
@@ -133,6 +157,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
@@ -140,6 +165,9 @@ class Products extends Seeder
 =======
             'manu_id' => 1,
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1,
+>>>>>>> show_feature_product
             'feature_id' => 2
         ]);
 
@@ -151,6 +179,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
@@ -158,6 +187,9 @@ class Products extends Seeder
 =======
             'manu_id' => 1,
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1,
+>>>>>>> show_feature_product
             'feature_id' => 1
         ]);
 
@@ -169,6 +201,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
@@ -176,6 +209,9 @@ class Products extends Seeder
 =======
             'manu_id' => 1,
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1,
+>>>>>>> show_feature_product
             'feature_id' => 3
         ]);
 
@@ -187,6 +223,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
@@ -194,6 +231,9 @@ class Products extends Seeder
 =======
             'manu_id' => 1,
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1,
+>>>>>>> show_feature_product
             'feature_id' => 3
         ]);
 
@@ -205,6 +245,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3,
 =======
             'manu_id' => 3,
@@ -212,6 +253,9 @@ class Products extends Seeder
 =======
             'manu_id' => 3,
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3,
+>>>>>>> show_feature_product
             'feature_id' => 1
         ]);
 
@@ -223,6 +267,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
@@ -230,6 +275,9 @@ class Products extends Seeder
 =======
             'manu_id' => 1,
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1,
+>>>>>>> show_feature_product
             'feature_id' => 2
         ]);
         \DB::table('products')->insert([
@@ -240,6 +288,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
@@ -247,6 +296,9 @@ class Products extends Seeder
 =======
             'manu_id' => 1,
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1,
+>>>>>>> show_feature_product
             'feature_id' => 1
         ]);
         \DB::table('products')->insert([
@@ -257,6 +309,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
@@ -264,6 +317,9 @@ class Products extends Seeder
 =======
             'manu_id' => 1,
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1,
+>>>>>>> show_feature_product
             'feature_id' => 3
         ]);
         \DB::table('products')->insert([
@@ -274,6 +330,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
@@ -281,6 +338,9 @@ class Products extends Seeder
 =======
             'manu_id' => 1,
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1,
+>>>>>>> show_feature_product
             'feature_id' => 2
         ]);
         \DB::table('products')->insert([
@@ -291,6 +351,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
@@ -298,6 +359,9 @@ class Products extends Seeder
 =======
             'manu_id' => 1,
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1,
+>>>>>>> show_feature_product
             'feature_id' => 3
         ]);
         \DB::table('products')->insert([
@@ -308,6 +372,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
@@ -315,6 +380,9 @@ class Products extends Seeder
 =======
             'manu_id' => 1,
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1,
+>>>>>>> show_feature_product
             'feature_id' => 1
         ]);
         \DB::table('products')->insert([
@@ -325,6 +393,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
@@ -332,6 +401,9 @@ class Products extends Seeder
 =======
             'manu_id' => 1,
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1,
+>>>>>>> show_feature_product
             'feature_id' => 2
         ]);
         \DB::table('products')->insert([
@@ -342,6 +414,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
@@ -349,6 +422,9 @@ class Products extends Seeder
 =======
             'manu_id' => 1,
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1,
+>>>>>>> show_feature_product
             'feature_id' => 2
         ]);
         \DB::table('products')->insert([
@@ -359,6 +435,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
@@ -366,6 +443,9 @@ class Products extends Seeder
 =======
             'manu_id' => 1,
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1,
+>>>>>>> show_feature_product
             'feature_id' => 3
         ]);
         \DB::table('products')->insert([
@@ -376,6 +456,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
@@ -383,6 +464,9 @@ class Products extends Seeder
 =======
             'manu_id' => 1,
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1,
+>>>>>>> show_feature_product
             'feature_id' => 1
         ]);
         \DB::table('products')->insert([
@@ -393,6 +477,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1
 =======
             'manu_id' => 1,
@@ -402,6 +487,9 @@ class Products extends Seeder
             'manu_id' => 1,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Thắt Lưng Caro Mặt Vuông Nam',
@@ -411,6 +499,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1
 =======
             'manu_id' => 1,
@@ -420,6 +509,9 @@ class Products extends Seeder
             'manu_id' => 1,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Mắt kính nam nữ LV Millionaire',
@@ -429,6 +521,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1
 =======
             'manu_id' => 1,
@@ -438,6 +531,9 @@ class Products extends Seeder
             'manu_id' => 1,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 1
+>>>>>>> show_feature_product
         ]);
         ////////////////////////////// Gucci ////////////////////////////////////////////////
         \DB::table('products')->insert([
@@ -448,6 +544,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -457,6 +554,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'ÁO THUN NAM TAY LỠ',
@@ -466,6 +566,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -475,6 +576,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'ÁO THUN GUCCI NAM TAY LỠ',
@@ -484,6 +588,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -493,6 +598,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo khoác CUCCI chất vải dù',
@@ -502,6 +610,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -511,6 +620,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo khoác gió nam nữ phong cách hiệu GUCCI',
@@ -520,6 +632,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -529,6 +642,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần bò jean nam ngắn',
@@ -538,6 +654,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -547,6 +664,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần short jean nam đen xanh rách nhẹ',
@@ -556,6 +676,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -565,6 +686,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Âu Nam Phối Cạp Gucci',
@@ -574,6 +698,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -583,6 +708,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần bò gucci vải thô gai',
@@ -592,6 +720,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -601,6 +730,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Jean Nam Đẹp',
@@ -610,6 +742,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -619,6 +752,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Giày Gucci nữ màu hồng',
@@ -628,6 +764,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -637,6 +774,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Dép GUCCI trong',
@@ -646,6 +786,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -655,6 +796,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Dép nam xỏ ngón Gucci cao cấp',
@@ -664,6 +808,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -673,6 +818,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Giày thể thao Giầy sneaker Gucci',
@@ -682,6 +830,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -691,6 +840,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Giày thể thao Gucci Sơn Tùng Hồng',
@@ -700,6 +852,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -709,6 +862,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Túi Đeo Chéo Đeo Vai nam gucci',
@@ -718,6 +874,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -727,6 +884,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'TÚI đeo GUCCI',
@@ -736,6 +896,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -745,6 +906,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Ba Lô GUCCI Cho Nam',
@@ -754,6 +918,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -763,6 +928,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Balo Gucci size 26cm',
@@ -772,6 +940,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -781,6 +950,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'GUCCI Ba Lô Cho Nữ',
@@ -790,6 +962,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -799,6 +972,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'DÂY CHUYỀN TITAN GUCCI',
@@ -808,6 +984,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -817,6 +994,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Dây chuyền titan mặt tròn',
@@ -826,6 +1006,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -835,6 +1016,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Đai váy GUCCI 5cm',
@@ -844,6 +1028,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -853,6 +1038,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Thắt lưng nam , Dây nịt nam gucci',
@@ -862,6 +1050,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -871,6 +1060,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Bông Tai Gucci',
@@ -880,6 +1072,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
@@ -889,6 +1082,9 @@ class Products extends Seeder
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 2
+>>>>>>> show_feature_product
         ]);
         //////////////////////////////////////////// Prada ////////////////////////////////////
         \DB::table('products')->insert([
@@ -899,6 +1095,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -908,6 +1105,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Nỉ Nam PraDa Túi Hộp',
@@ -917,6 +1117,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -926,6 +1127,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Jean Prada Chính Hãng',
@@ -935,6 +1139,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -944,6 +1149,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần đùi cotton in logo PRADA',
@@ -953,6 +1161,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -962,6 +1171,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Prada Nam Mới',
@@ -971,6 +1183,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -980,6 +1193,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => ' Quần PRADA Thời trang đơn giản Nam',
@@ -989,6 +1205,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -998,6 +1215,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'PRADA Cổ điển Áo sơ mi ngắn tay',
@@ -1007,6 +1227,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -1016,6 +1237,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'PRADA Áo phông cotton',
@@ -1025,6 +1249,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -1034,6 +1259,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'PRADA Bông trắng Áo phông',
@@ -1043,6 +1271,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -1052,6 +1281,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'PRADA Cotton Áo phông đơn giản Thêu Logo',
@@ -1061,6 +1293,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -1070,6 +1303,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo Prada Vest',
@@ -1079,6 +1315,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -1088,6 +1325,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Túi đa năng Prada',
@@ -1097,6 +1337,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -1106,6 +1347,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Balo công suất lớn Prada Advanced',
@@ -1115,6 +1359,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -1124,6 +1369,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Ba lô Prada Cao cấp',
@@ -1133,6 +1381,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -1142,6 +1391,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'PRADA Túi Nữ',
@@ -1151,6 +1403,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -1160,6 +1413,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Túi Xách, Cặp Da Thời Trang Nam',
@@ -1169,6 +1425,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -1178,6 +1435,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Giày Mọi Prada Da Lì',
@@ -1187,6 +1447,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -1196,6 +1457,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Giày Cao gót đế trụ vuông',
@@ -1205,6 +1469,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -1214,6 +1479,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Giày Cao Gót Dẹp 8p Prada',
@@ -1223,6 +1491,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -1232,6 +1501,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Dép xuồng chéo prada',
@@ -1241,6 +1513,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -1250,6 +1523,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Dép nam quai ngang PRADA',
@@ -1259,6 +1535,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -1268,6 +1545,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Prada Vòng Cổ Vòng Cổ Xương Đòn Bạc',
@@ -1277,6 +1557,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -1286,6 +1567,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'LemonBlue PRADA Vòng Cổ',
@@ -1295,6 +1579,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -1304,6 +1589,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Vòng Cổ PRADA Chính Hãng',
@@ -1313,6 +1601,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -1322,6 +1611,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Spot Thắt Lưng Chữ Prada Mới',
@@ -1331,6 +1623,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -1340,6 +1633,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Prada Khuyên Tai Nữ',
@@ -1349,6 +1645,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
@@ -1358,6 +1655,9 @@ class Products extends Seeder
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 3
+>>>>>>> show_feature_product
         ]);
         //////////////////////////////////////////// Chanel ////////////////////////////////////////
         \DB::table('products')->insert([
@@ -1368,6 +1668,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1377,6 +1678,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Dài Quét Đất Ống Đứng',
@@ -1386,6 +1690,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1395,6 +1700,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Short Thiết Kế Hai Túi',
@@ -1404,6 +1712,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1413,6 +1722,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Bò Tôn Dáng Gầy Ống Đứng',
@@ -1422,6 +1734,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1431,6 +1744,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Sooc Túi Giả Viền Tua Rua',
@@ -1440,6 +1756,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1449,6 +1766,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo Khoác Phong Cách CHANEL',
@@ -1458,6 +1778,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1467,6 +1788,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo Khoác Ngoài Áo Cardigan',
@@ -1476,6 +1800,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1485,6 +1810,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo Mặc Trong Mẫu Thu',
@@ -1494,6 +1822,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1503,6 +1832,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo Len Phong Cách CHANEL',
@@ -1512,6 +1844,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1521,6 +1854,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo T-shirt Nữ Tay Ngắn',
@@ -1530,6 +1866,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1539,6 +1876,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Ba Lô Hai Vai Ba Lô Nhỏ Trần Trám',
@@ -1548,6 +1888,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1557,6 +1898,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Balo chanel, balo nữ hàn quốc',
@@ -1566,6 +1910,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1575,6 +1920,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'TÚI Chanel khoá xoay',
@@ -1584,6 +1932,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1593,6 +1942,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Ba Lô Du Lịch Bằng Vải Oxford',
@@ -1602,6 +1954,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1611,6 +1964,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Túi Đeo Vai Nữ Chanel 2 Quai Xích',
@@ -1620,6 +1976,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1629,6 +1986,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Giày Trắng CHANEL Da Thật',
@@ -1638,6 +1998,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1647,6 +2008,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Giày Một Lớp Ngư Dân Bện Cói',
@@ -1656,6 +2020,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1665,6 +2030,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Bốt Đi Tuyết Phong Cách CHANEL',
@@ -1674,6 +2042,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1683,6 +2052,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Dép Lê Phong Cách CHANEL',
@@ -1692,6 +2064,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1701,6 +2074,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Dép Sục Bít Mũi Phong Cách CHANEL',
@@ -1710,6 +2086,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1719,6 +2096,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Dây Lụa Mặt Cười Đầy Kim Cương Phong Cách CHANEL',
@@ -1728,6 +2108,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1737,6 +2118,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Yoyoclub Dây Chuyền Trái Tim Phong Cách CHANEL',
@@ -1746,6 +2130,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1755,6 +2140,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Khuyên Tai Thương Hiệu Chanel',
@@ -1764,6 +2152,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1773,6 +2162,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Thắt Lưng Phong Cách CHANEL',
@@ -1782,6 +2174,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1791,6 +2184,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Phụ Kiện Xích Eo Phong Cách CHANEL',
@@ -1800,6 +2196,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
@@ -1809,6 +2206,9 @@ class Products extends Seeder
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 4
+>>>>>>> show_feature_product
         ]);
         //////////////////////////// Hermes ////////////////////////////////
         \DB::table('products')->insert([
@@ -1819,6 +2219,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -1828,6 +2229,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Jean Hermes',
@@ -1837,6 +2241,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -1846,6 +2251,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Nam Cạp Cao NO.1Hermes',
@@ -1855,6 +2263,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -1864,6 +2273,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Jean TOP.1Hermes Chính Hãng',
@@ -1873,6 +2285,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -1882,6 +2295,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'NO1Hermes Quần Thường Ngày',
@@ -1891,6 +2307,7 @@ class Products extends Seeder
             'type_id' => 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -1900,6 +2317,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo Nỉ Hermes Chính Hãng',
@@ -1909,6 +2329,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -1918,6 +2339,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'ÁO THUN NAM PHONG CÁCH HÀN QUỐC',
@@ -1927,6 +2351,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -1936,6 +2361,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo Polo TOP.1Hermes',
@@ -1945,6 +2373,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -1954,6 +2383,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo Sơ Mi Mới TOP.1Hermes',
@@ -1963,6 +2395,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -1972,6 +2405,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo Thun Nam Nữ Tay Lỡ Hermes',
@@ -1981,6 +2417,7 @@ class Products extends Seeder
             'type_id' => 2,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -1990,6 +2427,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Túi Xách, Cặp Da Hermes',
@@ -1999,6 +2439,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -2008,6 +2449,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Túi xách nữ đeo chéo Hermes',
@@ -2017,6 +2461,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -2026,6 +2471,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Túi Messenger Hermes Chính Hãng 2022',
@@ -2035,6 +2483,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -2044,6 +2493,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Balo Laptop Gaming Hermes',
@@ -2053,6 +2505,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -2062,6 +2515,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Túi Messenger Hermes Thời trang 2022',
@@ -2071,6 +2527,7 @@ class Products extends Seeder
             'type_id' => 3,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -2080,6 +2537,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Giày Lười Hermes Nam',
@@ -2089,6 +2549,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -2098,6 +2559,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Giày Cao Gót Hermes',
@@ -2107,6 +2571,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -2116,6 +2581,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Dép nam da chữ H cao cấp',
@@ -2125,6 +2593,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -2134,6 +2603,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Dép Lê thời trang Quai Ngang Chữ H',
@@ -2143,6 +2615,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -2152,6 +2625,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Dép HERMES Unisex Quai Ngang Chữ H',
@@ -2161,6 +2637,7 @@ class Products extends Seeder
             'type_id' => 4,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -2170,6 +2647,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'SET DÂY CHUYỀN + HOA TAI TITAN CHỮ H',
@@ -2179,6 +2659,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -2188,6 +2669,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Bông tai Hermes, khuyên tai chữ H',
@@ -2197,6 +2681,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -2206,6 +2691,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Thắt Lưng Nam Nữ Cao Cấp Khóa H Thời Trang',
@@ -2215,6 +2703,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -2224,6 +2713,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Thắt Lưng Hermes 2022 Chính Hãng',
@@ -2233,6 +2725,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -2242,6 +2735,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Vòng Cổ No.1Hermes Chính Hãng',
@@ -2251,6 +2747,7 @@ class Products extends Seeder
             'type_id' => 5,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
@@ -2260,6 +2757,9 @@ class Products extends Seeder
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> layout_login_and_register
+=======
+            'menu_id' => 5
+>>>>>>> show_feature_product
         ]);
     }
 }

@@ -14,6 +14,9 @@ class Features extends Seeder
     public function run()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> show_feature_product
         \DB::table('feature')->insert([
             'feature_name' => 'New Arrivals'
         ]);
@@ -21,6 +24,7 @@ class Features extends Seeder
             'feature_name' => 'Best Sellers'
         ]);
         \DB::table('feature')->insert([
+<<<<<<< HEAD
 =======
         \DB::table('features')->insert([
             'feature_name' => 'New Arrivals'
@@ -30,6 +34,8 @@ class Features extends Seeder
         ]);
         \DB::table('features')->insert([
 >>>>>>> layout_login_and_register
+=======
+>>>>>>> show_feature_product
             'feature_name' => 'Hot Sales'
         ]);
     }

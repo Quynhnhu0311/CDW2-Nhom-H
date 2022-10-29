@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @extends('layout')
 @section('content')
 =======
@@ -148,6 +149,10 @@
 @extends('layout')
 	@section('content')
 >>>>>>> layout_login_and_register
+=======
+@extends('layout')
+	@section('content')
+>>>>>>> show_feature_product
 
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-blog set-bg" data-setbg="img/breadcrumb-bg.jpg">
@@ -264,6 +269,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @endsection
 =======
     <!-- Footer Section Begin -->
@@ -368,3 +374,6 @@
 =======
     @endsection
 >>>>>>> layout_login_and_register
+=======
+    @endsection
+>>>>>>> show_feature_product

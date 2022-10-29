@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use App\Http\Controllers\MyController;
 use App\Http\Controllers\ProductController;
@@ -20,6 +21,11 @@ use App\Http\Controllers\UserController;
 >>>>>>> function_login_and_logout
 =======
 >>>>>>> layout_login_and_register
+=======
+use App\Http\Controllers\MyController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\HomeController;
+>>>>>>> show_feature_product
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +38,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -63,6 +70,8 @@ Route::get('/checkout', function () {
 =======
 >>>>>>> create_table_database
 =======
+=======
+>>>>>>> show_feature_product
 
 /* =====Front-End===== */
 
@@ -75,6 +84,7 @@ Route::get('/', [HomeController::class,'home']);
 Route::get('feature/{feature_id}', [HomeController::class, 'show_product_home'])->name('showproducthome');
 
 //Show all Page
+<<<<<<< HEAD
 Route::get('/{name?}',[MyController::class, 'index']);
 >>>>>>> detail_and_related_product
 =======
@@ -95,3 +105,6 @@ Route::get('/{name?}',[MyController::class, 'index']);
 >>>>>>> function_login_and_logout
 =======
 >>>>>>> layout_login_and_register
+=======
+Route::get('/{name?}',[MyController::class, 'index']);
+>>>>>>> show_feature_product

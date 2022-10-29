@@ -490,6 +490,7 @@ iframe {
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 .filter__controls li a {
   color:#333333 !important;
 }
@@ -497,6 +498,11 @@ iframe {
 >>>>>>> function_login_and_logout
 =======
 >>>>>>> layout_login_and_register
+=======
+.filter__controls li a {
+  color:#333333 !important;
+}
+>>>>>>> show_feature_product
 
 
 
