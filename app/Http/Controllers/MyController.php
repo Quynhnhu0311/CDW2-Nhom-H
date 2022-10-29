@@ -3,17 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 use DB;
-=======
->>>>>>> function_login_and_logout
-=======
->>>>>>> layout_login_and_register
-=======
-use DB;
->>>>>>> show_feature_product
 
 class MyController extends Controller
 {
@@ -23,19 +13,7 @@ class MyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index($name = 'index')
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-    {   
-=======
     {
->>>>>>> function_login_and_logout
-=======
-    {
->>>>>>> layout_login_and_register
-=======
-    {   
->>>>>>> show_feature_product
         return view($name);
     }
 

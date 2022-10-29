@@ -4,19 +4,8 @@
 	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<!--===============================================================================================-->	
-=======
 <!--===============================================================================================-->
->>>>>>> function_login_and_logout
-=======
-<!--===============================================================================================-->
->>>>>>> layout_login_and_register
-=======
-<!--===============================================================================================-->	
->>>>>>> show_feature_product
+
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ url ('bootstrap.min.css') }}">
 <!--===============================================================================================-->
@@ -25,37 +14,13 @@
 	<link rel="stylesheet" type="text/css" href="{{ url('fonts/iconic/css/material-design-iconic-font.min.css') }}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ url('vendor/animate/animate.css') }}">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<!--===============================================================================================-->	
-=======
 <!--===============================================================================================-->
->>>>>>> function_login_and_logout
-=======
-<!--===============================================================================================-->
->>>>>>> layout_login_and_register
-=======
-<!--===============================================================================================-->	
->>>>>>> show_feature_product
 	<link rel="stylesheet" type="text/css" href="{{ url('vendor/css-hamburgers/hamburgers.min.css') }}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ url('vendor/animsition/css/animsition.min.css') }}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ url ('vendor/select2/select2.min.css') }}">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<!--===============================================================================================-->	
-=======
 <!--===============================================================================================-->
->>>>>>> function_login_and_logout
-=======
-<!--===============================================================================================-->
->>>>>>> layout_login_and_register
-=======
-<!--===============================================================================================-->	
->>>>>>> show_feature_product
 	<link rel="stylesheet" type="text/css" href="{{ url ('vendor/daterangepicker/daterangepicker.css') }}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ url('css/util.css')}}">
@@ -63,47 +28,17 @@
 <!--===============================================================================================-->
 </head>
 <body>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> show_feature_product
-	
-	<div class="limiter">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				<form class="login100-form validate-form">
-<<<<<<< HEAD
-=======
-=======
->>>>>>> layout_login_and_register
-
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<form class="login100-form validate-form" action="/login-user" method="POST">
                 @csrf
-<<<<<<< HEAD
->>>>>>> function_login_and_logout
-=======
->>>>>>> layout_login_and_register
-=======
->>>>>>> show_feature_product
 					<span class="login100-form-title p-b-26">
 						Welcome
 					</span>
 					<span class="login100-form-title p-b-48">
                         <img src="img/logo.png" alt="">
 					</span>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-						<input class="input100" type="text" name="email">
-=======
-=======
->>>>>>> layout_login_and_register
                     <?php
                         $message = Session::get('message');
                         if($message){
@@ -112,16 +47,7 @@
                         }
                     ?>
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-						<input class="input100" type="email" name="email">
-<<<<<<< HEAD
->>>>>>> function_login_and_logout
-=======
->>>>>>> layout_login_and_register
-=======
-
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
 						<input class="input100" type="text" name="email">
->>>>>>> show_feature_product
 						<span class="focus-input100" data-placeholder="Email"></span>
 					</div>
 
@@ -136,19 +62,7 @@
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-							<button class="login100-form-btn">
-=======
 							<button class="login100-form-btn" name="login">
->>>>>>> function_login_and_logout
-=======
-							<button class="login100-form-btn" name="login">
->>>>>>> layout_login_and_register
-=======
-							<button class="login100-form-btn">
->>>>>>> show_feature_product
 								Login
 							</button>
 						</div>
@@ -167,29 +81,9 @@
 			</div>
 		</div>
 	</div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> show_feature_product
-	
-
-	<div id="dropDownSelect1"></div>
-	
-<<<<<<< HEAD
-=======
-=======
->>>>>>> layout_login_and_register
-
 
 	<div id="dropDownSelect1"></div>
 
-<<<<<<< HEAD
->>>>>>> function_login_and_logout
-=======
->>>>>>> layout_login_and_register
-=======
->>>>>>> show_feature_product
 <!--===============================================================================================-->
 	<script src="{{ url('vendor/jquery/jquery-3.2.1.min.js') }}"></script>
 <!--===============================================================================================-->
@@ -208,16 +102,4 @@
 	<script src="{{ url('vendor/js-login/main.js') }}"></script>
 
 </body>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> function_login_and_logout
-=======
-</html>
->>>>>>> layout_login_and_register
-=======
-</html>
->>>>>>> show_feature_product
