@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @extends('layout')
 @section('content')
 =======
@@ -142,6 +143,12 @@
     <!-- Shop Details Section Begin -->
     @foreach($detail as $product_detail)
 >>>>>>> detail_and_related_product
+=======
+@extends('layout')
+	@section('content')
+
+    <!-- Shop Details Section Begin -->
+>>>>>>> function_login_and_logout
     <section class="shop-details">
         <div class="product__details__pic">
             <div class="container">
@@ -149,12 +156,17 @@
                     <div class="col-lg-12">
                         <div class="product__details__breadcrumb">
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <a href="./index.html">Home</a>
                             <a href="./shop.html">Shop</a>
 =======
                             <a href="{{ url ('index') }}">Home</a>
                             <a href="{{ url ('shop') }}">Shop</a>
 >>>>>>> detail_and_related_product
+=======
+                            <a href="./index.html">Home</a>
+                            <a href="./shop.html">Shop</a>
+>>>>>>> function_login_and_logout
                             <span>Product Details</span>
                         </div>
                     </div>
@@ -194,37 +206,53 @@
                             <div class="tab-pane active" id="tabs-1" role="tabpanel">
                                 <div class="product__details__pic__item">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <img src="img/shop-details/product-big-2.png" alt="">
 =======
                                     <img src="{{ asset('./img/product/'.$product_detail->product_img) }}" alt="">
 >>>>>>> detail_and_related_product
+=======
+                                    <img src="img/shop-details/product-big-2.png" alt="">
+>>>>>>> function_login_and_logout
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-2" role="tabpanel">
                                 <div class="product__details__pic__item">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <img src="img/shop-details/product-big-3.png" alt="">
 =======
                                     <img src="{{ asset('./img/product/'.$product_detail->product_img) }}" alt="">
 >>>>>>> detail_and_related_product
+=======
+                                    <img src="img/shop-details/product-big-3.png" alt="">
+>>>>>>> function_login_and_logout
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-3" role="tabpanel">
                                 <div class="product__details__pic__item">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <img src="img/shop-details/product-big.png" alt="">
 =======
                                     <img src="{{ asset ('/product_detail->product_img') }}" alt="">
 >>>>>>> detail_and_related_product
+=======
+                                    <img src="img/shop-details/product-big.png" alt="">
+>>>>>>> function_login_and_logout
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-4" role="tabpanel">
                                 <div class="product__details__pic__item">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <img src="img/shop-details/product-big-4.png" alt="">
 =======
                                     <img src="{{ asset ('/product_detail->product_img') }}" alt="">
 >>>>>>> detail_and_related_product
+=======
+                                    <img src="img/shop-details/product-big-4.png" alt="">
+>>>>>>> function_login_and_logout
                                     <a href="https://www.youtube.com/watch?v=8PJ3_p7VqHw&list=RD8PJ3_p7VqHw&start_radio=1" class="video-popup"><i class="fa fa-play"></i></a>
                                 </div>
                             </div>
@@ -239,10 +267,14 @@
                     <div class="col-lg-8">
                         <div class="product__details__text">
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <h4>Hooded thermal anorak</h4>
 =======
                             <h4>{{ $product_detail->product_name}}</h4>
 >>>>>>> detail_and_related_product
+=======
+                            <h4>Hooded thermal anorak</h4>
+>>>>>>> function_login_and_logout
                             <div class="rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -252,14 +284,20 @@
                                 <span> - 5 Reviews</span>
                             </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> function_login_and_logout
                             <h3>$270.00 <span>70.00</span></h3>
                             <p>Coat with quilted lining and an adjustable hood. Featuring long sleeves with adjustable
                                 cuff tabs, adjustable asymmetric hem with elastic side tabs and a front zip fastening
                             with placket.</p>
+<<<<<<< HEAD
 =======
                             <h3>{{ number_format($product_detail->product_price) }} VND <span>70.00</span></h3>
                             <p>{{ $product_detail->product_description }}</p>
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                             <div class="product__details__option">
                                 <div class="product__details__option__size">
                                     <span>Size:</span>
@@ -320,6 +358,9 @@
                     </div>
                 </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> function_login_and_logout
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product__details__tab">
@@ -443,12 +484,15 @@
             </div>
         </div>
     </section>
+<<<<<<< HEAD
 =======
             </div>
         </div>
     </section>
     @endforeach
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
     <!-- Shop Details Section End -->
 
     <!-- Related Section Begin -->
@@ -461,6 +505,9 @@
             </div>
             <div class="row">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> function_login_and_logout
                 <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="img/product/product-1.jpg">
@@ -473,6 +520,7 @@
                         </div>
                         <div class="product__item__text">
                             <h6>Piqué Biker Jacket</h6>
+<<<<<<< HEAD
 =======
                 @foreach($related_product as $related)
                 <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
@@ -488,6 +536,8 @@
                         <div class="product__item__text">
                             <h6>{{ $related->product_name }}</h6>
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                             <a href="#" class="add-cart">+ Add To Cart</a>
                             <div class="rating">
                                 <i class="fa fa-star-o"></i>
@@ -512,6 +562,9 @@
                     </div>
                 </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> function_login_and_logout
                 <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
@@ -615,13 +668,17 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
 =======
                 @endforeach
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             </div>
         </div>
     </section>
     <!-- Related Section End -->
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 <<<<<<< HEAD
@@ -723,3 +780,7 @@
 =======
     @endsection
 >>>>>>> detail_and_related_product
+=======
+
+    @endsection
+>>>>>>> function_login_and_logout

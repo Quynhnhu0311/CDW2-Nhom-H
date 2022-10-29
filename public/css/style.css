@@ -4,7 +4,11 @@
   Author: Colorib
   Author URI: https://www.colorib.com/
   Version: 1.0
+<<<<<<< HEAD
   Created: Colorib 
+=======
+  Created: Colorib
+>>>>>>> function_login_and_logout
 ******************************************************************/
 
 /*------------------------------------------------------------------
@@ -3849,6 +3853,7 @@ ol {
 		height: 250px;
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
@@ -3859,3 +3864,6 @@ ol {
 	color:#000000 !important;
 }
 >>>>>>> detail_and_related_product
+=======
+}
+>>>>>>> function_login_and_logout

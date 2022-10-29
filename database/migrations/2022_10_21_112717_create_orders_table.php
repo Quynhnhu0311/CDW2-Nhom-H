@@ -20,10 +20,14 @@ class CreateOrdersTable extends Migration
             $table->string('order_code',20);
             $table->string('order_status',50);
 <<<<<<< HEAD
+<<<<<<< HEAD
             $table->double('product_price',11);
 =======
                         $table->double('product_price',11);
 >>>>>>> detail_and_related_product
+=======
+            $table->double('product_price',11);
+>>>>>>> function_login_and_logout
             $table->timestamps();
         });
     }

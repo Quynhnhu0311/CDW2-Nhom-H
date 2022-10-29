@@ -2,11 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 use App\Http\Controllers\MyController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
 >>>>>>> detail_and_related_product
+=======
+use App\Http\Controllers\MyController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+>>>>>>> function_login_and_logout
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +26,7 @@ use App\Http\Controllers\HomeController;
 |
 */
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Route::get('/', function () {
     return view('index');
@@ -62,3 +70,16 @@ Route::get('feature/{feature_id}', [HomeController::class, 'show_product_home'])
 //Show all Page
 Route::get('/{name?}',[MyController::class, 'index']);
 >>>>>>> detail_and_related_product
+=======
+//Products
+Route::get('/tat-ca-san-pham', [ProductController::class,'all_products']);
+Route::get('/', [HomeController::class,'home']);
+
+//Login
+Route::post('/login-user', [UserController::class,'login_user']);
+Route::get('/logout-user', [UserController::class,'logout_user']);
+
+
+//Show all Page
+Route::get('/{name?}',[MyController::class, 'index']);
+>>>>>>> function_login_and_logout

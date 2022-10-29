@@ -488,9 +488,12 @@ iframe {
     opacity: 1;
   }
 }
+<<<<<<< HEAD
 .filter__controls li a {
   color:#333333 !important;
 }
+=======
+>>>>>>> function_login_and_logout
 
 
 

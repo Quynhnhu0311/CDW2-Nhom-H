@@ -15,6 +15,9 @@
 
     <!-- Css Styles -->
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> function_login_and_logout
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
@@ -23,6 +26,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+<<<<<<< HEAD
 =======
     <link rel="stylesheet" href="{{ url ('css/bootstrap.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url ('css/font-awesome.min.css') }}" type="text/css">
@@ -33,6 +37,8 @@
     <link rel="stylesheet" href="{{ url ('css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url ('css/style.css') }}" type="text/css">
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
 </head>
 
 <body>
@@ -41,15 +47,32 @@
         <div class="loader"></div>
     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> detail_and_related_product
+=======
+
+>>>>>>> function_login_and_logout
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__option">
             <div class="offcanvas__links">
+<<<<<<< HEAD
                 <a href="#">Sign in</a>
+=======
+                <?php
+                    $name = Session::get('name');
+                    if($name){
+                        echo $name;
+                        echo '<li><a href="/logout-user">Log out</a></li>';
+                    }
+                    else{
+                        echo '<a href="#">Sign in</a>';
+                    }
+                ?>
+>>>>>>> function_login_and_logout
                 <a href="#">FAQs</a>
             </div>
             <div class="offcanvas__top__hover">
@@ -88,12 +111,18 @@
                         <div class="header__top__right">
                             <div class="header__top__links">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <a href="#">Sign in</a>
 =======
                                 <?php
                                     $name = Session::get('name');
                                     $id = Session::get('id');
                                     if($id){
+=======
+                                <?php
+                                    $name = Session::get('name');
+                                    if($name){
+>>>>>>> function_login_and_logout
                                         echo '<div class="header__top__hover">
                                                 <span>'.$name.'<i class="arrow_carrot-down"></i></span>
                                                 <ul>
@@ -105,7 +134,10 @@
                                         echo '<a href="/login">Sign in</a>';
                                     }
                                 ?>
+<<<<<<< HEAD
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                                 <a href="#">FAQs</a>
                             </div>
                             <div class="header__top__hover">
@@ -116,6 +148,10 @@
                                     <li>USD</li>
                                 </ul>
                             </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> function_login_and_logout
                         </div>
                     </div>
                 </div>
@@ -126,16 +162,21 @@
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <a href="./index.html"><img src="img/logo.png" alt=""></a>
 =======
                         <a href="{{ url ('index') }}"><img src="{{ asset ('/img/logo.png') }}" alt=""></a>
 >>>>>>> detail_and_related_product
+=======
+                        <a href="{{ url ('index') }}"><img src="img/logo.png" alt=""></a>
+>>>>>>> function_login_and_logout
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
                             <li class="active"><a href="/">Home</a></li>
+<<<<<<< HEAD
 <<<<<<< HEAD
                             <li><a href="/products">Shop</a></li>
                             <li><a href="#">Pages</a>
@@ -150,6 +191,8 @@
                             <li><a href="/blogs">Blog</a></li>
                             <li><a href="/contact">Contacts</a></li>
 =======
+=======
+>>>>>>> function_login_and_logout
                             <li><a href="/tat-ca-san-pham">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
@@ -162,12 +205,16 @@
                             </li>
                             <li><a href="{{url ('blog') }}">Blog</a></li>
                             <li><a href="{{ url ('contact') }}">Contacts</a></li>
+<<<<<<< HEAD
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                         </ul>
                     </nav>
                 </div>
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
+<<<<<<< HEAD
 <<<<<<< HEAD
                         <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
                         <a href="#"><img src="img/icon/heart.png" alt=""></a>
@@ -177,6 +224,11 @@
                         <a href="#"><img src="{{ asset ('img/icon/heart.png') }}" alt=""></a>
                         <a href="{{url ('shopping-cart') }}"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
 >>>>>>> detail_and_related_product
+=======
+                        <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+                        <a href="#"><img src="img/icon/heart.png" alt=""></a>
+                        <a href="{{url ('shopping-cart') }}"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+>>>>>>> function_login_and_logout
                         <div class="price">$0.00</div>
                     </div>
                 </div>
@@ -186,11 +238,15 @@
     </header>
     <!-- Header Section End -->
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     @yield('content')
 =======
     @yield('content');
 >>>>>>> detail_and_related_product
+=======
+    @yield('content');
+>>>>>>> function_login_and_logout
 
     <!-- Footer Section Begin -->
     <footer class="footer">
@@ -272,6 +328,9 @@
 
     <!-- Js Plugins -->
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> function_login_and_logout
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
@@ -282,6 +341,7 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+<<<<<<< HEAD
 =======
     <script src="{{ url ('js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ url ('js/bootstrap.min.js') }}"></script>
@@ -294,6 +354,10 @@
     <script src="{{ url ('js/owl.carousel.min.js') }}"></script>
     <script src="{{ url ('js/main.js') }}"></script>
 >>>>>>> detail_and_related_product
+=======
+
+
+>>>>>>> function_login_and_logout
 </body>
 
 </html>

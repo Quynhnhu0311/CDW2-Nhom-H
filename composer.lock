@@ -125,6 +125,9 @@
         {
             "name": "dflydev/dot-access-data",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> function_login_and_logout
             "version": "v3.0.1",
             "source": {
                 "type": "git",
@@ -135,6 +138,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/dflydev/dflydev-dot-access-data/zipball/0992cc19268b259a39e86f296da5f0677841f42c",
                 "reference": "0992cc19268b259a39e86f296da5f0677841f42c",
+<<<<<<< HEAD
 =======
             "version": "v3.0.2",
             "source": {
@@ -147,6 +151,8 @@
                 "url": "https://api.github.com/repos/dflydev/dflydev-dot-access-data/zipball/f41715465d65213d644d3141a6a93081be5d3549",
                 "reference": "f41715465d65213d644d3141a6a93081be5d3549",
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -158,10 +164,14 @@
                 "scrutinizer/ocular": "1.6.0",
                 "squizlabs/php_codesniffer": "^3.5",
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "vimeo/psalm": "^3.14"
 =======
                 "vimeo/psalm": "^4.0.0"
 >>>>>>> detail_and_related_product
+=======
+                "vimeo/psalm": "^3.14"
+>>>>>>> function_login_and_logout
             },
             "type": "library",
             "extra": {
@@ -211,12 +221,16 @@
             "support": {
                 "issues": "https://github.com/dflydev/dflydev-dot-access-data/issues",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> function_login_and_logout
                 "source": "https://github.com/dflydev/dflydev-dot-access-data/tree/v3.0.1"
             },
             "time": "2021-08-13T13:06:58+00:00"
         },
         {
             "name": "doctrine/inflector",
+<<<<<<< HEAD
 <<<<<<< HEAD
             "version": "2.0.4",
             "source": {
@@ -237,6 +251,8 @@
         {
             "name": "doctrine/inflector",
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "version": "2.0.6",
             "source": {
                 "type": "git",
@@ -248,15 +264,19 @@
                 "url": "https://api.github.com/repos/doctrine/inflector/zipball/d9d313a36c872fd6ee06d9a6cbcf713eaa40f024",
                 "reference": "d9d313a36c872fd6ee06d9a6cbcf713eaa40f024",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2 || ^8.0"
             },
             "require-dev": {
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 "doctrine/coding-standard": "^8.2",
@@ -268,6 +288,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "doctrine/coding-standard": "^10",
                 "phpstan/phpstan": "^1.8",
                 "phpstan/phpstan-phpunit": "^1.1",
@@ -275,9 +297,12 @@
                 "phpunit/phpunit": "^8.5 || ^9.5",
                 "vimeo/psalm": "^4.25"
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             },
             "type": "library",
             "autoload": {
@@ -329,6 +354,7 @@
                 "issues": "https://github.com/doctrine/inflector/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/doctrine/inflector/tree/2.0.4"
 =======
                 "source": "https://github.com/doctrine/inflector/tree/2.0.6"
@@ -336,6 +362,9 @@
 =======
                 "source": "https://github.com/doctrine/inflector/tree/2.0.6"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/doctrine/inflector/tree/2.0.6"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -353,6 +382,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2021-10-22T20:16:43+00:00"
 =======
             "time": "2022-10-20T09:10:12+00:00"
@@ -360,6 +390,9 @@
 =======
             "time": "2022-10-20T09:10:12+00:00"
 >>>>>>> detail_and_related_product
+=======
+            "time": "2022-10-20T09:10:12+00:00"
+>>>>>>> function_login_and_logout
         },
         {
             "name": "doctrine/lexer",
@@ -441,6 +474,7 @@
             "name": "dragonmantank/cron-expression",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "v3.3.1",
             "source": {
                 "type": "git",
@@ -454,6 +488,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "version": "v3.3.2",
             "source": {
                 "type": "git",
@@ -465,9 +501,12 @@
                 "url": "https://api.github.com/repos/dragonmantank/cron-expression/zipball/782ca5968ab8b954773518e9e49a6f892a34b2a8",
                 "reference": "782ca5968ab8b954773518e9e49a6f892a34b2a8",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -509,6 +548,7 @@
                 "issues": "https://github.com/dragonmantank/cron-expression/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/dragonmantank/cron-expression/tree/v3.3.1"
 =======
                 "source": "https://github.com/dragonmantank/cron-expression/tree/v3.3.2"
@@ -516,6 +556,9 @@
 =======
                 "source": "https://github.com/dragonmantank/cron-expression/tree/v3.3.2"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/dragonmantank/cron-expression/tree/v3.3.2"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -525,6 +568,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-01-18T15:43:28+00:00"
 =======
             "time": "2022-09-10T18:51:20+00:00"
@@ -532,6 +576,9 @@
 =======
             "time": "2022-09-10T18:51:20+00:00"
 >>>>>>> detail_and_related_product
+=======
+            "time": "2022-09-10T18:51:20+00:00"
+>>>>>>> function_login_and_logout
         },
         {
             "name": "egulias/email-validator",
@@ -605,6 +652,7 @@
             "name": "fideloper/proxy",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "4.4.1",
             "source": {
                 "type": "git",
@@ -618,6 +666,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "version": "4.4.2",
             "source": {
                 "type": "git",
@@ -629,9 +679,12 @@
                 "url": "https://api.github.com/repos/fideloper/TrustedProxy/zipball/a751f2bc86dd8e6cfef12dc0cbdada82f5a18750",
                 "reference": "a751f2bc86dd8e6cfef12dc0cbdada82f5a18750",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -643,6 +696,7 @@
                 "mockery/mockery": "^1.0",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "phpunit/phpunit": "^6.0"
 =======
                 "phpunit/phpunit": "^8.5.8|^9.3.3"
@@ -650,6 +704,9 @@
 =======
                 "phpunit/phpunit": "^8.5.8|^9.3.3"
 >>>>>>> detail_and_related_product
+=======
+                "phpunit/phpunit": "^8.5.8|^9.3.3"
+>>>>>>> function_login_and_logout
             },
             "type": "library",
             "extra": {
@@ -684,6 +741,7 @@
                 "issues": "https://github.com/fideloper/TrustedProxy/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/fideloper/TrustedProxy/tree/4.4.1"
             },
             "time": "2020-10-22T13:48:01+00:00"
@@ -697,6 +755,11 @@
             },
             "time": "2022-02-09T13:33:34+00:00"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/fideloper/TrustedProxy/tree/4.4.2"
+            },
+            "time": "2022-02-09T13:33:34+00:00"
+>>>>>>> function_login_and_logout
         },
         {
             "name": "fruitcake/laravel-cors",
@@ -781,6 +844,7 @@
             "name": "graham-campbell/result-type",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "v1.0.4",
             "source": {
                 "type": "git",
@@ -802,6 +866,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "version": "v1.1.0",
             "source": {
                 "type": "git",
@@ -821,9 +887,12 @@
             "require-dev": {
                 "phpunit/phpunit": "^8.5.28 || ^9.5.21"
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             },
             "type": "library",
             "autoload": {
@@ -854,6 +923,7 @@
                 "issues": "https://github.com/GrahamCampbell/Result-Type/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/GrahamCampbell/Result-Type/tree/v1.0.4"
 =======
                 "source": "https://github.com/GrahamCampbell/Result-Type/tree/v1.1.0"
@@ -861,6 +931,9 @@
 =======
                 "source": "https://github.com/GrahamCampbell/Result-Type/tree/v1.1.0"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/GrahamCampbell/Result-Type/tree/v1.1.0"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -872,6 +945,7 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2021-11-21T21:41:47+00:00"
@@ -891,6 +965,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "time": "2022-07-30T15:56:11+00:00"
         },
         {
@@ -906,14 +982,18 @@
                 "url": "https://api.github.com/repos/guzzle/guzzle/zipball/b50a2a1251152e43f6a37f0fa053e730a67d25ba",
                 "reference": "b50a2a1251152e43f6a37f0fa053e730a67d25ba",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "guzzlehttp/promises": "^1.5",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 "guzzlehttp/psr7": "^1.8.3 || ^2.1",
@@ -923,6 +1003,9 @@
 =======
                 "guzzlehttp/psr7": "^1.9 || ^2.4",
 >>>>>>> detail_and_related_product
+=======
+                "guzzlehttp/psr7": "^1.9 || ^2.4",
+>>>>>>> function_login_and_logout
                 "php": "^7.2.5 || ^8.0",
                 "psr/http-client": "^1.0",
                 "symfony/deprecation-contracts": "^2.2 || ^3.0"
@@ -933,6 +1016,7 @@
             "require-dev": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "bamarni/composer-bin-plugin": "^1.4.1",
                 "ext-curl": "*",
                 "php-http/client-integration-tests": "^3.0",
@@ -940,14 +1024,19 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "bamarni/composer-bin-plugin": "^1.8.1",
                 "ext-curl": "*",
                 "php-http/client-integration-tests": "^3.0",
                 "phpunit/phpunit": "^8.5.29 || ^9.5.23",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "psr/log": "^1.1 || ^2.0 || ^3.0"
             },
             "suggest": {
@@ -959,11 +1048,14 @@
             "extra": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "branch-alias": {
                     "dev-master": "7.4-dev"
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "bamarni-bin": {
                     "bin-links": true,
                     "forward-command": false
@@ -971,9 +1063,12 @@
                 "branch-alias": {
                     "dev-master": "7.5-dev"
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 }
             },
             "autoload": {
@@ -1041,6 +1136,7 @@
                 "issues": "https://github.com/guzzle/guzzle/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/guzzle/guzzle/tree/7.4.4"
 =======
                 "source": "https://github.com/guzzle/guzzle/tree/7.5.0"
@@ -1048,6 +1144,9 @@
 =======
                 "source": "https://github.com/guzzle/guzzle/tree/7.5.0"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/guzzle/guzzle/tree/7.5.0"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -1063,6 +1162,7 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2022-06-09T21:39:15+00:00"
@@ -1082,6 +1182,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "time": "2022-08-28T15:39:27+00:00"
         },
         {
@@ -1097,9 +1199,12 @@
                 "url": "https://api.github.com/repos/guzzle/promises/zipball/b94b2807d85443f9719887892882d0329d1e2598",
                 "reference": "b94b2807d85443f9719887892882d0329d1e2598",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -1156,6 +1261,7 @@
                 "issues": "https://github.com/guzzle/promises/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/guzzle/promises/tree/1.5.1"
 =======
                 "source": "https://github.com/guzzle/promises/tree/1.5.2"
@@ -1163,6 +1269,9 @@
 =======
                 "source": "https://github.com/guzzle/promises/tree/1.5.2"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/guzzle/promises/tree/1.5.2"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -1178,6 +1287,7 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2021-10-22T20:56:57+00:00"
@@ -1197,10 +1307,13 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "time": "2022-08-28T14:55:35+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
+<<<<<<< HEAD
 <<<<<<< HEAD
             "version": "2.4.1",
             "source": {
@@ -1214,6 +1327,8 @@
                 "reference": "69568e4293f4fa993f3b0e51c9723e1e17c41379",
 >>>>>>> create_table_database
 =======
+=======
+>>>>>>> function_login_and_logout
             "version": "2.4.2",
             "source": {
                 "type": "git",
@@ -1224,7 +1339,10 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/guzzle/psr7/zipball/3148458748274be1546f8f2809a6c09fe66f44aa",
                 "reference": "3148458748274be1546f8f2809a6c09fe66f44aa",
+<<<<<<< HEAD
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -1240,6 +1358,7 @@
             "require-dev": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "bamarni/composer-bin-plugin": "^1.4.1",
                 "http-interop/http-factory-tests": "^0.9",
                 "phpunit/phpunit": "^8.5.8 || ^9.3.10"
@@ -1253,6 +1372,11 @@
                 "http-interop/http-factory-tests": "^0.9",
                 "phpunit/phpunit": "^8.5.29 || ^9.5.23"
 >>>>>>> detail_and_related_product
+=======
+                "bamarni/composer-bin-plugin": "^1.8.1",
+                "http-interop/http-factory-tests": "^0.9",
+                "phpunit/phpunit": "^8.5.29 || ^9.5.23"
+>>>>>>> function_login_and_logout
             },
             "suggest": {
                 "laminas/laminas-httphandlerrunner": "Emit PSR-7 responses"
@@ -1261,11 +1385,14 @@
             "extra": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "branch-alias": {
                     "dev-master": "2.3-dev"
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "bamarni-bin": {
                     "bin-links": true,
                     "forward-command": false
@@ -1273,9 +1400,12 @@
                 "branch-alias": {
                     "dev-master": "2.4-dev"
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 }
             },
             "autoload": {
@@ -1339,6 +1469,7 @@
                 "issues": "https://github.com/guzzle/psr7/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/guzzle/psr7/tree/2.3.0"
 =======
                 "source": "https://github.com/guzzle/psr7/tree/2.4.1"
@@ -1346,6 +1477,9 @@
 =======
                 "source": "https://github.com/guzzle/psr7/tree/2.4.2"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/guzzle/psr7/tree/2.4.2"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -1361,6 +1495,7 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2022-06-09T08:26:02+00:00"
@@ -1382,6 +1517,9 @@
 =======
             "time": "2022-10-25T13:49:28+00:00"
 >>>>>>> detail_and_related_product
+=======
+            "time": "2022-10-25T13:49:28+00:00"
+>>>>>>> function_login_and_logout
         },
         {
             "name": "laravel/framework",
@@ -1396,9 +1534,12 @@
                 "url": "https://api.github.com/repos/laravel/framework/zipball/b77b908a9426efa41d6286a2ef4c3adbf5398ca1",
                 "reference": "b77b908a9426efa41d6286a2ef4c3adbf5398ca1",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -1560,6 +1701,7 @@
             },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-06-07T15:09:06+00:00"
         },
         {
@@ -1577,6 +1719,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "time": "2022-09-30T13:00:40+00:00"
         },
         {
@@ -1592,9 +1736,12 @@
                 "url": "https://api.github.com/repos/laravel/serializable-closure/zipball/47afb7fae28ed29057fdca37e16a84f90cc62fae",
                 "reference": "47afb7fae28ed29057fdca37e16a84f90cc62fae",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -1603,20 +1750,26 @@
             "require-dev": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "pestphp/pest": "^1.18",
                 "phpstan/phpstan": "^0.12.98",
                 "symfony/var-dumper": "^5.3"
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "nesbot/carbon": "^2.61",
                 "pestphp/pest": "^1.21.3",
                 "phpstan/phpstan": "^1.8.2",
                 "symfony/var-dumper": "^5.4.11"
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             },
             "type": "library",
             "extra": {
@@ -1655,6 +1808,7 @@
             },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-05-16T17:09:47+00:00"
 =======
             "time": "2022-09-08T13:45:54+00:00"
@@ -1662,6 +1816,9 @@
 =======
             "time": "2022-09-08T13:45:54+00:00"
 >>>>>>> detail_and_related_product
+=======
+            "time": "2022-09-08T13:45:54+00:00"
+>>>>>>> function_login_and_logout
         },
         {
             "name": "laravel/tinker",
@@ -1735,6 +1892,7 @@
             "name": "league/commonmark",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "2.3.3",
             "source": {
                 "type": "git",
@@ -1748,6 +1906,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "version": "2.3.5",
             "source": {
                 "type": "git",
@@ -1759,9 +1919,12 @@
                 "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/84d74485fdb7074f4f9dd6f02ab957b1de513257",
                 "reference": "84d74485fdb7074f4f9dd6f02ab957b1de513257",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -1785,6 +1948,7 @@
                 "nyholm/psr7": "^1.5",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "phpstan/phpstan": "^0.12.88 || ^1.0.0",
                 "phpunit/phpunit": "^9.5.5",
                 "scrutinizer/ocular": "^1.8.1",
@@ -1795,6 +1959,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "phpstan/phpstan": "^1.8.2",
                 "phpunit/phpunit": "^9.5.21",
                 "scrutinizer/ocular": "^1.8.1",
@@ -1803,9 +1969,12 @@
                 "unleashedtech/php-coding-standard": "^3.1.1",
                 "vimeo/psalm": "^4.24.0"
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             },
             "suggest": {
                 "symfony/yaml": "v2.3+ required if using the Front Matter extension"
@@ -1872,6 +2041,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-06-07T21:28:26+00:00"
 =======
             "time": "2022-07-29T10:59:45+00:00"
@@ -1879,6 +2049,9 @@
 =======
             "time": "2022-07-29T10:59:45+00:00"
 >>>>>>> detail_and_related_product
+=======
+            "time": "2022-07-29T10:59:45+00:00"
+>>>>>>> function_login_and_logout
         },
         {
             "name": "league/config",
@@ -1966,6 +2139,7 @@
             "name": "league/flysystem",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "1.1.9",
             "source": {
                 "type": "git",
@@ -1979,6 +2153,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "version": "1.1.10",
             "source": {
                 "type": "git",
@@ -1990,9 +2166,12 @@
                 "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/3239285c825c152bcc315fe0e87d6b55f5972ed1",
                 "reference": "3239285c825c152bcc315fe0e87d6b55f5972ed1",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -2067,6 +2246,7 @@
                 "issues": "https://github.com/thephpleague/flysystem/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/thephpleague/flysystem/tree/1.1.9"
 =======
                 "source": "https://github.com/thephpleague/flysystem/tree/1.1.10"
@@ -2074,6 +2254,9 @@
 =======
                 "source": "https://github.com/thephpleague/flysystem/tree/1.1.10"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/thephpleague/flysystem/tree/1.1.10"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -2083,6 +2266,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2021-12-09T09:40:50+00:00"
 =======
             "time": "2022-10-04T09:16:37+00:00"
@@ -2090,6 +2274,9 @@
 =======
             "time": "2022-10-04T09:16:37+00:00"
 >>>>>>> detail_and_related_product
+=======
+            "time": "2022-10-04T09:16:37+00:00"
+>>>>>>> function_login_and_logout
         },
         {
             "name": "league/mime-type-detection",
@@ -2151,6 +2338,7 @@
             "name": "monolog/monolog",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "2.7.0",
             "source": {
                 "type": "git",
@@ -2164,6 +2352,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "version": "2.8.0",
             "source": {
                 "type": "git",
@@ -2175,9 +2365,12 @@
                 "url": "https://api.github.com/repos/Seldaek/monolog/zipball/720488632c590286b88b80e62aa3d3d551ad4a50",
                 "reference": "720488632c590286b88b80e62aa3d3d551ad4a50",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -2199,6 +2392,7 @@
                 "php-amqplib/php-amqplib": "~2.4 || ^3",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "php-console/php-console": "^3.1.3",
                 "phpspec/prophecy": "^1.15",
                 "phpstan/phpstan": "^0.12.91",
@@ -2207,14 +2401,19 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "phpspec/prophecy": "^1.15",
                 "phpstan/phpstan": "^0.12.91",
                 "phpunit/phpunit": "^8.5.14",
                 "predis/predis": "^1.1 || ^2.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "rollbar/rollbar": "^1.3 || ^2 || ^3",
                 "ruflin/elastica": "^7",
                 "swiftmailer/swiftmailer": "^5.3|^6.0",
@@ -2236,11 +2435,14 @@
                 "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "php-console/php-console": "Allow sending log messages to Google Chrome",
 =======
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "rollbar/rollbar": "Allow sending log messages to Rollbar",
                 "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
             },
@@ -2277,6 +2479,7 @@
                 "issues": "https://github.com/Seldaek/monolog/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/Seldaek/monolog/tree/2.7.0"
 =======
                 "source": "https://github.com/Seldaek/monolog/tree/2.8.0"
@@ -2284,6 +2487,9 @@
 =======
                 "source": "https://github.com/Seldaek/monolog/tree/2.8.0"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/Seldaek/monolog/tree/2.8.0"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -2295,6 +2501,7 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2022-06-09T08:59:12+00:00"
@@ -2314,6 +2521,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "time": "2022-07-24T11:55:47+00:00"
         },
         {
@@ -2329,9 +2538,12 @@
                 "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/01bc4cdefe98ef58d1f9cb31bdbbddddf2a88f7a",
                 "reference": "01bc4cdefe98ef58d1f9cb31bdbbddddf2a88f7a",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -2348,6 +2560,7 @@
                 "kylekatarnls/multi-tester": "^2.0",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "phpmd/phpmd": "^2.9",
                 "phpstan/extension-installer": "^1.0",
                 "phpstan/phpstan": "^0.12.54 || ^1.0",
@@ -2356,6 +2569,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "ondrejmirtes/better-reflection": "*",
                 "phpmd/phpmd": "^2.9",
                 "phpstan/extension-installer": "^1.0",
@@ -2363,9 +2578,12 @@
                 "phpunit/php-file-iterator": "^2.0.5 || ^3.0.6",
                 "phpunit/phpunit": "^7.5.20 || ^8.5.26 || ^9.5.20",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "squizlabs/php_codesniffer": "^3.4"
             },
             "bin": [
@@ -2424,6 +2642,7 @@
                 {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "url": "https://opencollective.com/Carbon",
                     "type": "open_collective"
                 },
@@ -2436,6 +2655,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                     "url": "https://github.com/sponsors/kylekatarnls",
                     "type": "github"
                 },
@@ -2450,9 +2671,12 @@
             ],
             "time": "2022-09-02T07:48:13+00:00"
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
         },
         {
             "name": "nette/schema",
@@ -2520,6 +2744,7 @@
             "name": "nette/utils",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "v3.2.7",
             "source": {
                 "type": "git",
@@ -2537,6 +2762,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "version": "v3.2.8",
             "source": {
                 "type": "git",
@@ -2552,9 +2779,12 @@
             "require": {
                 "php": ">=7.2 <8.3"
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             },
             "conflict": {
                 "nette/di": "<3.0.6"
@@ -2622,6 +2852,7 @@
                 "issues": "https://github.com/nette/utils/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/nette/utils/tree/v3.2.7"
             },
             "time": "2022-01-24T11:29:14+00:00"
@@ -2641,6 +2872,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "source": "https://github.com/nette/utils/tree/v3.2.8"
             },
             "time": "2022-09-12T23:36:20+00:00"
@@ -2658,9 +2891,12 @@
                 "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/0ef6c55a3f47f89d7a374e6f835197a0b5fcf900",
                 "reference": "0ef6c55a3f47f89d7a374e6f835197a0b5fcf900",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -2703,6 +2939,7 @@
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/nikic/PHP-Parser/tree/v4.14.0"
             },
             "time": "2022-05-31T20:59:12+00:00"
@@ -2716,6 +2953,11 @@
             },
             "time": "2022-09-04T07:30:47+00:00"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.15.1"
+            },
+            "time": "2022-09-04T07:30:47+00:00"
+>>>>>>> function_login_and_logout
         },
         {
             "name": "opis/closure",
@@ -2786,6 +3028,7 @@
             "name": "phpoption/phpoption",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "1.8.1",
             "source": {
                 "type": "git",
@@ -2812,6 +3055,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "version": "1.9.0",
             "source": {
                 "type": "git",
@@ -2840,9 +3085,12 @@
                 "branch-alias": {
                     "dev-master": "1.9-dev"
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 }
             },
             "autoload": {
@@ -2877,6 +3125,7 @@
                 "issues": "https://github.com/schmittjoh/php-option/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/schmittjoh/php-option/tree/1.8.1"
 =======
                 "source": "https://github.com/schmittjoh/php-option/tree/1.9.0"
@@ -2884,6 +3133,9 @@
 =======
                 "source": "https://github.com/schmittjoh/php-option/tree/1.9.0"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/schmittjoh/php-option/tree/1.9.0"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -2897,6 +3149,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2021-12-04T23:24:31+00:00"
 =======
             "time": "2022-07-30T15:51:26+00:00"
@@ -2904,6 +3157,9 @@
 =======
             "time": "2022-07-30T15:51:26+00:00"
 >>>>>>> detail_and_related_product
+=======
+            "time": "2022-07-30T15:51:26+00:00"
+>>>>>>> function_login_and_logout
         },
         {
             "name": "psr/container",
@@ -3268,6 +3524,7 @@
             "name": "psy/psysh",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "v0.11.5",
             "source": {
                 "type": "git",
@@ -3281,6 +3538,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "version": "v0.11.8",
             "source": {
                 "type": "git",
@@ -3292,9 +3551,12 @@
                 "url": "https://api.github.com/repos/bobthecow/psysh/zipball/f455acf3645262ae389b10e9beba0c358aa6994e",
                 "reference": "f455acf3645262ae389b10e9beba0c358aa6994e",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -3357,6 +3619,7 @@
                 "issues": "https://github.com/bobthecow/psysh/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/bobthecow/psysh/tree/v0.11.5"
             },
             "time": "2022-05-27T18:03:49+00:00"
@@ -3370,6 +3633,11 @@
             },
             "time": "2022-07-28T14:25:11+00:00"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/bobthecow/psysh/tree/v0.11.8"
+            },
+            "time": "2022-07-28T14:25:11+00:00"
+>>>>>>> function_login_and_logout
         },
         {
             "name": "ralouphie/getallheaders",
@@ -3672,6 +3940,7 @@
             "name": "symfony/console",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "v5.4.9",
             "source": {
                 "type": "git",
@@ -3685,6 +3954,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "version": "v5.4.14",
             "source": {
                 "type": "git",
@@ -3696,9 +3967,12 @@
                 "url": "https://api.github.com/repos/symfony/console/zipball/984ea2c0f45f42dfed01d2f3987b187467c4b16d",
                 "reference": "984ea2c0f45f42dfed01d2f3987b187467c4b16d",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -3770,6 +4044,7 @@
             "support": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/console/tree/v5.4.9"
 =======
                 "source": "https://github.com/symfony/console/tree/v5.4.14"
@@ -3777,6 +4052,9 @@
 =======
                 "source": "https://github.com/symfony/console/tree/v5.4.14"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/symfony/console/tree/v5.4.14"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -3792,6 +4070,7 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2022-05-18T06:17:34+00:00"
@@ -3811,6 +4090,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "time": "2022-10-07T08:01:20+00:00"
         },
         {
@@ -3826,9 +4107,12 @@
                 "url": "https://api.github.com/repos/symfony/css-selector/zipball/c1681789f059ab756001052164726ae88512ae3d",
                 "reference": "c1681789f059ab756001052164726ae88512ae3d",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -3867,6 +4151,7 @@
             "support": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/css-selector/tree/v5.4.3"
 =======
                 "source": "https://github.com/symfony/css-selector/tree/v5.4.11"
@@ -3874,6 +4159,9 @@
 =======
                 "source": "https://github.com/symfony/css-selector/tree/v5.4.11"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/symfony/css-selector/tree/v5.4.11"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -3891,6 +4179,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-01-02T09:53:40+00:00"
         },
         {
@@ -3899,15 +4188,20 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "time": "2022-06-27T16:58:25+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
             "version": "v2.5.2",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/deprecation-contracts.git",
@@ -3956,6 +4250,7 @@
             "support": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/deprecation-contracts/tree/v2.5.1"
 =======
                 "source": "https://github.com/symfony/deprecation-contracts/tree/v2.5.2"
@@ -3963,6 +4258,9 @@
 =======
                 "source": "https://github.com/symfony/deprecation-contracts/tree/v2.5.2"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v2.5.2"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -3984,6 +4282,7 @@
             "name": "symfony/error-handler",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "v5.4.9",
             "source": {
                 "type": "git",
@@ -3997,6 +4296,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "version": "v5.4.14",
             "source": {
                 "type": "git",
@@ -4008,9 +4309,12 @@
                 "url": "https://api.github.com/repos/symfony/error-handler/zipball/5fe6d42ffeb68b094df8fdbf3acf23f391cc6be0",
                 "reference": "5fe6d42ffeb68b094df8fdbf3acf23f391cc6be0",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -4054,6 +4358,7 @@
             "support": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/error-handler/tree/v5.4.9"
 =======
                 "source": "https://github.com/symfony/error-handler/tree/v5.4.14"
@@ -4061,6 +4366,9 @@
 =======
                 "source": "https://github.com/symfony/error-handler/tree/v5.4.14"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/symfony/error-handler/tree/v5.4.14"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -4078,6 +4386,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-05-21T13:57:48+00:00"
 =======
             "time": "2022-10-03T15:15:50+00:00"
@@ -4085,6 +4394,9 @@
 =======
             "time": "2022-10-03T15:15:50+00:00"
 >>>>>>> detail_and_related_product
+=======
+            "time": "2022-10-03T15:15:50+00:00"
+>>>>>>> function_login_and_logout
         },
         {
             "name": "symfony/event-dispatcher",
@@ -4175,6 +4487,7 @@
             "name": "symfony/event-dispatcher-contracts",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "v2.5.1",
 =======
             "version": "v2.5.2",
@@ -4182,6 +4495,9 @@
 =======
             "version": "v2.5.2",
 >>>>>>> detail_and_related_product
+=======
+            "version": "v2.5.2",
+>>>>>>> function_login_and_logout
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher-contracts.git",
@@ -4242,6 +4558,7 @@
             "support": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/event-dispatcher-contracts/tree/v2.5.1"
 =======
                 "source": "https://github.com/symfony/event-dispatcher-contracts/tree/v2.5.2"
@@ -4249,6 +4566,9 @@
 =======
                 "source": "https://github.com/symfony/event-dispatcher-contracts/tree/v2.5.2"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/symfony/event-dispatcher-contracts/tree/v2.5.2"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -4270,6 +4590,7 @@
             "name": "symfony/finder",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "v5.4.8",
             "source": {
                 "type": "git",
@@ -4288,15 +4609,25 @@
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
                 "reference": "7872a66f57caffa2916a584db1aa7f12adc76f8c"
+=======
+            "version": "v5.4.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/finder.git",
+                "reference": "7872a66f57caffa2916a584db1aa7f12adc76f8c"
+>>>>>>> function_login_and_logout
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/finder/zipball/7872a66f57caffa2916a584db1aa7f12adc76f8c",
                 "reference": "7872a66f57caffa2916a584db1aa7f12adc76f8c",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -4332,6 +4663,7 @@
             "support": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/finder/tree/v5.4.8"
 =======
                 "source": "https://github.com/symfony/finder/tree/v5.4.11"
@@ -4339,6 +4671,9 @@
 =======
                 "source": "https://github.com/symfony/finder/tree/v5.4.11"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/symfony/finder/tree/v5.4.11"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -4354,6 +4689,7 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2022-04-15T08:07:45+00:00"
@@ -4373,6 +4709,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "time": "2022-07-29T07:37:50+00:00"
         },
         {
@@ -4388,9 +4726,12 @@
                 "url": "https://api.github.com/repos/symfony/http-foundation/zipball/e7c7b395c3a61d746919c21e915f51f0039c3f75",
                 "reference": "e7c7b395c3a61d746919c21e915f51f0039c3f75",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -4404,20 +4745,26 @@
                 "symfony/cache": "^4.4|^5.0|^6.0",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "symfony/expression-language": "^4.4|^5.0|^6.0",
                 "symfony/mime": "^4.4|^5.0|^6.0"
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "symfony/dependency-injection": "^5.4|^6.0",
                 "symfony/expression-language": "^4.4|^5.0|^6.0",
                 "symfony/http-kernel": "^5.4.12|^6.0.12|^6.1.4",
                 "symfony/mime": "^4.4|^5.0|^6.0",
                 "symfony/rate-limiter": "^5.2|^6.0"
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             },
             "suggest": {
                 "symfony/mime": "To use the file extension guesser"
@@ -4450,6 +4797,7 @@
             "support": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/http-foundation/tree/v5.4.9"
 =======
                 "source": "https://github.com/symfony/http-foundation/tree/v5.4.14"
@@ -4457,6 +4805,9 @@
 =======
                 "source": "https://github.com/symfony/http-foundation/tree/v5.4.14"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/symfony/http-foundation/tree/v5.4.14"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -4472,6 +4823,7 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2022-05-17T15:07:29+00:00"
@@ -4491,6 +4843,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "time": "2022-10-01T21:59:28+00:00"
         },
         {
@@ -4506,9 +4860,12 @@
                 "url": "https://api.github.com/repos/symfony/http-kernel/zipball/6f77fabc1a37c2dceecc6f78cca44772705dc52f",
                 "reference": "6f77fabc1a37c2dceecc6f78cca44772705dc52f",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -4593,6 +4950,7 @@
             "support": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/http-kernel/tree/v5.4.9"
 =======
                 "source": "https://github.com/symfony/http-kernel/tree/v5.4.14"
@@ -4600,6 +4958,9 @@
 =======
                 "source": "https://github.com/symfony/http-kernel/tree/v5.4.14"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/symfony/http-kernel/tree/v5.4.14"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -4615,6 +4976,7 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2022-05-27T07:09:08+00:00"
@@ -4634,6 +4996,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "time": "2022-10-12T07:12:21+00:00"
         },
         {
@@ -4649,9 +5013,12 @@
                 "url": "https://api.github.com/repos/symfony/mime/zipball/1c118b253bb3495d81e95a6e3ec6c2766a98a0c4",
                 "reference": "1c118b253bb3495d81e95a6e3ec6c2766a98a0c4",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -4667,6 +5034,7 @@
                 "phpdocumentor/type-resolver": "<1.4.0",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "symfony/mailer": "<4.4"
 =======
                 "symfony/mailer": "<4.4",
@@ -4676,6 +5044,10 @@
                 "symfony/mailer": "<4.4",
                 "symfony/serializer": "<5.4.14|>=6.0,<6.0.14|>=6.1,<6.1.6"
 >>>>>>> detail_and_related_product
+=======
+                "symfony/mailer": "<4.4",
+                "symfony/serializer": "<5.4.14|>=6.0,<6.0.14|>=6.1,<6.1.6"
+>>>>>>> function_login_and_logout
             },
             "require-dev": {
                 "egulias/email-validator": "^2.1.10|^3.1",
@@ -4685,6 +5057,7 @@
                 "symfony/property-info": "^4.4|^5.1|^6.0",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "symfony/serializer": "^5.2|^6.0"
 =======
                 "symfony/serializer": "^5.4.14|~6.0.14|^6.1.6"
@@ -4692,6 +5065,9 @@
 =======
                 "symfony/serializer": "^5.4.14|~6.0.14|^6.1.6"
 >>>>>>> detail_and_related_product
+=======
+                "symfony/serializer": "^5.4.14|~6.0.14|^6.1.6"
+>>>>>>> function_login_and_logout
             },
             "type": "library",
             "autoload": {
@@ -4725,6 +5101,7 @@
             "support": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/mime/tree/v5.4.9"
 =======
                 "source": "https://github.com/symfony/mime/tree/v5.4.14"
@@ -4732,6 +5109,9 @@
 =======
                 "source": "https://github.com/symfony/mime/tree/v5.4.14"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/symfony/mime/tree/v5.4.14"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -4749,6 +5129,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-05-21T10:24:18+00:00"
 =======
             "time": "2022-10-07T08:01:20+00:00"
@@ -4756,6 +5137,9 @@
 =======
             "time": "2022-10-07T08:01:20+00:00"
 >>>>>>> detail_and_related_product
+=======
+            "time": "2022-10-07T08:01:20+00:00"
+>>>>>>> function_login_and_logout
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -5578,6 +5962,7 @@
             "name": "symfony/process",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "v5.4.8",
             "source": {
                 "type": "git",
@@ -5591,6 +5976,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "version": "v5.4.11",
             "source": {
                 "type": "git",
@@ -5602,9 +5989,12 @@
                 "url": "https://api.github.com/repos/symfony/process/zipball/6e75fe6874cbc7e4773d049616ab450eff537bf1",
                 "reference": "6e75fe6874cbc7e4773d049616ab450eff537bf1",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -5639,6 +6029,7 @@
             "support": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/process/tree/v5.4.8"
 =======
                 "source": "https://github.com/symfony/process/tree/v5.4.11"
@@ -5646,6 +6037,9 @@
 =======
                 "source": "https://github.com/symfony/process/tree/v5.4.11"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/symfony/process/tree/v5.4.11"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -5661,6 +6055,7 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2022-04-08T05:07:18+00:00"
@@ -5680,6 +6075,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "time": "2022-06-27T16:58:25+00:00"
         },
         {
@@ -5695,9 +6092,12 @@
                 "url": "https://api.github.com/repos/symfony/routing/zipball/3e01ccd9b2a3a4167ba2b3c53612762300300226",
                 "reference": "3e01ccd9b2a3a4167ba2b3c53612762300300226",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -5760,6 +6160,7 @@
             "support": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/routing/tree/v5.4.8"
 =======
                 "source": "https://github.com/symfony/routing/tree/v5.4.11"
@@ -5767,6 +6168,9 @@
 =======
                 "source": "https://github.com/symfony/routing/tree/v5.4.11"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/symfony/routing/tree/v5.4.11"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -5782,6 +6186,7 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2022-04-18T21:45:37+00:00"
@@ -5809,6 +6214,8 @@
                 "url": "https://github.com/symfony/service-contracts.git",
                 "reference": "4b426aac47d6427cc1a1d0f7e2ac724627f5966c"
 =======
+=======
+>>>>>>> function_login_and_logout
             "time": "2022-07-20T13:00:38+00:00"
         },
         {
@@ -5818,16 +6225,22 @@
                 "type": "git",
                 "url": "https://github.com/symfony/service-contracts.git",
                 "reference": "4b426aac47d6427cc1a1d0f7e2ac724627f5966c"
+<<<<<<< HEAD
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/service-contracts/zipball/4b426aac47d6427cc1a1d0f7e2ac724627f5966c",
                 "reference": "4b426aac47d6427cc1a1d0f7e2ac724627f5966c",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -5883,6 +6296,7 @@
             "support": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/service-contracts/tree/v2.5.1"
 =======
                 "source": "https://github.com/symfony/service-contracts/tree/v2.5.2"
@@ -5890,6 +6304,9 @@
 =======
                 "source": "https://github.com/symfony/service-contracts/tree/v2.5.2"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/symfony/service-contracts/tree/v2.5.2"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -5905,6 +6322,7 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2022-03-13T20:07:29+00:00"
@@ -5924,6 +6342,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "time": "2022-05-30T19:17:29+00:00"
         },
         {
@@ -5939,9 +6359,12 @@
                 "url": "https://api.github.com/repos/symfony/string/zipball/089e7237497fae7a9c404d0c3aeb8db3254733e4",
                 "reference": "089e7237497fae7a9c404d0c3aeb8db3254733e4",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -6000,6 +6423,7 @@
             "support": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/string/tree/v5.4.9"
 =======
                 "source": "https://github.com/symfony/string/tree/v5.4.14"
@@ -6007,6 +6431,9 @@
 =======
                 "source": "https://github.com/symfony/string/tree/v5.4.14"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/symfony/string/tree/v5.4.14"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -6022,6 +6449,7 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2022-04-19T10:40:37+00:00"
@@ -6041,6 +6469,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "time": "2022-10-05T15:16:54+00:00"
         },
         {
@@ -6056,9 +6486,12 @@
                 "url": "https://api.github.com/repos/symfony/translation/zipball/f0ed07675863aa6e3939df8b1bc879450b585cab",
                 "reference": "f0ed07675863aa6e3939df8b1bc879450b585cab",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -6128,6 +6561,7 @@
             "support": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/translation/tree/v5.4.9"
 =======
                 "source": "https://github.com/symfony/translation/tree/v5.4.14"
@@ -6135,6 +6569,9 @@
 =======
                 "source": "https://github.com/symfony/translation/tree/v5.4.14"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/symfony/translation/tree/v5.4.14"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -6150,6 +6587,7 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2022-05-06T12:33:37+00:00"
@@ -6169,6 +6607,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "time": "2022-10-07T08:01:20+00:00"
         },
         {
@@ -6184,9 +6624,12 @@
                 "url": "https://api.github.com/repos/symfony/translation-contracts/zipball/136b19dd05cdf0709db6537d058bcab6dd6e2dbe",
                 "reference": "136b19dd05cdf0709db6537d058bcab6dd6e2dbe",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -6237,6 +6680,7 @@
             "support": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/translation-contracts/tree/v2.5.1"
 =======
                 "source": "https://github.com/symfony/translation-contracts/tree/v2.5.2"
@@ -6244,6 +6688,9 @@
 =======
                 "source": "https://github.com/symfony/translation-contracts/tree/v2.5.2"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/symfony/translation-contracts/tree/v2.5.2"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -6259,6 +6706,7 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2022-01-02T09:53:40+00:00"
@@ -6278,6 +6726,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "time": "2022-06-27T16:58:25+00:00"
         },
         {
@@ -6293,9 +6743,12 @@
                 "url": "https://api.github.com/repos/symfony/var-dumper/zipball/6894d06145fefebd9a4c7272baa026a1c394a430",
                 "reference": "6894d06145fefebd9a4c7272baa026a1c394a430",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -6357,6 +6810,7 @@
             "support": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/symfony/var-dumper/tree/v5.4.9"
 =======
                 "source": "https://github.com/symfony/var-dumper/tree/v5.4.14"
@@ -6364,6 +6818,9 @@
 =======
                 "source": "https://github.com/symfony/var-dumper/tree/v5.4.14"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/symfony/var-dumper/tree/v5.4.14"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -6379,6 +6836,7 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2022-05-21T10:24:18+00:00"
@@ -6398,6 +6856,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "time": "2022-10-07T08:01:20+00:00"
         },
         {
@@ -6413,9 +6873,12 @@
                 "url": "https://api.github.com/repos/tijsverkoyen/CssToInlineStyles/zipball/4348a3a06651827a27d989ad1d13efec6bb49b19",
                 "reference": "4348a3a06651827a27d989ad1d13efec6bb49b19",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -6455,6 +6918,7 @@
                 "issues": "https://github.com/tijsverkoyen/CssToInlineStyles/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/2.2.4"
             },
             "time": "2021-12-08T09:12:39+00:00"
@@ -6474,6 +6938,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/2.2.5"
             },
             "time": "2022-09-12T13:28:28+00:00"
@@ -6491,9 +6957,12 @@
                 "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/1a7ea2afc49c3ee6d87061f5a233e3a035d0eae7",
                 "reference": "1a7ea2afc49c3ee6d87061f5a233e3a035d0eae7",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -6510,6 +6979,7 @@
                 "ext-filter": "*",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "phpunit/phpunit": "^7.5.20 || ^8.5.21 || ^9.5.10"
 =======
                 "phpunit/phpunit": "^7.5.20 || ^8.5.30 || ^9.5.25"
@@ -6517,6 +6987,9 @@
 =======
                 "phpunit/phpunit": "^7.5.20 || ^8.5.30 || ^9.5.25"
 >>>>>>> detail_and_related_product
+=======
+                "phpunit/phpunit": "^7.5.20 || ^8.5.30 || ^9.5.25"
+>>>>>>> function_login_and_logout
             },
             "suggest": {
                 "ext-filter": "Required to use the boolean validator."
@@ -6525,11 +6998,14 @@
             "extra": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "branch-alias": {
                     "dev-master": "5.4-dev"
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "bamarni-bin": {
                     "bin-links": true,
                     "forward-command": true
@@ -6537,9 +7013,12 @@
                 "branch-alias": {
                     "dev-master": "5.5-dev"
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 }
             },
             "autoload": {
@@ -6573,6 +7052,7 @@
                 "issues": "https://github.com/vlucas/phpdotenv/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/vlucas/phpdotenv/tree/v5.4.1"
 =======
                 "source": "https://github.com/vlucas/phpdotenv/tree/v5.5.0"
@@ -6580,6 +7060,9 @@
 =======
                 "source": "https://github.com/vlucas/phpdotenv/tree/v5.5.0"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/vlucas/phpdotenv/tree/v5.5.0"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -6593,6 +7076,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2021-12-12T23:22:04+00:00"
 =======
             "time": "2022-10-16T01:01:54+00:00"
@@ -6600,6 +7084,9 @@
 =======
             "time": "2022-10-16T01:01:54+00:00"
 >>>>>>> detail_and_related_product
+=======
+            "time": "2022-10-16T01:01:54+00:00"
+>>>>>>> function_login_and_logout
         },
         {
             "name": "voku/portable-ascii",
@@ -6809,6 +7296,7 @@
             "name": "facade/flare-client-php",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "1.9.1",
             "source": {
                 "type": "git",
@@ -6822,6 +7310,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "version": "1.10.0",
             "source": {
                 "type": "git",
@@ -6833,9 +7323,12 @@
                 "url": "https://api.github.com/repos/facade/flare-client-php/zipball/213fa2c69e120bca4c51ba3e82ed1834ef3f41b8",
                 "reference": "213fa2c69e120bca4c51ba3e82ed1834ef3f41b8",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -6850,6 +7343,7 @@
                 "friendsofphp/php-cs-fixer": "^2.14",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "phpunit/phpunit": "^7.5.16",
 =======
                 "phpunit/phpunit": "^7.5",
@@ -6857,6 +7351,9 @@
 =======
                 "phpunit/phpunit": "^7.5",
 >>>>>>> detail_and_related_product
+=======
+                "phpunit/phpunit": "^7.5",
+>>>>>>> function_login_and_logout
                 "spatie/phpunit-snapshot-assertions": "^2.0"
             },
             "type": "library",
@@ -6889,6 +7386,7 @@
                 "issues": "https://github.com/facade/flare-client-php/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/facade/flare-client-php/tree/1.9.1"
 =======
                 "source": "https://github.com/facade/flare-client-php/tree/1.10.0"
@@ -6896,6 +7394,9 @@
 =======
                 "source": "https://github.com/facade/flare-client-php/tree/1.10.0"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/facade/flare-client-php/tree/1.10.0"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -6903,6 +7404,7 @@
                     "type": "github"
                 }
             ],
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             "time": "2021-09-13T12:16:46+00:00"
@@ -6922,6 +7424,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "time": "2022-08-09T11:23:57+00:00"
         },
         {
@@ -6937,9 +7441,12 @@
                 "url": "https://api.github.com/repos/facade/ignition/zipball/6acd82e986a2ecee89e2e68adfc30a1936d1ab7c",
                 "reference": "6acd82e986a2ecee89e2e68adfc30a1936d1ab7c",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -7006,6 +7513,7 @@
             },
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-02-23T18:31:24+00:00"
 =======
             "time": "2022-06-30T18:26:59+00:00"
@@ -7013,6 +7521,9 @@
 =======
             "time": "2022-06-30T18:26:59+00:00"
 >>>>>>> detail_and_related_product
+=======
+            "time": "2022-06-30T18:26:59+00:00"
+>>>>>>> function_login_and_logout
         },
         {
             "name": "facade/ignition-contracts",
@@ -7248,6 +7759,7 @@
             "name": "mockery/mockery",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "1.5.0",
             "source": {
                 "type": "git",
@@ -7261,6 +7773,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "version": "1.5.1",
             "source": {
                 "type": "git",
@@ -7272,9 +7786,12 @@
                 "url": "https://api.github.com/repos/mockery/mockery/zipball/e92dcc83d5a51851baf5f5591d32cb2b16e3684e",
                 "reference": "e92dcc83d5a51851baf5f5591d32cb2b16e3684e",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -7333,6 +7850,7 @@
                 "issues": "https://github.com/mockery/mockery/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/mockery/mockery/tree/1.5.0"
             },
             "time": "2022-01-20T13:18:17+00:00"
@@ -7346,6 +7864,11 @@
             },
             "time": "2022-09-07T15:32:08+00:00"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/mockery/mockery/tree/1.5.1"
+            },
+            "time": "2022-09-07T15:32:08+00:00"
+>>>>>>> function_login_and_logout
         },
         {
             "name": "myclabs/deep-copy",
@@ -7607,6 +8130,7 @@
         {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "name": "phpdocumentor/reflection-common",
             "version": "2.2.0",
             "source": {
@@ -7846,6 +8370,8 @@
                 "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/2e9da11878c4202f97915c1cb4bb1ca318a63f5f",
                 "reference": "2e9da11878c4202f97915c1cb4bb1ca318a63f5f",
 =======
+=======
+>>>>>>> function_login_and_logout
             "name": "phpunit/php-code-coverage",
             "version": "9.2.17",
             "source": {
@@ -7857,6 +8383,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/aa94dc41e8661fe90c7316849907cba3007b10d8",
                 "reference": "aa94dc41e8661fe90c7316849907cba3007b10d8",
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
             "name": "phpunit/php-code-coverage",
@@ -7871,12 +8398,15 @@
                 "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/12fddc491826940cf9b7e88ad9664cf51f0f6d0a",
                 "reference": "12fddc491826940cf9b7e88ad9664cf51f0f6d0a",
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "ext-libxml": "*",
                 "ext-xmlwriter": "*",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 "nikic/php-parser": "^4.13.0",
@@ -7886,6 +8416,9 @@
 =======
                 "nikic/php-parser": "^4.14",
 >>>>>>> detail_and_related_product
+=======
+                "nikic/php-parser": "^4.14",
+>>>>>>> function_login_and_logout
                 "php": ">=7.3",
                 "phpunit/php-file-iterator": "^3.0.3",
                 "phpunit/php-text-template": "^2.0.2",
@@ -7936,6 +8469,7 @@
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.15"
 =======
                 "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.17"
@@ -7943,6 +8477,9 @@
 =======
                 "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.18"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.17"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -7952,6 +8489,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-03-07T09:28:20+00:00"
 =======
             "time": "2022-08-30T12:24:04+00:00"
@@ -7959,6 +8497,9 @@
 =======
             "time": "2022-10-27T13:35:33+00:00"
 >>>>>>> detail_and_related_product
+=======
+            "time": "2022-08-30T12:24:04+00:00"
+>>>>>>> function_login_and_logout
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -8205,6 +8746,7 @@
             "name": "phpunit/phpunit",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "9.5.20",
             "source": {
                 "type": "git",
@@ -8216,6 +8758,8 @@
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/12bc8879fb65aef2138b26fc633cb1e3620cffba",
                 "reference": "12bc8879fb65aef2138b26fc633cb1e3620cffba",
 =======
+=======
+>>>>>>> function_login_and_logout
             "version": "9.5.25",
             "source": {
                 "type": "git",
@@ -8226,6 +8770,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3e6f90ca7e3d02025b1d147bd8d4a89fd4ca8a1d",
                 "reference": "3e6f90ca7e3d02025b1d147bd8d4a89fd4ca8a1d",
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
             "version": "9.5.26",
@@ -8239,6 +8784,8 @@
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/851867efcbb6a1b992ec515c71cdcf20d895e9d2",
                 "reference": "851867efcbb6a1b992ec515c71cdcf20d895e9d2",
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -8255,11 +8802,14 @@
                 "php": ">=7.3",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "phpspec/prophecy": "^1.12.1",
 =======
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "phpunit/php-code-coverage": "^9.2.13",
                 "phpunit/php-file-iterator": "^3.0.5",
                 "phpunit/php-invoker": "^3.1.1",
@@ -8267,6 +8817,7 @@
                 "phpunit/php-timer": "^5.0.2",
                 "sebastian/cli-parser": "^1.0.1",
                 "sebastian/code-unit": "^1.0.6",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 "sebastian/comparator": "^4.0.5",
@@ -8286,6 +8837,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "sebastian/comparator": "^4.0.8",
                 "sebastian/diff": "^4.0.3",
                 "sebastian/environment": "^5.1.3",
@@ -8297,9 +8850,12 @@
                 "sebastian/version": "^3.0.2"
             },
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "suggest": {
                 "ext-soap": "*",
                 "ext-xdebug": "*"
@@ -8343,6 +8899,7 @@
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.20"
 =======
                 "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.25"
@@ -8350,6 +8907,9 @@
 =======
                 "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.26"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.5.25"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -8361,12 +8921,15 @@
                     "type": "github"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 }
             ],
             "time": "2022-04-01T12:37:26+00:00"
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 },
                 {
                     "url": "https://tidelift.com/funding/github/packagist/phpunit/phpunit",
@@ -8374,11 +8937,15 @@
                 }
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-09-25T03:44:45+00:00"
 >>>>>>> create_table_database
 =======
             "time": "2022-10-28T06:00:21+00:00"
 >>>>>>> detail_and_related_product
+=======
+            "time": "2022-09-25T03:44:45+00:00"
+>>>>>>> function_login_and_logout
         },
         {
             "name": "sebastian/cli-parser",
@@ -8551,6 +9118,7 @@
             "name": "sebastian/comparator",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "4.0.6",
             "source": {
                 "type": "git",
@@ -8564,6 +9132,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "version": "4.0.8",
             "source": {
                 "type": "git",
@@ -8575,9 +9145,12 @@
                 "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/fa0f136dd2334583309d32b62544682ee972b51a",
                 "reference": "fa0f136dd2334583309d32b62544682ee972b51a",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -8632,6 +9205,7 @@
                 "issues": "https://github.com/sebastianbergmann/comparator/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/sebastianbergmann/comparator/tree/4.0.6"
 =======
                 "source": "https://github.com/sebastianbergmann/comparator/tree/4.0.8"
@@ -8639,6 +9213,9 @@
 =======
                 "source": "https://github.com/sebastianbergmann/comparator/tree/4.0.8"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/sebastianbergmann/comparator/tree/4.0.8"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -8648,6 +9225,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2020-10-26T15:49:45+00:00"
 =======
             "time": "2022-09-14T12:41:17+00:00"
@@ -8655,6 +9233,9 @@
 =======
             "time": "2022-09-14T12:41:17+00:00"
 >>>>>>> detail_and_related_product
+=======
+            "time": "2022-09-14T12:41:17+00:00"
+>>>>>>> function_login_and_logout
         },
         {
             "name": "sebastian/complexity",
@@ -8846,6 +9427,7 @@
             "name": "sebastian/exporter",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "4.0.4",
             "source": {
                 "type": "git",
@@ -8859,6 +9441,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "version": "4.0.5",
             "source": {
                 "type": "git",
@@ -8870,9 +9454,12 @@
                 "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/ac230ed27f0f98f597c8a2b6eb7ac563af5e5b9d",
                 "reference": "ac230ed27f0f98f597c8a2b6eb7ac563af5e5b9d",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -8930,6 +9517,7 @@
                 "issues": "https://github.com/sebastianbergmann/exporter/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/sebastianbergmann/exporter/tree/4.0.4"
 =======
                 "source": "https://github.com/sebastianbergmann/exporter/tree/4.0.5"
@@ -8937,6 +9525,9 @@
 =======
                 "source": "https://github.com/sebastianbergmann/exporter/tree/4.0.5"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/sebastianbergmann/exporter/tree/4.0.5"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -8946,6 +9537,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2021-11-11T14:18:36+00:00"
 =======
             "time": "2022-09-14T06:03:37+00:00"
@@ -8953,6 +9545,9 @@
 =======
             "time": "2022-09-14T06:03:37+00:00"
 >>>>>>> detail_and_related_product
+=======
+            "time": "2022-09-14T06:03:37+00:00"
+>>>>>>> function_login_and_logout
         },
         {
             "name": "sebastian/global-state",
@@ -9309,6 +9904,7 @@
             "name": "sebastian/type",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "version": "3.0.0",
             "source": {
                 "type": "git",
@@ -9322,6 +9918,8 @@
 =======
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             "version": "3.2.0",
             "source": {
                 "type": "git",
@@ -9333,9 +9931,12 @@
                 "url": "https://api.github.com/repos/sebastianbergmann/type/zipball/fb3fe09c5f0bae6bc27ef3ce933a1e0ed9464b6e",
                 "reference": "fb3fe09c5f0bae6bc27ef3ce933a1e0ed9464b6e",
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> create_table_database
 =======
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
                 "shasum": ""
             },
             "require": {
@@ -9349,6 +9950,7 @@
                 "branch-alias": {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                     "dev-master": "3.0-dev"
 =======
                     "dev-master": "3.2-dev"
@@ -9356,6 +9958,9 @@
 =======
                     "dev-master": "3.2-dev"
 >>>>>>> detail_and_related_product
+=======
+                    "dev-master": "3.2-dev"
+>>>>>>> function_login_and_logout
                 }
             },
             "autoload": {
@@ -9380,6 +9985,7 @@
                 "issues": "https://github.com/sebastianbergmann/type/issues",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 "source": "https://github.com/sebastianbergmann/type/tree/3.0.0"
 =======
                 "source": "https://github.com/sebastianbergmann/type/tree/3.2.0"
@@ -9387,6 +9993,9 @@
 =======
                 "source": "https://github.com/sebastianbergmann/type/tree/3.2.0"
 >>>>>>> detail_and_related_product
+=======
+                "source": "https://github.com/sebastianbergmann/type/tree/3.2.0"
+>>>>>>> function_login_and_logout
             },
             "funding": [
                 {
@@ -9396,6 +10005,7 @@
             ],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2022-03-15T09:54:48+00:00"
 =======
             "time": "2022-09-12T14:47:03+00:00"
@@ -9403,6 +10013,9 @@
 =======
             "time": "2022-09-12T14:47:03+00:00"
 >>>>>>> detail_and_related_product
+=======
+            "time": "2022-09-12T14:47:03+00:00"
+>>>>>>> function_login_and_logout
         },
         {
             "name": "sebastian/version",
@@ -9519,6 +10132,7 @@
     "platform-dev": [],
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     "plugin-api-version": "2.2.0"
 =======
     "plugin-api-version": "2.3.0"
@@ -9526,4 +10140,7 @@
 =======
     "plugin-api-version": "2.2.0"
 >>>>>>> detail_and_related_product
+=======
+    "plugin-api-version": "2.2.0"
+>>>>>>> function_login_and_logout
 }

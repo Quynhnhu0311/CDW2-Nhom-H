@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @extends('layout')
 @section('content')
 =======
@@ -139,6 +140,10 @@
     @extends('layout')
 	@section('content')
 >>>>>>> detail_and_related_product
+=======
+    @extends('layout')
+	@section('content')
+>>>>>>> function_login_and_logout
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel">
@@ -237,6 +242,7 @@
                 <div class="col-lg-12">
                     <ul class="filter__controls">
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <li class="active" data-filter="*">Best Sellers</li>
                         <li data-filter=".new-arrivals">New Arrivals</li>
                         <li data-filter=".hot-sales">Hot Sales</li>
@@ -249,10 +255,16 @@
                         </li>
                         @endforeach
 >>>>>>> detail_and_related_product
+=======
+                        <li class="active" data-filter=".best-sellers">Best Sellers</li>
+                        <li data-filter=".new-arrivals">New Arrivals</li>
+                        <li data-filter=".hot-sales">Hot Sales</li>
+>>>>>>> function_login_and_logout
                     </ul>
                 </div>
             </div>
             <div class="row product__filter">
+<<<<<<< HEAD
 <<<<<<< HEAD
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                     <div class="product__item">
@@ -542,6 +554,19 @@
                             </div>
                             <div class="product__item__text">
                                 <h6>{{ $bestSellers->product_name }}</h6>
+=======
+                    @foreach($bestSellers as $row => $bestSellers)
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix best-sellers">
+                        <div class="product__item">
+                            <div class="product__item__pic set-bg" data-setbg="{{ asset('./img/product/'.$bestSellers->product_img) }}">
+                                <ul class="product__hover">
+                                    <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                    <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                    <li><a href="/detailProduct"><img src="img/icon/search.png" alt=""></a></li>
+                                </ul>
+                            </div>
+                            <div class="product__item__text">
+                                <h6>{{ $bestSellers->product_name }}</h6>
                                 <a href="#" class="add-cart">+ Add To Cart</a>
                                 <div class="rating">
                                     <i class="fa fa-star-o"></i>
@@ -566,7 +591,87 @@
                         </div>
                     </div>
                     @endforeach
+                    @foreach($newArrivals as $row => $newArrivals)
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+                        <div class="product__item">
+                            <div class="product__item__pic set-bg" data-setbg="{{ asset('./img/product/'.$newArrivals->product_img) }}">
+                                <ul class="product__hover">
+                                    <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                    <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                    <li><a href="/detailProduct"><img src="img/icon/search.png" alt=""></a></li>
+                                </ul>
+                            </div>
+                            <div class="product__item__text">
+                                <h6>{{ $newArrivals->product_name }}</h6>
+                                <a href="#" class="add-cart">+ Add To Cart</a>
+                                <div class="rating">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                                <h5>{{ number_format($newArrivals->product_price) }}đ</h5>
+                                <div class="product__color__select">
+                                    <label for="pc-1">
+                                        <input type="radio" id="pc-1">
+                                    </label>
+                                    <label class="active black" for="pc-2">
+                                        <input type="radio" id="pc-2">
+                                    </label>
+                                    <label class="grey" for="pc-3">
+                                        <input type="radio" id="pc-3">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                    @foreach($hotSales as $row => $hotSales)
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
+                        <div class="product__item">
+                            <div class="product__item__pic set-bg" data-setbg="{{ asset('./img/product/'.$hotSales->product_img) }}">
+                                <ul class="product__hover">
+                                    <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                    <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                    <li><a href="/detailProduct"><img src="img/icon/search.png" alt=""></a></li>
+                                </ul>
+                            </div>
+                            <div class="product__item__text">
+                                <h6>{{ $hotSales->product_name }}</h6>
+>>>>>>> function_login_and_logout
+                                <a href="#" class="add-cart">+ Add To Cart</a>
+                                <div class="rating">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+<<<<<<< HEAD
+                                <h5>{{ number_format($bestSellers->product_price) }}đ</h5>
+=======
+                                <h5>{{ number_format($hotSales->product_price) }}đ</h5>
+>>>>>>> function_login_and_logout
+                                <div class="product__color__select">
+                                    <label for="pc-1">
+                                        <input type="radio" id="pc-1">
+                                    </label>
+                                    <label class="active black" for="pc-2">
+                                        <input type="radio" id="pc-2">
+                                    </label>
+                                    <label class="grey" for="pc-3">
+                                        <input type="radio" id="pc-3">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+<<<<<<< HEAD
 >>>>>>> detail_and_related_product
+=======
+>>>>>>> function_login_and_logout
             </div>
         </div>
     </section>
@@ -694,6 +799,7 @@
     </section>
     <!-- Latest Blog Section End -->
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 @endsection
@@ -794,3 +900,6 @@
 =======
     @endsection
 >>>>>>> detail_and_related_product
+=======
+    @endsection
+>>>>>>> function_login_and_logout
