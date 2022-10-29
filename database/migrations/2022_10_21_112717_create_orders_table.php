@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->double('shipping_id',11);
             $table->string('order_code',20);
             $table->string('order_status',50);
-                        $table->double('product_price',11);
+            $table->double('product_price',11);
             $table->timestamps();
         });
     }
