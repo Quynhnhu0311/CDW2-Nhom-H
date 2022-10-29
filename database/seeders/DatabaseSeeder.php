@@ -13,6 +13,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+<<<<<<< HEAD
         
+=======
+        // User::factory(10)->create();
+>>>>>>> create_table_database
     }
 }

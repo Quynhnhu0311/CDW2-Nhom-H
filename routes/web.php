@@ -34,6 +34,9 @@ Route::get('/blogDetail', function () {
 Route::get('/cart', function () {
     return view('shopping-cart');
 });
+<<<<<<< HEAD
 Route::get('/checkout', function () {
     return view('checkout');
 });
+=======
+>>>>>>> create_table_database
