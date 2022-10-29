@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 @extends('layout')
 @section('content')
 =======
@@ -134,6 +135,10 @@
     <!-- Header Section End -->
 >>>>>>> create_table_database
 
+=======
+    @extends('layout')
+	@section('content')
+>>>>>>> detail_and_related_product
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel">
@@ -231,13 +236,24 @@
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="filter__controls">
+<<<<<<< HEAD
                         <li class="active" data-filter="*">Best Sellers</li>
                         <li data-filter=".new-arrivals">New Arrivals</li>
                         <li data-filter=".hot-sales">Hot Sales</li>
+=======
+                        @foreach($features as $feature)
+                        <li class="active"  data-filter=".best-sellers">
+                            <a href="{{ route('showproducthome',['feature_id' => $feature->feature_id]) }}">
+                                {{ $feature->feature_name }}
+                            </a>
+                        </li>
+                        @endforeach
+>>>>>>> detail_and_related_product
                     </ul>
                 </div>
             </div>
             <div class="row product__filter">
+<<<<<<< HEAD
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="img/product/product-1.jpg">
@@ -513,6 +529,44 @@
                         </div>
                     </div>
                 </div>
+=======
+                    @foreach($products_feature as $row => $bestSellers)
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix best-sellers">
+                        <div class="product__item">
+                            <div class="product__item__pic set-bg" data-setbg="{{ asset('/img/product/'.$bestSellers->product_img) }}">
+                                <ul class="product__hover">
+                                    <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                    <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                    <li><a href="/shop-details/{{ $bestSellers->product_id }}/{{ $bestSellers->type_id}}"><img src="img/icon/search.png" alt=""></a></li>
+                                </ul>
+                            </div>
+                            <div class="product__item__text">
+                                <h6>{{ $bestSellers->product_name }}</h6>
+                                <a href="#" class="add-cart">+ Add To Cart</a>
+                                <div class="rating">
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+                                <h5>{{ number_format($bestSellers->product_price) }}đ</h5>
+                                <div class="product__color__select">
+                                    <label for="pc-1">
+                                        <input type="radio" id="pc-1">
+                                    </label>
+                                    <label class="active black" for="pc-2">
+                                        <input type="radio" id="pc-2">
+                                    </label>
+                                    <label class="grey" for="pc-3">
+                                        <input type="radio" id="pc-3">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+>>>>>>> detail_and_related_product
             </div>
         </div>
     </section>
@@ -639,6 +693,7 @@
         </div>
     </section>
     <!-- Latest Blog Section End -->
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 @endsection
@@ -736,3 +791,6 @@
 
 </html>
 >>>>>>> create_table_database
+=======
+    @endsection
+>>>>>>> detail_and_related_product

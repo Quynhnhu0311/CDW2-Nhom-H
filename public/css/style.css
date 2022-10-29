@@ -3848,4 +3848,14 @@ ol {
 	.categories__text:before {
 		height: 250px;
 	}
+<<<<<<< HEAD
 }
+=======
+}
+.filter__controls li a {
+	color:#57594d !important;
+}
+.filter__controls li a:hover {
+	color:#000000 !important;
+}
+>>>>>>> detail_and_related_product

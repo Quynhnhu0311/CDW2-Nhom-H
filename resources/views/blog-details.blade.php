@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 @extends('layout')
 @section('content')
 =======
@@ -134,6 +135,10 @@
     <!-- Header Section End -->
 >>>>>>> create_table_database
 
+=======
+@extends('layout')
+	@section('content')
+>>>>>>> detail_and_related_product
     <!-- Blog Details Hero Begin -->
     <section class="blog-hero spad">
         <div class="container">
@@ -262,6 +267,7 @@
         </div>
     </section>
     <!-- Blog Details Section End -->
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 @endsection
@@ -359,3 +365,6 @@
 
 </html>
 >>>>>>> create_table_database
+=======
+    @endsection
+>>>>>>> detail_and_related_product

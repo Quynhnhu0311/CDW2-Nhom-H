@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 @extends('layout')
 @section('content')
 =======
@@ -133,6 +134,10 @@
     </header>
     <!-- Header Section End -->
 >>>>>>> create_table_database
+=======
+@extends('layout')
+	@section('content')
+>>>>>>> detail_and_related_product
 
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-option">
@@ -286,6 +291,7 @@
     <!-- Checkout Section End -->
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 @endsection
 =======
     <!-- Footer Section Begin -->
@@ -381,3 +387,6 @@
 
 </html>
 >>>>>>> create_table_database
+=======
+    @endsection
+>>>>>>> detail_and_related_product

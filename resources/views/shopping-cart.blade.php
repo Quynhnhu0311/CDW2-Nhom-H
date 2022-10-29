@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 @extends('layout')
 @section('content')
 =======
@@ -133,6 +134,10 @@
     </header>
     <!-- Header Section End -->
 >>>>>>> create_table_database
+=======
+@extends('layout')
+	@section('content')
+>>>>>>> detail_and_related_product
 
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-option">
@@ -280,10 +285,14 @@
                             <li>Total <span>$ 169.50</span></li>
                         </ul>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <a href="/checkout" class="primary-btn">Proceed to checkout</a>
 =======
                         <a href="#" class="primary-btn">Proceed to checkout</a>
 >>>>>>> create_table_database
+=======
+                        <a href="#" class="primary-btn">Proceed to checkout</a>
+>>>>>>> detail_and_related_product
                     </div>
                 </div>
             </div>
@@ -291,6 +300,7 @@
     </section>
     <!-- Shopping Cart Section End -->
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 @endsection
 =======
@@ -387,3 +397,6 @@
 
 </html>
 >>>>>>> create_table_database
+=======
+    @endsection
+>>>>>>> detail_and_related_product

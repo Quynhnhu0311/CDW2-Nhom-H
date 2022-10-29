@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 @extends('layout')
 @section('content')
 =======
@@ -133,6 +134,10 @@
     </header>
     <!-- Header Section End -->
 >>>>>>> create_table_database
+=======
+@extends('layout')
+	@section('content')
+>>>>>>> detail_and_related_product
 
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-option">
@@ -340,18 +345,33 @@
                         </div>
                     </div>
                     <div class="row">
+<<<<<<< HEAD
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
+=======
+                        @foreach($products as $row => $allProducts)
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="{{ asset('./img/product/'.$allProducts->product_img) }}">
+>>>>>>> detail_and_related_product
                                     <ul class="product__hover">
                                         <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
                                         <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a>
                                         </li>
+<<<<<<< HEAD
                                         <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
                                     <h6>Piqué Biker Jacket</h6>
+=======
+                                        <li><a href="/shop-details/{{ $allProducts->product_id }}/{{ $allProducts->type_id}}"><img src="img/icon/search.png" alt=""></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6>{{ $allProducts->product_name }}</h6>
+>>>>>>> detail_and_related_product
                                     <a href="#" class="add-cart">+ Add To Cart</a>
                                     <div class="rating">
                                         <i class="fa fa-star-o"></i>
@@ -360,7 +380,11 @@
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
                                     </div>
+<<<<<<< HEAD
                                     <h5>$67.24</h5>
+=======
+                                    <h5>{{ number_format($allProducts->product_price) }}đ</h5>
+>>>>>>> detail_and_related_product
                                     <div class="product__color__select">
                                         <label for="pc-4">
                                             <input type="radio" id="pc-4">
@@ -375,6 +399,7 @@
                                 </div>
                             </div>
                         </div>
+<<<<<<< HEAD
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item sale">
                                 <div class="product__item__pic set-bg" data-setbg="img/product/product-3.jpg">
@@ -764,6 +789,9 @@
                                 </div>
                             </div>
                         </div>
+=======
+                        @endforeach
+>>>>>>> detail_and_related_product
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
@@ -782,6 +810,7 @@
     </section>
     <!-- Shop Section End -->
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 @endsection
 =======
@@ -878,3 +907,6 @@
 
 </html>
 >>>>>>> create_table_database
+=======
+    @endsection
+>>>>>>> detail_and_related_product
