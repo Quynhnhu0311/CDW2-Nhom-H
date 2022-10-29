@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use DB;
 =======
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
 
 class MyController extends Controller
 {
@@ -17,10 +20,14 @@ class MyController extends Controller
      */
     public function index($name = 'index')
 <<<<<<< HEAD
+<<<<<<< HEAD
     {   
 =======
     {
 >>>>>>> function_login_and_logout
+=======
+    {
+>>>>>>> layout_login_and_register
         return view($name);
     }
 

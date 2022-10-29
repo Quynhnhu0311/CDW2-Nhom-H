@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @extends('layout')
 @section('content')
 =======
@@ -143,6 +144,10 @@
 @extends('layout')
 	@section('content')
 >>>>>>> function_login_and_logout
+=======
+@extends('layout')
+	@section('content')
+>>>>>>> layout_login_and_register
 
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-option">
@@ -352,32 +357,42 @@
                     <div class="row">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
 =======
 =======
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
                         @foreach($products as $row => $allProducts)
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="{{ asset('./img/product/'.$allProducts->product_img) }}">
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> detail_and_related_product
 =======
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
                                     <ul class="product__hover">
                                         <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
                                         <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a>
                                         </li>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
                                         <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
+<<<<<<< HEAD
 <<<<<<< HEAD
                                     <h6>Piqué Biker Jacket</h6>
 =======
@@ -390,6 +405,9 @@
 =======
                                     <h6>{{ $allProducts->product_name }}</h6>
 >>>>>>> function_login_and_logout
+=======
+                                    <h6>{{ $allProducts->product_name }}</h6>
+>>>>>>> layout_login_and_register
                                     <a href="#" class="add-cart">+ Add To Cart</a>
                                     <div class="rating">
                                         <i class="fa fa-star-o"></i>
@@ -400,6 +418,7 @@
                                     </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <h5>$67.24</h5>
 =======
                                     <h5>{{ number_format($allProducts->product_price) }}đ</h5>
@@ -407,6 +426,9 @@
 =======
                                     <h5>{{ number_format($allProducts->product_price) }}đ</h5>
 >>>>>>> function_login_and_logout
+=======
+                                    <h5>{{ number_format($allProducts->product_price) }}đ</h5>
+>>>>>>> layout_login_and_register
                                     <div class="product__color__select">
                                         <label for="pc-4">
                                             <input type="radio" id="pc-4">
@@ -421,6 +443,7 @@
                                 </div>
                             </div>
                         </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                         <div class="col-lg-4 col-md-6 col-sm-6">
@@ -818,6 +841,9 @@
 =======
                         @endforeach
 >>>>>>> function_login_and_logout
+=======
+                        @endforeach
+>>>>>>> layout_login_and_register
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
@@ -836,6 +862,7 @@
     </section>
     <!-- Shop Section End -->
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -940,3 +967,6 @@
 =======
     @endsection
 >>>>>>> function_login_and_logout
+=======
+    @endsection
+>>>>>>> layout_login_and_register

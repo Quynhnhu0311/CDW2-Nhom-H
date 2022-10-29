@@ -24,10 +24,14 @@ class Products extends Seeder
                                      - Màu: Xanh',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+>>>>>>> layout_login_and_register
             'feature_id' => 1
         ]);
 
@@ -38,10 +42,14 @@ class Products extends Seeder
             'product_description' => 'Quần jean ngắn đen rách phối họa tiết LV chất vải dày co dãn mẫu mới nhất cao cấp',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+>>>>>>> layout_login_and_register
             'feature_id' => 2
         ]);
 
@@ -52,10 +60,14 @@ class Products extends Seeder
             'product_description' => 'Quần jean nam xanh loang màu chất bò,mẫu mới,vải dày đẹp,form chuẩn,phối LV cao cấp-AHFASHION',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+>>>>>>> layout_login_and_register
             'feature_id' => 3
         ]);
 
@@ -66,10 +78,14 @@ class Products extends Seeder
             'product_description' => 'Quần Dài GC Nam Chất Thô Thêu Logo GC Siêu Đẹp - Quần Dài LV Nam Chất Thô Thêu Logo LV Cực Chất',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+>>>>>>> layout_login_and_register
             'feature_id' => 3
         ]);
 
@@ -80,10 +96,14 @@ class Products extends Seeder
             'product_description' => 'Quần Ngố LV Nam Thêu Hoạ Tiết hoa LV Siêu Đẹp - mát mẻ - Quần Ngố LV Nam Mẫu mới',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+>>>>>>> layout_login_and_register
             'feature_id' => 2
         ]);
 
@@ -94,10 +114,14 @@ class Products extends Seeder
             'product_description' => 'Áo thun nam polo siêu cấp LOIUS.VUITTEN có túi thêu LV có cổ tay ngắn vải cotton co dãn tốt chất mát thấm hút mồ hôi tốt 2 màu trắng đen cao cấp',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+>>>>>>> layout_login_and_register
             'feature_id' => 1
         ]);
 
@@ -108,10 +132,14 @@ class Products extends Seeder
             'product_description' => 'Áo thun nam cổ tròn 2 màu trắng đen phối họa tiết LV đẹp thời trang cao cấp hàng chuẩn shop Quang_thời_trang',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+>>>>>>> layout_login_and_register
             'feature_id' => 2
         ]);
 
@@ -122,10 +150,14 @@ class Products extends Seeder
             'product_description' => 'Áo thun Unisex nam nữ LV in phối xanh trắng - đen đen form rộng đẹp tay lỡ kiểu hàn quốc vải cotton',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+>>>>>>> layout_login_and_register
             'feature_id' => 1
         ]);
 
@@ -136,10 +168,14 @@ class Products extends Seeder
             'product_description' => 'Áo sơ mi nam dài tay phối loang in họa tiết LV chữ nổi sang trọng chất vải đũi cao cấp mẫu mới giá rẻ DV-FASHION',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+>>>>>>> layout_login_and_register
             'feature_id' => 3
         ]);
 
@@ -150,10 +186,14 @@ class Products extends Seeder
             'product_description' => 'Áo thun nam thêu LV POLO có cổ tay ngắn vải cotton thoáng mát-dày dặn-chuẩn form-sang trọng-AHFASHION',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+>>>>>>> layout_login_and_register
             'feature_id' => 3
         ]);
 
@@ -164,10 +204,14 @@ class Products extends Seeder
             'product_description' => 'Túi xách nữ cầm tay kèm dây đeo chéo hoạ tiết LV',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3,
 =======
             'manu_id' => 3,
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+>>>>>>> layout_login_and_register
             'feature_id' => 1
         ]);
 
@@ -178,10 +222,14 @@ class Products extends Seeder
             'product_description' => 'Túi đeo chéo Combo 2 túi LV dành cho nam Fullbox - Túi xách combo 2 túi cao cấp dành cho Nam',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+>>>>>>> layout_login_and_register
             'feature_id' => 2
         ]);
         \DB::table('products')->insert([
@@ -191,10 +239,14 @@ class Products extends Seeder
             'product_description' => 'Túi tròn họa tiết túi hộp tròn mini đeo chéo cầm tay hàng đẹp TRONLVMINI+ hình tự chụp',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+>>>>>>> layout_login_and_register
             'feature_id' => 1
         ]);
         \DB::table('products')->insert([
@@ -204,10 +256,14 @@ class Products extends Seeder
             'product_description' => 'Balo nam Lv hàng da cao cấp tiện dụng đa năng',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+>>>>>>> layout_login_and_register
             'feature_id' => 3
         ]);
         \DB::table('products')->insert([
@@ -217,10 +273,14 @@ class Products extends Seeder
             'product_description' => 'Balo caro LV thời trang hoạ tiết in hình cá tính - Cặp đa năng',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+>>>>>>> layout_login_and_register
             'feature_id' => 2
         ]);
         \DB::table('products')->insert([
@@ -230,10 +290,14 @@ class Products extends Seeder
             'product_description' => 'Dép lv quai ngang đế cao su quai da thật 100%, dép nam lv Fullbox.',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+>>>>>>> layout_login_and_register
             'feature_id' => 3
         ]);
         \DB::table('products')->insert([
@@ -243,10 +307,14 @@ class Products extends Seeder
             'product_description' => 'Dép Sục Bít Mũi Dép Đế Bằng Dễ Phối Mùa Hè Mẫu Mới 2022 Đi Bên Ngoài Cho Nữ Giày Giày Lười Dép Lê Nổi Tiếng Trên Mạng Giày Sành Điệu',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+>>>>>>> layout_login_and_register
             'feature_id' => 1
         ]);
         \DB::table('products')->insert([
@@ -256,10 +324,14 @@ class Products extends Seeder
             'product_description' => 'Giày lười nam LV da sần siêu hot - Giày moca nam Lv',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+>>>>>>> layout_login_and_register
             'feature_id' => 2
         ]);
         \DB::table('products')->insert([
@@ -269,10 +341,14 @@ class Products extends Seeder
             'product_description' => 'Giày sneaker nam LV nhiều màu cá tính viền khâu',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+>>>>>>> layout_login_and_register
             'feature_id' => 2
         ]);
         \DB::table('products')->insert([
@@ -282,10 +358,14 @@ class Products extends Seeder
             'product_description' => 'Giày slipon nam LV thêu logo caro xen kẽ - Giày lười nam LV',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+>>>>>>> layout_login_and_register
             'feature_id' => 3
         ]);
         \DB::table('products')->insert([
@@ -295,10 +375,14 @@ class Products extends Seeder
             'product_description' => 'Dây Chuyền Mặt Chữ Lv Xinh Xắn - TRANG SỨC BẠC TNJ CAM KẾT HÀNG CHUẨN ẢNH, CHẤT LƯỢNG TỐT, PHỤC VỤ TẬN TÌNH, CHU ĐÁO',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1,
 =======
             'manu_id' => 1,
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+>>>>>>> layout_login_and_register
             'feature_id' => 1
         ]);
         \DB::table('products')->insert([
@@ -308,11 +392,16 @@ class Products extends Seeder
             'product_description' => 'Mặt dây chuyền nam bạc LV size nhỏ-Minh Tâm Jewelry',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1
 =======
             'manu_id' => 1,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Thắt Lưng Caro Mặt Vuông Nam',
@@ -321,11 +410,16 @@ class Products extends Seeder
             'product_description' => 'Thắt Lưng Caro Mặt Vuông Nam - Dây Lưng Lv Nam - Thắt Lưng LV caro',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1
 =======
             'manu_id' => 1,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Mắt kính nam nữ LV Millionaire',
@@ -334,11 +428,16 @@ class Products extends Seeder
             'product_description' => 'Mắt kính nam nữ LV Millionaire cao cấp thời thượng hot trend BINSPORTS K002',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 1
 =======
             'manu_id' => 1,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 1,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         ////////////////////////////// Gucci ////////////////////////////////////////////////
         \DB::table('products')->insert([
@@ -348,11 +447,16 @@ class Products extends Seeder
             'product_description' => 'ÁO KHOÁC THIẾT KẾ | ÁO KHOÁC GUCCI VỚI 1 PHÒNG CÁCH TRẺ TRUNG, NĂNG ĐỘNG BT',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'ÁO THUN NAM TAY LỠ',
@@ -361,11 +465,16 @@ class Products extends Seeder
             'product_description' => 'ÁO THUN NAM TAY LỠ CÓ IN HỌA TIẾT GUCCI MẶC KÈM VỚI QUẦN TÂY RẤT LÀ LỊCH SỰ BT',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'ÁO THUN GUCCI NAM TAY LỠ',
@@ -374,11 +483,16 @@ class Products extends Seeder
             'product_description' => 'ÁO THUN GUCCI NAM TAY LỠ HÀNG SIÊU CẤP RẤT HOT MẶC CỰC KÌ THOẢI MÁI BT',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo khoác CUCCI chất vải dù',
@@ -387,11 +501,16 @@ class Products extends Seeder
             'product_description' => 'Áo khoác CUCCI chất vải dù mero dày dặn, thiết kế sành điệu cá tính WEGO BOX',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo khoác gió nam nữ phong cách hiệu GUCCI',
@@ -400,11 +519,16 @@ class Products extends Seeder
             'product_description' => 'Áo khoác gió nam nữ phong cách hiệu GUCCI kẻ sọc cánh tay siêu chất kiểu thời trang nam nữ',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần bò jean nam ngắn',
@@ -413,11 +537,16 @@ class Products extends Seeder
             'product_description' => 'Quần bò jean nam ngắn kiểu thêu logo đen xanh nhiều mẫu mới đẹp chất co giãn tốt_GUCCI',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần short jean nam đen xanh rách nhẹ',
@@ -426,11 +555,16 @@ class Products extends Seeder
             'product_description' => 'Quần short jean nam đen xanh rách nhẹ thêu cao cấp đẹp nhiều mẫu,quần bò ngố nam thời trang_gucci',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Âu Nam Phối Cạp Gucci',
@@ -439,11 +573,16 @@ class Products extends Seeder
             'product_description' => 'Quần Âu Nam Phối Cạp Gucci Quần Trơn Chất Vải Cotton Không Xù Vải - Mặc Là Đẹp - Mã QPC',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần bò gucci vải thô gai',
@@ -452,11 +591,16 @@ class Products extends Seeder
             'product_description' => 'Quần bò gucci vải thô gai cao cấp hàng Quảng Châu loại 1',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Jean Nam Đẹp',
@@ -465,11 +609,16 @@ class Products extends Seeder
             'product_description' => 'Quần Jean Nam Đẹp,Quần Jean Nam cao cấp,Quần Jean Nam Cao Cấp,Quần Jean Dài nam jean thun form rộng tây âu hàn quốc thể thao gucci jean rách XMJ MS16',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Giày Gucci nữ màu hồng',
@@ -478,11 +627,16 @@ class Products extends Seeder
             'product_description' => 'Giày Gucci nữ màu hồng sneaker thể thao bản đẹp full box',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Dép GUCCI trong',
@@ -491,11 +645,16 @@ class Products extends Seeder
             'product_description' => 'Dép gucci trong sốt quai ngang nam nữ in chữ nổi full size, màu xanh ngọc',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Dép nam xỏ ngón Gucci cao cấp',
@@ -504,11 +663,16 @@ class Products extends Seeder
             'product_description' => '[FullBox] Dép nam xỏ ngón Gucci cao cấp, thời trang phong cách. Đầy đủ hộp+hóa đơn chính hãng Gucci, siêu rẻ bền bỉ êm chân.Màu trắng',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Giày thể thao Giầy sneaker Gucci',
@@ -517,11 +681,16 @@ class Products extends Seeder
             'product_description' => 'Giày thể thao Giầy sneaker Gucci Original thêu ong sao bản Like Authentic 1-1 on web Fullbox',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Giày thể thao Gucci Sơn Tùng Hồng',
@@ -530,11 +699,16 @@ class Products extends Seeder
             'product_description' => 'Giày thể thao Gucci Sơn Tùng Hồng. Giày sneaker Gucci Sơn Tùng màu Hồng mẫu mới dễ phối đồ',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Túi Đeo Chéo Đeo Vai nam gucci',
@@ -543,11 +717,16 @@ class Products extends Seeder
             'product_description' => 'Túi Đeo Chéo Đeo Vai nam gucci kiểu dáng thời trang đi chơi phượt- TDC500',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'TÚI đeo GUCCI',
@@ -556,11 +735,16 @@ class Products extends Seeder
             'product_description' => 'TÚI đeo GUCCI Phong cách thời trang trẻ 2022 Hàng Fullbox ạ',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Ba Lô GUCCI Cho Nam',
@@ -569,11 +753,16 @@ class Products extends Seeder
             'product_description' => 'Ba Lô GUCCI Cho Nam Giảm Giá Ba Lô Lớn Màu Nâu 2022 Ba Lô Du Lịch Tập Gym Du Lịch Cuối Tuần Ba Lô Đi Học',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Balo Gucci size 26cm',
@@ -582,11 +771,16 @@ class Products extends Seeder
             'product_description' => 'Balo Gucci size 26cm fom cứng nhiều ngăn hàng quảng châu cao cấp',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'GUCCI Ba Lô Cho Nữ',
@@ -595,11 +789,16 @@ class Products extends Seeder
             'product_description' => 'GUCCI Ba Lô Cho Nữ 2022 Túi Đi Học Cho Bé Trai Bé Gái Túi Giấy Tùy Chọn',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'DÂY CHUYỀN TITAN GUCCI',
@@ -608,11 +807,16 @@ class Products extends Seeder
             'product_description' => 'DÂY CHUYỀN TITAN GUCCI ĐẸP THÍCH HỢP LÀM QUÀ TN234',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Dây chuyền titan mặt tròn',
@@ -621,11 +825,16 @@ class Products extends Seeder
             'product_description' => 'TTN7508 - Dây chuyền titan mặt tròn GUCCI (1 dây 2 mặt 2 kiểu - màu vàng)',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Đai váy GUCCI 5cm',
@@ -634,11 +843,16 @@ class Products extends Seeder
             'product_description' => 'Đai váy GUCCI 5cm mặt chữ mạ vàng belt phối đầm sang chảnh TB487',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Thắt lưng nam , Dây nịt nam gucci',
@@ -647,11 +861,16 @@ class Products extends Seeder
             'product_description' => 'Thắt lưng nam , Dây nịt nam gucci [ HÀNG CAO CẤP ] , chất liệt da bò , không phai màu',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Bông Tai Gucci',
@@ -660,11 +879,16 @@ class Products extends Seeder
             'product_description' => 'Bông Tai Gucci Thời Trang Khuyên Tai Hai Vòng GG Logo Chữ Cái Bằng Thép Titan Trang Sức Cho Nữ',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 2
 =======
             'manu_id' => 2,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 2,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         //////////////////////////////////////////// Prada ////////////////////////////////////
         \DB::table('products')->insert([
@@ -674,11 +898,16 @@ class Products extends Seeder
             'product_description' => 'Quần legging prada CẠP CAO chun bản to chất umi cao cấp',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Nỉ Nam PraDa Túi Hộp',
@@ -687,11 +916,16 @@ class Products extends Seeder
             'product_description' => 'Quần Nỉ Nam PraDa Túi Hộp - Quần Jogger Nam Ống Bo Chun',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Jean Prada Chính Hãng',
@@ -700,11 +934,16 @@ class Products extends Seeder
             'product_description' => 'Quần Jean Prada Chính Hãng 2021 Xu Hướng Phù Hợp Quần Bò Nam, Quần Bò Chất Lượng Cao, Quần Jean Thương Hiệu Cao Cấp',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần đùi cotton in logo PRADA',
@@ -713,11 +952,16 @@ class Products extends Seeder
             'product_description' => 'Quần đùi cotton in logo PRADA mẫu 2021 thời trang mùa hè mới trẻ trung',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Prada Nam Mới',
@@ -726,11 +970,16 @@ class Products extends Seeder
             'product_description' => 'Quần Prada Nam Mới Mùa Thu Quần Mỏng Thời Trang Thường Ngày Jinrun Vải Co Giãn Thoáng Khí Và Thoải Mái Dễ Phối Đồ Có Thể Mặc Trong Bốn Mùa',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => ' Quần PRADA Thời trang đơn giản Nam',
@@ -739,11 +988,16 @@ class Products extends Seeder
             'product_description' => 'PRADA Thời trang đơn giản Nam giới Quần ngắn Cotton Mềm mại Thoải mái Thoáng khí Mùa hè Mỏng Thể thao Ngoài trời Chạy bộ Thể dục Quần short Thường mỏng',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'PRADA Cổ điển Áo sơ mi ngắn tay',
@@ -752,11 +1006,16 @@ class Products extends Seeder
             'product_description' => 'PRADA Cổ điển Áo sơ mi ngắn tay Thông thường Rộng thoáng khí mỏng Thoải mái Chất liệu cotton mềm mại Ngoài trời hàng ngày Đơn giản Độ co giãn Đơn giản Áo phông Unisex cổ tròn đơn giản',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'PRADA Áo phông cotton',
@@ -765,11 +1024,16 @@ class Products extends Seeder
             'product_description' => 'PRADA Áo phông cotton Thiết kế phản quang Thời trang mới Xu hướng mùa hè Ngoài trời hàng ngày Thường ngày Thở lỏng mỏng thoáng khí Mềm mại Thoải mái Ngắn tay áo Unisex',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'PRADA Bông trắng Áo phông',
@@ -778,11 +1042,16 @@ class Products extends Seeder
             'product_description' => 'PRADA Bông trắng Áo phông thường thêu Logo Mùa hè Đơn giản mỏng thoáng khí Mềm mại Thoải mái Thể thao ngoài trời Thể dục thể thao lỏng lẻo Mát mẻ Cổ thuyền viên Áo ngắn tay',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'PRADA Cotton Áo phông đơn giản Thêu Logo',
@@ -791,11 +1060,16 @@ class Products extends Seeder
             'product_description' => 'PRADA Cotton Áo phông đơn giản Thêu Logo Mùa hè Giản dị Rộng mỏng thoáng khí Mềm mại Thoải mái Thể thao ngoài trời Thể dục thể thao Cổ điển Tất cả phù hợp Áo sơ mi ngắn tay',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo Prada Vest',
@@ -804,11 +1078,16 @@ class Products extends Seeder
             'product_description' => 'Prada Vest Sản Phẩm Mới Ngôi Sao Với Phần Thân Trên Áo Vest Nữ Nylon Chức Năng Thiết Kế Logo Tam Giác Cổ Điển',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Túi đa năng Prada',
@@ -817,11 +1096,16 @@ class Products extends Seeder
             'product_description' => 'Túi đa năng Prada Túi đeo vai nữ Túi đeo vai nữ túi lớn Ransel Hàn Quốc Balo NHẬP KHẨU THỜI TRANG Đai đeo vai',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Balo công suất lớn Prada Advanced',
@@ -830,11 +1114,16 @@ class Products extends Seeder
             'product_description' => 'Balo công suất lớn Prada Advanced Balo hàn quốc 2022 túi nữ mới chống thấm nước túi học sinh đa năng',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Ba lô Prada Cao cấp',
@@ -843,11 +1132,16 @@ class Products extends Seeder
             'product_description' => 'Ba lô Prada Cao cấp Thời trang Hàn Quốc Oxford Vải chống thấm nước Đa chức năng Ba lô',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'PRADA Túi Nữ',
@@ -856,11 +1150,16 @@ class Products extends Seeder
             'product_description' => 'PRADA Túi Nữ Cuối Tuần 2022 Túi Cuối Tuần Mới Nhất Chất Lượng Cao',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Túi Xách, Cặp Da Thời Trang Nam',
@@ -869,11 +1168,16 @@ class Products extends Seeder
             'product_description' => 'Túi Xách, Cặp Da Thời Trang Nam Khóa Số Cao Cấp Prada CPR01 (Nhập khẩu)',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Giày Mọi Prada Da Lì',
@@ -882,11 +1186,16 @@ class Products extends Seeder
             'product_description' => 'Cx(ẢNH THẬT) Giày Mọi Prada Da Lì Và Bóng Mềm Êm Fullbox Bill Túi Hãng Cao Cấp (GDQC)',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Giày Cao gót đế trụ vuông',
@@ -895,11 +1204,16 @@ class Products extends Seeder
             'product_description' => 'Giầy Cao gót đế trụ vuông 7P da mêm Prada siêu phẩm hot trend 2022',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Giày Cao Gót Dẹp 8p Prada',
@@ -908,11 +1222,16 @@ class Products extends Seeder
             'product_description' => 'Giày Cao Gót Dẹp 8p Prada Mềm Êm Fullbox Bill Túi Cao Cấp (GDQC)',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Dép xuồng chéo prada',
@@ -921,11 +1240,16 @@ class Products extends Seeder
             'product_description' => 'Dép xuồng chéo prada da mềm đế êm cao 7 phân hàng quảng châu',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Dép nam quai ngang PRADA',
@@ -934,11 +1258,16 @@ class Products extends Seeder
             'product_description' => 'Dép nam quai ngang PRADA đế cao su đi êm chân bền đẹp',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Prada Vòng Cổ Vòng Cổ Xương Đòn Bạc',
@@ -947,11 +1276,16 @@ class Products extends Seeder
             'product_description' => 'Prada Vòng Cổ Vòng Cổ Xương Đòn Bạc 925 Cho Nữ Mặt Dây Chuyền Quyến Rũ Vòng Cổ Bằng Thép Không Gỉ Quà Tặng Trang Sức',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'LemonBlue PRADA Vòng Cổ',
@@ -960,11 +1294,16 @@ class Products extends Seeder
             'product_description' => 'LemonBlue PRADA Vòng Cổ Ngược Tam Giác Thép Không Gỉ Mặt Dây Chuyền',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Vòng Cổ PRADA Chính Hãng',
@@ -973,11 +1312,16 @@ class Products extends Seeder
             'product_description' => 'Vòng Cổ PRADA Chính Hãng 2022 Mặt Dây Chuyền Thời Trang Mới Vòng Cổ Quà Tặng Nữ Trang Vòng Cổ Nữ Tinh Tế Thời Trang',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Spot Thắt Lưng Chữ Prada Mới',
@@ -986,11 +1330,16 @@ class Products extends Seeder
             'product_description' => 'Spot Thắt Lưng Chữ Prada Mới Thắt Lưng Nam Nữ Tam Giác Ngược Quần Short Phối Đồ Thường Ngày Váy Công Sở Thắt Lưng Quần Jean',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Prada Khuyên Tai Nữ',
@@ -999,11 +1348,16 @@ class Products extends Seeder
             'product_description' => 'Prada Khuyên Tai Nữ Khuyên Tai Dạng Hạt Hình Tam Giác Bằng Thép Không Gỉ Khuyên Tai Nữ Khuyên Tai Dạng Hạt Xỏ Sụn Trang Sức',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 3
 =======
             'manu_id' => 3,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 3,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         //////////////////////////////////////////// Chanel ////////////////////////////////////////
         \DB::table('products')->insert([
@@ -1013,11 +1367,16 @@ class Products extends Seeder
             'product_description' => 'Quần Ống Rộng Thon Gọn Cạp Cao Vải Tweed Thô Hai Hàng Cúc Ca Rô Phong Cách CHANEL Dễ Phối Khí Chất Mẫu Mới Thu Đông Quần Short Nữ',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Dài Quét Đất Ống Đứng',
@@ -1026,11 +1385,16 @@ class Products extends Seeder
             'product_description' => 'Quần Dài Quét Đất Ống Đứng Thường Ngày Hoa Bướm Phong Cách CHANEL Quần Ống Rộng Chống Nắng Dáng Gầy Rộng Rãi Giấm Cảm Giác Rủ Xuống Bề Mặt Satin',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Short Thiết Kế Hai Túi',
@@ -1039,11 +1403,16 @@ class Products extends Seeder
             'product_description' => 'Quần Short Thiết Kế Hai Túi Dáng Gầy Cạp Cao Vải Tweed Phong Cách CHANEL Quần Ống Rộng Nữ Mẫu Mới 2022 Thời Trang Dễ Phối',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Bò Tôn Dáng Gầy Ống Đứng',
@@ -1052,11 +1421,16 @@ class Products extends Seeder
             'product_description' => 'Quần Bò Tôn Dáng Gầy Ống Đứng Rộng Rãi Màu Nhạt Phối Vải Tweed Chanel Cửa Hàng Trái Đất Nữ Mẫu Mới Mùa Hè 2022',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Sooc Túi Giả Viền Tua Rua',
@@ -1065,11 +1439,16 @@ class Products extends Seeder
             'product_description' => 'Quần Sooc Túi Giả Viền Tua Rua Tôn Dáng Gầy Cạp Cao Hai Hàng Cúc Vải Tweed Phong Cách CHANEL Mẫu Mới Thu Đông Quần Ống Rộng Nữ',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo Khoác Phong Cách CHANEL',
@@ -1078,11 +1457,16 @@ class Products extends Seeder
             'product_description' => 'Áo Khoác Phong Cách CHANEL Trang Phục Nữ Mẫu Mới Cổ V Khí Chất Kiểu Tây Xuân Thu Cho Nữ Áo Len Mẫu Ngắn Áo Cardigan Dệt Kim',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo Khoác Ngoài Áo Cardigan',
@@ -1091,11 +1475,16 @@ class Products extends Seeder
             'product_description' => 'Áo Khoác Ngoài Áo Cardigan Mẫu Mỏng Dệt Kim Mẫu Ngắn Màu Trắng Phong Cách CHANEL Mẫu Giống Rose Park So Young Kim Ji Ni SE Jennie',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo Mặc Trong Mẫu Thu',
@@ -1104,11 +1493,16 @@ class Products extends Seeder
             'product_description' => 'Áo Mặc Trong Mẫu Thu Mặc Phối Dịu Dàng Kiểu Hàn Áo Khoác Phong Cách CHANEL Áo Len Cardigan Dệt Kim Áo Mặc Trong Cảm Giác Thiết Kế Cho Nữ',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo Len Phong Cách CHANEL',
@@ -1117,11 +1511,16 @@ class Products extends Seeder
             'product_description' => 'Áo Len Phong Cách CHANEL Cổ Áo Vest Gilê Áo Cardigan Gilê DệT Kim Sát Nách Không Tay Phong Cách Hàn Quốc Thu Đông Cho Nữ Áo Khoác Gilê Thời Trang',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo T-shirt Nữ Tay Ngắn',
@@ -1130,11 +1529,16 @@ class Products extends Seeder
             'product_description' => 'Áo T-shirt Nữ Tay Ngắn Mùa Hè Phong Cách CHANEL Cổ Bẻ Rỗng Màu Trắng',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Ba Lô Hai Vai Ba Lô Nhỏ Trần Trám',
@@ -1143,11 +1547,16 @@ class Products extends Seeder
             'product_description' => 'Ba Lô Hai Vai Ba Lô Nhỏ Trần Trám Dễ Phối Phong Cách Hàn Quốc Mẫu Mới 2022 Cho Nữ Ba Lô Cặp Sách Dây Xích Mini Phong Cách CHANEL Đeo Chéo Một Bên Vai',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Balo chanel, balo nữ hàn quốc',
@@ -1156,11 +1565,16 @@ class Products extends Seeder
             'product_description' => 'Balo chanel, balo nữ hàn quốc chất liệu da pu cao cấp,dây dút cá tính ANHSHOP34 MÃ 26',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'TÚI Chanel khoá xoay',
@@ -1169,11 +1583,16 @@ class Products extends Seeder
             'product_description' => 'TÚI Chanel khoá xoay đan nắp mới Thiết kế fom tui lạ cực đẹp năng động trẻ trung Chất liệu PU x, mềm thích lắm xuất sắc Màu sắc : đen ,trắng',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Ba Lô Du Lịch Bằng Vải Oxford',
@@ -1182,11 +1601,16 @@ class Products extends Seeder
             'product_description' => 'Ba Lô Du Lịch Bằng Vải Oxford Họa Tiết CHANEL Chống Thấm Nước Cho Nữ',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Túi Đeo Vai Nữ Chanel 2 Quai Xích',
@@ -1195,11 +1619,16 @@ class Products extends Seeder
             'product_description' => 'Túi Đeo Vai Nữ Chanel 2 Quai Xích Khóa Xoay New có 2 ngăn riêng biệt, Trần ô truyền thống Hàng bao đẹp từng chi tiết',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Giày Trắng CHANEL Da Thật',
@@ -1208,11 +1637,16 @@ class Products extends Seeder
             'product_description' => 'Giày Trắng Da Thật Giày Nữ Phong Cách CHANEL Thoáng Khí Mùa Hè 2022 Mẫu Mỏng Giày Đế Bằng Mũi Rộng Thể Thao AJ Tăng Chiều Cao Đế Dày',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Giày Một Lớp Ngư Dân Bện Cói',
@@ -1221,11 +1655,16 @@ class Products extends Seeder
             'product_description' => 'Giày Một Lớp Ngư Dân Bện Cói Đế Mềm Phối Màu Phong Cách CHANEL Giày Loafer Thường Ngày Xỏ Chân Người Lười Mẫu Mới Năm 2022 Cho Nữ',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Bốt Đi Tuyết Phong Cách CHANEL',
@@ -1234,11 +1673,16 @@ class Products extends Seeder
             'product_description' => 'Bốt Đi Tuyết Phong Cách CHANEL, Giày Nữ, Giày Bánh Mì, Giày Bông Đông Bắc Giữ Ấm Lót Lông Mẫu Mới Thu Đông 2022',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Dép Lê Phong Cách CHANEL',
@@ -1247,11 +1691,16 @@ class Products extends Seeder
             'product_description' => 'Dép Lê Phong Cách CHANEL Xăng Đan Bánh Xốp Đế Dày Mẫu Mới Năm 2022 Đi Bên Ngoài Mùa Hè Cho Nữ Dép Lê Đi Biển Giày Thời Trang Thoải Mái',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Dép Sục Bít Mũi Phong Cách CHANEL',
@@ -1260,11 +1709,16 @@ class Products extends Seeder
             'product_description' => 'Dép Sục Bít Mũi Phong Cách CHANEL Dép Lê Nổi Tiếng Trên Mạng Sành Điệu Instagram Đi Bên Ngoài Mùa Hè Đế Bằng Mẫu Mới Năm 2021 Cho Nữ Thời Trang',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Dây Lụa Mặt Cười Đầy Kim Cương Phong Cách CHANEL',
@@ -1273,11 +1727,16 @@ class Products extends Seeder
             'product_description' => 'Dây Lụa Mặt Cười Đầy Kim Cương Phong Cách CHANEL Dây Chuyền Xương Đòn Cảm Giác Thiết Kế Nơ Bướm Dây Chuyền Mùa Hè Cho Nữ Trẻ Trung Sang Trọng Đeo',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Yoyoclub Dây Chuyền Trái Tim Phong Cách CHANEL',
@@ -1286,11 +1745,16 @@ class Products extends Seeder
             'product_description' => 'Yoyoclub Dây Chuyền Trái Tim Phong Cách CHANEL Phong Cách Hàn Quốc Dây Chuyền Lộ Xương Đòn Trắng Mẫu Nhà Thiết Kế Instagram 4 Màu',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Khuyên Tai Thương Hiệu Chanel',
@@ -1299,11 +1763,16 @@ class Products extends Seeder
             'product_description' => 'Khuyên Tai Thương Hiệu Chanel Dior Gucci YSL LV Giá Rẻ, Bông Tai Thương Hiệu Cao Cấp Bạc 925 Bảo Hành 30 Ngày',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Thắt Lưng Phong Cách CHANEL',
@@ -1312,11 +1781,16 @@ class Products extends Seeder
             'product_description' => 'Thắt Lưng Phong Cách CHANEL Kiểu Pháp Sisijia Phụ Kiện Áo Len Dễ Phối Thời Trang Nữ Thắt Lưng Túi Mini Dây Xích Kim Loại',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Phụ Kiện Xích Eo Phong Cách CHANEL',
@@ -1325,11 +1799,16 @@ class Products extends Seeder
             'product_description' => 'Phụ Kiện Xích Eo Phong Cách CHANEL, Váy Liền Trang Trí Thắt Lưng Dây Xích Kim Loại Instagram Cho Nữ, Áo Len, Quần Âu Dây Xích',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 4
 =======
             'manu_id' => 4,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 4,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         //////////////////////////// Hermes ////////////////////////////////
         \DB::table('products')->insert([
@@ -1339,11 +1818,16 @@ class Products extends Seeder
             'product_description' => 'Quần Bò Hermes 2022 Chính Hãng Quần Bò Nam Xu Hướng Phù Hợp, Quần Bò Chất Lượng Cao, Quần Jean Thương Hiệu Cao Cấp',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Jean Hermes',
@@ -1352,11 +1836,16 @@ class Products extends Seeder
             'product_description' => 'Quần Jean Hermes 2022 Quần Denim Nam Chất Lượng Cao Phù Hợp Với Mọi Loại Quần Jean Thương Hiệu Sang Trọng Quần Jean Dáng Ôm Thời Trang',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Nam Cạp Cao NO.1Hermes',
@@ -1365,11 +1854,16 @@ class Products extends Seeder
             'product_description' => 'Quần Nam Cạp Cao NO.1Hermes Hoàn Toàn Mới 2021, Quần Nam Màu Trơn Cho Nam Quần Ống Đứng Cho Nam Quần Cotton Mỏng',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Quần Jean TOP.1Hermes Chính Hãng',
@@ -1378,11 +1872,16 @@ class Products extends Seeder
             'product_description' => 'Quần Jean TOP.1Hermes Chính Hãng Quần Dài Nam Thường Ngày Đơn Giản Quần Ống Đứng Thoáng Khí Thoải Mái Mùa Hè 2022 Quần Bò',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'NO1Hermes Quần Thường Ngày',
@@ -1391,11 +1890,16 @@ class Products extends Seeder
             'product_description' => 'NO1Hermes Quần Thường Ngày Co Giãn Chính Hãng Quần Nam Hàn Quốc Chất Lượng Cao Quần Ống Thẳng Xuân Hè 2022 Mới Cho Nam',
             'type_id' => 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo Nỉ Hermes Chính Hãng',
@@ -1404,11 +1908,16 @@ class Products extends Seeder
             'product_description' => 'Áo Nỉ Hermes Chính Hãng Chính Hãng Thường Ngày Cho Nam Quần Áo Nam Cao Cấp Sang Trọng Áo Dài Tay Mới Xuân/Thu 2022',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'ÁO THUN NAM PHONG CÁCH HÀN QUỐC',
@@ -1417,11 +1926,16 @@ class Products extends Seeder
             'product_description' => 'ÁO THUN NAM PHONG CÁCH HÀN QUỐC, DÁNG THỂ THAO, THỜI TRANG ANBE-Chữ Hermes',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo Polo TOP.1Hermes',
@@ -1430,11 +1944,16 @@ class Products extends Seeder
             'product_description' => 'Áo Polo TOP.1Hermes Áo Sơ Mi Ngắn Tay Vải Viscose Áo Polo Chơi Gôn Ngoài Trời',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo Sơ Mi Mới TOP.1Hermes',
@@ -1443,11 +1962,16 @@ class Products extends Seeder
             'product_description' => 'Áo Sơ Mi Mới TOP.1Hermes Chính Hãng Áo Sơ Mi Nam Đính Đá Cao Cấp Bộ Com Lê Ôm Sát Phù Hợp Với Mọi Người Áo Sơ Mi Có Ve Áo',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Áo Thun Nam Nữ Tay Lỡ Hermes',
@@ -1456,11 +1980,16 @@ class Products extends Seeder
             'product_description' => 'Áo Thun Nam Nữ Tay Lỡ Áo Phông Form Rộng Cổ Tròn 100% Cotton Dày Mịn Chuẩn Form Hàng Xuất Dư Hermes',
             'type_id' => 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Túi Xách, Cặp Da Hermes',
@@ -1469,11 +1998,16 @@ class Products extends Seeder
             'product_description' => 'Túi Xách, Cặp Da Thời Trang Nam Cao Cấp Khóa Số Hermes CHM01 (Nhập khẩu)',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Túi xách nữ đeo chéo Hermes',
@@ -1482,11 +2016,16 @@ class Products extends Seeder
             'product_description' => 'Túi xách nữ đeo chéo túi Hermes Kelly size 20 thời trang cao cấp',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Túi Messenger Hermes Chính Hãng 2022',
@@ -1495,11 +2034,16 @@ class Products extends Seeder
             'product_description' => 'Túi Messenger Hermes Chính Hãng 2022 Túi Đeo Vai Nữ Chất Lượng Cao Túi Xách Đa Năng Thời Trang Thường Ngày Túi Xu Hướng Thương Hiệu',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Balo Laptop Gaming Hermes',
@@ -1508,11 +2052,16 @@ class Products extends Seeder
             'product_description' => 'Balo Laptop Gaming Hermes GT Balo Chất Lượng Cao, Đa Năng Thời Trang Balo Xu Hướng Thương Hiệu',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Túi Messenger Hermes Thời trang 2022',
@@ -1521,11 +2070,16 @@ class Products extends Seeder
             'product_description' => 'Túi Messenger Hermes Thời trang chất lượng cao phù hợp với giời trẻ hiện nay',
             'type_id' => 3,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Giày Lười Hermes Nam',
@@ -1534,11 +2088,16 @@ class Products extends Seeder
             'product_description' => 'Giày Lười Hermes Nam Phong Cách Trẻ Trung Lên Chân Nhẹ Mềm Êm',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Giày Cao Gót Hermes',
@@ -1547,11 +2106,16 @@ class Products extends Seeder
             'product_description' => '2022 Chất Lượng Cao Hermes Đỏ Da Thật Giày Cao Gót Giày Cho Nữ',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Dép nam da chữ H cao cấp',
@@ -1560,11 +2124,16 @@ class Products extends Seeder
             'product_description' => 'Dép nam da chữ H cao cấp da bò đẹp quai ngang quai chéo không quai hậu thời trang trẻ và trung niên CHACO HERMES DEP123',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Dép Lê thời trang Quai Ngang Chữ H',
@@ -1573,11 +2142,16 @@ class Products extends Seeder
             'product_description' => 'Dép Lê thời trang Quai Ngang Chữ H cực chất HERMES Full Box size 38-42 hottrend 2022 MSP D002',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Dép HERMES Unisex Quai Ngang Chữ H',
@@ -1586,11 +2160,16 @@ class Products extends Seeder
             'product_description' => '[HÌNH THẬT] Dép HERMES Unisex Quai Ngang Chữ H Cao Cấp, Cực Êm & Bền Thời trang, Thời thượng',
             'type_id' => 4,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'SET DÂY CHUYỀN + HOA TAI TITAN CHỮ H',
@@ -1599,11 +2178,16 @@ class Products extends Seeder
             'product_description' => 'SET DÂY CHUYỀN + HOA TAI TITAN CHỮ H ( HERMES) - TITAN CHUẨN LOẠI 1 SIÊU BỀN MÀU',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Bông tai Hermes, khuyên tai chữ H',
@@ -1612,11 +2196,16 @@ class Products extends Seeder
             'product_description' => 'Bông tai Hermes, khuyên tai chữ H đính đá sang trọng phong cách thanh lịch',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Thắt Lưng Nam Nữ Cao Cấp Khóa H Thời Trang',
@@ -1625,11 +2214,16 @@ class Products extends Seeder
             'product_description' => 'Thiết Kế Thương Hiệu TOP.1Hermes Chính Hãng 100%, Thắt Lưng Nam Thắt Lưng Nam Nữ Cao Cấp Khóa H Thời Trang 2022 Rộng 3.8 Cm Thắt Lưng Thường Ngày Phù Hợp Với Tất Cả',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Thắt Lưng Hermes 2022 Chính Hãng',
@@ -1638,11 +2232,16 @@ class Products extends Seeder
             'product_description' => 'Thắt Lưng Hermes 2021 Chính Hãng Thắt Lưng Thời Trang Hoang Dã Cho Nam Và Nữ, Thắt Lưng Da Chất Lượng Cao, Thắt Lưng Thương Hiệu Cao Cấp',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
         \DB::table('products')->insert([
             'product_name' => 'Vòng Cổ No.1Hermes Chính Hãng',
@@ -1651,11 +2250,16 @@ class Products extends Seeder
             'product_description' => 'Vòng Cổ No.1Hermes Chính Hãng, Vòng Cổ Nữ Sang Trọng Vòng Cổ Mặt Dây Chuyền Nhỏ Thời Trang Quà Tặng Trang Sức Vòng Cổ Nữ Vòng Cổ Hợp Thời Trang Chất Lượng Cao',
             'type_id' => 5,
 <<<<<<< HEAD
+<<<<<<< HEAD
             'menu_id' => 5
 =======
             'manu_id' => 5,
             'feature_id' => 0
 >>>>>>> function_login_and_logout
+=======
+            'manu_id' => 5,
+            'feature_id' => 0
+>>>>>>> layout_login_and_register
         ]);
     }
 }

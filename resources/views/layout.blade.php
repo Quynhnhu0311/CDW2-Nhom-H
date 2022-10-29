@@ -16,8 +16,11 @@
     <!-- Css Styles -->
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
@@ -26,6 +29,7 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     <link rel="stylesheet" href="{{ url ('css/bootstrap.min.css') }}" type="text/css">
@@ -39,6 +43,8 @@
 >>>>>>> detail_and_related_product
 =======
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
 </head>
 
 <body>
@@ -48,20 +54,27 @@
     </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 >>>>>>> detail_and_related_product
 =======
 
 >>>>>>> function_login_and_logout
+=======
+
+>>>>>>> layout_login_and_register
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
         <div class="offcanvas__option">
             <div class="offcanvas__links">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <a href="#">Sign in</a>
 =======
+=======
+>>>>>>> layout_login_and_register
                 <?php
                     $name = Session::get('name');
                     if($name){
@@ -72,7 +85,10 @@
                         echo '<a href="#">Sign in</a>';
                     }
                 ?>
+<<<<<<< HEAD
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
                 <a href="#">FAQs</a>
             </div>
             <div class="offcanvas__top__hover">
@@ -112,6 +128,7 @@
                             <div class="header__top__links">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <a href="#">Sign in</a>
 =======
                                 <?php
@@ -123,6 +140,11 @@
                                     $name = Session::get('name');
                                     if($name){
 >>>>>>> function_login_and_logout
+=======
+                                <?php
+                                    $name = Session::get('name');
+                                    if($name){
+>>>>>>> layout_login_and_register
                                         echo '<div class="header__top__hover">
                                                 <span>'.$name.'<i class="arrow_carrot-down"></i></span>
                                                 <ul>
@@ -135,9 +157,12 @@
                                     }
                                 ?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> detail_and_related_product
 =======
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
                                 <a href="#">FAQs</a>
                             </div>
                             <div class="header__top__hover">
@@ -149,9 +174,13 @@
                                 </ul>
                             </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> function_login_and_logout
+=======
+
+>>>>>>> layout_login_and_register
                         </div>
                     </div>
                 </div>
@@ -163,6 +192,7 @@
                     <div class="header__logo">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <a href="./index.html"><img src="img/logo.png" alt=""></a>
 =======
                         <a href="{{ url ('index') }}"><img src="{{ asset ('/img/logo.png') }}" alt=""></a>
@@ -170,12 +200,16 @@
 =======
                         <a href="{{ url ('index') }}"><img src="img/logo.png" alt=""></a>
 >>>>>>> function_login_and_logout
+=======
+                        <a href="{{ url ('index') }}"><img src="img/logo.png" alt=""></a>
+>>>>>>> layout_login_and_register
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
                             <li class="active"><a href="/">Home</a></li>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                             <li><a href="/products">Shop</a></li>
@@ -193,6 +227,8 @@
 =======
 =======
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
                             <li><a href="/tat-ca-san-pham">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
@@ -206,14 +242,18 @@
                             <li><a href="{{url ('blog') }}">Blog</a></li>
                             <li><a href="{{ url ('contact') }}">Contacts</a></li>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> detail_and_related_product
 =======
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
                         </ul>
                     </nav>
                 </div>
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                         <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
@@ -229,6 +269,11 @@
                         <a href="#"><img src="img/icon/heart.png" alt=""></a>
                         <a href="{{url ('shopping-cart') }}"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
 >>>>>>> function_login_and_logout
+=======
+                        <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+                        <a href="#"><img src="img/icon/heart.png" alt=""></a>
+                        <a href="{{url ('shopping-cart') }}"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+>>>>>>> layout_login_and_register
                         <div class="price">$0.00</div>
                     </div>
                 </div>
@@ -239,6 +284,7 @@
     <!-- Header Section End -->
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     @yield('content')
 =======
@@ -247,6 +293,9 @@
 =======
     @yield('content');
 >>>>>>> function_login_and_logout
+=======
+    @yield('content');
+>>>>>>> layout_login_and_register
 
     <!-- Footer Section Begin -->
     <footer class="footer">
@@ -329,8 +378,11 @@
     <!-- Js Plugins -->
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.nice-select.min.js"></script>
@@ -341,6 +393,7 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     <script src="{{ url ('js/jquery-3.3.1.min.js') }}"></script>
@@ -358,6 +411,10 @@
 
 
 >>>>>>> function_login_and_logout
+=======
+
+
+>>>>>>> layout_login_and_register
 </body>
 
 </html>

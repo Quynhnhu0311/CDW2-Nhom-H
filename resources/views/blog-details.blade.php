@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @extends('layout')
 @section('content')
 =======
@@ -144,6 +145,10 @@
 @extends('layout')
 	@section('content')
 >>>>>>> function_login_and_logout
+=======
+@extends('layout')
+	@section('content')
+>>>>>>> layout_login_and_register
     <!-- Blog Details Hero Begin -->
     <section class="blog-hero spad">
         <div class="container">
@@ -274,6 +279,7 @@
     <!-- Blog Details Section End -->
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 @endsection
@@ -377,3 +383,6 @@
 =======
     @endsection
 >>>>>>> function_login_and_logout
+=======
+    @endsection
+>>>>>>> layout_login_and_register

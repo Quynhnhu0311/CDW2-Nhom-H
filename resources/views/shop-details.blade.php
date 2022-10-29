@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @extends('layout')
 @section('content')
 =======
@@ -144,17 +145,23 @@
     @foreach($detail as $product_detail)
 >>>>>>> detail_and_related_product
 =======
+=======
+>>>>>>> layout_login_and_register
 @extends('layout')
 	@section('content')
 
     <!-- Shop Details Section Begin -->
+<<<<<<< HEAD
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
     <section class="shop-details">
         <div class="product__details__pic">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product__details__breadcrumb">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                             <a href="./index.html">Home</a>
@@ -167,6 +174,10 @@
                             <a href="./index.html">Home</a>
                             <a href="./shop.html">Shop</a>
 >>>>>>> function_login_and_logout
+=======
+                            <a href="./index.html">Home</a>
+                            <a href="./shop.html">Shop</a>
+>>>>>>> layout_login_and_register
                             <span>Product Details</span>
                         </div>
                     </div>
@@ -207,6 +218,7 @@
                                 <div class="product__details__pic__item">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <img src="img/shop-details/product-big-2.png" alt="">
 =======
                                     <img src="{{ asset('./img/product/'.$product_detail->product_img) }}" alt="">
@@ -214,12 +226,16 @@
 =======
                                     <img src="img/shop-details/product-big-2.png" alt="">
 >>>>>>> function_login_and_logout
+=======
+                                    <img src="img/shop-details/product-big-2.png" alt="">
+>>>>>>> layout_login_and_register
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-2" role="tabpanel">
                                 <div class="product__details__pic__item">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <img src="img/shop-details/product-big-3.png" alt="">
 =======
                                     <img src="{{ asset('./img/product/'.$product_detail->product_img) }}" alt="">
@@ -227,12 +243,16 @@
 =======
                                     <img src="img/shop-details/product-big-3.png" alt="">
 >>>>>>> function_login_and_logout
+=======
+                                    <img src="img/shop-details/product-big-3.png" alt="">
+>>>>>>> layout_login_and_register
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-3" role="tabpanel">
                                 <div class="product__details__pic__item">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <img src="img/shop-details/product-big.png" alt="">
 =======
                                     <img src="{{ asset ('/product_detail->product_img') }}" alt="">
@@ -240,12 +260,16 @@
 =======
                                     <img src="img/shop-details/product-big.png" alt="">
 >>>>>>> function_login_and_logout
+=======
+                                    <img src="img/shop-details/product-big.png" alt="">
+>>>>>>> layout_login_and_register
                                 </div>
                             </div>
                             <div class="tab-pane" id="tabs-4" role="tabpanel">
                                 <div class="product__details__pic__item">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <img src="img/shop-details/product-big-4.png" alt="">
 =======
                                     <img src="{{ asset ('/product_detail->product_img') }}" alt="">
@@ -253,6 +277,9 @@
 =======
                                     <img src="img/shop-details/product-big-4.png" alt="">
 >>>>>>> function_login_and_logout
+=======
+                                    <img src="img/shop-details/product-big-4.png" alt="">
+>>>>>>> layout_login_and_register
                                     <a href="https://www.youtube.com/watch?v=8PJ3_p7VqHw&list=RD8PJ3_p7VqHw&start_radio=1" class="video-popup"><i class="fa fa-play"></i></a>
                                 </div>
                             </div>
@@ -268,6 +295,7 @@
                         <div class="product__details__text">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <h4>Hooded thermal anorak</h4>
 =======
                             <h4>{{ $product_detail->product_name}}</h4>
@@ -275,6 +303,9 @@
 =======
                             <h4>Hooded thermal anorak</h4>
 >>>>>>> function_login_and_logout
+=======
+                            <h4>Hooded thermal anorak</h4>
+>>>>>>> layout_login_and_register
                             <div class="rating">
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -285,12 +316,16 @@
                             </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
                             <h3>$270.00 <span>70.00</span></h3>
                             <p>Coat with quilted lining and an adjustable hood. Featuring long sleeves with adjustable
                                 cuff tabs, adjustable asymmetric hem with elastic side tabs and a front zip fastening
                             with placket.</p>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
                             <h3>{{ number_format($product_detail->product_price) }} VND <span>70.00</span></h3>
@@ -298,6 +333,8 @@
 >>>>>>> detail_and_related_product
 =======
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
                             <div class="product__details__option">
                                 <div class="product__details__option__size">
                                     <span>Size:</span>
@@ -359,8 +396,11 @@
                 </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product__details__tab">
@@ -485,6 +525,7 @@
         </div>
     </section>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             </div>
         </div>
@@ -493,6 +534,8 @@
 >>>>>>> detail_and_related_product
 =======
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
     <!-- Shop Details Section End -->
 
     <!-- Related Section Begin -->
@@ -506,8 +549,11 @@
             <div class="row">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
                 <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="img/product/product-1.jpg">
@@ -520,6 +566,7 @@
                         </div>
                         <div class="product__item__text">
                             <h6>Piqué Biker Jacket</h6>
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
                 @foreach($related_product as $related)
@@ -538,6 +585,8 @@
 >>>>>>> detail_and_related_product
 =======
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
                             <a href="#" class="add-cart">+ Add To Cart</a>
                             <div class="rating">
                                 <i class="fa fa-star-o"></i>
@@ -563,8 +612,11 @@
                 </div>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
                 <div class="col-lg-3 col-md-6 col-sm-6 col-sm-6">
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
@@ -669,15 +721,19 @@
                     </div>
                 </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 @endforeach
 >>>>>>> detail_and_related_product
 =======
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
             </div>
         </div>
     </section>
     <!-- Related Section End -->
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -784,3 +840,7 @@
 
     @endsection
 >>>>>>> function_login_and_logout
+=======
+
+    @endsection
+>>>>>>> layout_login_and_register

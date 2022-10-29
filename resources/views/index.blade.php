@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 @extends('layout')
 @section('content')
 =======
@@ -144,6 +145,10 @@
     @extends('layout')
 	@section('content')
 >>>>>>> function_login_and_logout
+=======
+    @extends('layout')
+	@section('content')
+>>>>>>> layout_login_and_register
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel">
@@ -243,6 +248,7 @@
                     <ul class="filter__controls">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <li class="active" data-filter="*">Best Sellers</li>
                         <li data-filter=".new-arrivals">New Arrivals</li>
                         <li data-filter=".hot-sales">Hot Sales</li>
@@ -260,10 +266,16 @@
                         <li data-filter=".new-arrivals">New Arrivals</li>
                         <li data-filter=".hot-sales">Hot Sales</li>
 >>>>>>> function_login_and_logout
+=======
+                        <li class="active" data-filter=".best-sellers">Best Sellers</li>
+                        <li data-filter=".new-arrivals">New Arrivals</li>
+                        <li data-filter=".hot-sales">Hot Sales</li>
+>>>>>>> layout_login_and_register
                     </ul>
                 </div>
             </div>
             <div class="row product__filter">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
@@ -555,6 +567,8 @@
                             <div class="product__item__text">
                                 <h6>{{ $bestSellers->product_name }}</h6>
 =======
+=======
+>>>>>>> layout_login_and_register
                     @foreach($bestSellers as $row => $bestSellers)
                     <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix best-sellers">
                         <div class="product__item">
@@ -639,7 +653,10 @@
                             </div>
                             <div class="product__item__text">
                                 <h6>{{ $hotSales->product_name }}</h6>
+<<<<<<< HEAD
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
                                 <a href="#" class="add-cart">+ Add To Cart</a>
                                 <div class="rating">
                                     <i class="fa fa-star-o"></i>
@@ -649,10 +666,14 @@
                                     <i class="fa fa-star-o"></i>
                                 </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <h5>{{ number_format($bestSellers->product_price) }}đ</h5>
 =======
                                 <h5>{{ number_format($hotSales->product_price) }}đ</h5>
 >>>>>>> function_login_and_logout
+=======
+                                <h5>{{ number_format($hotSales->product_price) }}đ</h5>
+>>>>>>> layout_login_and_register
                                 <div class="product__color__select">
                                     <label for="pc-1">
                                         <input type="radio" id="pc-1">
@@ -669,9 +690,12 @@
                     </div>
                     @endforeach
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> detail_and_related_product
 =======
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
             </div>
         </div>
     </section>
@@ -800,6 +824,7 @@
     <!-- Latest Blog Section End -->
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 @endsection
@@ -903,3 +928,6 @@
 =======
     @endsection
 >>>>>>> function_login_and_logout
+=======
+    @endsection
+>>>>>>> layout_login_and_register

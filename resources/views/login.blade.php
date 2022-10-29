@@ -5,10 +5,14 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!--===============================================================================================-->	
 =======
 <!--===============================================================================================-->
 >>>>>>> function_login_and_logout
+=======
+<!--===============================================================================================-->
+>>>>>>> layout_login_and_register
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ url ('bootstrap.min.css') }}">
 <!--===============================================================================================-->
@@ -18,20 +22,28 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ url('vendor/animate/animate.css') }}">
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!--===============================================================================================-->	
 =======
 <!--===============================================================================================-->
 >>>>>>> function_login_and_logout
+=======
+<!--===============================================================================================-->
+>>>>>>> layout_login_and_register
 	<link rel="stylesheet" type="text/css" href="{{ url('vendor/css-hamburgers/hamburgers.min.css') }}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ url('vendor/animsition/css/animsition.min.css') }}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ url ('vendor/select2/select2.min.css') }}">
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!--===============================================================================================-->	
 =======
 <!--===============================================================================================-->
 >>>>>>> function_login_and_logout
+=======
+<!--===============================================================================================-->
+>>>>>>> layout_login_and_register
 	<link rel="stylesheet" type="text/css" href="{{ url ('vendor/daterangepicker/daterangepicker.css') }}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ url('css/util.css')}}">
@@ -40,19 +52,25 @@
 </head>
 <body>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<form class="login100-form validate-form">
 =======
+=======
+>>>>>>> layout_login_and_register
 
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<form class="login100-form validate-form" action="/login-user" method="POST">
                 @csrf
+<<<<<<< HEAD
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
 					<span class="login100-form-title p-b-26">
 						Welcome
 					</span>
@@ -60,10 +78,13 @@
                         <img src="img/logo.png" alt="">
 					</span>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
 						<input class="input100" type="text" name="email">
 =======
+=======
+>>>>>>> layout_login_and_register
                     <?php
                         $message = Session::get('message');
                         if($message){
@@ -73,7 +94,10 @@
                     ?>
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
 						<input class="input100" type="email" name="email">
+<<<<<<< HEAD
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
 						<span class="focus-input100" data-placeholder="Email"></span>
 					</div>
 
@@ -89,10 +113,14 @@
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 							<button class="login100-form-btn">
 =======
 							<button class="login100-form-btn" name="login">
 >>>>>>> function_login_and_logout
+=======
+							<button class="login100-form-btn" name="login">
+>>>>>>> layout_login_and_register
 								Login
 							</button>
 						</div>
@@ -112,16 +140,22 @@
 		</div>
 	</div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 
 	<div id="dropDownSelect1"></div>
 	
 =======
+=======
+>>>>>>> layout_login_and_register
 
 
 	<div id="dropDownSelect1"></div>
 
+<<<<<<< HEAD
 >>>>>>> function_login_and_logout
+=======
+>>>>>>> layout_login_and_register
 <!--===============================================================================================-->
 	<script src="{{ url('vendor/jquery/jquery-3.2.1.min.js') }}"></script>
 <!--===============================================================================================-->
@@ -141,7 +175,11 @@
 
 </body>
 <<<<<<< HEAD
+<<<<<<< HEAD
 </html>
 =======
 </html>
 >>>>>>> function_login_and_logout
+=======
+</html>
+>>>>>>> layout_login_and_register

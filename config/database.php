@@ -71,6 +71,7 @@ return [
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             'database' => env('DB_DATABASE', 'cdw2-nhom-h'),
             'username' => env('DB_USERNAME', 'root'),
 =======
@@ -85,6 +86,10 @@ return [
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
 >>>>>>> function_login_and_logout
+=======
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+>>>>>>> layout_login_and_register
             'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',

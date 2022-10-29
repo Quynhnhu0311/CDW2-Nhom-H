@@ -21,6 +21,7 @@ class CreateOrdersTable extends Migration
             $table->string('order_status',50);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             $table->double('product_price',11);
 =======
                         $table->double('product_price',11);
@@ -28,6 +29,9 @@ class CreateOrdersTable extends Migration
 =======
             $table->double('product_price',11);
 >>>>>>> function_login_and_logout
+=======
+                        $table->double('product_price',11);
+>>>>>>> layout_login_and_register
             $table->timestamps();
         });
     }
