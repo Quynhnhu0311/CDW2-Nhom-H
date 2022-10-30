@@ -26,6 +26,9 @@ Route::get('feature/{feature_id}', [HomeController::class, 'show_product_home'])
 //Products
 Route::get('/tat-ca-san-pham', [ProductController::class,'all_products']);
 
+//Comment Product 
+Route::post('/shop-details/{id}', [HomeController::class, 'comment_product'])->name('comment-product');;
+
 
 //Login
 Route::post('/login-user', [UserController::class,'login_user']);

@@ -3860,14 +3860,6 @@ ol {
 	.categories__text:before {
 		height: 250px;
 	}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-}
-=======
-=======
->>>>>>> show_feature_product
 }
 .filter__controls li a {
 	color:#57594d !important;
@@ -3875,13 +3867,52 @@ ol {
 .filter__controls li a:hover {
 	color:#000000 !important;
 }
-<<<<<<< HEAD
->>>>>>> detail_and_related_product
-=======
+.comment .comment-items .comment-item .info-comment{
+	display: flex;
+	padding-bottom: 20px;
 }
->>>>>>> function_login_and_logout
-=======
+.comment .title {
+	color: #111111;
+    font-weight: 700;
+    margin-bottom: 45px;
+    text-align: center;
 }
->>>>>>> layout_login_and_register
-=======
->>>>>>> show_feature_product
+.comment .comment-items .comment-item .info-comment .avatar img {
+	width: 100px;
+	height: 100px;
+}
+.comment .comment-items .comment-item .info-comment .name{
+	padding-left: 10px;
+}
+.comment .comment-items .comment-item .info-comment .name h2 {
+	font-size: 24px;
+}
+.comment .comment-items .comment-item .content-comment form, .comment .comment-items .comment-item .content-comment form textarea {
+	width: 100%;
+}
+.comment .comment-items .comment-item .content-comment form textarea {
+	padding: 20px;
+}
+
+input[name="submit-comment"] {
+	width: 100px;
+    margin-left: auto;
+    display: block;
+}
+.comment {
+	padding-bottom: 50px;
+}
+.comment .show-comment .comment-item .info-comment .avatar img {
+	width: 100px;
+	height: 100px;
+}
+.comment .show-comment .comment-item .info-comment .name{
+	padding-left: 10px;
+}
+.comment .show-comment .comment-item .info-comment .name h2 {
+	font-size: 24px;
+}
+.comment .show-comment .comment-item .info-comment{
+	display: flex;
+	padding-bottom: 20px;
+}
