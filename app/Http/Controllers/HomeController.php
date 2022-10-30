@@ -36,6 +36,6 @@ class HomeController extends Controller
             $type_id = $related->type_id;
         }
         $related_product = DB::table('products')->join('protypes','protypes.type_id','=','products.type_id')->where('protypes.type_id',$type_id)->paginate(8);
-        return view('shop-details',compact('detail', $detail)->with('related_product', $related_product));
+        return view('shop-details',compact('detail','related_product'));
     }
 }
