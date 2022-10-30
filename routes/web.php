@@ -22,7 +22,7 @@ use App\Http\Controllers\CartController;
 //Home
 Route::get('/', [HomeController::class,'home']);
 Route::get('/shop-details/{id}', [HomeController::class, 'show_details']);
-Route::get('feature/{feature_id}', [HomeController::class, 'show_product_home'])->name('showproducthome');
+Route::get('/feature/{feature_id}', [HomeController::class, 'show_product_home'])->name('showproducthome');
 
 //Products
 Route::get('/tat-ca-san-pham', [ProductController::class,'all_products']);
