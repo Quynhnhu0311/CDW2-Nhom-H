@@ -107,26 +107,18 @@
                     </ul>
                 </div>
             </div>
-            <div class="row product__filter">
-                @foreach($products_feature as $row => $bestSellers)
-                    <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix best-sellers">
-                        <div class="product__item">
-                            <div class="product__item__pic set-bg" data-setbg="{{ asset('/img/product/'.$bestSellers->product_img) }}">
-                                <ul class="product__hover">
-                                    <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                                    <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                    <li><a href="/shop-details/{{ $bestSellers->product_id }}"><img src="img/icon/search.png" alt=""></a></li>
-                                </ul>
-                            </div>
-                            <div class="product__item__text">
-                                <h6>{{ $bestSellers->product_name }}</h6>
-                                <a href="#" class="add-cart">+ Add To Cart</a>
-                                <div class="rating">
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
+            <form>
+                @csrf
+                <div class="row product__filter">
+                    @foreach($products_feature as $row => $bestSellers)
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix best-sellers">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="{{ asset('/img/product/'.$bestSellers->product_img) }}">
+                                    <ul class="product__hover">
+                                        <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                        <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                        <li><a href="/shop-details/{{ $bestSellers->product_id }}"><img src="img/icon/search.png" alt=""></a></li>
+                                    </ul>
                                 </div>
                                 <div class="product__item__text">
                                     <h6>{{ $bestSellers->product_name }}</h6>
@@ -145,17 +137,35 @@
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
                                     </div>
-                                    <h5>{{ number_format($bestSellers->product_price) }}đ</h5>
-                                    <div class="product__color__select">
-                                        <label for="pc-1">
-                                            <input type="radio" id="pc-1">
-                                        </label>
-                                        <label class="active black" for="pc-2">
-                                            <input type="radio" id="pc-2">
-                                        </label>
-                                        <label class="grey" for="pc-3">
-                                            <input type="radio" id="pc-3">
-                                        </label>
+                                    <div class="product__item__text">
+                                        <h6>{{ $bestSellers->product_name }}</h6>
+                                        <div class="add-to-cart">
+                                            <input type="hidden" value="{{ $bestSellers->product_id }}" class="cart_product_id_{{ $bestSellers->product_id }}">
+                                            <input type="hidden" value="{{ $bestSellers->product_name }}" class="cart_product_name_{{ $bestSellers->product_id }}">
+                                            <input type="hidden" value="{{ $bestSellers->product_price }}" class="cart_product_price_{{ $bestSellers->product_id }}">
+                                            <input type="hidden" value="{{ $bestSellers->product_img }}" class="cart_product_image_{{ $bestSellers->product_id }}">
+                                            <input type="hidden" value="1" class="cart_product_qty_{{ $bestSellers->product_id }}">
+                                            <button type="button" class="add-to-cart-btn" data-id="{{ $bestSellers->product_id }}" name="add-cart">+ Add To Cart</button>
+                                        </div>
+                                        <div class="rating">
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </div>
+                                        <h5>{{ number_format($bestSellers->product_price) }}đ</h5>
+                                        <div class="product__color__select">
+                                            <label for="pc-1">
+                                                <input type="radio" id="pc-1">
+                                            </label>
+                                            <label class="active black" for="pc-2">
+                                                <input type="radio" id="pc-2">
+                                            </label>
+                                            <label class="grey" for="pc-3">
+                                                <input type="radio" id="pc-3">
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
