@@ -205,44 +205,54 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        @foreach($products as $row => $allProducts)
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="{{ asset('./img/product/'.$allProducts->product_img) }}">
-                                    <ul class="product__hover">
-                                        <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                                        <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                        <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product__item__text">
-                                    <h6>{{ $allProducts->product_name }}</h6>
-                                    <a href="#" class="add-cart">+ Add To Cart</a>
-                                    <div class="rating">
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
+                    <form>
+                        @csrf
+                        <div class="row">
+                            @foreach($products as $row => $allProducts)
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="product__item">
+                                    <div class="product__item__pic set-bg" data-setbg="{{ asset('./img/product/'.$allProducts->product_img) }}">
+                                        <ul class="product__hover">
+                                            <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                            <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                            <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
+                                        </ul>
                                     </div>
-                                    <h5>{{ number_format($allProducts->product_price) }}đ</h5>
-                                    <div class="product__color__select">
-                                        <label for="pc-4">
-                                            <input type="radio" id="pc-4">
-                                        </label>
-                                        <label class="active black" for="pc-5">
-                                            <input type="radio" id="pc-5">
-                                        </label>
-                                        <label class="grey" for="pc-6">
-                                            <input type="radio" id="pc-6">
-                                        </label>
+                                    <div class="product__item__text">
+                                        <h6>{{ $allProducts->product_name }}</h6>
+                                        <div class="add-to-cart">
+                                            <input type="hidden" value="{{ $allProducts->product_id }}" class="cart_product_id_{{ $allProducts->product_id }}">
+                                            <input type="hidden" value="{{ $allProducts->product_name }}" class="cart_product_name_{{ $allProducts->product_id }}">
+                                            <input type="hidden" value="{{ $allProducts->product_price }}" class="cart_product_price_{{ $allProducts->product_id }}">
+                                            <input type="hidden" value="{{ $allProducts->product_img }}" class="cart_product_image_{{ $allProducts->product_id }}">
+                                            <input type="hidden" value="1" class="cart_product_qty_{{ $allProducts->product_id }}">
+                                            <button type="button" class="add-to-cart-btn" data-id="{{ $allProducts->product_id }}" name="add-cart">+ Add To Cart</button>
+                                        </div>
+                                        <div class="rating">
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                            <i class="fa fa-star-o"></i>
+                                        </div>
+                                        <h5>{{ number_format($allProducts->product_price) }}đ</h5>
+                                        <div class="product__color__select">
+                                            <label for="pc-4">
+                                                <input type="radio" id="pc-4">
+                                            </label>
+                                            <label class="active black" for="pc-5">
+                                                <input type="radio" id="pc-5">
+                                            </label>
+                                            <label class="grey" for="pc-6">
+                                                <input type="radio" id="pc-6">
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
-                        @endforeach
-                    </div>
+                    </form>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="product__pagination">

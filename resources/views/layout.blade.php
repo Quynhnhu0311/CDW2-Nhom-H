@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="{{ url ('css/owl.carousel.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url ('css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url ('css/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url ('css/sweetalert.css') }}" type="text/css">
 </head>
 
 <body>
@@ -140,7 +141,7 @@
                     <div class="header__nav__option">
                         <a href="#" class="search-switch"><img src="{{ asset ('img/icon/search.png') }}" alt=""></a>
                         <a href="#"><img src="{{ asset ('img/icon/heart.png') }}" alt=""></a>
-                        <a href="{{url ('shopping-cart') }}"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
+                        <a href="/gio-hang"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
                         <div class="price">$0.00</div>
                     </div>
                 </div>
@@ -231,6 +232,7 @@
     <!-- Search End -->
 
     <!-- Js Plugins -->
+    <script src="{{ url ('js/jquery.min.js') }}"></script>
     <script src="{{ url ('js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ url ('js/bootstrap.min.js') }}"></script>
     <script src="{{ url ('js/jquery.nice-select.min.js') }}"></script>
@@ -241,6 +243,40 @@
     <!-- <script src="{{ url ('js/mixitup.min.js') }}"></script> -->
     <script src="{{ url ('js/owl.carousel.min.js') }}"></script>
     <script src="{{ url ('js/main.js') }}"></script>
-</body>
+    <script src="{{ url ('js/sweetalert.js') }}"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.add-to-cart-btn').click(function(){
+                var id = $(this).data('id');
+                var cart_product_id = $('.cart_product_id_' + id).val();
+                var cart_product_name = $('.cart_product_name_' + id).val();
+                var cart_product_price = $('.cart_product_price_' + id).val();
+                var cart_product_image = $('.cart_product_image_' + id).val();
+                var cart_product_qty = $('.cart_product_qty_' + id).val();
+                var _token = $('input[name="_token"]').val();
+                $.ajax({
+                    url: "{{url('/add-cart-ajax')}}",
+                    method: 'POST',
+                    data: {cart_product_id:cart_product_id,cart_product_name:cart_product_name,cart_product_price:cart_product_price,
+                        cart_product_image:cart_product_image,cart_product_qty:cart_product_qty,_token:_token},
+                    success:function(data){
+                        swal({
+                            title: "Add Cart Successfully!",
+                            text: "Please go to cart to review your shopping cart",
+                            showCancelButton: true,
+                            cancelButtonText: "See More",
+                            confirmButtonClass: "btn-success",
+                            confirmButtonText: "Go To Cart",
+                            closeOnConfirm: false
+                            },
+                            function() {
+                            window.location.href = "{{ url('/gio-hang') }}";
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
 </html>

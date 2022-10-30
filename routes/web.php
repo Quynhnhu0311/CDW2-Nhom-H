@@ -5,6 +5,7 @@ use App\Http\Controllers\MyController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,11 +27,15 @@ Route::get('feature/{feature_id}', [HomeController::class, 'show_product_home'])
 //Products
 Route::get('/tat-ca-san-pham', [ProductController::class,'all_products']);
 
-
 //Login
 Route::post('/login-user', [UserController::class,'login_user']);
 Route::get('/logout-user', [UserController::class,'logout_user']);
 
+//Cart
+Route::post('/add-cart-ajax', [CartController::class,'add_cart_ajax']);
+Route::get('/gio-hang', [CartController::class,'gio_hang']);
+Route::get('/delete-product-cart/{session_id}', [CartController::class,'delete_product_cart']);
+Route::post('/update-cart', [CartController::class,'update_cart']);
 
 //Show all Page
 Route::get('/{name?}',[MyController::class, 'index']);

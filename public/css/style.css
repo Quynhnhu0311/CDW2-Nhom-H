@@ -7,15 +7,26 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-  Created: Colorib 
+<<<<<<< HEAD
+  Created: Colorib
+=======
+  Created: Colorib
+>>>>>>> function_addcart_updatecart_deletecart
 =======
   Created: Colorib
 >>>>>>> function_login_and_logout
 =======
-  Created: Colorib 
+<<<<<<< HEAD
+  Created: Colorib
 >>>>>>> layout_login_and_register
 =======
-  Created: Colorib 
+  Created: Colorib
+=======
+  Created: Colorib
+>>>>>>> layout_login_and_register
+=======
+  Created: Colorib
+>>>>>>> function_addcart_updatecart_deletecart
 >>>>>>> show_feature_product
 ******************************************************************/
 
@@ -970,7 +981,7 @@ ol {
 	opacity: 1;
 }
 
-.product__item:hover .product__item__text a {
+.product__item:hover .product__item__text button {
 	top: 22px;
 	opacity: 1;
 	visibility: visible;
@@ -1066,7 +1077,7 @@ ol {
 	position: relative;
 }
 
-.product__item__text a {
+.product__item__text button {
 	font-size: 15px;
 	color: #e53637;
 	font-weight: 700;
@@ -1078,6 +1089,8 @@ ol {
 	-webkit-transition: all, 0.3s;
 	-o-transition: all, 0.3s;
 	transition: all, 0.3s;
+    background: none;
+    border: none;
 }
 
 .product__item__text h6 {
@@ -2416,13 +2429,41 @@ ol {
 	background: #111111;
 	border-color: #111111;
 }
-
+/* */
+.continue__btn.update__btn input {
+	color: #ffffff;
+	background: #111111;
+	border-color: #111111;
+}
+.continue__btn input {
+	color: #111111;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	border: 1px solid #e1e1e1;
+	padding: 14px 35px;
+	display: inline-block;
+}
+/*  */
 .continue__btn.update__btn a i {
 	margin-right: 5px;
 }
 
 .continue__btn a {
 	color: #111111;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	border: 1px solid #e1e1e1;
+	padding: 14px 35px;
+	display: inline-block;
+}
+
+.continue__btn a:hover {
+	color: #fff;
+    background-color: #000;
 	font-size: 14px;
 	font-weight: 700;
 	letter-spacing: 2px;
@@ -3860,14 +3901,6 @@ ol {
 	.categories__text:before {
 		height: 250px;
 	}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-}
-=======
-=======
->>>>>>> show_feature_product
 }
 .filter__controls li a {
 	color:#57594d !important;
@@ -3875,13 +3908,50 @@ ol {
 .filter__controls li a:hover {
 	color:#000000 !important;
 }
-<<<<<<< HEAD
->>>>>>> detail_and_related_product
-=======
+
+/* Button swal */
+button.cancel.btn.btn-lg.btn-default {
+    color: #000;
+    background-color: #fff;
+    font-weight: bold;
 }
->>>>>>> function_login_and_logout
-=======
+
+button.cancel.btn.btn-lg.btn-default:hover {
+    color: #fff;
+    background-color: #000;
+    font-weight: bold;
 }
->>>>>>> layout_login_and_register
-=======
->>>>>>> show_feature_product
+
+button.confirm.btn.btn-lg.btn-success {
+    font-weight: bold;
+}
+
+button.confirm.btn.btn-lg.btn-success:hover {
+    color: #fff;
+    background-color: #000;
+    font-weight: bold;
+    border-color: #000;
+}
+
+/* Img Cart */
+.product__cart__item__pic img{
+    height: 130px;
+    width: 130px;
+}
+
+/* Message */
+.text-alert {
+    color:green;
+    font-weight: bold;
+}
+
+/* Font Awesome */
+input[type="submit"] {
+    font-family: FontAwesome;
+}
+
+.continue__btn.update__btn input:hover {
+    color: #111111;
+    background: #ffffff;
+    border-color: #ffffff;
+}
