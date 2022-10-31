@@ -3917,7 +3917,7 @@ input[name="submit-comment"] {
 	padding-bottom: 20px;
 }
 .ratings {
-	cursor: pointer;
+	color: #deb217;
 }
 .rate {
 	float: left;
@@ -3952,11 +3952,4 @@ input[name="submit-comment"] {
 	.rate > input:checked ~ label:hover ~ label,
 	.rate > label:hover ~ input:checked ~ label {
 	color: #c59b08;
-	}
-	.rating-container .form-control:hover, .rating-container .form-control:focus{
-	background: #fff;
-	border: 1px solid #ced4da;
-	}
-	.rating-container textarea:focus, .rating-container input:focus {
-	color: #000;
 	}

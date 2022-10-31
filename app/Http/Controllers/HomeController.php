@@ -46,9 +46,12 @@ class HomeController extends Controller
         /* Show Comment Product */
         $comment_all = DB::table('comments')->join('products','products.product_id','=','comments.product_id')
         ->where('comments.product_id',$comment_id)
-        ->join('users','users.id','=','comments.id')
-        ->join('ratings','ratings.product_id','=','products.product_id')->get();
-        return view('shop-details',compact('detail','related_product','comment_all'));
+        ->join('users','users.id','=','comments.id')->get();
+        foreach($comment_all as $ratings) {
+            $id_user = $ratings->id;
+        }
+        $ratings = DB::table('ratings')->join('users','users.id','=','ratings.id')->where('ratings.id',$id_user)->get();
+        return view('shop-details',compact('detail','related_product','comment_all','ratings'));
     }
     //Add Comment Product 
     public function comment_product(Request $request) {
