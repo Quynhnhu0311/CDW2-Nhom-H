@@ -33,14 +33,13 @@ class HomeController extends Controller
     //Detail Product and Related Product
     public function show_details($id)
     {
-        /* Detail Product */   
+        /* Detail Product */
         $detail = DB::table('products')->join('protypes','protypes.type_id','=','products.type_id')->where('products.product_id',$id)->get();
         foreach($detail as $related) {
             $type_id = $related->type_id;
         }
         /* Realated Product */
         $related_product = DB::table('products')->join('protypes','protypes.type_id','=','products.type_id')->where('protypes.type_id',$type_id)->paginate(8);
-<<<<<<< HEAD
         foreach($detail as $comment) {
             $comment_id = $comment->product_id;
         }
@@ -50,14 +49,14 @@ class HomeController extends Controller
         ->join('users','users.id','=','comments.id')->get();
         return view('shop-details',compact('detail','related_product','comment_all'));
     }
-    //Add Comment Product 
+    //Add Comment Product
     public function comment_product(Request $request) {
         $comment = array();
         $comment['id'] = $request->id;
         $comment['product_id'] = $request->product_id;
         $comment['comment_content'] = $request->comment_content;
         $id = Session::get('id');
-        // Nếu User đã đăng nhập mới được bình luận 
+        // Nếu User đã đăng nhập mới được bình luận
         if($id) {
             DB::table('comments')->insert($comment);
             return Redirect::to('shop-details/'.$comment['product_id']);
@@ -66,8 +65,5 @@ class HomeController extends Controller
              Session::put('message_cmt','Vui lòng đăng nhập để được bình luận!');
              return Redirect::to('shop-details/'.$comment['product_id']);
         }
-=======
-        return view('shop-details',compact('detail','related_product'));
->>>>>>> origin/function_addcart_updatecart_deletecart
     }
 }
