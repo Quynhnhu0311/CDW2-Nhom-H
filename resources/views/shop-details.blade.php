@@ -203,5 +203,82 @@
         </div>
     </section>
     <!-- Related Section End -->
-
+    <!-- Commtent Section Begin -->
+    <section class="comment">
+        <div class="container">
+            <div class="title">
+                <h2>Comment</h2>
+            </div>
+            <div class="show-comment">
+                <div class="comment-item">
+                    @foreach($comment_all as $comment_all)
+                    <div class="info-comment">
+                        <div class="avatar">
+                            <img src="{{ asset ('img/avatar.jpg') }}" alt="">
+                        </div>
+                        <div class="name">
+                            <h2>{{ $comment_all->name }}</h2>
+                            <div class="rating">
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-comment">
+                        <p>{{ $comment_all->comment_content }}</p>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+            <div class="comment-items">
+                <div class="comment-item">
+                    <div class="info-comment">
+                        <div class="avatar">
+                            <img src="{{ asset ('img/avatar.jpg') }}" alt="">
+                        </div>
+                        <div class="name">
+                            <?php 
+                            $name = Session::get('name');
+                            ?>
+                            <h2><?php echo $name ?></h2>
+                            <div class="rating">
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-comment">
+                        @foreach($detail as $product_detail)
+                        <form action="  route('comment-product',['id' => $product_detail->product_id])" method="POST"  enctype="multipart/form-data">
+                        @endforeach
+                        {{ csrf_field() }}
+                            <?php 
+                            $id = Session::get('id');
+                            ?>
+                            <input type="hidden" name="id" value="<?php echo $id ?>">
+                            @foreach($detail as $product_detail)
+                            <input type="hidden" name="product_id" value="{{$product_detail->product_id }}">
+                            @endforeach
+                            <textarea placeholder="" name="comment_content" id="" cols="100%" rows="5"></textarea>
+                            <input type="submit" name="submit-comment">
+                        </form>
+                        <?php 
+                        $message_cmt = Session::get('message_cmt');
+                        if($message_cmt){
+                            echo '<span class="text-alert" style="color:red;">'.$message_cmt.'</span>';
+                            Session::put('message_cmt',null);
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Comment Section End -->
 @endsection

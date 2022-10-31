@@ -4,30 +4,7 @@
   Author: Colorib
   Author URI: https://www.colorib.com/
   Version: 1.0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   Created: Colorib
-=======
-  Created: Colorib
->>>>>>> function_addcart_updatecart_deletecart
-=======
-  Created: Colorib
->>>>>>> function_login_and_logout
-=======
-<<<<<<< HEAD
-  Created: Colorib
->>>>>>> layout_login_and_register
-=======
-  Created: Colorib
-=======
-  Created: Colorib
->>>>>>> layout_login_and_register
-=======
-  Created: Colorib
->>>>>>> function_addcart_updatecart_deletecart
->>>>>>> show_feature_product
 ******************************************************************/
 
 /*------------------------------------------------------------------
@@ -3908,7 +3885,6 @@ ol {
 .filter__controls li a:hover {
 	color:#000000 !important;
 }
-
 /* Button swal */
 button.cancel.btn.btn-lg.btn-default {
     color: #000;
@@ -3954,4 +3930,55 @@ input[type="submit"] {
     color: #111111;
     background: #ffffff;
     border-color: #ffffff;
+}
+
+/* Comment */
+.comment .comment-items .comment-item .info-comment{
+	display: flex;
+	padding-bottom: 20px;
+}
+.comment .title {
+	color: #111111;
+    font-weight: 700;
+    margin-bottom: 45px;
+    text-align: center;
+}
+.comment .comment-items .comment-item .info-comment .avatar img {
+	width: 100px;
+	height: 100px;
+}
+.comment .comment-items .comment-item .info-comment .name{
+	padding-left: 10px;
+}
+.comment .comment-items .comment-item .info-comment .name h2 {
+	font-size: 24px;
+}
+.comment .comment-items .comment-item .content-comment form, .comment .comment-items .comment-item .content-comment form textarea {
+	width: 100%;
+}
+.comment .comment-items .comment-item .content-comment form textarea {
+	padding: 20px;
+}
+
+input[name="submit-comment"] {
+	width: 100px;
+    margin-left: auto;
+    display: block;
+}
+.comment {
+	padding-bottom: 50px;
+}
+.comment .show-comment .comment-item .info-comment .avatar img {
+	width: 100px;
+	height: 100px;
+}
+.comment .show-comment .comment-item .info-comment .name{
+	padding-left: 10px;
+}
+.comment .show-comment .comment-item .info-comment .name h2 {
+	font-size: 24px;
+}
+.comment .show-comment .comment-item .info-comment{
+	display: flex;
+	padding-bottom: 20px;
 }
