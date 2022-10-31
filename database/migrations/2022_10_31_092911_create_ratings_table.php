@@ -18,7 +18,6 @@ class CreateRatingsTable extends Migration
             $table->double('product_id',11);
             $table->double('id',11);
             $table->double('ratings_value',11);
-            $table->double('comment_id',11);
             $table->timestamps();
         });
     }

@@ -219,9 +219,7 @@
                         <div class="name">
                             <h2>{{ $comment_all->name }}</h2>
                             <div class="rating">
-                                @foreach($ratings as $rating)
-                                <i class="ratings fa fa-star-o">{{ $rating->ratings_value }}</i>
-                                @endforeach
+                                <i class="ratings fa fa-star-o"></i>
                             </div>
                         </div>
                     </div>
