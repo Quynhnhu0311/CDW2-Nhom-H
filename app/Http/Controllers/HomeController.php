@@ -40,6 +40,7 @@ class HomeController extends Controller
         }
         /* Realated Product */
         $related_product = DB::table('products')->join('protypes','protypes.type_id','=','products.type_id')->where('protypes.type_id',$type_id)->paginate(8);
+<<<<<<< HEAD
         foreach($detail as $comment) {
             $comment_id = $comment->product_id;
         }
@@ -65,5 +66,8 @@ class HomeController extends Controller
              Session::put('message_cmt','Vui lòng đăng nhập để được bình luận!');
              return Redirect::to('shop-details/'.$comment['product_id']);
         }
+=======
+        return view('shop-details',compact('detail','related_product'));
+>>>>>>> origin/function_addcart_updatecart_deletecart
     }
 }

@@ -115,10 +115,9 @@
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="{{ asset('/img/product/'.$bestSellers->product_img) }}">
                                     <ul class="product__hover">
-                                        <li><a href="#"><img src="{{ asset ('img/icon/heart.png') }}" alt=""></a></li>
-                                        <li><a href="#"><img src="{{ asset ('img/icon/compare.png') }}" alt=""> <span>Compare</span></a></li>
-                                        <li><a href="/shop-details/{{ $bestSellers->product_id }}"><img src="{{ asset ('img/icon/search.png') }}" alt=""></a></li>
-                                    </ul>
+                                        <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                        <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                        <li><a href="/shop-details/{{ $bestSellers->product_id }}"><img src="{{ asset ('img/icon/search.png') }}" alt=""></a></li>                                    </ul>
                                 </div>
                                 <div class="product__item__text">
                                     <h6>{{ $bestSellers->product_name }}</h6>
