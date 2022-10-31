@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call([Manufactures::class]);
         $this->call([Features::class]);
         $this->call([Users::class]);
+        $this->call([Coupons::class]);
     }
 }

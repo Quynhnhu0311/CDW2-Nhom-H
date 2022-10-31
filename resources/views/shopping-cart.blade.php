@@ -9,7 +9,7 @@
                     <div class="breadcrumb__text">
                         <h4>Shopping Cart</h4>
                         <div class="breadcrumb__links">
-                            <a href="./index.html">Home</a>
+                            <a href="/">Home</a>
                             <a href="./shop.html">Shop</a>
                             <span>Shopping Cart</span>
                         </div>
@@ -38,14 +38,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
-                                    $message = Session::get('message_delete');
-                                    if($message){
-                                        echo '<span class="text-alert">'.$message.'</span>';
-                                        Session::put('message_delete',null);
-                                    }
-                                ?>
-
+                                @if(session()->has('message_delete'))
+                                    <div class="alert text-alert">
+                                        {{ session()->get('message_delete') }}
+                                    </div>
+                                @elseif(session()->has('error'))
+                                    <div class="alert alert-danger">
+                                        {{ session()->get('error') }}
+                                    </div>
+                                @endif
                                 <?php
                                     $subtotal = 0;
                                 ?>
@@ -99,18 +100,44 @@
                 <div class="col-lg-4">
                     <div class="cart__discount">
                         <h6>Discount codes</h6>
-                        <form action="#">
-                            <input type="text" placeholder="Coupon code">
-                            <button type="submit">Apply</button>
+                        <form action="/check-coupon" method="post">
+                            @csrf
+                            <input type="text" placeholder="Coupon code" name="coupon_name">
+                            <button type="submit" class="check_coupon" name="check_coupon">Apply</button>
                         </form>
                     </div>
                     <div class="cart__total">
                         <h6>Cart total</h6>
+                        @if(Session::get('cart') == true)
                         <ul>
                             <li>Subtotal <span>{{ number_format($subtotal) }}đ</span></li>
-                            <li>Total <span>$ 169.50</span></li>
+                            @if(Session::get('coupon'))
+                                @foreach(Session::get('coupon') as $row => $coupon)
+                                    @if($coupon['coupon_condition'] == 1)
+                                        <li>Discount <span>{{ number_format($coupon['coupon_number']) }}đ</span></li>
+                                        <?php
+                                            $total_coupon =  $subtotal - $coupon['coupon_number'];
+                                        ?>
+                                        <li>Total <span>{{ number_format($total_coupon) }}đ</span></li>
+                                    @elseif($coupon['coupon_condition'] == 2)
+                                        <li>Discount <span>{{ $coupon['coupon_number'] }}%</span></li>
+                                        <?php
+                                            $total_coupon = $subtotal - ($subtotal * $coupon['coupon_number']) / 100;
+                                        ?>
+                                        <li>Total <span>{{ number_format($total_coupon) }}đ</span></li>
+                                    @endif
+                                @endforeach
+                            @else
+                                <li>Total <span>{{ number_format($subtotal) }}đ</span></li>
+                            @endif
                         </ul>
-                        <a href="/checkout" class="primary-btn">Proceed to checkout</a>
+                        @endif
+                        <div class="delete-coupons">
+                            @if(Session::get('coupon'))
+                                <a href="/delete-coupon" class="delete_discount primary-btn">Delete Discount</a>
+                            @endif
+                        </div>
+                        <a href="/checkout" class="checkout_cart primary-btn">Proceed to checkout</a>
                     </div>
                 </div>
             </div>

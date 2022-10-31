@@ -3919,6 +3919,11 @@ button.confirm.btn.btn-lg.btn-success:hover {
 .text-alert {
     color:green;
     font-weight: bold;
+    background-color: #c6e2d2;
+    border-color: #c6e2d2;
+}
+.alert-danger {
+    font-weight: bold;
 }
 
 /* Font Awesome */
@@ -3981,4 +3986,24 @@ input[name="submit-comment"] {
 .comment .show-comment .comment-item .info-comment{
 	display: flex;
 	padding-bottom: 20px;
+}
+
+/* Button Page Cart */
+a.delete_discount.primary-btn {
+    margin-bottom: 8px;
+}
+
+a.delete_discount.primary-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+a.checkout_cart.primary-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+button.check_coupon:hover {
+    background-color: #eee3e370;
+    color: #000;
 }
