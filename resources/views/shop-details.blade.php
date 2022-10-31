@@ -268,6 +268,13 @@
                             <textarea placeholder="" name="comment_content" id="" cols="100%" rows="5"></textarea>
                             <input type="submit" name="submit-comment">
                         </form>
+                        <?php 
+                        $message_cmt = Session::get('message_cmt');
+                        if($message_cmt){
+                            echo '<span class="text-alert" style="color:red;">'.$message_cmt.'</span>';
+                            Session::put('message_cmt',null);
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
