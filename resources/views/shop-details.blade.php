@@ -219,7 +219,9 @@
                         <div class="name">
                             <h2>{{ $comment_all->name }}</h2>
                             <div class="rating">
+                                @for($i = 1; $i <= $comment_all->rating_value; $i++)
                                 <i class="ratings fa fa-star-o"></i>
+                                @endfor
                             </div>
                         </div>
                     </div>

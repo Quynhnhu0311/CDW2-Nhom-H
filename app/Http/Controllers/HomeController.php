@@ -43,13 +43,10 @@ class HomeController extends Controller
         foreach($detail as $comment) {
             $comment_id = $comment->product_id;
         }
-        /* Show Comment Product */
+        /* Show Comment and Rating Product */
         $comment_all = DB::table('comments')->join('products','products.product_id','=','comments.product_id')
         ->where('comments.product_id',$comment_id)
         ->join('users','users.id','=','comments.id')->get();
-        // $ratings = DB::table('ratings')->join('users','users.id','=','ratings.id')
-        // ->where('ratings.id')
-        // ->join('products','products.product_id','=','ratings.product_id')->get();
         return view('shop-details',compact('detail','related_product','comment_all'));
     }
     //Add Comment Product 
@@ -58,14 +55,10 @@ class HomeController extends Controller
         $comment['id'] = $request->id;
         $comment['product_id'] = $request->product_id;
         $comment['comment_content'] = $request->comment_content;
-        $ratings = array();
-        $ratings['id'] = $request->id;
-        $ratings['product_id'] = $request->product_id;
-        $ratings['ratings_value'] = $request->rating;
+        $comment['rating_value'] = $request->rating;
         $id = Session::get('id');
         // Nếu User đã đăng nhập mới được bình luận 
         if($id) {
-            DB::table('ratings')->insert($ratings);
             DB::table('comments')->insert($comment);
             return Redirect::to('shop-details/'.$comment['product_id']);
         // Không cho phép bình luận khi chưa đăng nhập

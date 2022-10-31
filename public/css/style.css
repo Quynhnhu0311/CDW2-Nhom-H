@@ -4,19 +4,7 @@
   Author: Colorib
   Author URI: https://www.colorib.com/
   Version: 1.0
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  Created: Colorib 
-=======
   Created: Colorib
->>>>>>> function_login_and_logout
-=======
-  Created: Colorib 
->>>>>>> layout_login_and_register
-=======
-  Created: Colorib 
->>>>>>> show_feature_product
 ******************************************************************/
 
 /*------------------------------------------------------------------
@@ -970,7 +958,7 @@ ol {
 	opacity: 1;
 }
 
-.product__item:hover .product__item__text a {
+.product__item:hover .product__item__text button {
 	top: 22px;
 	opacity: 1;
 	visibility: visible;
@@ -1066,7 +1054,7 @@ ol {
 	position: relative;
 }
 
-.product__item__text a {
+.product__item__text button {
 	font-size: 15px;
 	color: #e53637;
 	font-weight: 700;
@@ -1078,6 +1066,8 @@ ol {
 	-webkit-transition: all, 0.3s;
 	-o-transition: all, 0.3s;
 	transition: all, 0.3s;
+    background: none;
+    border: none;
 }
 
 .product__item__text h6 {
@@ -2416,13 +2406,41 @@ ol {
 	background: #111111;
 	border-color: #111111;
 }
-
+/* */
+.continue__btn.update__btn input {
+	color: #ffffff;
+	background: #111111;
+	border-color: #111111;
+}
+.continue__btn input {
+	color: #111111;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	border: 1px solid #e1e1e1;
+	padding: 14px 35px;
+	display: inline-block;
+}
+/*  */
 .continue__btn.update__btn a i {
 	margin-right: 5px;
 }
 
 .continue__btn a {
 	color: #111111;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	border: 1px solid #e1e1e1;
+	padding: 14px 35px;
+	display: inline-block;
+}
+
+.continue__btn a:hover {
+	color: #fff;
+    background-color: #000;
 	font-size: 14px;
 	font-weight: 700;
 	letter-spacing: 2px;
@@ -3867,6 +3885,54 @@ ol {
 .filter__controls li a:hover {
 	color:#000000 !important;
 }
+/* Button swal */
+button.cancel.btn.btn-lg.btn-default {
+    color: #000;
+    background-color: #fff;
+    font-weight: bold;
+}
+
+button.cancel.btn.btn-lg.btn-default:hover {
+    color: #fff;
+    background-color: #000;
+    font-weight: bold;
+}
+
+button.confirm.btn.btn-lg.btn-success {
+    font-weight: bold;
+}
+
+button.confirm.btn.btn-lg.btn-success:hover {
+    color: #fff;
+    background-color: #000;
+    font-weight: bold;
+    border-color: #000;
+}
+
+/* Img Cart */
+.product__cart__item__pic img{
+    height: 130px;
+    width: 130px;
+}
+
+/* Message */
+.text-alert {
+    color:green;
+    font-weight: bold;
+}
+
+/* Font Awesome */
+input[type="submit"] {
+    font-family: FontAwesome;
+}
+
+.continue__btn.update__btn input:hover {
+    color: #111111;
+    background: #ffffff;
+    border-color: #ffffff;
+}
+
+/* Comment */
 .comment .comment-items .comment-item .info-comment{
 	display: flex;
 	padding-bottom: 20px;
@@ -3917,7 +3983,7 @@ input[name="submit-comment"] {
 	padding-bottom: 20px;
 }
 .ratings {
-	color: #deb217;
+	color : #ffc700;
 }
 .rate {
 	float: left;
@@ -3953,3 +4019,11 @@ input[name="submit-comment"] {
 	.rate > label:hover ~ input:checked ~ label {
 	color: #c59b08;
 	}
+	.rating-container .form-control:hover, .rating-container .form-control:focus{
+	background: #fff;
+	border: 1px solid #ced4da;
+	}
+	.rating-container textarea:focus, .rating-container input:focus {
+	color: #000;
+	}
+

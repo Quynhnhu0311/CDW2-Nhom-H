@@ -18,6 +18,7 @@ class CreateCommentsTable extends Migration
             $table->double('product_id',11);
             $table->double('id',11);
             $table->string('comment_content',150);
+            $table->double('rating_value',5);
             $table->timestamps();
         });
     }
