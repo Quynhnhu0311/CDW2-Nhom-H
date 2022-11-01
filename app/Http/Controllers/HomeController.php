@@ -43,7 +43,7 @@ class HomeController extends Controller
         foreach($detail as $comment) {
             $comment_id = $comment->product_id;
         }
-        /* Show Comment Product */
+        /* Show Comment and Rating Product */
         $comment_all = DB::table('comments')->join('products','products.product_id','=','comments.product_id')
         ->where('comments.product_id',$comment_id)
         ->join('users','users.id','=','comments.id')->get();
@@ -55,6 +55,7 @@ class HomeController extends Controller
         $comment['id'] = $request->id;
         $comment['product_id'] = $request->product_id;
         $comment['comment_content'] = $request->comment_content;
+        $comment['rating_value'] = $request->rating;
         $id = Session::get('id');
         // Nếu User đã đăng nhập mới được bình luận
         if($id) {

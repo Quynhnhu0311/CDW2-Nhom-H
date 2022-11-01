@@ -232,11 +232,9 @@
                         <div class="name">
                             <h2>{{ $comment_all->name }}</h2>
                             <div class="rating">
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
+                                @for($i = 1; $i <= $comment_all->rating_value; $i++)
+                                <i class="ratings fa fa-star-o"></i>
+                                @endfor
                             </div>
                         </div>
                     </div>
@@ -257,13 +255,6 @@
                             $name = Session::get('name');
                             ?>
                             <h2><?php echo $name ?></h2>
-                            <div class="rating">
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                            </div>
                         </div>
                     </div>
                     <div class="content-comment">
@@ -274,6 +265,18 @@
                             <?php 
                             $id = Session::get('id');
                             ?>
+                            <div class="rate">
+                                <input type="radio" id="star5" class="rate" name="rating" value="5"/>
+                                <label for="star5" title="text">5 stars</label>
+                                <input type="radio" checked id="star4" class="rate" name="rating" value="4"/>
+                                <label for="star4" title="text">4 stars</label>
+                                <input type="radio" id="star3" class="rate" name="rating" value="3"/>
+                                <label for="star3" title="text">3 stars</label>
+                                <input type="radio" id="star2" class="rate" name="rating" value="2">
+                                <label for="star2" title="text">2 stars</label>
+                                <input type="radio" id="star1" class="rate" name="rating" value="1"/>
+                                <label for="star1" title="text">1 star</label>
+                            </div>
                             <input type="hidden" name="id" value="<?php echo $id ?>">
                             @foreach($detail as $product_detail)
                             <input type="hidden" name="product_id" value="{{$product_detail->product_id }}">
@@ -293,5 +296,17 @@
             </div>
         </div>
     </section>
+    <script>
+    // function remove_background(product_id) {
+    //     for(var count = 1; count <= 5; count++){
+    //         $('#'+ product_id + '-' + count).css('color','#ccc');
+    //     }
+    // }
+    $(document).on('mouseenter', '.ratings', function(){
+        var index = $(this).data("index");
+        // var product_id = $(this).data('product_id');
+        alert(index);
+    }); 
+    </script>
     <!-- Comment Section End -->
 @endsection
