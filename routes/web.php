@@ -19,18 +19,20 @@ use App\Http\Controllers\UserController;
 
 /* =====Front-End===== */
 //Home
-Route::get('/', [HomeController::class,'home']);
+Route::get('/', [HomeController::class, 'home']);
 Route::get('/shop-details/{id}', [HomeController::class, 'show_details']);
 Route::get('feature/{feature_id}', [HomeController::class, 'show_product_home'])->name('showproducthome');
 
 //Products
-Route::get('/tat-ca-san-pham', [ProductController::class,'all_products']);
+Route::get('/tat-ca-san-pham', [ProductController::class, 'all_products']);
 
 
 //Login
-Route::post('/login-user', [UserController::class,'login_user']);
-Route::get('/logout-user', [UserController::class,'logout_user']);
+Route::post('/login-user', [UserController::class, 'login_user']);
+Route::get('/logout-user', [UserController::class, 'logout_user']);
 
+//Register
+Route::post('/register-user', [UserController::class, 'register_user']);
 
 //Show all Page
-Route::get('/{name?}',[MyController::class, 'index']);
+Route::get('/{name?}', [MyController::class, 'index']);
