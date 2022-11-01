@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CouponController;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,10 @@ Route::post('/update-cart', [CartController::class,'update_cart']);
 //Coupon
 Route::post('/check-coupon', [CouponController::class,'check_coupon']);
 Route::get('/delete-coupon', [CouponController::class,'delete_coupon']);
+
+//Blog
+Route::get('/blog', [BlogController::class,'blog']);
+Route::get('/blog-detail/{id}', [BlogController::class,'blog_detail']);
 
 //Show all Page
 Route::get('/{name?}',[MyController::class, 'index']);

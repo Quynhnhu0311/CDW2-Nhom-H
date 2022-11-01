@@ -18,6 +18,10 @@ class DatabaseSeeder extends Seeder
         $this->call([Manufactures::class]);
         $this->call([Features::class]);
         $this->call([Users::class]);
+<<<<<<< HEAD
         $this->call([Coupons::class]);
+=======
+        $this->call([Blog::class]);
+>>>>>>> origin/blog
     }
 }
