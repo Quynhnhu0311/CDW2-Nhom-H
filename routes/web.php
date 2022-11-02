@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CouponController;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,9 @@ Route::post('/update-cart', [CartController::class,'update_cart']);
 //Coupon
 Route::post('/check-coupon', [CouponController::class,'check_coupon']);
 Route::get('/delete-coupon', [CouponController::class,'delete_coupon']);
+
+//Checkout
+Route::post('/confirm-order', [CheckoutController::class,'confirm_order']);
 
 //Show all Page
 Route::get('/{name?}',[MyController::class, 'index']);

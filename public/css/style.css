@@ -2593,7 +2593,7 @@ ol {
 	width: 100%;
 	border: 1px solid #e1e1e1;
 	font-size: 14px;
-	color: #b7b7b7;
+	color: #000;
 	padding-left: 20px;
 	margin-bottom: 20px;
 }
@@ -4006,4 +4006,48 @@ a.checkout_cart.primary-btn:hover {
 button.check_coupon:hover {
     background-color: #eee3e370;
     color: #000;
+}
+
+/* Select CSS */
+div.checkout__input.select {
+    margin-left: 16px;
+    margin-bottom: 20px;
+}
+select#province {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+    border: 1px solid #e1e1e1;
+    font-size: 14px;
+    font-weight: bold;
+}
+select#district {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-align: center;
+    border: 1px solid #e1e1e1;
+    font-size: 14px;
+    font-weight: bold;
+}
+select#town {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: center;
+    border: 1px solid #e1e1e1;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Page Success */
+.success {
+    font-size: 60px;
+    font-weight: bold;
+    color: #dc3535;
+    padding-left: 235px;
 }

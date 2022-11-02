@@ -11,18 +11,20 @@
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
-    rel="stylesheet">
-
+        rel="stylesheet">
     <!-- Css Styles -->
+    <link rel="stylesheet" href="{{ url ('css/select.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url ('css/bootstrap.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url ('css/font-awesome.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url ('css/elegant-icons.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url ('css/magnific-popup.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ url ('css/nice-select.css') }}" type="text/css">
+    <!-- <link rel="stylesheet" href="{{ url ('css/nice-select.css') }}" type="text/css"> -->
     <link rel="stylesheet" href="{{ url ('css/owl.carousel.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url ('css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url ('css/style.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url ('css/sweetalert.css') }}" type="text/css">
+
+
 </head>
 
 <body>
@@ -142,22 +144,23 @@
                         $subqty = 0;
                     ?>
                     @if(Session::has('cart') != null)
-                        @foreach(Session::get('cart') as $key => $cart)
-                        <?php
+                    @foreach(Session::get('cart') as $key => $cart)
+                    <?php
                             $subqty += $cart['product_qty']++;
                         ?>
-                        @endforeach
-                        <div class="header__nav__option">
-                            <a href="#" class="search-switch"><img src="{{ asset ('img/icon/search.png') }}" alt=""></a>
-                            <a href="#"><img src="{{ asset ('img/icon/heart.png') }}" alt=""></a>
-                            <a href="/gio-hang"><img src="{{ asset ('img/icon/cart.png') }}" alt=""> <span>{{$subqty}}</span></a>
-                        </div>
+                    @endforeach
+                    <div class="header__nav__option">
+                        <a href="#" class="search-switch"><img src="{{ asset ('img/icon/search.png') }}" alt=""></a>
+                        <a href="#"><img src="{{ asset ('img/icon/heart.png') }}" alt=""></a>
+                        <a href="/gio-hang"><img src="{{ asset ('img/icon/cart.png') }}" alt="">
+                            <span>{{$subqty}}</span></a>
+                    </div>
                     @else
-                        <div class="header__nav__option">
-                            <a href="#" class="search-switch"><img src="{{ asset ('img/icon/search.png') }}" alt=""></a>
-                            <a href="#"><img src="{{ asset ('img/icon/heart.png') }}" alt=""></a>
-                            <a href="/gio-hang"><img src="{{ asset ('img/icon/cart.png') }}" alt=""> <span>0</span></a>
-                        </div>
+                    <div class="header__nav__option">
+                        <a href="#" class="search-switch"><img src="{{ asset ('img/icon/search.png') }}" alt=""></a>
+                        <a href="#"><img src="{{ asset ('img/icon/heart.png') }}" alt=""></a>
+                        <a href="/gio-hang"><img src="{{ asset ('img/icon/cart.png') }}" alt=""> <span>0</span></a>
+                    </div>
                     @endif
                 </div>
             </div>
@@ -222,10 +225,10 @@
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         <p>Copyright ©
                             <script>
-                                document.write(new Date().getFullYear());
+                            document.write(new Date().getFullYear());
                             </script>2020
                             All rights reserved | This template is made with <i class="fa fa-heart-o"
-                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                         </p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
@@ -247,6 +250,10 @@
     <!-- Search End -->
 
     <!-- Js Plugins -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="{{ url ('js/data.json') }}"></script>
     <script src="{{ url ('js/jquery.min.js') }}"></script>
     <script src="{{ url ('js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ url ('js/bootstrap.min.js') }}"></script>
@@ -260,9 +267,10 @@
     <script src="{{ url ('js/main.js') }}"></script>
     <script src="{{ url ('js/sweetalert.js') }}"></script>
 
+    <!-- Chức năng thêm sản phẩm vào giỏ hàng -->
     <script type="text/javascript">
         $(document).ready(function() {
-            $('.add-to-cart-btn').click(function(){
+            $('.add-to-cart-btn').click(function() {
                 var id = $(this).data('id');
                 var cart_product_id = $('.cart_product_id_' + id).val();
                 var cart_product_name = $('.cart_product_name_' + id).val();
@@ -273,25 +281,76 @@
                 $.ajax({
                     url: "{{url('/add-cart-ajax')}}",
                     method: 'POST',
-                    data: {cart_product_id:cart_product_id,cart_product_name:cart_product_name,cart_product_price:cart_product_price,
-                        cart_product_image:cart_product_image,cart_product_qty:cart_product_qty,_token:_token},
-                    success:function(data){
+                    data: {
+                        cart_product_id: cart_product_id,
+                        cart_product_name: cart_product_name,
+                        cart_product_price: cart_product_price,
+                        cart_product_image: cart_product_image,
+                        cart_product_qty: cart_product_qty,
+                        _token: _token
+                    },
+                    success: function(data) {
                         swal({
-                            title: "Add Cart Successfully!",
-                            text: "Please go to cart to review your shopping cart",
-                            showCancelButton: true,
-                            cancelButtonText: "See More",
-                            confirmButtonClass: "btn-success",
-                            confirmButtonText: "Go To Cart",
-                            closeOnConfirm: false
+                                title: "Add Cart Successfully!",
+                                text: "Please go to cart to review your shopping cart",
+                                showCancelButton: true,
+                                cancelButtonText: "See More",
+                                confirmButtonClass: "btn-success",
+                                confirmButtonText: "Go To Cart",
+                                closeOnConfirm: false
                             },
                             function() {
-                            window.location.href = "{{ url('/gio-hang') }}";
-                        });
+                                window.location.href = "{{ url('/gio-hang') }}";
+                            });
                     }
                 });
             });
         });
     </script>
+
+    <!-- API lấy ra địa chỉ -->
+    <script>
+        $(function() {
+            apiProvince = (prodvince) => {
+                let district;
+
+                prodvince.forEach(element => {
+                    $('#province').append(`<option value="${element.code}">${element.name}</option>`)
+                });
+                $('#province').change(function() {
+                    $('#district').html('<option value="-1">Select District</option>')
+                    $('#town').html('<option value = "-1"> Select Town </option>')
+                    let value = $(this).val();
+                    $.each(prodvince, function(index, element) {
+                        if (element.code == value) {
+                            district = element.districts;
+                            $.each(element.districts, function(index, element1) {
+                                $('#district').append(
+                                    `<option value="${element1.code}">${element1.name}</option>`
+                                    )
+                            })
+
+                        }
+                    })
+                });
+                $('#district').change(function() {
+                    $('#town').html('<option value = "-1"> Select Town </option>')
+                    let value = $(this).val();
+                    $.each(district, function(index, element) {
+                        if (element.code == value) {
+                            element.wards.forEach(element1 => {
+                                $('#town').append(
+                                    `<option value="${element1.code}">${element1.name}</option>`
+                                    )
+                            });
+                        }
+                    })
+                });
+            }
+            prodvince = JSON.parse(data);
+            apiProvince(prodvince);
+        });
+    </script>
 </body>
+
 </html>
