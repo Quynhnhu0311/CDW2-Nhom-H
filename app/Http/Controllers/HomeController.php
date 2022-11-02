@@ -9,7 +9,6 @@ use DB;
 use Illuminate\Support\Facades\Redirect;
 use Session;
 
-
 class HomeController extends Controller
 {
     function home() {

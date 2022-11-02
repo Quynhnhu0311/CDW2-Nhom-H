@@ -213,7 +213,13 @@
                                 <div class="product__item">
                                     <div class="product__item__pic set-bg" data-setbg="{{ asset('./img/product/'.$allProducts->product_img) }}">
                                         <ul class="product__hover">
-                                            <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                            <form action="{{ url('favorite') }}" method="POST" enctype="multipart/form-data">
+                                            {{ csrf_field() }}   
+                                                <input type="hidden" value="{{ $allProducts->product_id }}" name="favorite_product_id">
+                                                <?php  $id = Session::get('id'); ?>
+                                                <input type="hidden" value="<?php echo $id ?>" name="favorite_user_id">
+                                                <input name="submit-favorite" value="" type="submit">
+                                            </form>
                                             <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
                                             <li><a href="/shop-details/{{ $allProducts->product_id }}"><img src="img/icon/search.png" alt=""></a></li>
                                         </ul>

@@ -176,7 +176,13 @@
                         <div class="product__item__pic set-bg" data-setbg="{{ asset('/img/product/'.$related->product_img) }}">
                             <span class="label">New</span>
                             <ul class="product__hover">
-                                <li><a href="#"><img src="{{ asset ('img/icon/heart.png') }}" alt=""></a></li>
+                                <form action="{{ url('favorite') }}" method="POST" enctype="multipart/form-data">
+                                {{ csrf_field() }}   
+                                    <input type="hidden" value="{{ $related->product_id }}" name="favorite_product_id">
+                                    <?php  $id = Session::get('id'); ?>
+                                        <input type="hidden" value="<?php echo $id ?>" name="favorite_user_id">
+                                        <input name="submit-favorite" value="" type="submit">
+                                </form>
                                 <li><a href="#"><img src="{{ asset ('img/icon/compare.png') }}" alt=""> <span>Compare</span></a></li>
                                 <li><a href="/shop-details/{{ $related->product_id }}"><img src="{{ asset ('img/icon/search.png') }}" alt=""></a></li>
                             </ul>
@@ -268,7 +274,7 @@
                     </div>
                     <div class="content-comment">
                         @foreach($detail as $product_detail)
-                        <form action="  route('comment-product',['id' => $product_detail->product_id])" method="POST"  enctype="multipart/form-data">
+                        <form action="route('comment-product',['id' => $product_detail->product_id])" method="POST"  enctype="multipart/form-data">
                         @endforeach
                         {{ csrf_field() }}
                             <?php 
