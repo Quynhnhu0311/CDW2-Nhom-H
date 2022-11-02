@@ -11,7 +11,18 @@ session_start();
 
 class CartController extends Controller
 {
+    function AuthLogin() {
+        $customer_id = Session::get('id');
+        if($customer_id){
+            return Redirect::to('/');
+        }
+        else{
+            return Redirect::to('/login')->send();
+        }
+    }
+
     function gio_hang(Request $request) {
+        $this->AuthLogin();
         $meta_desc = "Giỏ hàng của bạn";
         $meta_keywords = "Giỏ hàng Ajax";
         $meta_title = "Giỏ hàng Ajax";
@@ -20,6 +31,7 @@ class CartController extends Controller
     }
 
     public function add_cart_ajax(Request $request) {
+        $this->AuthLogin();
         $data = $request->all();
         $session_id = substr(md5(microtime()),rand(0,26),5);
         $cart = Session::get('cart');
@@ -56,6 +68,7 @@ class CartController extends Controller
     }
 
     function delete_product_cart($session_id) {
+        $this->AuthLogin();
         $cart = Session::get('cart');
         if($cart == true) {
             foreach($cart as $key => $val) {
@@ -72,6 +85,7 @@ class CartController extends Controller
     }
 
     public function update_cart(Request $request) {
+        $this->AuthLogin();
         $data = $request->all();
         $cart = Session::get('cart');
         if($cart == true){

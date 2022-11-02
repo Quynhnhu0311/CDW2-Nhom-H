@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +51,9 @@ Route::get('/delete-coupon', [CouponController::class,'delete_coupon']);
 //Blog
 Route::get('/blog', [BlogController::class,'blog']);
 Route::get('/blog-detail/{id}', [BlogController::class,'blog_detail']);
+
+//Checkout
+Route::post('/confirm-order', [CheckoutController::class,'confirm_order']);
 
 //Show all Page
 Route::get('/{name?}',[MyController::class, 'index']);
