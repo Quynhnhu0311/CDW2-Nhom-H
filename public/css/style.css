@@ -3970,6 +3970,12 @@ input[name="submit-comment"] {
     margin-left: auto;
     display: block;
 }
+input[name="submit-favorite"] {
+	background:url('../img/icon/heart.png') center no-repeat #ffff;
+	width: 100%;
+	height: 100%;
+	border:none;
+}
 .comment {
 	padding-bottom: 50px;
 }

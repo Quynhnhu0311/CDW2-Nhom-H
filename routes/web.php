@@ -10,6 +10,7 @@ use App\Http\Controllers\CouponController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\FavoriteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,10 @@ Route::get('/tat-ca-san-pham', [ProductController::class,'all_products']);
 //Comment Product
 Route::post('/shop-details/{id}', [HomeController::class, 'comment_product'])->name('comment-product');;
 
+//Favorite Product
+Route::post('/favorite', [FavoriteController::class,'add_favorite'])->name('add-favorite');
+Route::get('/favorite/{favorite_id}', [FavoriteController::class, 'show_favorite_user'])->name('showfavorite');
+Route::DELETE('favorite/{favorite_id}', [FavoriteController::class, 'delete_favorite_user']);
 
 //Login
 Route::post('/login-user', [UserController::class,'login_user']);

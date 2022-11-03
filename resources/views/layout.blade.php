@@ -60,7 +60,7 @@
         </div>
         <div class="offcanvas__nav__option">
             <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
-            <a href="#"><img src="img/icon/heart.png" alt=""></a>
+            <a href=""><img src="img/icon/heart.png" alt=""></a>
             <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
             <div class="price">$0.00</div>
         </div>
@@ -140,28 +140,24 @@
                     </nav>
                 </div>
                 <div class="col-lg-3 col-md-3">
-                    <?php
+                    <div class="header__nav__option">
+                        <a href="#" class="search-switch"><img src="{{ asset ('img/icon/search.png') }}" alt=""></a>
+                        <?php $id = Session::get('id'); ?>
+                        <a href="/favorite/<?php echo $id ?>"><img src="{{ asset ('img/icon/heart.png') }}" alt=""></a>
+                        <?php
                         $subqty = 0;
-                    ?>
-                    @if(Session::has('cart') != null)
-                    @foreach(Session::get('cart') as $key => $cart)
-                    <?php
-                            $subqty += $cart['product_qty']++;
                         ?>
-                    @endforeach
-                    <div class="header__nav__option">
-                        <a href="#" class="search-switch"><img src="{{ asset ('img/icon/search.png') }}" alt=""></a>
-                        <a href="#"><img src="{{ asset ('img/icon/heart.png') }}" alt=""></a>
-                        <a href="/gio-hang"><img src="{{ asset ('img/icon/cart.png') }}" alt="">
-                            <span>{{$subqty}}</span></a>
+                        @if(Session::has('cart') != null)
+                            @foreach(Session::get('cart') as $key => $cart)
+                            <?php
+                                $subqty += $cart['product_qty']++;
+                            ?>
+                            @endforeach
+                                <a href="/gio-hang"><img src="{{ asset ('img/icon/cart.png') }}" alt=""> <span>{{$subqty}}</span></a>
+                        @else
+                                <a href="/gio-hang"><img src="{{ asset ('img/icon/cart.png') }}" alt=""> <span>0</span></a>
+                        @endif
                     </div>
-                    @else
-                    <div class="header__nav__option">
-                        <a href="#" class="search-switch"><img src="{{ asset ('img/icon/search.png') }}" alt=""></a>
-                        <a href="#"><img src="{{ asset ('img/icon/heart.png') }}" alt=""></a>
-                        <a href="/gio-hang"><img src="{{ asset ('img/icon/cart.png') }}" alt=""> <span>0</span></a>
-                    </div>
-                    @endif
                 </div>
             </div>
             <div class="canvas__open"><i class="fa fa-bars"></i></div>

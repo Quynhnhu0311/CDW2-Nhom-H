@@ -5,10 +5,10 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Feature;
 use App\Models\Comment;
+use App\Models\Favorite;
 use DB;
 use Illuminate\Support\Facades\Redirect;
 use Session;
-
 
 class HomeController extends Controller
 {
@@ -17,10 +17,12 @@ class HomeController extends Controller
         $bestSellers = Product::where('feature_id','=',2)->get();
         $features = DB::table('features')->get();
         $products_feature =Product::where('feature_id','=',1)->Paginate(4);
+        $duplicate = DB::table('favorites')->join('products','products.product_id','=','favorites.product_id')->get();
         return view('/index')->with('newArrivals',$newArrivals)
                             ->with('bestSellers',$bestSellers)
                             ->with('features', $features)
-                            ->with('products_feature',$products_feature);
+                            ->with('products_feature',$products_feature)
+                            ->with('duplicate', $duplicate);
     }
     // Show Product Home Page
     public function show_product_home($feature_id) {
@@ -28,7 +30,8 @@ class HomeController extends Controller
         $features = DB::table('features')->get();
         $feature_id = Feature::where('feature_id',$feature_id)->first();
         $products_feature = Product::where('feature_id',$feature_id->feature_id)->Paginate(4);
-        return view('/index',compact('bestSellers','features','products_feature'));
+        $duplicate = DB::table('favorites')->join('products','products.product_id','=','favorites.product_id')->get();
+        return view('/index',compact('bestSellers','features','products_feature','duplicate'));
     }
     //Detail Product and Related Product
     public function show_details($id)
