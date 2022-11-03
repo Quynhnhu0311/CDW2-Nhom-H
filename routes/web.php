@@ -9,6 +9,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,9 @@ use App\Http\Controllers\CheckoutController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+/*====== Authen ===== */
+//Authenticate
+Route::get('/admin.dashboard',[AdminController::class, 'show_dashboard']);
 
 /* =====Front-End===== */
 //Home
