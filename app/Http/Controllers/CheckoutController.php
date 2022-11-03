@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Redirect;
 use App\Models\Order;
 use App\Models\Shipping;
 use App\Models\Detail_order;
+use App\Models\Coupon;
 use Cart;
 use DB;
 use Session;
@@ -54,11 +55,12 @@ class CheckoutController extends Controller
         $order['created_at'] = now();
         $order->save();
 
-        // if(Session::get('coupon')==true){
-        //     $coupon = DB::table('coupons')->where('coupon_code',$order->order_code)->first();
-        //     $coupon->coupon_qty = $coupon->coupon_qty - 1;
-        //     $coupon->save();
-        // }
+        //Khi sử dụng coupon thì số lượng giảm
+        if(Session::get('coupon') == true){
+            $coupon = Coupon::where('coupon_code','=',$data['order_coupon'])->first();
+            $coupon->coupon_qty = $coupon->coupon_qty - 1;
+            $coupon->save();
+        }
 
         //Thông tin Detail Order
         if(Session::get('cart')){
