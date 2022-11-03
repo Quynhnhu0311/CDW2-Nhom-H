@@ -73,43 +73,6 @@ class CheckoutController extends Controller
             }
         }
 
-
-    // $title_mail = "Đơn hàng xác nhận";
-    // $customer = DB::table('users')->find(Session::get('id'));
-    // $data['email'][] = $customer->email;
-
-    // if(Session::get('cart')==true){
-    //     foreach(Session::get('cart') as $key => $cart_mail){
-    //         $cart_array[] = array(
-    //             'product_name' => $cart_mail['product_name'],
-    //             'product_price' => $cart_mail['product_price'],
-    //             'product_qty' => $cart_mail['product_qty']
-
-    //         );
-    //     }
-    // }
-
-    // $shipping_array = array(
-    //     'customer_name' => $customer->name,
-    //     'shipping_name' => $data['shipping_name'],
-    //     'shipping_email' => $data['shipping_email'],
-    //     'shipping_phone' => $data['shipping_phone'],
-    //     'shipping_address' => $data['shipping_address'],
-    //     'shipping_note' => $data['shipping_note']
-    // );
-
-    // $ordercode_mail = array(
-    //     //'coupon_code' => $coupon_mail,
-    //     'order_code' => $checkout_code
-    // );
-
-    // Mail::send('mail_order', ['cart_array'=>$cart_array, 'shipping_array' => $shipping_array, 'code' => $ordercode_mail]
-    // , function($message) use ($title_mail,$data){
-    //     $message->to($data['email'])->subject($title_mail);
-    //     $message->from($data['email'],$title_mail);
-    // });
-
-
     $request->session()->forget(['cart']);
     $request->session()->forget(['coupon']);
     return view('/success');

@@ -4008,7 +4008,7 @@ button.check_coupon:hover {
     color: #000;
 }
 
-<<<<<<< HEAD
+
 /* Rating */
 .ratings {
 	color : #ffc700;
@@ -4054,7 +4054,7 @@ button.check_coupon:hover {
 	.rating-container textarea:focus, .rating-container input:focus {
 	color: #000;
 	}
-=======
+
 /* Select CSS */
 div.checkout__input.select {
     margin-left: 16px;
@@ -4098,4 +4098,3 @@ select#town {
     color: #dc3535;
     padding-left: 235px;
 }
->>>>>>> function_checkout
