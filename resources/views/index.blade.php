@@ -115,19 +115,19 @@
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="{{ asset('/img/product/'.$bestSellers->product_img) }}">
                                     <ul class="product__hover">
-                                        <form action="{{ url('favorite') }}" method="POST" enctype="multipart/form-data">
+                                        <form action="{{ url ('favorite')}}" method="POST" enctype="multipart/form-data">
                                         {{ csrf_field() }}   
                                             <input type="hidden" value="{{ $bestSellers->product_id }}" name="favorite_product_id">
                                             <?php  $id = Session::get('id'); ?>
                                             <input type="hidden" value="<?php echo $id ?>" name="favorite_user_id">
-                                            <input name="submit-favorite" value="" type="submit">
+                                            <input style="" name="submit-favorite" value="" type="submit"  >              
                                         </form>
-                                        <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
+                                        <li><a href="#"><img src="{{ asset('img/icon/compare.png') }}" alt=""> <span>Compare</span></a></li>
                                         <li><a href="/shop-details/{{ $bestSellers->product_id }}"><img src="{{ asset ('img/icon/search.png') }}" alt=""></a></li>                                    
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6>{{ $bestSellers->product_name }}</h6>
+                                    <h6 >{{ $bestSellers->product_name }}</h6>
                                     <div class="add-to-cart">
                                         <input type="hidden" value="{{ $bestSellers->product_id }}" class="cart_product_id_{{ $bestSellers->product_id }}">
                                         <input type="hidden" value="{{ $bestSellers->product_name }}" class="cart_product_name_{{ $bestSellers->product_id }}">

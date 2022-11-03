@@ -16,13 +16,15 @@ class FavoriteController extends Controller
         $favorite['product_id'] = $request->favorite_product_id;
         $favorite['id'] = $request->favorite_user_id;
         $id = Session::get('id');
-        $duplicate =DB::table('favorites')->get();
-        foreach($duplicate as $row) {
-            $id_product = $row->product_id;
-        }
-        if($id) {
-                    DB::table('favorites')->insert($favorite);
-                    return Redirect::to('favorite/'.$id); 
+        $duplicate = DB::table('favorites')->where('product_id',$request->favorite_product_id)->first();
+        if($id) { 
+            if (!$duplicate){
+                DB::table('favorites')->insert($favorite);
+                return Redirect::to('favorite/'.$id);
+            }
+            else {
+                return redirect()->back();
+            }
         }else {
             return Redirect::to('/');
         }

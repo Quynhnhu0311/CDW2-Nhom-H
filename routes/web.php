@@ -34,7 +34,7 @@ Route::post('/shop-details/{id}', [HomeController::class, 'comment_product'])->n
 
 //Favorite Product
 Route::post('/favorite', [FavoriteController::class,'add_favorite'])->name('add-favorite');
-Route::get('/favorite/{id}', [FavoriteController::class, 'show_favorite_user']);
+Route::get('/favorite/{favorite_id}', [FavoriteController::class, 'show_favorite_user'])->name('showfavorite');
 Route::DELETE('favorite/{favorite_id}', [FavoriteController::class, 'delete_favorite_user']);
 
 //Login

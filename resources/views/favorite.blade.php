@@ -62,7 +62,7 @@
                                             <form class="btn btn-danger btn-sm" method="POST" action="{{ $favorite_id->favorite_id }}" onsubmit="return confirm('Bạn Có Muốn Xóa Không?')">
                                                 @method('DELETE')
                                                 @csrf
-                                                <button type="submit"><i class="fa fa-close"></i>Delete</button>
+                                                <button type="submit"><i class="fa fa-close"></i></button>
                                             </form>
                                         </td>
                                     </tr>
