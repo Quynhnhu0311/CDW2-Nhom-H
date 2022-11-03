@@ -57,7 +57,7 @@
                             </div>
                         </div>
                         <div class="checkout__input">
-                            <input type="text" placeholder="Street Address" class="checkout__input__add" required>
+                            <input type="text" placeholder="Street Address" class="checkout__input__add" name="shipping_address" required>
                         </div>
                         <div class="row">
                             <div class="col-lg-6">

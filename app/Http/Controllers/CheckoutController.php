@@ -37,6 +37,7 @@ class CheckoutController extends Controller
         $shipping->customer_province = $data['shipping_province'];
         $shipping->customer_district = $data['shipping_district'];
         $shipping->customer_town = $data['shipping_town'];
+        $shipping->customer_address = $data['shipping_address'];
         $shipping->customer_phone = $data['shipping_phone'];
         $shipping->customer_note = $data['shipping_note'];
         $shipping->save();
@@ -55,23 +56,78 @@ class CheckoutController extends Controller
 
         // if(Session::get('coupon')==true){
         //     $coupon = DB::table('coupons')->where('coupon_code',$order->order_code)->first();
-        //     $coupon->coupon_time = $coupon->coupon_time - 1;
+        //     $coupon->coupon_qty = $coupon->coupon_qty - 1;
         //     $coupon->save();
         // }
 
-        //Thôn tin Detail Order
+        //Thông tin Detail Order
         if(Session::get('cart')){
-            foreach(Session::get('cart') as $key => $cart){
-                $order_detail = new Detail_order;
-                $order_detail->order_code = $checkout_code;
-                $order_detail->product_id = $cart['product_id'];
-                $order_detail->product_name	 = $cart['product_name'];
-                $order_detail->product_price = $cart['product_price'];
-                $order_detail->product_qty = $cart['product_qty'];
-                $order_detail->coupon_code = $data['order_coupon'];
-                $order_detail->save();
+            if(Session::get('coupon')==true){
+                foreach(Session::get('cart') as $key => $cart){
+                    $order_detail = new Detail_order;
+                    $order_detail->order_code = $checkout_code;
+                    $order_detail->product_id = $cart['product_id'];
+                    $order_detail->product_name	 = $cart['product_name'];
+                    $order_detail->product_price = $cart['product_price'];
+                    $order_detail->product_qty = $cart['product_qty'];
+                    $order_detail->coupon_code = $data['order_coupon'];
+                    $order_detail->save();
+                }
             }
         }
+
+    //Send Mail
+    $title_mail = "Đơn hàng xác nhận";
+    $customer = DB::table('users')->find(Session::get('id'));
+    $data['email'][] = $customer->email;
+
+    if(Session::get('cart')==true){
+        foreach(Session::get('cart') as $key => $cart_mail){
+            $cart_array[] = array(
+                'product_name' => $cart_mail['product_name'],
+                'product_price' => $cart_mail['product_price'],
+                'product_qty' => $cart_mail['product_qty']
+
+            );
+        }
+    }
+
+    if(Session::get('coupon')==true){
+        foreach(Session::get('coupon') as $row => $coupon_mail){
+            $coupon_array = array(
+                'coupon_code' => $data['order_coupon']
+            );
+        }
+    }
+    else{
+        $coupon_array = array(
+            'coupon_code' => 0
+        );
+    }
+
+    $shipping_array = array(
+        'customer_name' => $customer->name,
+        'shipping_fistname' =>  $data['shipping_fistname'],
+        'shipping_lastname' =>  $data['shipping_lastname'],
+        'shipping_email' => $data['shipping_email'],
+        'shipping_province' => $data['shipping_province'],
+        'shipping_district' => $data['shipping_district'],
+        'shipping_town' => $data['shipping_town'],
+        'shipping_address' => $data['shipping_address'],
+        'shipping_phone' => $data['shipping_phone'],
+        'shipping_note' => $data['shipping_note']
+    );
+
+    $ordercode_mail = array(
+        'order_code' => $checkout_code
+    );
+
+    Mail::send('mail_order', ['cart_array'=>$cart_array, 'coupon_array'=>$coupon_array, 'shipping_array' => $shipping_array, 'code' => $ordercode_mail]
+    , function($message) use ($title_mail,$data){
+        $message->to($data['email'])->subject($title_mail);
+        $message->from($data['email'],$title_mail);
+    });
+
 
     $request->session()->forget(['cart']);
     $request->session()->forget(['coupon']);

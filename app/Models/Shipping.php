@@ -9,7 +9,7 @@ class Shipping extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'customer_fistname','customer_lastname','customer_province','customer_district','customer_town','customer_email','customer_phone','customer_note'
+        'customer_fistname','customer_lastname','customer_province','customer_district','customer_town','customer_address','customer_email','customer_phone','customer_note'
     ];
     protected $primaryKey = 'shipping_id';
     protected $table = 'shippings';

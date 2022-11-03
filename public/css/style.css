@@ -4098,3 +4098,68 @@ select#town {
     color: #dc3535;
     padding-left: 235px;
 }
+
+/* Mail */
+.header-mail {
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+}
+.mail {
+    background: #222;
+    border-radius: 12px;
+    padding:15px;
+}
+.body-mail {
+    background: cadetblue;
+    padding: 15px;
+}
+.title-mail {
+    text-align:center;
+    color:#fff;
+    font-weight:bold;
+    font-size:30px;
+}
+.title-mail h4 {
+    margin:0;
+}
+.cart-information h4 {
+    color:#000;
+    text-transform:uppercase;
+}
+.welcome {
+    color:#fff;
+}
+.welcome strong{
+    color:#000;
+    text-decoration:underline;
+}
+.cart-information strong{
+    color:#fff;
+    text-transform:uppercase;
+}
+.receiver-information h4{
+    color:#000;
+    text-transform:uppercase;
+}
+.receiver-information span {
+    color:#fff;
+}
+.notification {
+    color:#fff;
+}
+.product-information h4{
+    color:#000;
+    text-transform:uppercase;
+}
+.product-information table{
+    border:1px;
+}
+.total {
+    text-align: right;
+}
+.history p{
+    color:#fff;
+    text-align:center;
+    font-size:15px;
+}

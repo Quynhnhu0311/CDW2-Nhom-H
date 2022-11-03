@@ -17,10 +17,11 @@ class CreateShippingsTable extends Migration
             $table->id('shipping_id');
             $table->string('customer_fistname',50);
             $table->string('customer_lastname',50);
-            $table->string('customer_province',100);
-            $table->string('customer_district',100);
-            $table->string('customer_town',100);
-            $table->string('customer_email',50);
+            $table->string('customer_province',200);
+            $table->string('customer_district',200);
+            $table->string('customer_town',200);
+            $table->string('customer_address',200);
+            $table->string('customer_email',100);
             $table->double('customer_phone',11);
             $table->string('customer_note',100);
             $table->timestamps();
