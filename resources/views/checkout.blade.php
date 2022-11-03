@@ -1,132 +1,130 @@
 @extends('layout')
 @section('content')
-    <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-option">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb__text">
-                        <h4>Check Out</h4>
-                        <div class="breadcrumb__links">
-                            <a href="./index.html">Home</a>
-                            <a href="./shop.html">Shop</a>
-                            <span>Check Out</span>
-                        </div>
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__text">
+                    <h4>Check Out</h4>
+                    <div class="breadcrumb__links">
+                        <a href="/">Home</a>
+                        <a href="/tat-ca-san-pham">Shop</a>
+                        <span>Check Out</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Breadcrumb Section End -->
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
 
-    <!-- Checkout Section Begin -->
-    <section class="checkout spad">
-        <div class="container">
-            <div class="checkout__form">
-                <form action="#">
-                    <div class="row">
-                        <div class="col-lg-8 col-md-6">
-                            <h6 class="coupon__code"><span class="icon_tag_alt"></span> Have a coupon? <a href="#">Click
-                            here</a> to enter your code</h6>
-                            <h6 class="checkout__title">Billing Details</h6>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="checkout__input">
-                                        <p>Fist Name<span>*</span></p>
-                                        <input type="text">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="checkout__input">
-                                        <p>Last Name<span>*</span></p>
-                                        <input type="text">
-                                    </div>
+<!-- Checkout Section Begin -->
+<section class="checkout spad">
+    <div class="container">
+        <div class="checkout__form">
+            <form action="/confirm-order" method="POST">
+                @csrf
+                <div class="row">
+                    <div class="col-lg-7 col-md-6">
+                        <h6 class="checkout__title">Billing Details</h6>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Fist Name<span>*</span></p>
+                                    <input type="text" class="input" name="shipping_fistname" required>
                                 </div>
                             </div>
-                            <div class="checkout__input">
-                                <p>Country<span>*</span></p>
-                                <input type="text">
-                            </div>
-                            <div class="checkout__input">
-                                <p>Address<span>*</span></p>
-                                <input type="text" placeholder="Street Address" class="checkout__input__add">
-                                <input type="text" placeholder="Apartment, suite, unite ect (optinal)">
-                            </div>
-                            <div class="checkout__input">
-                                <p>Town/City<span>*</span></p>
-                                <input type="text">
-                            </div>
-                            <div class="checkout__input">
-                                <p>Country/State<span>*</span></p>
-                                <input type="text">
-                            </div>
-                            <div class="checkout__input">
-                                <p>Postcode / ZIP<span>*</span></p>
-                                <input type="text">
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="checkout__input">
-                                        <p>Phone<span>*</span></p>
-                                        <input type="text">
-                                    </div>
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Last Name<span>*</span></p>
+                                    <input type="text" class="input" name="shipping_lastname" required>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="checkout__input">
-                                        <p>Email<span>*</span></p>
-                                        <input type="text">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="checkout__input__checkbox">
-                                <label for="acc">
-                                    Create an account?
-                                    <input type="checkbox" id="acc">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <p>Create an account by entering the information below. If you are a returning customer
-                                please login at the top of the page</p>
-                            </div>
-                            <div class="checkout__input">
-                                <p>Account Password<span>*</span></p>
-                                <input type="text">
-                            </div>
-                            <div class="checkout__input__checkbox">
-                                <label for="diff-acc">
-                                    Note about your order, e.g, special noe for delivery
-                                    <input type="checkbox" id="diff-acc">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                            <div class="checkout__input">
-                                <p>Order notes<span>*</span></p>
-                                <input type="text"
-                                placeholder="Notes about your order, e.g. special notes for delivery.">
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="checkout__order">
+                        <div class="row">
+                            <div class="checkout__input select">
+                                <p>Address<span>*</span></p>
+                                <select name="shipping_province" id="province" required>
+                                    <option value="">Select Province</option>
+                                </select>
+                                <select name="shipping_district" id="district" required>
+                                    <option value="">Select District</option>
+                                </select>
+                                <select name="shipping_town" id="town" required>
+                                    <option value="">Select Town</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="checkout__input">
+                            <input type="text" placeholder="Street Address" class="checkout__input__add" name="shipping_address" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Phone<span>*</span></p>
+                                    <input type="text" name="shipping_phone" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Email<span>*</span></p>
+                                    <input type="text" name="shipping_email" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="checkout__input">
+                            <p>Order notes<span>*</span></p>
+                            <input type="text" name="shipping_note" placeholder="Notes about your order, e.g. special notes for delivery.">
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-4">
+                        <div class="checkout__order">
+                            <?php
+                                $total = 0;
+                                $subTotal = 0;
+                            ?>
+                            @if(Session::get('cart') == true)
                                 <h4 class="order__title">Your order</h4>
-                                <div class="checkout__order__products">Product <span>Total</span></div>
+                                <div class="checkout__order__products">Product
+                                    <span>Total</span>
+                                </div>
                                 <ul class="checkout__total__products">
-                                    <li>01. Vanilla salted caramel <span>$ 300.0</span></li>
-                                    <li>02. German chocolate <span>$ 170.0</span></li>
-                                    <li>03. Sweet autumn <span>$ 170.0</span></li>
-                                    <li>04. Cluten free mini dozen <span>$ 110.0</span></li>
+                                @foreach(Session::get('cart') as $key => $cart)
+                                    <?php
+                                        $total = $cart['product_price'] * $cart['product_qty'];
+                                        $subTotal += $total;
+                                    ?>
+                                    <li>{{ $cart['product_name'] }} | x{{ $cart['product_qty'] }}
+                                        <span>{{ number_format($total) }}đ</span>
+                                    </li>
+                                @endforeach
                                 </ul>
                                 <ul class="checkout__total__all">
-                                    <li>Subtotal <span>$750.99</span></li>
-                                    <li>Total <span>$750.99</span></li>
+                                    <li>Subtotal <span>{{ number_format($subTotal) }}đ</span></li>
+                                    @if(Session::get('coupon'))
+                                        @foreach(Session::get('coupon') as $key => $coupon_cart)
+                                            @if($coupon_cart['coupon_condition'] == 1)
+                                                <input class="input" type="hidden" name="order_coupon" value="{{ $coupon_cart['coupon_code'] }}">
+                                                <li>Discount <span>{{ number_format($coupon_cart['coupon_number']) }}đ</span></li>
+                                                <?php
+                                                    $total_coupon =  $subTotal - $coupon_cart['coupon_number'];
+                                                ?>
+                                                <li>Total <span>{{ number_format($total_coupon) }}đ</span></li>
+                                            @elseif($coupon_cart['coupon_condition'] == 2)
+                                                <input class="input" type="hidden" name="order_coupon" value="0">
+                                                <li>Discount <span>{{ number_format($coupon_cart['coupon_number']) }}%</span></li>
+                                                <?php
+                                                    $total_coupon = $subTotal - ($subTotal * $coupon_cart['coupon_number']) / 100;
+                                                ?>
+                                                <li>Total <span>{{ number_format($total_coupon) }}đ</span></li>
+                                            @endif
+                                        @endforeach
+                                    @else
+                                        <li>Discount <span>0</span></li>
+                                        <li>Total <span>{{ number_format($subTotal) }}đ</span></li>
+                                    @endif
                                 </ul>
-                                <div class="checkout__input__checkbox">
-                                    <label for="acc-or">
-                                        Create an account?
-                                        <input type="checkbox" id="acc-or">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adip elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua.</p>
                                 <div class="checkout__input__checkbox">
                                     <label for="payment">
                                         Check Payment
@@ -142,12 +140,13 @@
                                     </label>
                                 </div>
                                 <button type="submit" class="site-btn">PLACE ORDER</button>
-                            </div>
+                            @endif
                         </div>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
-    </section>
-    <!-- Checkout Section End -->
+    </div>
+</section>
+<!-- Checkout Section End -->
 @endsection

@@ -50,36 +50,38 @@
                                 <?php
                                     $subtotal = 0;
                                 ?>
-                                @foreach(Session::get('cart') as $key => $cart)
-                                    <?php
-                                        $cartPrice = $cart['product_qty'] * $cart['product_price'];
-                                        $subtotal += $cartPrice;
-                                    ?>
-                                    <tr>
-                                        <td class="product__cart__item">
-                                            <div class="product__cart__item__pic">
-                                                <img src="{{ asset('/img/product/'.$cart['product_image']) }}" alt="">
-                                            </div>
-                                            <div class="product__cart__item__text">
-                                                <h6>{{ $cart['product_name'] }}</h6>
-                                                <h5>{{ number_format($cart['product_price']) }}đ</h5>
-                                            </div>
-                                        </td>
-                                        <td class="quantity__item">
-                                            <div class="quantity">
-                                                <div class="pro-qty-2">
-                                                    <input type="text" class="cart_quantity" min="1" name="cart_qty[{{ $cart['session_id'] }}]" value="{{ $cart['product_qty'] }}">
+                                @if(Session::get('cart'))
+                                    @foreach(Session::get('cart') as $key => $cart)
+                                        <?php
+                                            $cartPrice = $cart['product_qty'] * $cart['product_price'];
+                                            $subtotal += $cartPrice;
+                                        ?>
+                                        <tr>
+                                            <td class="product__cart__item">
+                                                <div class="product__cart__item__pic">
+                                                    <img src="{{ asset('/img/product/'.$cart['product_image']) }}" alt="">
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td class="cart__price">{{ number_format($cartPrice) }}đ</td>
-                                        <td class="cart__close">
-                                            <a href="/delete-product-cart/{{ $cart['session_id'] }}">
-                                                <i class="fa fa-close"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                                <div class="product__cart__item__text">
+                                                    <h6>{{ $cart['product_name'] }}</h6>
+                                                    <h5>{{ number_format($cart['product_price']) }}đ</h5>
+                                                </div>
+                                            </td>
+                                            <td class="quantity__item">
+                                                <div class="quantity">
+                                                    <div class="pro-qty-2">
+                                                        <input type="text" class="cart_quantity" min="1" name="cart_qty[{{ $cart['session_id'] }}]" value="{{ $cart['product_qty'] }}">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="cart__price">{{ number_format($cartPrice) }}đ</td>
+                                            <td class="cart__close">
+                                                <a href="/delete-product-cart/{{ $cart['session_id'] }}">
+                                                    <i class="fa fa-close"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                @endif
                             </tbody>
                         </table>
                     </div>
@@ -109,28 +111,28 @@
                     <div class="cart__total">
                         <h6>Cart total</h6>
                         @if(Session::get('cart') == true)
-                        <ul>
-                            <li>Subtotal <span>{{ number_format($subtotal) }}đ</span></li>
-                            @if(Session::get('coupon'))
-                                @foreach(Session::get('coupon') as $row => $coupon)
-                                    @if($coupon['coupon_condition'] == 1)
-                                        <li>Discount <span>{{ number_format($coupon['coupon_number']) }}đ</span></li>
-                                        <?php
-                                            $total_coupon =  $subtotal - $coupon['coupon_number'];
-                                        ?>
-                                        <li>Total <span>{{ number_format($total_coupon) }}đ</span></li>
-                                    @elseif($coupon['coupon_condition'] == 2)
-                                        <li>Discount <span>{{ $coupon['coupon_number'] }}%</span></li>
-                                        <?php
-                                            $total_coupon = $subtotal - ($subtotal * $coupon['coupon_number']) / 100;
-                                        ?>
-                                        <li>Total <span>{{ number_format($total_coupon) }}đ</span></li>
-                                    @endif
-                                @endforeach
-                            @else
-                                <li>Total <span>{{ number_format($subtotal) }}đ</span></li>
-                            @endif
-                        </ul>
+                            <ul>
+                                <li>Subtotal <span>{{ number_format($subtotal) }}đ</span></li>
+                                @if(Session::get('coupon'))
+                                    @foreach(Session::get('coupon') as $row => $coupon)
+                                        @if($coupon['coupon_condition'] == 1)
+                                            <li>Discount <span>{{ number_format($coupon['coupon_number']) }}đ</span></li>
+                                            <?php
+                                                $total_coupon =  $subtotal - $coupon['coupon_number'];
+                                            ?>
+                                            <li>Total <span>{{ number_format($total_coupon) }}đ</span></li>
+                                        @elseif($coupon['coupon_condition'] == 2)
+                                            <li>Discount <span>{{ $coupon['coupon_number'] }}%</span></li>
+                                            <?php
+                                                $total_coupon = $subtotal - ($subtotal * $coupon['coupon_number']) / 100;
+                                            ?>
+                                            <li>Total <span>{{ number_format($total_coupon) }}đ</span></li>
+                                        @endif
+                                    @endforeach
+                                @else
+                                    <li>Total <span>{{ number_format($subtotal) }}đ</span></li>
+                                @endif
+                            </ul>
                         @endif
                         <div class="delete-coupons">
                             @if(Session::get('coupon'))

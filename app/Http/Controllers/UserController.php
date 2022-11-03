@@ -26,9 +26,11 @@ class UserController extends Controller
             return Redirect::to('/login');
         }
     }
-    function logout_user() {
+    function logout_user(Request $request) {
         Session::put('name',null);
         Session::put('id',null);
+        $request->session()->forget(['cart']);
+        $request->session()->forget(['coupon']);
         return Redirect::to('/');
     }
 }
