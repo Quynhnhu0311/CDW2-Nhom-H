@@ -8,9 +8,10 @@ use DB;
 
 class ProductController extends Controller
 {
-    function all_products() {
-        $products = DB::table('products')->orderby('product_id','desc')->get();
+    function all_products()
+    {
+        $products = DB::table('products')->orderby('product_id', 'desc')->get();
 
-        return view('shop')->with('products',$products);
+        return view('shop')->with('products', $products);
     }
 }
