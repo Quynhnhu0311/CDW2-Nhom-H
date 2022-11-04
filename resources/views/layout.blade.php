@@ -32,6 +32,11 @@
     <div id="preloder">
         <div class="loader"></div>
     </div>
+    @if (session('success'))
+    <div class="popup">
+        <p>{{ session('success') }}</p>
+    </div>
+    @endif
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
