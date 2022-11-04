@@ -10,8 +10,7 @@
     <title>Male-Fashion | Template</title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
-    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ url ('css/bootstrap.min.css') }}" type="text/css">
@@ -35,14 +34,13 @@
         <div class="offcanvas__option">
             <div class="offcanvas__links">
                 <?php
-                    $name = Session::get('name');
-                    if($name){
-                        echo $name;
-                        echo '<li><a href="/logout-user">Log out</a></li>';
-                    }
-                    else{
-                        echo '<a href="#">Sign in</a>';
-                    }
+                $name = Session::get('name');
+                if ($name) {
+                    echo $name;
+                    echo '<li><a href="/logout-user">Log out</a></li>';
+                } else {
+                    echo '<a href="#">Sign in</a>';
+                }
                 ?>
                 <a href="#">FAQs</a>
             </div>
@@ -82,18 +80,17 @@
                         <div class="header__top__right">
                             <div class="header__top__links">
                                 <?php
-                                    $name = Session::get('name');
-                                    if($name){
-                                        echo '<div class="header__top__hover">
-                                                <span>'.$name.'<i class="arrow_carrot-down"></i></span>
+                                $name = Session::get('name');
+                                if ($name) {
+                                    echo '<div class="header__top__hover">
+                                                <span>' . $name . '<i class="arrow_carrot-down"></i></span>
                                                 <ul>
                                                     <a href="/logout-user"><li>LOG OUT</li></a>
                                                 </ul>
                                             </div>';
-                                    }
-                                    else{
-                                        echo '<a href="/login">Sign in</a>';
-                                    }
+                                } else {
+                                    echo '<a href="/login">Sign in</a>';
+                                }
                                 ?>
                                 <a href="#">FAQs</a>
                             </div>
@@ -114,7 +111,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3">
                     <div class="header__logo">
-                        <a href="{{ url ('index') }}"><img src="{{ asset ('/img/logo.png') }}" alt=""></a>
+                        <a href="{{ url ('/') }}"><img src="{{ asset ('/img/logo.png') }}" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
@@ -208,8 +205,7 @@
                             <script>
                                 document.write(new Date().getFullYear());
                             </script>2020
-                            All rights reserved | This template is made with <i class="fa fa-heart-o"
-                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                         </p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
