@@ -30,6 +30,12 @@
     <div id="preloder">
         <div class="loader"></div>
     </div>
+    @if (session('success'))
+    <div class="popup">
+        <p>{{ session('success') }}</p>
+        <span class="close-favorite">OK</span>
+    </div>
+    @endif
     <!-- Offcanvas Menu Begin -->
     <div class="offcanvas-menu-overlay"></div>
     <div class="offcanvas-menu-wrapper">
@@ -256,7 +262,14 @@
     <script src="{{ url ('js/owl.carousel.min.js') }}"></script>
     <script src="{{ url ('js/main.js') }}"></script>
     <script src="{{ url ('js/sweetalert.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $(".close-favorite").click(function() {
+                $(this).parent().toggleClass('active');
+            });
+        }); 
 
+    </script>
     <script type="text/javascript">
         $(document).ready(function() {
             $('.add-to-cart-btn').click(function(){

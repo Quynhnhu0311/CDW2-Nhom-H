@@ -4015,13 +4015,54 @@ button.check_coupon:hover {
 }
 .popup {
 	position: fixed;
-	background-color: red;
+	background: #504d4d;
 	z-index: 9999;
-	top:50%;
 	left: 50%;
-	transform: translateX(-50%) translateY(-50%);
 	transition: 0.5s;
-	border-radius: 20px;
-	height: 50px;
-	color:rgba(0, 0, 0, 0.7);
+	display: block;	
+	width: 470px;
+    text-align: center;
+	transform: translateX(-50%) translateY(-50%) scale(0.5);
+	animation: anime-favorite 1.5s forwards;
+	border-radius: 30px;
+	padding:35px 50px;
+	top:40%;
+}
+.popup p {
+	color:#fff;
+	font-weight: bold;
+	font-size: 27px;
+	margin: 0;
+}
+.popup.active {
+	animation: anime-favorite-close 0.5s forwards;
+}
+.close-favorite {
+	color: #fff;
+    font-weight: bold;
+    font-size: 27px;
+    padding: 0 25px;
+    border-radius: 30px;
+    background: #00CC66;
+    margin-top: 10px;
+    display: block;
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 25px;
+	cursor: pointer;
+}
+.close-favorite:hover {
+	background: #fff;
+	color:#00CC66;
+	transition: 0.5s;
+}
+@keyframes anime-favorite {
+	100% {
+		transform: translateX(-50%) translateY(-50%) scale(1);
+	}
+}
+@keyframes anime-favorite-close {
+	100% {
+		transform: translateX(-50%) translateY(-50%) scale(0);
+	}
 }
