@@ -106,12 +106,15 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="shop__product__option__right">
-                                    <p>Sort by Price:</p>
-                                    <select>
-                                        <option value="">Low To High</option>
-                                        <option value="">$0 - $55</option>
-                                        <option value="">$55 - $100</option>
-                                    </select>
+                                    <form action="">
+                                        @csrf
+                                        <p>Sort by Price:</p>
+                                        <select name="sort" id="sort">
+                                            <option value="{{Request::url()}}?sort_by=none">---Select---</option>
+                                            <option value="{{Request::url()}}?sort_by=tang_dan">Low To High</option>
+                                            <option value="{{Request::url()}}?sort_by=giam_dan">High To Low</option>
+                                        </select>
+                                    </form>
                                 </div>
                             </div>
                         </div>

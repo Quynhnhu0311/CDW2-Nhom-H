@@ -12,7 +12,16 @@ class ProductController extends Controller
         $min_price = DB::table('products')->min('product_price');
         $max_price = DB::table('products')->max('product_price');
 
-        if(isset($_GET['start_price']) && $_GET['end_price']) {
+        if(isset($_GET['sort_by'])) {
+            $sort_by = $_GET['sort_by'];
+            if($sort_by == 'giam_dan') {
+                $products = DB::table('products')->orderBy('product_price', 'DESC')->paginate(6)->appends(request()->query());
+            }
+            elseif ($sort_by == 'tang_dan') {
+                $products = DB::table('products')->orderBy('product_price', 'ASC')->paginate(6)->appends(request()->query());
+            }
+        }
+        elseif (isset($_GET['start_price']) && $_GET['end_price']) {
             $min_price = $_GET['start_price'];
             $max_price = $_GET['end_price'];
             $products = DB::table('products')->whereBetween('product_price', [$min_price,$max_price])
@@ -21,6 +30,7 @@ class ProductController extends Controller
         else {
             $products = DB::table('products')->orderby('product_id','desc')->paginate(6);
         }
+
         return view('shop')->with('products',$products)
                            ->with('min_price', $min_price)
                            ->with('max_price', $max_price);
