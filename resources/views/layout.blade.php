@@ -366,7 +366,7 @@
                 step: 10000,
                 values: [ {{ $min_price }}, {{ $max_price }} ],
                 slide: function( event, ui ) {
-                    $( "#amount" ).val( ui.values[ 0 ] + "VNĐ" + " - " + ui.values[ 1 ] + "VNĐ" );
+                    $( "#amount" ).val( number_format(ui.values[ 0 ]) + "VNĐ" + " - " + number_format(ui.values[ 1 ]) + "VNĐ" );
                     $( "#start_price" ).val( ui.values[ 0 ]);
                     $( "#end_price" ).val( ui.values[ 1 ]);
                 }
