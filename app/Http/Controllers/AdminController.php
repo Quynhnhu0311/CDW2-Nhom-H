@@ -27,23 +27,26 @@ class AdminController extends Controller
         $this->AuthLogin();
         return view('admin.dashboard');
     }
+
     //Add Manufactures Admin
     public function save_manufacture(Request $request){
-        
+
         $data = array();
         $data['manu_name'] = $request->manu_name;
         $data['manu_qty'] = $request->manu_qty;
         DB::table('manufactures')->insert($data);
         return Redirect::to('admin.manufacture');
     }
+
      //Chỉnh Sửa Hãng Sản Phẩm
      public function edit_manufacture($manu_id)
-     {   
+     {
          $this->AuthLogin();
          $protypes = DB::table('protypes')->get();
          $manufactures =  DB::table('manufactures')->where('manu_id',$manu_id)->get();
          return view('admin.editmanufacture',compact('manufactures','protypes'));
      }
+
      //Update Manufacture admin
      public function update_manufacture(Request $request, $manu_id)
      {
@@ -53,9 +56,10 @@ class AdminController extends Controller
          $data['manu_name'] = $request->manu_name;
          $data['manu_qty'] = $request->manu_qty;
          DB::table('manufactures')->where('manu_id',$manu_id)->update($data);
- 
+
          return Redirect::to('admin.admin_manufactures')->with("status","Data Update Successfully");
     }
+
      //Show Add manufactures admin
     public function show_admin_manufacture(){
         $this->AuthLogin();
@@ -73,6 +77,7 @@ class AdminController extends Controller
 
         return view('admin.addmanufacture',compact('protypes','protypes','manufactures','Allproducts'));
     }
+    
     //Delete manufactures admin
     public function destroy_manu($manu_id)
     {
