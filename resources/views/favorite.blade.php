@@ -51,7 +51,15 @@
                                         </td>
                                         <td class="cart__price">{{ number_format($favorite_id->product_price) }}VND</td>
                                         <td>
-                                            <button type="button" class="add-to-cart-btn" data-id="" name="add-cart">+ Add To Cart</button>
+                                            <!-- <button type="button" class="add-to-cart-btn" data-id="" name="add-cart">+ Add To Cart</button> -->
+                                            <div class="add-to-cart">
+                                                <input type="hidden" value="{{ $favorite_id->product_id }}" class="cart_product_id_{{ $favorite_id->product_id }}">
+                                                <input type="hidden" value="{{ $favorite_id->product_name }}" class="cart_product_name_{{ $favorite_id->product_id }}">
+                                                <input type="hidden" value="{{ $favorite_id->product_price }}" class="cart_product_price_{{ $favorite_id->product_id }}">
+                                                <input type="hidden" value="{{ $favorite_id->product_img }}" class="cart_product_image_{{ $favorite_id->product_id }}">
+                                                <input type="hidden" value="1" class="cart_product_qty_{{ $favorite_id->product_id }}">
+                                                <button type="button" class="add-to-cart-btn" data-id="{{ $favorite_id->product_id }}" name="add-cart">+ Add To Cart</button>
+                                            </div>
                                         </td>
                                         <!-- <td class="cart__close">
                                             <a href="">
