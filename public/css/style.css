@@ -1434,6 +1434,7 @@ ol {
 .shop__product__option__right p {
 	display: inline-block;
 	margin-bottom: 0;
+    font-weight: bold;
 }
 
 .shop__product__option__right .nice-select {

@@ -366,7 +366,7 @@
                 step: 10000,
                 values: [ {{ $min_price }}, {{ $max_price }} ],
                 slide: function( event, ui ) {
-                    $( "#amount" ).val( number_format(ui.values[ 0 ]) + "VNĐ" + " - " + number_format(ui.values[ 1 ]) + "VNĐ" );
+                    $( "#amount" ).val( ui.values[ 0 ] + "VNĐ" + " - " + ui.values[ 1 ] + "VNĐ" );
                     $( "#start_price" ).val( ui.values[ 0 ]);
                     $( "#end_price" ).val( ui.values[ 1 ]);
                 }
@@ -374,6 +374,19 @@
             $( "#amount" ).val( $( "#slider-range" ).slider( "values", 0 ) + "VNĐ" +
             " - " + $( "#slider-range" ).slider( "values", 1 ) + "VNĐ" );
         } );
+    </script>
+
+    <!-- Sắp xếp theo giá -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $( "#sort" ).on('change', function(){
+                var url = $(this).val();
+                if(url) {
+                    window.location = url;
+                }
+                return false;
+            });
+        });
     </script>
 </body>
 
