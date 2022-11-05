@@ -10,14 +10,14 @@ use Illuminate\Support\Facades\Redirect;
 use Session;
 class FavoriteController extends Controller
 {
-    //Sản phẩm yêu thích 
+    //Sản phẩm yêu thích
     public function add_favorite(Request $request){
         $favorite = array();
         $favorite['product_id'] = $request->favorite_product_id;
         $favorite['id'] = $request->favorite_user_id;
         $id = Session::get('id');
         $duplicate = DB::table('favorites')->where('product_id',$request->favorite_product_id)->first();
-        if($id) { 
+        if($id) {
             if (!$duplicate){
                 DB::table('favorites')->insert($favorite);
                 return Redirect::to('favorite/'.$id);
@@ -39,6 +39,6 @@ class FavoriteController extends Controller
     public function delete_favorite_user($favorite_id) {
         $id = Session::get('id');
         DB::table('favorites')->where('favorite_id',$favorite_id)->delete();
-        return Redirect::to('favorite/'.$id);  
+        return Redirect::to('favorite/'.$id);
     }
 }

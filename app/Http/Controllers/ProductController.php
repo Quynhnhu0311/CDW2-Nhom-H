@@ -9,8 +9,6 @@ use DB;
 class ProductController extends Controller
 {
     function all_products() {
-        $min_price = DB::table('products')->min('product_price');
-        $max_price = DB::table('products')->max('product_price');
 
         if(isset($_GET['sort_by'])) {
             $sort_by = $_GET['sort_by'];
@@ -31,8 +29,6 @@ class ProductController extends Controller
             $products = DB::table('products')->orderby('product_id','desc')->paginate(6);
         }
 
-        return view('shop')->with('products',$products)
-                           ->with('min_price', $min_price)
-                           ->with('max_price', $max_price);
+        return view('shop')->with('products',$products);
     }
 }

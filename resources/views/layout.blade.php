@@ -361,10 +361,10 @@
             $( "#slider-range" ).slider({
                 orientation: "horizon",
                 range: true,
-                min: {{ $min_price }},
-                max: {{ $max_price }},
+                min: 5000,
+                max: 2000000,
                 step: 10000,
-                values: [ {{ $min_price }}, {{ $max_price }} ],
+                values: [ 10000, 1000000 ],
                 slide: function( event, ui ) {
                     $( "#amount" ).val( ui.values[ 0 ] + "VNĐ" + " - " + ui.values[ 1 ] + "VNĐ" );
                     $( "#start_price" ).val( ui.values[ 0 ]);

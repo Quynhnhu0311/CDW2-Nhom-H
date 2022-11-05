@@ -20,15 +20,13 @@ class HomeController extends Controller
         $duplicate = DB::table('favorites')->join('products','products.product_id','=','favorites.product_id')->get();
         $min_price = DB::table('products')->min('product_price');
         $max_price = DB::table('products')->max('product_price');
-        
+
 
         return view('/index')->with('newArrivals',$newArrivals)
                             ->with('bestSellers',$bestSellers)
                             ->with('features', $features)
                             ->with('products_feature',$products_feature)
-                            ->with('duplicate', $duplicate)
-                            ->with('min_price', $min_price)
-                            ->with('max_price', $max_price);
+                            ->with('duplicate', $duplicate);
     }
     // Show Product Home Page
     public function show_product_home($feature_id) {
