@@ -30,6 +30,17 @@ Route::get('/admin.dashboard',[AdminController::class, 'show_dashboard']);
 // Route::get('/login-admin', [AdminController::class, 'login_admin']);
 Route::get('/logout-admin', [AdminController::class, 'logout_admin']);
 
+//Show manufactures
+Route::get('/admin.addmanufacture',[AdminController::class, 'show_admin_addmanufacture']);
+Route::get('/admin.manufacture',[AdminController::class, 'show_admin_manufacture']);
+//Delete Manufactures
+Route::DELETE('deletemanufacture/{id}',[AdminController::class, 'destroy_manu']);
+//Add Manufactures
+Route::post('/savemanufacture',[AdminController::class, 'save_manufacture']);
+//Show Edit Page Manufacture
+Route::get('editmanufacture/{manu_id}',[AdminController::class, 'edit_manufacture']);
+//Update Manufactures
+Route::put('update_datamanu/{manu_id}',[AdminController::class, 'update_manufacture']);
 
 
 /* =====Front-End===== */
