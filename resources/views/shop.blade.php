@@ -79,12 +79,14 @@
                                         <div class="card-body">
                                             <div class="shop__sidebar__price">
                                                 <ul>
-                                                    <li><a href="#">$0.00 - $50.00</a></li>
-                                                    <li><a href="#">$50.00 - $100.00</a></li>
-                                                    <li><a href="#">$100.00 - $150.00</a></li>
-                                                    <li><a href="#">$150.00 - $200.00</a></li>
-                                                    <li><a href="#">$200.00 - $250.00</a></li>
-                                                    <li><a href="#">250.00+</a></li>
+                                                    <form>
+                                                        <div id="slider-range"></div>
+                                                        <input type="text" id="amount" readonly>
+                                                        <input type="hidden" name="start_price" id="start_price">
+                                                        <input type="hidden" name="end_price" id="end_price">
+                                                        <br>
+                                                        <input type="submit" name="filter_price" value="Filter" class="btn btn-default">
+                                                    </form>
                                                 </ul>
                                             </div>
                                         </div>
@@ -123,7 +125,7 @@
                                     <div class="product__item__pic set-bg" data-setbg="{{ asset('./img/product/'.$allProducts->product_img) }}">
                                         <ul class="product__hover">
                                             <form action="{{ url('favorite') }}" method="POST" enctype="multipart/form-data">
-                                            {{ csrf_field() }}   
+                                            {{ csrf_field() }}
                                                 <input type="hidden" value="{{ $allProducts->product_id }}" name="favorite_product_id">
                                                 <?php  $id = Session::get('id'); ?>
                                                 <input type="hidden" value="<?php echo $id ?>" name="favorite_user_id">
