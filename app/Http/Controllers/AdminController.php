@@ -11,6 +11,7 @@ session_start();
 
 class AdminController extends Controller
 {
+    // Chặn Admin
     public function AuthLogin(){
         $id_admin = Session::get('admin_id');
         if($id_admin){
@@ -19,28 +20,12 @@ class AdminController extends Controller
             return Redirect::to('login')->send();
         }
     }
+
     // Hiện Thị Trang chủ Admin
     public function show_dashboard(){
         $this->AuthLogin();
         return view('admin.dashboard');
     }
-    // Chặn Admin
-
-
-    // function login_admin(Request $request) {
-    //     $admin_email = $request->email;
-    //     $admin_pass = md5($request->pass);
-    //     $result = DB::table('users')->where('email', $user_email)
-    //                                 ->where('password', $user_pass)->first();
-    //     if ($result) {
-    //         Session::put('admin_name', $result->name);
-    //         Session::put('id', $result->id);
-    //         return Redirect::to('/');
-    //     } else {
-    //         Session::put('message', 'Mật khẩu hoặc tài khoản bị sai. Vui lòng nhập lại!');
-    //         return Redirect::to('/login');
-    //     }
-    // }
 
     function logout_admin(Request $request) {
         Session::put('admin_name',null);
