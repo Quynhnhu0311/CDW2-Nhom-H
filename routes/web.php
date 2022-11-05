@@ -26,6 +26,12 @@ use App\Http\Controllers\FavoriteController;
 //Authenticate
 Route::get('/admin.dashboard',[AdminController::class, 'show_dashboard']);
 
+//Login And Logout Admin
+// Route::get('/login-admin', [AdminController::class, 'login_admin']);
+Route::get('/logout-admin', [AdminController::class, 'logout_admin']);
+
+
+
 /* =====Front-End===== */
 //Home
 Route::get('/', [HomeController::class, 'home']);

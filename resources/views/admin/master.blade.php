@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminGroupH  | Dashboard </title>
+    <title>AdminGroupH | Dashboard </title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -22,7 +22,8 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__wobble" src="{{ asset ('dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo" height="60" width="60">
+            <img class="animation__wobble" src="{{ asset ('dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo"
+                height="60" width="60">
         </div>
 
         <!-- Navbar -->
@@ -164,6 +165,28 @@
                         <i class="fas fa-th-large"></i>
                     </a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <?php
+                            $admin_name = Session::get('admin_name');
+                            if($admin_name){
+                                echo '<a href="/logout-admin" class="dropdown-item">
+                                        <i class="fas fa-sign-out-alt"></i> Log Out
+                                      </a>
+                                      <div class="dropdown-divider"></div>';
+                            }
+                            else{
+                                echo '<a href="/login" class="dropdown-item">
+                                        <i class="fas fa-sign-out-alt"></i> Log In
+                                      </a>
+                                      <div class="dropdown-divider"></div>';
+                            }
+                        ?>
+                    </div>
+                </li>
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -185,7 +208,13 @@
                         <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Võ Thị Quỳnh Như</a>
+                        <?php
+                            $admin_name = Session::get('admin_name');
+                            if($admin_name){
+                                echo '<a href="#" class="d-block">'.$admin_name.'</a>';
+                            }
+                        ?>
+
                     </div>
                 </div>
 
@@ -667,10 +696,9 @@
     <script src="{{ url ('plugins/chart.js/Chart.min.js') }}"></script>
 
     <!-- AdminLTE for demo purposes -->
-    <script src="{{ url ('dist/js/demo.js') }}"></script>
+    <!-- <script src="{{ url ('dist/js/demo.js') }}"></script> -->
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ url ('dist/js/pages/dashboard2.js') }}"></script>
 </body>
 
 </html>
-
