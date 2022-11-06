@@ -21,8 +21,7 @@ class AdminController extends Controller
             return Redirect::to('login')->send();
         }
     }
-
-    // Hiện Thị Trang chủ Admin
+    //Show Manufacture Admin
     public function show_dashboard(){
         $this->AuthLogin();
         return view('admin.dashboard');
@@ -36,7 +35,7 @@ class AdminController extends Controller
         DB::table('manufactures')->insert($data);
         return Redirect::to('admin.manufacture');
     }
-     //Chỉnh Sửa Hãng Sản Phẩm
+     //Edit manufacture
      public function edit_manufacture($manu_id)
      {   
          $this->AuthLogin();
