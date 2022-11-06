@@ -35,13 +35,6 @@
                                     </div>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-4.png">
-                                        <i class="fa fa-play"></i>
-                                    </div>
-                                </a>
-                            </li>
                         </ul>
                     </div>
                     <div class="col-lg-6 col-md-9">
@@ -59,12 +52,6 @@
                             <div class="tab-pane" id="tabs-3" role="tabpanel">
                                 <div class="product__details__pic__item">
                                     <img src="{{ asset ('/product_detail->product_img') }}" alt="">
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tabs-4" role="tabpanel">
-                                <div class="product__details__pic__item">
-                                    <img src="{{ asset ('/product_detail->product_img') }}" alt="">
-                                    <a href="https://www.youtube.com/watch?v=8PJ3_p7VqHw&list=RD8PJ3_p7VqHw&start_radio=1" class="video-popup"><i class="fa fa-play"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -88,48 +75,12 @@
                                     <i class="fa fa-star-o"></i>
                                     <span> - 5 Reviews</span>
                                 </div>
-                                <h3>{{ number_format($product_detail->product_price) }} VND <span>70.00</span></h3>
+                                <h3>{{ number_format($product_detail->product_price) }} VND</h3>
                                 <p>{{ $product_detail->product_description }}</p>
-                                <div class="product__details__option">
-                                    <div class="product__details__option__size">
-                                        <span>Size:</span>
-                                        <label for="xxl">xxl
-                                            <input type="radio" id="xxl">
-                                        </label>
-                                        <label class="active" for="xl">xl
-                                            <input type="radio" id="xl">
-                                        </label>
-                                        <label for="l">l
-                                            <input type="radio" id="l">
-                                        </label>
-                                        <label for="sm">s
-                                            <input type="radio" id="sm">
-                                        </label>
-                                    </div>
-                                    <div class="product__details__option__color">
-                                        <span>Color:</span>
-                                        <label class="c-1" for="sp-1">
-                                            <input type="radio" id="sp-1">
-                                        </label>
-                                        <label class="c-2" for="sp-2">
-                                            <input type="radio" id="sp-2">
-                                        </label>
-                                        <label class="c-3" for="sp-3">
-                                            <input type="radio" id="sp-3">
-                                        </label>
-                                        <label class="c-4" for="sp-4">
-                                            <input type="radio" id="sp-4">
-                                        </label>
-                                        <label class="c-9" for="sp-9">
-                                            <input type="radio" id="sp-9">
-                                        </label>
-                                    </div>
-                                </div>
                                 <div class="product__details__cart__option">
                                     <div class="quantity">
                                         <div class="pro-qty">
                                             <input type="text" value="1">
-                                        </div>
                                     </div>
                                     <input type="hidden" value="{{ $product_detail->product_id }}" class="cart_product_id_{{ $product_detail->product_id }}">
                                     <input type="hidden" value="{{ $product_detail->product_name }}" class="cart_product_name_{{ $product_detail->product_id }}">
@@ -139,16 +90,17 @@
                                     <button type="button" class="add-to-cart-btn primary-btn" data-id="{{ $product_detail->product_id }}" name="add-cart">add to cart</button>
                                 </div>
                                 <div class="product__details__btns__option">
+                                    <a href="#" class="primary-btn">add to cart</a>
+                                </div>
+                                <div class="product__details__btns__option">
                                     <a href="#"><i class="fa fa-heart"></i> add to wishlist</a>
-                                    <a href="#"><i class="fa fa-exchange"></i> Add To Compare</a>
                                 </div>
                                 <div class="product__details__last__option">
                                     <h5><span>Guaranteed Safe Checkout</span></h5>
                                     <img src="img/shop-details/details-payment.png" alt="">
                                     <ul>
-                                        <li><span>SKU:</span> 3812912</li>
-                                        <li><span>Categories:</span> Clothes</li>
-                                        <li><span>Tag:</span> Clothes, Skin, Body</li>
+                                        <li><span>Categories: </span>{{ $product_detail->type_name }} </li>
+                                        <li><span>Manufactures: </span>{{ $product_detail->manu_name }} </li>
                                     </ul>
                                 </div>
                             </div>
@@ -202,18 +154,7 @@
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                             </div>
-                            <h5>{{ $related->product_price }}</h5>
-                            <div class="product__color__select">
-                                <label for="pc-1">
-                                    <input type="radio" id="pc-1">
-                                </label>
-                                <label class="active black" for="pc-2">
-                                    <input type="radio" id="pc-2">
-                                </label>
-                                <label class="grey" for="pc-3">
-                                    <input type="radio" id="pc-3">
-                                </label>
-                            </div>
+                            <h5>{{ number_format($related->product_price) }} VND</h5>
                         </div>
                     </div>
                     </div>

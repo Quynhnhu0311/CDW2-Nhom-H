@@ -36,8 +36,8 @@ class HomeController extends Controller
     //Detail Product and Related Product
     public function show_details($id)
     {
-        /* Detail Product */
-        $detail = DB::table('products')->join('protypes','protypes.type_id','=','products.type_id')->where('products.product_id',$id)->get();
+        $detail = DB::table('products')->join('protypes','protypes.type_id','=','products.type_id')
+        ->join('manufactures','manufactures.manu_id','=','products.manu_id')->where('products.product_id',$id)->get();
         foreach($detail as $related) {
             $type_id = $related->type_id;
         }
