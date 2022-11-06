@@ -217,16 +217,47 @@
 
     <!-- Search Begin -->
     <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="h-100 d-flex justify-content-center">
             <div class="search-close-switch">+</div>
             <form class="search-model-form">
                 <input type="text" id="search-input" placeholder="Search here.....">
+                <div class="input-result">
+
+                </div>
             </form>
         </div>
     </div>
     <!-- Search End -->
 
     <!-- Js Plugins -->
+    <script>
+        document.querySelector('#search-input').addEventListener('keyup', function() {
+            let _text = $(this).val();
+            if (_text != '') {
+                $.ajax({
+                    url: "http://127.0.0.1:8000/ajax-search-product/" + _text,
+                    type: 'GET',
+                    success: function(res) {
+                        // let _html = "";
+                        // for (let pro of res) {
+                        //     _html += '<div class="search-result">';
+                        //     _html += '<div><a href=""><img src="{{ asset ("' + /img/logo.png + '") }}" alt="" style="width: 50px;height:50px"></a></div>';
+                        //     _html += ' <div style="margin-left: 20px;">';
+                        //     _html += ' <a href="#">' + pro.product_name + 'A</a>';
+                        //     _html += '<h6>thong tin mo ta</h6>';
+                        //     _html += ' </div>';
+                        //     _html += ' </div>';
+                        // }
+                        document.querySelector('.input-result').style.display = "block";
+                        document.querySelector('.input-result').innerHTML = res;
+                    }
+                })
+            } else {
+                document.querySelector('.input-result').style.display = "none";
+                document.querySelector('.input-result').innerHTML = ' ';
+            }
+        })
+    </script>
     <script src="{{ url ('js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ url ('js/bootstrap.min.js') }}"></script>
     <script src="{{ url ('js/jquery.nice-select.min.js') }}"></script>
