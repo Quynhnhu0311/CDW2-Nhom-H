@@ -130,9 +130,9 @@ class CheckoutController extends Controller
         $message->from($data['email'],$title_mail);
     });
 
-
     $request->session()->forget(['cart']);
     $request->session()->forget(['coupon']);
+
     return view('/success');
     }
 }

@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{ url ('css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url ('css/style.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url ('css/sweetalert.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url ('css/jquery-ui.css') }}" type="text/css">
 
 
 </head>
@@ -267,6 +268,7 @@
     <script src="{{ url ('js/owl.carousel.min.js') }}"></script>
     <script src="{{ url ('js/main.js') }}"></script>
     <script src="{{ url ('js/sweetalert.js') }}"></script>
+    <script src="{{ url ('js/jquery-ui.js') }}"></script>
 
     <!-- Chức năng thêm sản phẩm vào giỏ hàng -->
     <script type="text/javascript">
@@ -350,6 +352,40 @@
             }
             prodvince = JSON.parse(data);
             apiProvince(prodvince);
+        });
+    </script>
+
+    <!-- Lọc giá sản phẩm -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $( "#slider-range" ).slider({
+                orientation: "horizon",
+                range: true,
+                min: 5000,
+                max: 2000000,
+                step: 10000,
+                values: [ 10000, 1000000 ],
+                slide: function( event, ui ) {
+                    $( "#amount" ).val( ui.values[ 0 ] + "VNĐ" + " - " + ui.values[ 1 ] + "VNĐ" );
+                    $( "#start_price" ).val( ui.values[ 0 ]);
+                    $( "#end_price" ).val( ui.values[ 1 ]);
+                }
+            });
+            $( "#amount" ).val( $( "#slider-range" ).slider( "values", 0 ) + "VNĐ" +
+            " - " + $( "#slider-range" ).slider( "values", 1 ) + "VNĐ" );
+        } );
+    </script>
+
+    <!-- Sắp xếp theo giá -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $( "#sort" ).on('change', function(){
+                var url = $(this).val();
+                if(url) {
+                    window.location = url;
+                }
+                return false;
+            });
         });
     </script>
 </body>
