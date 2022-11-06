@@ -31,11 +31,12 @@ class HomeController extends Controller
     //Detail Product and Related Product
     public function show_details($id)
     {
-        $detail = DB::table('products')->join('protypes','protypes.type_id','=','products.type_id')->where('products.product_id',$id)->get();
+        $detail = DB::table('products')->join('protypes','protypes.type_id','=','products.type_id')
+        ->join('manufactures','manufactures.manu_id','=','products.manu_id')->where('products.product_id',$id)->get();
         foreach($detail as $related) {
             $type_id = $related->type_id;
         }
         $related_product = DB::table('products')->join('protypes','protypes.type_id','=','products.type_id')->where('protypes.type_id',$type_id)->paginate(8);
-        return view('shop-details',compact('detail', $detail)->with('related_product', $related_product));
+        return view('shop-details',compact('detail','related_product'));
     }
 }
