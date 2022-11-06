@@ -54,7 +54,7 @@ class AdminController extends Controller
          $data['manu_qty'] = $request->manu_qty;
          DB::table('manufactures')->where('manu_id',$manu_id)->update($data);
  
-         return Redirect::to('admin.admin_manufactures')->with("status","Data Update Successfully");
+         return Redirect::to('admin.manufacture')->with("status","Data Update Successfully");
     }
      //Show Add manufactures admin
     public function show_admin_manufacture(){
