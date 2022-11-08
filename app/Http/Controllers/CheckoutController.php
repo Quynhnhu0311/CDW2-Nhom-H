@@ -8,6 +8,7 @@ use App\Models\Order;
 use App\Models\Shipping;
 use App\Models\Detail_order;
 use App\Models\Coupon;
+use App\Models\Product;
 use Cart;
 use DB;
 use Session;
@@ -74,6 +75,9 @@ class CheckoutController extends Controller
                     $order_detail->product_qty = $cart['product_qty'];
                     $order_detail->coupon_code = $data['order_coupon'];
                     $order_detail->save();
+                    // $cart_product_qty = Product::where('product_id','=', $cart['product_id'])->first();
+                    // $cart_product_qty->product_qty = $cart_product_qty->product_qty - $cart['product_qty'];
+                    // $cart_product_qty->save();
                 }
             }
         }

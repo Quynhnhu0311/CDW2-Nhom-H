@@ -42,6 +42,13 @@ Route::get('editmanufacture/{manu_id}',[AdminController::class, 'edit_manufactur
 //Update Manufactures
 Route::put('update_datamanu/{manu_id}',[AdminController::class, 'update_manufacture']);
 
+/*----- Products -----*/
+Route::get('/products', [AdminController::class,'show_all_products'])->name('viewProductList');
+Route::get('/edit-product/{product_id}', [AdminController::class,'edit_product']);
+Route::post('/update-product/{product_id}', [AdminController::class,'update_product']);
+Route::get('/delete-product/{product_id}', [AdminController::class,'delete_product']);
+Route::get('/add-product', [AdminController::class,'add_product']);
+Route::post('/save-product', [AdminController::class,'save_product']);
 
 /* =====Front-End===== */
 //Home

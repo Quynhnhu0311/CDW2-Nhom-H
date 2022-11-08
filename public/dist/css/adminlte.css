@@ -53010,3 +53010,95 @@ a.text-muted:hover {
   border-color: #4b545c !important;
 }
 /*# sourceMappingURL=adminlte.css.map */
+
+
+/* ----- Button In Manage Products -----*/
+.products-body img {
+    width: 70%;
+}
+
+.products-body th {
+    text-align: center;
+}
+
+.products-body td{
+    text-align: center;
+}
+
+a.btn.btn-info.btn-sm {
+    font-weight: bold;
+}
+
+a.btn.btn-danger.btn-sm {
+    font-weight: bold;
+    background-color: #e74c3c;
+    border:0;
+    padding-bottom: 6px;
+    margin-top: 1px;
+    padding-top: 5px;
+}
+input.btn.btn-success.float-center {
+    margin-left: 540px;
+    font-weight: bold;
+}
+
+.content-header h1 {
+    font-weight: bold;
+    color: #db8f8f;
+}
+
+h3.card-title {
+    font-weight: bold;
+}
+
+.group-price {
+    display: flex;
+}
+
+input.vnđ {
+    color: #000;
+    background-color: #fff;
+    font-weight: bold;
+    border-radius: 0.25rem;
+    position: absolute;
+    margin-left: 235px;
+    padding-top: 4px;
+    padding-bottom: 5px;
+}
+
+input#inputPrice {
+    width: 280px;
+    position: absolute;
+}
+
+input#inputQty {
+    width: 280px;
+}
+
+.form-group.qty {
+    margin-top: 55px;
+}
+
+.form-group.description {
+    margin-top: 55px;
+}
+
+.form-group img {
+    width: 15%;
+    margin-top: 10px;
+}
+
+input#inputImage {
+    height: 45px;
+}
+
+.text-alert {
+    color:green;
+    font-weight: bold;
+    background-color: #c6e2d2;
+    border-color: #c6e2d2;
+}
+
+.form-group select {
+    width: 280px;
+}
