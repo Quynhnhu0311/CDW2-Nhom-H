@@ -53102,3 +53102,60 @@ input#inputImage {
 .form-group select {
     width: 280px;
 }
+
+a.btn.btn-info.btn-sm {
+    margin-right: 144px;
+}
+
+a.btn.btn-info.btn-sm.view {
+    margin-right: 95px;
+}
+
+div.form-group.status {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+div.form-group.total {
+    padding-bottom: 50px;
+    margin-left: 35px;
+}
+
+.form-group.coupon {
+    margin-left: 220px;
+}
+
+.form-group.discount {
+    margin-left: 35px;
+}
+
+.form-group.coupon label {
+    margin-left: 82px;
+}
+
+input.form-control.coupon {
+    font-weight: bold;
+}
+
+input.form-control.total {
+    font-weight: bold;
+    width: 281px;
+}
+
+input.form-control.discount {
+    font-weight: bold;
+}
+
+.form-group.discount label {
+    margin-left: 70px;
+}
+
+.form-group.total label {
+    margin-left: 95px;
+}
+
+.group-total {
+    display: flex;
+    margin-top: 25px;
+}
+

@@ -22,8 +22,8 @@ class CreateShippingsTable extends Migration
             $table->string('customer_town',200);
             $table->string('customer_address',200);
             $table->string('customer_email',100);
-            $table->double('customer_phone',11);
-            $table->string('customer_note',100);
+            $table->string('customer_phone',11);
+            $table->string('customer_note',100)->nullable();
             $table->timestamps();
         });
     }

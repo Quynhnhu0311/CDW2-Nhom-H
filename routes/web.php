@@ -50,6 +50,12 @@ Route::get('/delete-product/{product_id}', [AdminController::class,'delete_produ
 Route::get('/add-product', [AdminController::class,'add_product']);
 Route::post('/save-product', [AdminController::class,'save_product']);
 
+/*----- Orders -----*/
+Route::get('/orders', [AdminController::class,'show_all_orders'])->name('viewOrderList');
+Route::get('/detail-order/{order_code}', [AdminController::class,'detail_order']);
+Route::post('/update-order-qty', [AdminController::class,'update_order_qty']);
+
+
 /* =====Front-End===== */
 //Home
 Route::get('/', [HomeController::class, 'home']);

@@ -15,6 +15,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ url ('dist/css/adminlte.min.css') }}">
     <link rel="stylesheet" href="{{ url ('dist/css/adminlte.css') }}">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 </head>
 
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -299,7 +300,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ url ('/admin.manufacture')}}" class="nav-link">
+                                    <a href="{{route('viewOrderList')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Manage Orders</p>
                                     </a>
@@ -327,6 +328,7 @@
     <!-- ./wrapper -->
     <!-- REQUIRED SCRIPTS -->
     <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ url ('plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap -->
     <script src="{{ url ('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -348,6 +350,37 @@
     <!-- <script src="{{ url ('dist/js/demo.js') }}"></script> -->
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ url ('dist/js/pages/dashboard2.js') }}"></script>
+
+    <!-------------------------
+        Update Order Status
+    --------------------------->
+    <script type="text/javascript">
+        $('.order_details').change(function(){
+            var order_status = $(this).val();
+            var order_id = $(this).children(":selected").attr("id");
+            var _token = $('input[name="_token"]').val();
+
+            order_product_qty = [];
+            $("input[name='order_product_qty']").each(function() {
+                order_product_qty.push($(this).val());
+            });
+
+            order_product_id = [];
+            $("input[name='order_product_id']").each(function() {
+                order_product_id.push($(this).val());
+            });
+            $.ajax({
+                url: "{{ url('/update-order-qty') }}",
+                method: "POST",
+                dataType : "JSON",
+                data : {order_status:order_status,order_id:order_id,_token:_token,order_product_qty:order_product_qty,order_product_id:order_product_id},
+                success: function(data){
+                    alert("Cập Nhật Thành Công!");
+                }
+            });
+        });
+    </script>
+
 </body>
 
 </html>

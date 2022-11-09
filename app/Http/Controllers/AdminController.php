@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 use App\Models\Product;
 use App\Models\Protype;
 use App\Models\Manufacture;
+use App\Models\Order;
 use DB;
 use Session;
 session_start();
@@ -65,7 +66,7 @@ class AdminController extends Controller
          $data['manu_name'] = $request->manu_name;
          $data['manu_qty'] = $request->manu_qty;
          DB::table('manufactures')->where('manu_id',$manu_id)->update($data);
- 
+
          return Redirect::to('admin.manufacture')->with("status","Data Update Successfully");
     }
 
@@ -215,4 +216,98 @@ class AdminController extends Controller
                                         ->with('getManufactures', $getManufactures)
                                         ->with('getFeatures', $getFeatures);
     }
+
+    /*----- Show Orders -----*/
+    function show_all_orders() {
+        $this->AuthLogin();
+        $show_AllOrders = Order::all();
+        return view('admin.orders')->with('show_AllOrders',$show_AllOrders);
+    }
+
+    function detail_order($order_code) {
+        $this->AuthLogin();
+        $order_details = DB::table('detail_orders')->where('order_code',$order_code)->get();
+        $order_status = DB::table('orders')->where('order_code',$order_code)->get();
+
+        foreach($order_status as $key => $order) {
+            $shipping_id = $order->shipping_id;
+        }
+
+        $shippings = DB::table('shippings')->where('shipping_id',$shipping_id)->get();
+
+        foreach($order_details as $key => $order_coupon_code){
+            $coupon_code = $order_coupon_code->coupon_code;
+        }
+
+        $coupon_order = DB::table('coupons')->where('coupon_code',$coupon_code)->first();
+        if($coupon_order){
+            $coupon_condition = $coupon_order->coupon_condition;
+            $coupon_number = $coupon_order->coupon_number;
+            $coupon_code_cart = $coupon_order->coupon_code;
+        }
+        else{
+            $coupon_condition = 0;
+            $coupon_number = 0;
+            $coupon_code_cart = 'Không có mã';
+        }
+
+        return view('admin.detailorder')->with('shippings',$shippings)
+                                        ->with('order_details',$order_details)
+                                        ->with('coupon_condition',$coupon_condition)
+                                        ->with('coupon_number',$coupon_number)
+                                        ->with('coupon_code_cart',$coupon_code_cart)
+                                        ->with('order_status',$order_status);
+    }
+
+    function update_order_qty(Request $request) {
+        $data = $request->all();
+
+        $order = Order::find($data['order_id']);
+        $order->order_status = $data['order_status'];
+        $order->save();
+
+    //     $order_date = $order_stt->created_at;
+    //     $statistic = Statistic::where('order_date',$order_date)->get();
+    //     if($statistic){
+    //         $statistic_count = $statistic->count();
+    //     }else{
+    //         $statistic_count = 0;
+    //     }
+    //     if($order_stt->order_status == 2){
+    //         $total_order = 0;
+    //         $sales = 0;
+    //         $profit = 0;
+    //         $quantity = 0;
+    //         foreach($data['order_product_id'] as $key => $product_id){
+    //             $product = Product::find($product_id);
+    //             $product_price = $product->price;
+    //             $now = Carbon::now('Asia/Ho_Chi_Minh')->toDateString();
+    //             foreach($data['quantity'] as $key2 => $qty){
+    //                 if($key==$key2){
+    //                     $quantity+=$qty;
+    //                     $total_order+=1;
+    //                     $sales+=$product_price*$qty;
+    //                     $profit = $sales-1000;
+    //                 }
+    //             }
+    //         }
+    //         if($statistic_count>0){
+    //             $statistic_update = Statistic::where('order_date',$order_date)->first();
+    //             $statistic_update->sales = $statistic_update->sales + $sales;
+    //             $statistic_update->profit = $statistic_update->profit + $profit;
+    //             $statistic_update->quantity = $statistic_update->quantity + $quantity;
+    //             $statistic_update->total_order = $statistic_update->total_order + $total_order;
+    //             $statistic_update->save();
+    //         }else{
+    //             $statistic_new = new Statistic();
+    //             $statistic_new->order_date = $order_date;
+    //             $statistic_new->sales = $sales;
+    //             $statistic_new->profit = $profit;
+    //             $statistic_new->quantity = $quantity;
+    //             $statistic_new->total_order = $total_order;
+    //             $statistic_new->save();
+    //         }
+    //     }
+    }
+
 }

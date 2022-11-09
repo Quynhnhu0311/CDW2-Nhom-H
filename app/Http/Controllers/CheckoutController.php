@@ -75,16 +75,23 @@ class CheckoutController extends Controller
                     $order_detail->product_qty = $cart['product_qty'];
                     $order_detail->coupon_code = $data['order_coupon'];
                     $order_detail->save();
-                    // $cart_product_qty = Product::where('product_id','=', $cart['product_id'])->first();
-                    // $cart_product_qty->product_qty = $cart_product_qty->product_qty - $cart['product_qty'];
-                    // $cart_product_qty->save();
+                }
+            }else{
+                foreach(Session::get('cart') as $key => $cart){
+                    $order_detail = new Detail_order;
+                    $order_detail->order_code = $checkout_code;
+                    $order_detail->product_id = $cart['product_id'];
+                    $order_detail->product_name	 = $cart['product_name'];
+                    $order_detail->product_price = $cart['product_price'];
+                    $order_detail->product_qty = $cart['product_qty'];
+                    $order_detail->save();
                 }
             }
         }
 
     //Send Mail
     $title_mail = "Đơn hàng xác nhận";
-    $customer = DB::table('users')->find(Session::get('id'));
+    $customer = DB::table('customers')->find(Session::get('id'));
     $data['email'][] = $customer->email;
 
     if(Session::get('cart')==true){

@@ -27,8 +27,8 @@ class UserController extends Controller
         $user_pass = md5($request->pass);
 
         //Account Customer
-        $result = DB::table('users')->where('email', $user_email)
-                                    ->where('password', $user_pass)->first();
+        $result = DB::table('customers')->where('email', $user_email)
+                                        ->where('password', $user_pass)->first();
 
         //Account Admin
         $admin_result = DB::table('admins')->where('admin_email', $user_email)
@@ -71,7 +71,7 @@ class UserController extends Controller
             // Register the new user or whatever.
             $user_pass = md5($request->pass);
             $user_name = $request->name;
-            DB::table('users')->insert([
+            DB::table('customers')->insert([
                 'email' => $user_email,
                 'name' => $user_name,
                 'password' => $user_pass,
@@ -86,8 +86,8 @@ class UserController extends Controller
     {
         $user_email = $request->email;
         $user_pass = md5($request->pass);
-        $result = DB::table('users')->where('email', $user_email)
-                                    ->where('password', $user_pass)->first();
+        $result = DB::table('customers')->where('email', $user_email)
+                                        ->where('password', $user_pass)->first();
         return $result;
     }
 }
