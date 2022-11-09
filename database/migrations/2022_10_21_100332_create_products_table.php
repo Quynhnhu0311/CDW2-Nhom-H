@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->double('product_price',11);
             $table->string('product_img',150);
             $table->integer('product_qty');
+            $table->integer('product_sold');
             $table->string('product_description',500);
             $table->double('type_id',11);
             $table->double('manu_id',11);

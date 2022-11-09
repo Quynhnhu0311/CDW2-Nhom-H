@@ -11,6 +11,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,7 +54,7 @@ Route::post('/save-product', [AdminController::class,'save_product']);
 /*----- Orders -----*/
 Route::get('/orders', [AdminController::class,'show_all_orders'])->name('viewOrderList');
 Route::get('/detail-order/{order_code}', [AdminController::class,'detail_order']);
-Route::post('/update-order-qty', [AdminController::class,'update_order_qty']);
+Route::post('/update-order-qty', [OrderController::class,'update_order_qty']);
 
 
 /* =====Front-End===== */

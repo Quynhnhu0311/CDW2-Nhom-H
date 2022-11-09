@@ -103,8 +103,8 @@
                                     ID
                                 </th>
                                 <th style="width: 15%"> Product Name </th>
-                                <th style="width: 20%"> Product Price </th>
-                                <th style="width: 15%"> Product Quantity </th>
+                                <th style="width: 15%"> Product Price </th>
+                                <th style="width: 10%"> Product Quantity </th>
                                 <th style="width: 15%"> Total </th>
                             </tr>
                         </thead>
@@ -156,7 +156,7 @@
                         <div class="form-group discount">
                             <label for="inputPrice">Discount</label>
                             <div class="group-price">
-                                <input type="text" class="form-control discount" value="Giảm {{ $coupon_condition }} VNĐ" disabled>
+                                <input type="text" class="form-control discount" value="Giảm {{ $coupon_number }} VNĐ" disabled>
                             </div>
                         </div>
                         <?php
@@ -173,7 +173,7 @@
                         <div class="form-group discount">
                             <label for="inputPrice">Discount</label>
                             <div class="group-price">
-                                <input type="text" class="form-control discount" value="Giảm {{ $coupon_condition }} %" disabled>
+                                <input type="text" class="form-control discount" value="Giảm {{ $coupon_number }} %" disabled>
                             </div>
                         </div>
                         <?php
@@ -225,16 +225,11 @@
                             <div class="card card-primary">
                                 <div class="form-group status">
                                     <label for="inputType">Order Status</label><br>
-                                    <!-- <select id="inputType" class="form-control custom-select" name="protype">
-                                        <option value="1">Đơn Hàng Mới</option>
-                                        <option value="1">Đã Xử Lý - Đang Giao Hàng</option>
-                                        <option value="1">Hủy Đơn Hàng</option>
-                                    </select> -->
                                     @foreach($order_status as $row => $order_status)
                                         @if($order_status->order_status == 1)
                                             <form>
                                                 @csrf
-                                                <select id="inputType" class="form-control order_details" name="protype">
+                                                <select class="form-control update_order_qty">
                                                     <option id="{{ $order_status->order_id }}" selected value="1">Đơn Hàng Mới</option>
                                                     <option id="{{ $order_status->order_id }}" value="2">Đã Xử Lý - Đang Giao Hàng</option>
                                                     <option id="{{ $order_status->order_id }}" value="3">Hủy Đơn Hàng</option>
@@ -243,8 +238,8 @@
                                         @elseif($order_status->order_status == 2)
                                             <form>
                                                 @csrf
-                                                <select id="inputType" class="form-control order_details" name="protype">
-                                                    <option disabled id="{{ $order_status->order_id }}" value="1">Đơn Hàng Mới</option>
+                                                <select class="form-control update_order_qty">
+                                                    <option id="{{ $order_status->order_id }}" value="1">Đơn Hàng Mới</option>
                                                     <option id="{{ $order_status->order_id }}" selected value="2">Đã Xử Lý - Đang Giao Hàng</option>
                                                     <option id="{{ $order_status->order_id }}" value="3">Hủy Đơn Hàng</option>
                                                 </select>
@@ -252,8 +247,8 @@
                                         @else
                                             <form>
                                                 @csrf
-                                                <select id="inputType" class="form-control order_details" name="protype">
-                                                    <option disabled id="{{ $order_status->order_id }}" value="1">Đơn Hàng Mới</option>
+                                                <select class="form-control update_order_qty">
+                                                    <option id="{{ $order_status->order_id }}" value="1">Đơn Hàng Mới</option>
                                                     <option id="{{ $order_status->order_id }}" value="2">Đã Xử Lý - Đang Giao Hàng</option>
                                                     <option id="{{ $order_status->order_id }}" selected value="3">Hủy Đơn Hàng</option>
                                                 </select>
