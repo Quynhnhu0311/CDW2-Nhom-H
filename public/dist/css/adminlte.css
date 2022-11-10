@@ -53105,11 +53105,22 @@ input#inputImage {
     height: 45px;
 }
 
+input#inputNumber {
+    width: 280px;
+}
+
 .text-alert {
     color:green;
     font-weight: bold;
     background-color: #c6e2d2;
     border-color: #c6e2d2;
+}
+
+.text-alert-error {
+    color: red;
+    font-weight: bold;
+    background-color: #c98b87;
+    border-color: #c98b87;
 }
 
 .form-group select {

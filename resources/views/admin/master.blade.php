@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ url ('dist/css/adminlte.min.css') }}">
     <link rel="stylesheet" href="{{ url ('dist/css/adminlte.css') }}">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="{{ url ('css/sweetalert.css') }}" type="text/css">
 </head>
 
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -368,6 +369,7 @@
     <script src="{{ url ('plugins/jquery-mapael/maps/usa_states.min.js') }}"></script>
     <!-- ChartJS -->
     <script src="{{ url ('plugins/chart.js/Chart.min.js') }}"></script>
+    <script src="{{ url ('js/sweetalert.js') }}"></script>
 
     <!-- AdminLTE for demo purposes -->
     <!-- <script src="{{ url ('dist/js/demo.js') }}"></script> -->
@@ -442,6 +444,42 @@
         });
     </script>
 
-</body>
+    <script type="text/javascript">
+        // $(document).ready(function() {
+        //     $('#btnCreateCoupon').click(function(){
+        //         var order_prd_id = $(this).data('product_id');
+        //         var product_price = $('.product_price').val();
+        //         var product_name = $('.product_name').val();
+        //         var product_qty = $('.product_qty').val();
+        //         var manu_id = $('.manu_id').val();
+        //         var type_id = $('.type_id').val();
+        //         var feature_id = $('.feature_id').val();
+        //         var product_description = $('.product_description').val();
+        //         var product_img = $('.product_img').val();
+        //         var product_sold = $('.product_sold').val();
+        //         var _token = $('input[name="_token"]').val();
 
+        //         var coupon_condition = $('#inputCondition').val();
+        //         var coupon_number = $('#inputNumber').val();
+
+        //         if(coupon_condition == 1 && coupon_number < 1000){
+        //             swal({
+        //                 title: "Error!",
+        //                 text: "Your Discount Field Error. Please Re-Enter!",
+        //                 cancelButtonText: "OK",
+        //                 confirmButtonClass: "btn-success"
+        //             });
+        //         }
+        //         else if(coupon_condition == 2 && coupon_number > 100){
+        //             swal({
+        //                 title: "Error!",
+        //                 text: "Your Discount Field Error. Please Re-Enter!",
+        //                 cancelButtonText: "OK",
+        //                 confirmButtonClass: "btn-success"
+        //             });
+        //         }
+        //     });
+        // });
+    </script>
+</body>
 </html>

@@ -54,7 +54,7 @@ class AdminController extends Controller
      {
          $this->AuthLogin();
          $protypes = DB::table('protypes')->get();
-         $manufactures =  DB::table('manufactures')->where('manu_id',$manu_id)->get();
+         $manufactures = DB::table('manufactures')->where('manu_id',$manu_id)->get();
          return view('admin.editmanufacture',compact('manufactures','protypes'));
      }
 
@@ -90,8 +90,7 @@ class AdminController extends Controller
     }
 
     //Delete manufactures admin
-    public function destroy_manu($manu_id)
-    {
+    public function destroy_manu($manu_id){
         $this->AuthLogin();
         DB::table('manufactures')->where('manu_id',$manu_id)->delete();
         return Redirect::to('admin.manufacture');
@@ -265,7 +264,7 @@ class AdminController extends Controller
     /*----- Show Coupons -----*/
     //Show All Coupon
     function show_all_coupons() {
-        $get_all_coupon = Coupon::all();
+        $get_all_coupon = DB::table('coupons')->get();
         return view('admin.coupons')->with('get_all_coupon', $get_all_coupon);
     }
 
@@ -284,9 +283,19 @@ class AdminController extends Controller
         $data['coupon_condition'] = $request->coupon_condition;
         $data['coupon_number'] = $request->coupon_number;
 
-        DB::table('coupons')->insert($data);
-        Session::put('message_add','Thêm Coupon Thành Công!');
-        return view('admin.addcoupon');
+        if($data['coupon_condition'] == 1 && $data['coupon_number'] < 1000) {
+            Session::put('message_add_error','Thêm Coupon Không Thành Công!');
+            return view('admin.addcoupon');
+        }
+        elseif ($data['coupon_condition'] == 2 && $data['coupon_number'] > 100) {
+            Session::put('message_add_error','Thêm Coupon Không Thành Công!');
+            return view('admin.addcoupon');
+        }
+        else{
+            DB::table('coupons')->insert($data);
+            Session::put('message_add','Thêm Coupon Thành Công!');
+            return view('admin.addcoupon');
+        }
     }
 
     //Edit Coupon
@@ -315,11 +324,12 @@ class AdminController extends Controller
     }
 
     //Delete Coupon
-    function delete_coupon($coupon_id) {
+    public function delete_coupon($coupon_id) {
         $this->AuthLogin();
-        $get_all_coupon = Coupon::all();
+        $get_all_coupon = DB::table('coupons')->get();
         DB::table('coupons')->where('coupon_id',$coupon_id)->delete();
         Session::put('message_deleteCoupon','Xóa Coupon Thành Công!');
         return view('admin.coupons')->with('get_all_coupon', $get_all_coupon);
+        //return Redirect::to('admin.coupons');
     }
 }

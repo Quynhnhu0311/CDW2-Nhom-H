@@ -39,6 +39,11 @@
                                 {{ session()->get('message_add') }}
                             </div>
                             <?php session()->forget(['message_add']); ?>
+                        @elseif(session()->has('message_add_error'))
+                            <div class="alert text-alert-error">
+                                {{ session()->get('message_add_error') }}
+                            </div>
+                            <?php session()->forget(['message_add_error']); ?>
                         @endif
                         <div class="card-body">
                             <div class="form-group">
@@ -55,14 +60,14 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputManu">Coupon Condition</label><br>
-                                <select id="inputManu" class="form-control custom-select" name="coupon_condition">
+                                <select id="inputCondition" class="form-control custom-select" name="coupon_condition">
                                     <option selected value="1">Giảm Theo VNĐ</option>
                                     <option value="2">Giảm Theo %</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="inputCouponNumber">Reduction Price</label>
-                                <input type="number" id="inputQty" class="form-control" name="coupon_number" required>
+                                <input type="text" id="inputNumber" class="form-control" name="coupon_number" required>
                             </div>
                         </div>
                         <!-- /.card-body -->
@@ -72,7 +77,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <input name="submit" type="submit" value="Create New Coupon" class="btn btn-success float-center">
+                    <input name="submit" id="btnCreateCoupon" type="submit" value="Create New Coupon" class="btn btn-success float-center">
                 </div>
             </div>
         </form>
