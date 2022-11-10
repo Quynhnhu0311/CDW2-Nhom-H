@@ -16,6 +16,16 @@ class UserController extends Controller
         $user_pass = md5($request->pass);
         $result = DB::table('users')->where('email',$user_email)
                                     ->where('password',$user_pass)->first();
+
+        //Required Captcha
+        $request->validate([
+                'g-recaptcha-response' => 'required|captcha'
+            ],
+            [
+                'g-recaptcha-response.required' => 'Please check You are not a robot'
+            ]
+        );
+
         if($result) {
             Session::put('name',$result->name);
             Session::put('id',$result->id);
