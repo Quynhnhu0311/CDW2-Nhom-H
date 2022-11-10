@@ -19,7 +19,7 @@
             </div>
         </div><!-- /.container-fluid -->
     </section>
-    
+
     <section class="content">
             <!-- Default box -->
             <div class="card">
@@ -98,13 +98,13 @@
                     <table class="table table-striped projects">
                         <thead>
                             <tr>
-                                <th style="width: 5%">
+                                <th style="width: 2%">
                                     ID
                                 </th>
                                 <th style="width: 15%"> Product Name </th>
-                                <th style="width: 15%"> Product Price </th>
+                                <th style="width: 9%"> Product Price </th>
                                 <th style="width: 10%"> Product Quantity </th>
-                                <th style="width: 15%"> Total </th>
+                                <th style="width: 9%"> Total </th>
                             </tr>
                         </thead>
 
@@ -127,9 +127,15 @@
                                 <td>
                                     {{ number_format($order_details->product_price) }} VNĐ
                                 </td>
-                                <td>
-                                    <input type="hidden" value="{{ $order_details->product_qty }}" name="order_product_qty">
-                                    {{ $order_details->product_qty }}
+                                <td style="display: flex;">
+                                        <input type="number" min="1" name="product_sale_quantity" class="form-control order_qty_{{ $order_details->product_id }}" value="{{ $order_details->product_qty }}">
+
+                                        <input type="hidden" value="{{ $order_details->product_qty }}" name="order_product_qty">
+                                        <input type="hidden" value="{{ $order_details->product_id }}" name="order_prod_id" class="order_prod_id">
+                                        <input type="hidden" value="{{ $order_details->order_code }}" name="order_code" class="order_code">
+
+                                        <input name="update_quantity_product" type="submit" data-product_id="{{ $order_details->product_id }}" value="Update" class="btn btn-success update_quantity_product">
+
                                 </td>
                                 <td>
                                     {{ number_format($total) }} VND
@@ -238,7 +244,7 @@
                                             <form>
                                                 @csrf
                                                 <select class="form-control update_order_qty">
-                                                    <option id="{{ $order_status->order_id }}" value="1">Đơn Hàng Mới</option>
+                                                    <option id="{{ $order_status->order_id }}" disabled value="1">Đơn Hàng Mới</option>
                                                     <option id="{{ $order_status->order_id }}" selected value="2">Đã Xử Lý - Đang Giao Hàng</option>
                                                     <option id="{{ $order_status->order_id }}" value="3">Hủy Đơn Hàng</option>
                                                 </select>
@@ -247,7 +253,7 @@
                                             <form>
                                                 @csrf
                                                 <select class="form-control update_order_qty">
-                                                    <option id="{{ $order_status->order_id }}" value="1">Đơn Hàng Mới</option>
+                                                    <option id="{{ $order_status->order_id }}" disabled value="1">Đơn Hàng Mới</option>
                                                     <option id="{{ $order_status->order_id }}" value="2">Đã Xử Lý - Đang Giao Hàng</option>
                                                     <option id="{{ $order_status->order_id }}" selected value="3">Hủy Đơn Hàng</option>
                                                 </select>

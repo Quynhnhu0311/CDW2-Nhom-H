@@ -383,7 +383,36 @@
                         order_product_id:order_product_id
                     },
                     success: function(data){
-                        alert("Cập Nhật Thành Công!");
+                        alert("Cập Nhật Số Lượng Thành Công!");
+                        // location.reload();
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.update_quantity_product').click(function(){
+                var order_prd_id = $(this).data('product_id');
+                var order_qty = $('.order_qty_' + order_prd_id).val();
+                var order_code = $('.order_code').val();
+                var _token = $('input[name="_token"]').val();
+
+                // alert(order_prd_id);
+                // alert(order_qty);
+                // alert(order_code);
+                $.ajax({
+                    url: "{{ url('/update-order-qty-product') }}",
+                    method: "POST",
+                    data: {
+                        order_prd_id:order_prd_id,
+                        order_qty:order_qty,
+                        _token:_token,
+                        order_code:order_code
+                    },
+                    success: function(data){
+                        alert("Cập Nhật  Thành Công!");
                         // location.reload();
                     }
                 });

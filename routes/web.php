@@ -55,6 +55,7 @@ Route::post('/save-product', [AdminController::class,'save_product']);
 Route::get('/orders', [AdminController::class,'show_all_orders'])->name('viewOrderList');
 Route::get('/detail-order/{order_code}', [AdminController::class,'detail_order']);
 Route::post('/update-order-qty', [OrderController::class,'update_order_qty']);
+Route::post('/update-order-qty-product', [OrderController::class,'update_order_qty_product']);
 
 
 /* =====Front-End===== */
