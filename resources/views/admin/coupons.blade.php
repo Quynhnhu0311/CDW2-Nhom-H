@@ -7,29 +7,29 @@
         <div class="container-fluid">
             <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Manage Products</h1>
+                <h1>Manage Coupons</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="/admin.dashboard">Home</a></li>
-                <li class="breadcrumb-item active">Products</li>
+                <li class="breadcrumb-item active">Coupons</li>
                 </ol>
             </div>
             </div>
         </div><!-- /.container-fluid -->
         </section>
-        @if(session()->has('message_deleteProduct'))
+        @if(session()->has('message_deleteCoupon'))
             <div class="alert text-alert">
-                {{ session()->get('message_deleteProduct') }}
+                {{ session()->get('message_deleteCoupon') }}
             </div>
-            <?php session()->forget(['message_deleteProduct']); ?>
+            <?php session()->forget(['message_deleteCoupon']); ?>
         @endif
         <!-- Main content -->
         <section class="content">
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
-                <h3 class="card-title">Products</h3>
+                <h3 class="card-title">Coupons</h3>
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                     <i class="fas fa-minus"></i>
@@ -41,52 +41,49 @@
                 </div>
                 <div class="products-body p-0">
                     <table class="table table-striped projects">
+                    <?php $i = 1; ?>
                         <thead>
                             <tr>
                                 <th style="width: 2%">
                                     ID
                                 </th>
-                                <th style="width: 15%"> Image </th>
-                                <th style="width: 20%"> Name </th>
-                                <th style="width: 10%"> Price </th>
-                                <th  style="width: 8%">Quantity</th>
-                                <th  style="width: 8%">Sold</th>
-                                <th  style="width: 10%">Protype</th>
-                                <th  style="width: 10%">Manufacture</th>
-                                <th  style="width: 30%">Action</th>
+                                <th style="width: 15%"> Coupon Name </th>
+                                <th style="width: 15%"> Coupon Code </th>
+                                <th style="width: 12%"> Coupon Quantity </th>
+                                <th  style="width: 11%">Coupon Condition</th>
+                                <th  style="width: 10%">Reduction Price</th>
+                                <th  style="width: 20%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($show_Allproducts as $key => $show_Allproducts)
+                            @foreach($get_all_coupon as $key => $get_all_coupon)
                             <tr>
-                                <td>{{ $show_Allproducts->product_id }}</td>
+                                <td>{{ $i++ }}</td>
                                 <td>
-                                    <img src="{{ asset('/img/product/'.$show_Allproducts->product_img) }}" alt=""><br/>
+                                    {{ $get_all_coupon->coupon_name }}
                                 </td>
                                 <td>
-                                    {{ $show_Allproducts->product_name }}
+                                    {{ $get_all_coupon->coupon_code }}
                                 </td>
                                 <td>
-                                    {{ number_format($show_Allproducts->product_price) }}đ
+                                    {{ $get_all_coupon->coupon_qty }}
                                 </td>
                                 <td>
-                                    {{ $show_Allproducts->product_qty }}
+                                    {{ $get_all_coupon->coupon_condition }}
                                 </td>
                                 <td>
-                                    {{ $show_Allproducts->product_sold }}
-                                </td>
-                                <td>
-                                    {{ $show_Allproducts->protype->type_name }}
-                                </td>
-                                <td>
-                                    {{ $show_Allproducts->manufacture->manu_name }}
+                                    @if($get_all_coupon->coupon_condition == 1)
+                                        {{ number_format($get_all_coupon->coupon_number) }} VNĐ
+                                    @elseif($get_all_coupon->coupon_condition == 2)
+                                        {{ $get_all_coupon->coupon_number }} %
+                                    @endif
                                 </td>
                                 <td class="project-actions text-right">
-                                    <a class="btn btn-info btn-sm product" href="/edit-product/{{ $show_Allproducts->product_id }}">
+                                    <a class="btn btn-info btn-sm edit-coupon" href="/edit-coupon/{{ $get_all_coupon->coupon_id }}">
                                         <i class="fas fa-pencil-alt"></i>
                                         Edit
                                     </a>
-                                    <a onclick="return confirm('Bạn có chắc muốn xóa product này không?')" class="btn btn-danger btn-sm" href="/delete-product/{{ $show_Allproducts->product_id }}">
+                                    <a class="btn btn-danger btn-sm delete-coupon" href="/delete-coupon/{{ $get_all_coupon->coupon_id }}">
                                         <i class="fas fa-trash"></i>
                                         Delete
                                     </a>

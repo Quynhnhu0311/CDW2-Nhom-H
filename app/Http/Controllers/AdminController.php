@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 use App\Models\Product;
 use App\Models\Protype;
+use App\Models\Coupon;
 use App\Models\Manufacture;
 use App\Models\Order;
 use DB;
@@ -261,4 +262,64 @@ class AdminController extends Controller
                                         ->with('order_status',$order_status);
     }
 
+    /*----- Show Coupons -----*/
+    //Show All Coupon
+    function show_all_coupons() {
+        $get_all_coupon = Coupon::all();
+        return view('admin.coupons')->with('get_all_coupon', $get_all_coupon);
+    }
+
+    //New Coupon
+    function add_coupon() {
+        return view('admin.addcoupon');
+    }
+
+    //Save Coupon
+    function save_coupon(Request $request) {
+        $this->AuthLogin();
+        $data = array();
+        $data['coupon_name'] = $request->coupon_name;
+        $data['coupon_code'] = $request->coupon_code;
+        $data['coupon_qty'] = $request->coupon_qty;
+        $data['coupon_condition'] = $request->coupon_condition;
+        $data['coupon_number'] = $request->coupon_number;
+
+        DB::table('coupons')->insert($data);
+        Session::put('message_add','Thêm Coupon Thành Công!');
+        return view('admin.addcoupon');
+    }
+
+    //Edit Coupon
+    function edit_coupon($coupon_id) {
+        $this->AuthLogin();
+        $get_all_coupon = Coupon::all();
+        $edit_coupon = Coupon::where('coupon_id',$coupon_id)->get();
+        return view('admin.editcoupon')->with('edit_coupon', $edit_coupon);
+    }
+
+    //Update Coupon
+    function update_coupon(Request $request, $coupon_id){
+        $this->AuthLogin();
+        $data = array();
+        $edit_coupon = Coupon::where('coupon_id',$coupon_id)->get();
+
+        $data['coupon_name'] = $request->coupon_name;
+        $data['coupon_code'] = $request->coupon_code;
+        $data['coupon_qty'] = $request->coupon_qty;
+        $data['coupon_number'] = $request->coupon_number;
+        DB::table('coupons')->where('coupon_id',$coupon_id)->update($data);
+
+        Session::put('message_update_coupon','Cập Nhật Thành Công!');
+
+        return view('admin.editcoupon')->with('edit_coupon', $edit_coupon);
+    }
+
+    //Delete Coupon
+    function delete_coupon($coupon_id) {
+        $this->AuthLogin();
+        $get_all_coupon = Coupon::all();
+        DB::table('coupons')->where('coupon_id',$coupon_id)->delete();
+        Session::put('message_deleteCoupon','Xóa Coupon Thành Công!');
+        return view('admin.coupons')->with('get_all_coupon', $get_all_coupon);
+    }
 }
