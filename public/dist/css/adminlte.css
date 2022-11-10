@@ -53066,6 +53066,19 @@ input.vnđ {
     padding-bottom: 5px;
 }
 
+input.phantram {
+    color: #000;
+    background-color: #fff;
+    font-weight: bold;
+    border-radius: 0.25rem;
+    position: absolute;
+    margin-left: 234px;
+    padding-top: 4px;
+    padding-bottom: 5px;
+    padding-right: 14px;
+    padding-left: 14px;
+}
+
 input#inputPrice {
     width: 280px;
     position: absolute;
@@ -53159,3 +53172,14 @@ input.form-control.discount {
     margin-top: 25px;
 }
 
+a.btn.btn-info.btn-sm.edit-coupon {
+    margin-right: 0;
+}
+
+a.btn.btn-danger.btn-sm.delete-coupon {
+    margin-right: 57px;
+}
+
+a.btn.btn-info.btn-sm.product {
+    margin-right: 0;
+}

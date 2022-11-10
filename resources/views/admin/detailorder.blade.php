@@ -129,11 +129,9 @@
                                 </td>
                                 <td style="display: flex;">
                                         <input type="number" min="1" name="product_sale_quantity" class="form-control order_qty_{{ $order_details->product_id }}" value="{{ $order_details->product_qty }}">
-
                                         <input type="hidden" value="{{ $order_details->product_qty }}" name="order_product_qty">
                                         <input type="hidden" value="{{ $order_details->product_id }}" name="order_prod_id" class="order_prod_id">
                                         <input type="hidden" value="{{ $order_details->order_code }}" name="order_code" class="order_code">
-
                                         <input name="update_quantity_product" type="submit" data-product_id="{{ $order_details->product_id }}" value="Update" class="btn btn-success update_quantity_product">
 
                                 </td>

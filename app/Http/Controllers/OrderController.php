@@ -3,16 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Coupon;
 use App\Models\Detail_order;
-
 use DB;
+use Session;
+session_start();
 
 class OrderController extends Controller
 {
+    // Chặn Admin
+    public function AuthLogin(){
+        $id_admin = Session::get('admin_id');
+        if($id_admin){
+            return Redirect::to('admin.dashboard');
+        }else{
+            return Redirect::to('login')->send();
+        }
+    }
+
     function update_order_qty(Request $request) {
+        $this->AuthLogin();
         //Update Status Order
         $data = $request->all();
         $order = Order::find($data['order_id']);
@@ -51,6 +64,7 @@ class OrderController extends Controller
     }
 
     function update_order_qty_product(Request $request) {
+        $this->AuthLogin();
         $data = $request->all();
         $order_detail = Detail_order::where('product_id',$data['order_prd_id'])->where('order_code', $data['order_code'])->first();
         $order_detail->product_qty = $data['order_qty'];

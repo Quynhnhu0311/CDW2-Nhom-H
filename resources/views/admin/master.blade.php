@@ -307,6 +307,28 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <p>
+                                    Coupons
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('viewCouponList')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Manage Coupons</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/add-coupon" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>New Coupons</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -383,7 +405,7 @@
                         order_product_id:order_product_id
                     },
                     success: function(data){
-                        alert("Cập Nhật Số Lượng Thành Công!");
+                        alert("Cập Nhật Đơn Hàng Thành Công!");
                         // location.reload();
                     }
                 });
@@ -412,7 +434,7 @@
                         order_code:order_code
                     },
                     success: function(data){
-                        alert("Cập Nhật  Thành Công!");
+                        alert("Cập Nhật Số Lượng Thành Công!");
                         // location.reload();
                     }
                 });
