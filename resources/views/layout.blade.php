@@ -118,7 +118,13 @@
                     <nav class="header__menu mobile-menu">
                         <ul>
                             <li class="active"><a href="/">Home</a></li>
-                            <li><a href="/tat-ca-san-pham">Shop</a></li>
+                            <li><a href="/tat-ca-san-pham">Shop</a>
+                                <ul class="dropdown">
+                                    @foreach($manufactures as $manufacture)
+                                    <li><a href="#">{{$manufacture->manu_name}}</a></li>
+                                    @endforeach
+                                </ul>
+                            </li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="{{ url ('about')}}">About Us</a></li>
@@ -219,7 +225,7 @@
     <div class="search-model">
         <div class="h-100 d-flex justify-content-center">
             <div class="search-close-switch">+</div>
-            <form class="search-model-form">
+            <form class="search-model-form" action="tat-ca-san-pham">
                 <input type="text" id="search-input" placeholder="Search here.....">
                 <div class="input-result">
 
@@ -235,19 +241,9 @@
             let _text = $(this).val();
             if (_text != '') {
                 $.ajax({
-                    url: "http://127.0.0.1:8000/ajax-search-product/" + _text,
+                    url: "{{ url('./ajax-search-product') }}/" + _text,
                     type: 'GET',
                     success: function(res) {
-                        // let _html = "";
-                        // for (let pro of res) {
-                        //     _html += '<div class="search-result">';
-                        //     _html += '<div><a href=""><img src="{{ asset ("' + /img/logo.png + '") }}" alt="" style="width: 50px;height:50px"></a></div>';
-                        //     _html += ' <div style="margin-left: 20px;">';
-                        //     _html += ' <a href="#">' + pro.product_name + 'A</a>';
-                        //     _html += '<h6>thong tin mo ta</h6>';
-                        //     _html += ' </div>';
-                        //     _html += ' </div>';
-                        // }
                         document.querySelector('.input-result').style.display = "block";
                         document.querySelector('.input-result').innerHTML = res;
                     }

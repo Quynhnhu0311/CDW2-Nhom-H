@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ManufactureController;
+use App\Http\Controllers\ProtypeController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -26,7 +28,6 @@ Route::get('feature/{feature_id}', [HomeController::class, 'show_product_home'])
 //Products
 Route::get('/tat-ca-san-pham', [ProductController::class, 'all_products']);
 
-
 //Login
 Route::post('/login-user', [UserController::class, 'login_user']);
 Route::get('/logout-user', [UserController::class, 'logout_user']);
@@ -36,4 +37,7 @@ Route::get('/logout-user', [UserController::class, 'logout_user']);
 Route::get('/{name?}', [MyController::class, 'index']);
 
 //Search
-Route::get('/ajax-search-product/{key}', [UserController::class, 'ajaxSearch'])->name('ajax-search-product');
+Route::get('/ajax-search-product/{key}', [ProductController::class, 'ajaxSearch'])->name('ajax-search-product');
+Route::get('/ajax-search-product-shop/{key}', [ProductController::class, 'ajaxSearch_shop'])->name('ajax-search-product-shop');
+Route::get('/ajax-search-product-shop/{key}/{type_key}', [ProductController::class, 'ajaxSearch_shop'])->name('ajax-search-product-shop');
+Route::get('/ajax-search-product-shop/{key}/{type_key}/{manu_key}', [ProductController::class, 'ajaxSearch_shop'])->name('ajax-search-product-shop');

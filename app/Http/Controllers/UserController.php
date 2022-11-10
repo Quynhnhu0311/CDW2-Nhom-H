@@ -34,9 +34,4 @@ class UserController extends Controller
         Session::put('id', null);
         return Redirect::to('/');
     }
-    public function ajaxSearch()
-    {
-        $data = Product::search()->get();
-        return view('ajaxSearch', compact('data'));
-    }
 }

@@ -19,4 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/ajax-search-product/{key}', [apiSearchController::class, 'ajaxSearch'])->name('ajax-search-product');
+// Route::get('/ajax-search-product/{key}', [apiSearchController::class, 'ajaxSearch'])->name('ajax-search-product');
