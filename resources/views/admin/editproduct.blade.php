@@ -67,6 +67,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label for="inputClientCompany">Product Sold</label>
+                                    <div class="group-price">
+                                        <input type="number" min="1" id="inputQty" class="form-control" name="product_sold" value="{{ $edit_product->product_sold }}" disabled>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label for="inputManu">Manufacture</label><br>
                                     <select id="inputManu" class="form-control custom-select" name="manufacture">
                                         @foreach($manu_product as $key => $manu_product)

@@ -189,6 +189,7 @@ class AdminController extends Controller
         $data['feature_id'] = $request->feature;
         $data['product_description'] = $request->product_description;
         $data['product_img'] = $request->product_img;
+        $data['product_sold'] = $request->product_sold;
         $get_image = $request->file('product_img');
 
         /*-----Fix Undefined variable-----*/
@@ -210,6 +211,7 @@ class AdminController extends Controller
                                             ->with('getFeatures', $getFeatures);
         }
         $data['product_img'] = '';
+        $data['product_sold'] = 0;
         DB::table('products')->insert($data);
         Session::put('message_add','THÊM THÀNH CÔNG!');
         return view('admin.addproduct')->with('getProtypes', $getProtypes)

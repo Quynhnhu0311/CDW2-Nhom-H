@@ -56,8 +56,9 @@
                                 <label for="inputQty">Product Quantity</label>
                                 <input type="number" min="1" value="1" id="inputQty" class="form-control" name="product_qty">
                             </div>
+                                <input type="hidden" value="0" id="inputQty" class="form-control" name="product_sold">
                             <div class="form-group">
-                                <label for="inputDescription">Product Description</label>
+                                <label for="inputDe cription">Product Description</label>
                                 <input type="text" id="inputDescription" class="form-control" name="product_description" required>
                             </div>
                             <div class="form-group">
