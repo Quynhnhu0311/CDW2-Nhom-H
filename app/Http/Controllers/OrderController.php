@@ -18,6 +18,7 @@ class OrderController extends Controller
         $order->save();
         if($order->order_status == 2) {
             foreach($data['order_product_id'] as $key => $product_id) {
+                $prod_id = $data['order_product_id'];
                 //$products = Product::find($prod_id);
                 $products = Product::where('product_id','=',$product_id)->first();
                 $product_quantity = $products->product_qty;
@@ -25,9 +26,10 @@ class OrderController extends Controller
                 foreach($data['order_product_qty'] as $key2 => $qty) {
                     if($key==$key2){
                         $product_remain = $product_quantity - $qty;
-                        $products->product_qty = $product_remain;
-                        $products->product_sold = $product_sold + $qty;
-                        $products->save();
+                        //$products->product_qty = $product_remain;
+                        //$products->product_sold = $product_sold + $qty;
+                        $products_sold = $product_sold + $qty;
+                        DB::update('update products set product_qty = ?, product_sold = ? where product_id = ?',[$product_remain,$products_sold,$product_id]);
                     }
                 }
             }
