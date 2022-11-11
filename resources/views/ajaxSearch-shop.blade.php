@@ -1,7 +1,7 @@
 @foreach($data as $pro)
 <div class="col-lg-4 col-md-6 col-sm-6 ajax-resutl">
     <div class="product__item">
-        <div class="product__item__pic set-bg" data-setbg="{{ asset('./img/product/'.$pro->product_img) }}" style="background-image: url('{{ asset('./img/product/'.$pro->product_img) }}');">
+        <div class="product__item__pic set-bg" data-setbg="{{ asset('./img/product/'.$pro->product_img) }}" style="background-image: url('{{ asset('./img/product/'.$pro->product_img) }}')">
             <ul class="product__hover">
                 <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
                 <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
