@@ -21,5 +21,6 @@ class DatabaseSeeder extends Seeder
         $this->call([Coupons::class]);
         $this->call([Blog::class]);
         $this->call([Admins::class]);
+        $this->call([Customers::class]);
     }
 }

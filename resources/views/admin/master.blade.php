@@ -7,14 +7,16 @@
     <title>AdminGroupH | Dashboard </title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{ url ('plugins/fontawesome-free/css/all.min.css') }}">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{ url ('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ url ('dist/css/adminlte.min.css') }}">
+    <link rel="stylesheet" href="{{ url ('dist/css/adminlte.css') }}">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="{{ url ('css/sweetalert.css') }}" type="text/css">
 </head>
 
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -76,7 +78,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="dist/img/user1-128x128.jpg" alt="User Avatar"
+                                <img src="{{ asset ('dist/img/user1-128x128.jpg') }}" alt="User Avatar"
                                     class="img-size-50 mr-3 img-circle">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
@@ -93,7 +95,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="dist/img/user8-128x128.jpg" alt="User Avatar"
+                                <img src="{{ asset ('dist/img/user8-128x128.jpg') }}" alt="User Avatar"
                                     class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
@@ -110,7 +112,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="dist/img/user3-128x128.jpg" alt="User Avatar"
+                                <img src="{{ asset ('dist/img/user3-128x128.jpg') }}" alt="User Avatar"
                                     class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
@@ -195,7 +197,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
-                <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+                <img src="{{ asset ('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                     style="opacity: .8">
                 <span class="brand-text font-weight-light">AdminGoupH</span>
             </a>
@@ -205,7 +207,7 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <?php
@@ -277,15 +279,15 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ url ('/admin.manufacture')}}" class="nav-link">
+                                    <a href="{{route('viewProductList')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Manage Products</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ url ('/admin.addmanufacture') }}" class="nav-link">
+                                    <a href="/add-product" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Add Products</p>
+                                        <p>New Products</p>
                                     </a>
                                 </li>
                             </ul>
@@ -299,9 +301,31 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{ url ('/admin.manufacture')}}" class="nav-link">
+                                    <a href="{{route('viewOrderList')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Manage Orders</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <p>
+                                    Coupons
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('viewCouponList')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Manage Coupons</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/add-coupon" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>New Coupons</p>
                                     </a>
                                 </li>
                             </ul>
@@ -327,6 +351,8 @@
     <!-- ./wrapper -->
     <!-- REQUIRED SCRIPTS -->
     <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ url ('plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap -->
     <script src="{{ url ('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -343,11 +369,117 @@
     <script src="{{ url ('plugins/jquery-mapael/maps/usa_states.min.js') }}"></script>
     <!-- ChartJS -->
     <script src="{{ url ('plugins/chart.js/Chart.min.js') }}"></script>
+    <script src="{{ url ('js/sweetalert.js') }}"></script>
 
     <!-- AdminLTE for demo purposes -->
     <!-- <script src="{{ url ('dist/js/demo.js') }}"></script> -->
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="{{ url ('dist/js/pages/dashboard2.js') }}"></script>
-</body>
+    <!-- <script src="{{ url ('dist/js/pages/dashboard2.js') }}"></script> -->
 
+    <!-------------------------
+        Update Order Status
+    --------------------------->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.update_order_qty').change(function(){
+                var order_status = $(this).val();
+                var order_id = $(this).children(":selected").attr("id");
+                var _token = $('input[name="_token"]').val();
+
+                order_product_qty = [];
+                $("input[name='order_product_qty']").each(function() {
+                    order_product_qty.push($(this).val());
+                });
+
+                order_product_id = [];
+                $("input[name='order_product_id']").each(function() {
+                    order_product_id.push($(this).val());
+                });
+
+                $.ajax({
+                    url: "{{ url('/update-order-qty') }}",
+                    method: "POST",
+                    data: {
+                        order_status:order_status,
+                        order_id:order_id,
+                        _token:_token,
+                        order_product_qty:order_product_qty,
+                        order_product_id:order_product_id
+                    },
+                    success: function(data){
+                        alert("Cập Nhật Đơn Hàng Thành Công!");
+                        // location.reload();
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.update_quantity_product').click(function(){
+                var order_prd_id = $(this).data('product_id');
+                var order_qty = $('.order_qty_' + order_prd_id).val();
+                var order_code = $('.order_code').val();
+                var _token = $('input[name="_token"]').val();
+
+                // alert(order_prd_id);
+                // alert(order_qty);
+                // alert(order_code);
+                $.ajax({
+                    url: "{{ url('/update-order-qty-product') }}",
+                    method: "POST",
+                    data: {
+                        order_prd_id:order_prd_id,
+                        order_qty:order_qty,
+                        _token:_token,
+                        order_code:order_code
+                    },
+                    success: function(data){
+                        alert("Cập Nhật Số Lượng Thành Công!");
+                        // location.reload();
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        // $(document).ready(function() {
+        //     $('#btnCreateCoupon').click(function(){
+        //         var order_prd_id = $(this).data('product_id');
+        //         var product_price = $('.product_price').val();
+        //         var product_name = $('.product_name').val();
+        //         var product_qty = $('.product_qty').val();
+        //         var manu_id = $('.manu_id').val();
+        //         var type_id = $('.type_id').val();
+        //         var feature_id = $('.feature_id').val();
+        //         var product_description = $('.product_description').val();
+        //         var product_img = $('.product_img').val();
+        //         var product_sold = $('.product_sold').val();
+        //         var _token = $('input[name="_token"]').val();
+
+        //         var coupon_condition = $('#inputCondition').val();
+        //         var coupon_number = $('#inputNumber').val();
+
+        //         if(coupon_condition == 1 && coupon_number < 1000){
+        //             swal({
+        //                 title: "Error!",
+        //                 text: "Your Discount Field Error. Please Re-Enter!",
+        //                 cancelButtonText: "OK",
+        //                 confirmButtonClass: "btn-success"
+        //             });
+        //         }
+        //         else if(coupon_condition == 2 && coupon_number > 100){
+        //             swal({
+        //                 title: "Error!",
+        //                 text: "Your Discount Field Error. Please Re-Enter!",
+        //                 cancelButtonText: "OK",
+        //                 confirmButtonClass: "btn-success"
+        //             });
+        //         }
+        //     });
+        // });
+    </script>
+</body>
 </html>

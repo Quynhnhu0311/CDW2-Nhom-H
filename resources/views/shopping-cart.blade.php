@@ -42,10 +42,12 @@
                                     <div class="alert text-alert">
                                         {{ session()->get('message_delete') }}
                                     </div>
+                                    <?php session()->forget(['message_delete']); ?>
                                 @elseif(session()->has('error'))
                                     <div class="alert alert-danger">
                                         {{ session()->get('error') }}
                                     </div>
+                                    <?php session()->forget(['error']); ?>
                                 @endif
                                 <?php
                                     $subtotal = 0;

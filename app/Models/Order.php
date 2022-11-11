@@ -13,4 +13,8 @@ class Order extends Model
     ];
     protected $primaryKey = 'order_id';
     protected $table = 'orders';
+
+    public function customer(){
+        return $this->belongsTo(Customer::class,'customer_id');
+    }
 }

@@ -112,7 +112,7 @@
                                                 ?>
                                                 <li>Total <span>{{ number_format($total_coupon) }}đ</span></li>
                                             @elseif($coupon_cart['coupon_condition'] == 2)
-                                                <input class="input" type="hidden" name="order_coupon" value="0">
+                                                <input class="input" type="hidden" name="order_coupon" value="{{ $coupon_cart['coupon_code'] }}">
                                                 <li>Discount <span>{{ number_format($coupon_cart['coupon_number']) }}%</span></li>
                                                 <?php
                                                     $total_coupon = $subTotal - ($subTotal * $coupon_cart['coupon_number']) / 100;

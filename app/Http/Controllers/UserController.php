@@ -25,18 +25,36 @@ class UserController extends Controller
     function login_user(Request $request, $name = 'index'){
         $user_email = $request->email;
         $user_pass = md5($request->pass);
+<<<<<<< HEAD
 
         //Account Customer
-        $result = DB::table('users')->where('email', $user_email)
-                                    ->where('password', $user_pass)->first();
+        $result = DB::table('customers')->where('email', $user_email)
+                                        ->where('password', $user_pass)->first();
 
         //Account Admin
         $admin_result = DB::table('admins')->where('admin_email', $user_email)
                                            ->where('admin_password', $user_pass)->first();
-
+        
         if ($result) {
             Session::put('name', $result->name);
             Session::put('id', $result->id);
+=======
+        $result = DB::table('users')->where('email',$user_email)
+                                    ->where('password',$user_pass)->first();
+
+        //Required Captcha
+        $request->validate([
+                'g-recaptcha-response' => 'required|captcha'
+            ],
+            [
+                'g-recaptcha-response.required' => 'Please check You are not a robot'
+            ]
+        );
+
+        if($result) {
+            Session::put('name',$result->name);
+            Session::put('id',$result->id);
+>>>>>>> function_login_and_logout
             return Redirect::to('/');
         }
         elseif($admin_result) {
@@ -71,7 +89,7 @@ class UserController extends Controller
             // Register the new user or whatever.
             $user_pass = md5($request->pass);
             $user_name = $request->name;
-            DB::table('users')->insert([
+            DB::table('customers')->insert([
                 'email' => $user_email,
                 'name' => $user_name,
                 'password' => $user_pass,
@@ -86,8 +104,8 @@ class UserController extends Controller
     {
         $user_email = $request->email;
         $user_pass = md5($request->pass);
-        $result = DB::table('users')->where('email', $user_email)
-                                    ->where('password', $user_pass)->first();
+        $result = DB::table('customers')->where('email', $user_email)
+                                        ->where('password', $user_pass)->first();
         return $result;
     }
 }
