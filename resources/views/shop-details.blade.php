@@ -206,31 +206,32 @@
                     </div>
                     <div class="content-comment">
                         @foreach($detail as $product_detail)
-                        <form action="route('comment-product',['id' => $product_detail->product_id])" method="POST"  enctype="multipart/form-data">
+                        <form action=""  enctype="multipart/form-data">
                         @endforeach
-                        {{ csrf_field() }}
                             <?php 
                             $id = Session::get('id');
                             ?>
-                            <div class="rate">
-                                <input type="radio" id="star5" class="rate" name="rating" value="5"/>
-                                <label for="star5" title="text">5 stars</label>
-                                <input type="radio" checked id="star4" class="rate" name="rating" value="4"/>
+                            <div class="rates">
+                                <input type="radio" id="rating" class="rate" value="0" />
+                                <input type="radio" checked id="star5"  class="rate" name="rating" value="5" />
+                                <label for="star5"  class="" title="text">5 stars</label>
+                                <input type="radio"  id="star4" class="rate" name="rating" value="4" />
                                 <label for="star4" title="text">4 stars</label>
-                                <input type="radio" id="star3" class="rate" name="rating" value="3"/>
+                                <input type="radio" id="star3" class="rate" name="rating" value="3" />
                                 <label for="star3" title="text">3 stars</label>
-                                <input type="radio" id="star2" class="rate" name="rating" value="2">
+                                <input type="radio" id="star2" class="rate" name="rating" value="2"  />
                                 <label for="star2" title="text">2 stars</label>
-                                <input type="radio" id="star1" class="rate" name="rating" value="1"/>
+                                <input type="radio" id="star1" class="rate" name="rating" value="1" />
                                 <label for="star1" title="text">1 star</label>
                             </div>
-                            <input type="hidden" name="id" value="<?php echo $id ?>">
+                            <input type="hidden" id="id_user_comment" name="id" value="<?php echo $id ?>">
                             @foreach($detail as $product_detail)
-                            <input type="hidden" name="product_id" value="{{$product_detail->product_id }}">
+                            <input type="hidden" id="product_id" name="comment_product_id" value="{{$product_detail->product_id }}">
                             @endforeach
-                            <textarea placeholder="" name="comment_content" id="" cols="100%" rows="5"></textarea>
-                            <input type="submit" name="submit-comment">
+                            <textarea placeholder="" name="comment_content" id="comment_content" cols="100%" rows="5"></textarea>
+                            <button type="button" name="submit-comment" id="btn-comment">Gửi Bình Luận</button>
                         </form>
+                        <div id="test"></div>
                         <?php 
                         $message_cmt = Session::get('message_cmt');
                         if($message_cmt){
