@@ -226,7 +226,7 @@
         <div class="h-100 d-flex justify-content-center">
             <div class="search-close-switch">+</div>
             <form class="search-model-form" action="tat-ca-san-pham">
-                <input type="text" id="search-input" placeholder="Search here.....">
+                <input type="text" id="search-input" name="searchValue" placeholder="Search here.....">
                 <div class="input-result">
 
                 </div>

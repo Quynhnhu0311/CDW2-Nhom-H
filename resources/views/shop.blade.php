@@ -26,7 +26,7 @@
                 <div class="shop__sidebar">
                     <div class="shop__sidebar__search">
                         <form>
-                            <input type="text" id="search-shop-input" onkeydown="return (event.keyCode!=13);" placeholder="Search...">
+                            <input type="text" id="search-shop-input" onkeydown="return (event.keyCode!=13);" value="" placeholder="Search...">
                             <button type="submit" disabled><span class="icon_search"></span></button>
                         </form>
                     </div>
