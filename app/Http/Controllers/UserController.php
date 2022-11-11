@@ -25,7 +25,6 @@ class UserController extends Controller
     function login_user(Request $request, $name = 'index'){
         $user_email = $request->email;
         $user_pass = md5($request->pass);
-<<<<<<< HEAD
 
         //Account Customer
         $result = DB::table('customers')->where('email', $user_email)
@@ -35,13 +34,7 @@ class UserController extends Controller
         $admin_result = DB::table('admins')->where('admin_email', $user_email)
                                            ->where('admin_password', $user_pass)->first();
         
-        if ($result) {
-            Session::put('name', $result->name);
-            Session::put('id', $result->id);
-=======
-        $result = DB::table('users')->where('email',$user_email)
-                                    ->where('password',$user_pass)->first();
-
+                                           
         //Required Captcha
         $request->validate([
                 'g-recaptcha-response' => 'required|captcha'
@@ -50,11 +43,10 @@ class UserController extends Controller
                 'g-recaptcha-response.required' => 'Please check You are not a robot'
             ]
         );
-
-        if($result) {
-            Session::put('name',$result->name);
-            Session::put('id',$result->id);
->>>>>>> function_login_and_logout
+        
+        if ($result) {
+            Session::put('name', $result->name);
+            Session::put('id', $result->id);
             return Redirect::to('/');
         }
         elseif($admin_result) {
