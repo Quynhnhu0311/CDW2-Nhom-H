@@ -43,6 +43,17 @@ Route::get('editmanufacture/{manu_id}',[AdminController::class, 'edit_manufactur
 //Update Manufactures
 Route::put('update_datamanu/{manu_id}',[AdminController::class, 'update_manufacture']);
 
+//Show Protypes page
+Route::get('/admin.protype',[AdminController::class,'show_admin_protype']);
+//Show EditProtype page
+Route::get('/admin.editprotype/{type_id}',[AdminController::class,'show_edit_protype']);
+//Update Protypes
+Route::put('update_protype/{type_id}',[AdminController::class,'update_admin_protype']);
+//Add Protypes
+Route::post('/addprotype',[AdminController::class,'add_admin_protype']);
+//Delete Protypes
+Route::DELETE('deleteprotype/{type_id}',[AdminController::class,'delete_admin_protype']);
+
 /*----- Products -----*/
 Route::get('/products', [AdminController::class,'show_all_products'])->name('viewProductList');
 Route::get('/edit-product/{product_id}', [AdminController::class,'edit_product']);
