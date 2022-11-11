@@ -169,9 +169,9 @@
             <div class="title">
                 <h2>Comment</h2>
             </div>
+            @foreach($comment_all as $comment_all)
             <div class="show-comment">
                 <div class="comment-item">
-                    @foreach($comment_all as $comment_all)
                     <div class="info-comment">
                         <div class="avatar">
                             <img src="{{ asset ('img/avatar.jpg') }}" alt="">
@@ -188,9 +188,9 @@
                     <div class="content-comment">
                         <p>{{ $comment_all->comment_content }}</p>
                     </div>
-                    @endforeach
                 </div>
             </div>
+            @endforeach
             <div class="comment-items">
                 <div class="comment-item">
                     <div class="info-comment">
@@ -250,11 +250,11 @@
     //         $('#'+ product_id + '-' + count).css('color','#ccc');
     //     }
     // }
-    $(document).on('mouseenter', '.ratings', function(){
-        var index = $(this).data("index");
-        // var product_id = $(this).data('product_id');
-        alert(index);
-    }); 
+    // $(document).on('mouseenter', '.ratings', function(){
+    //     var index = $(this).data("index");
+    //     // var product_id = $(this).data('product_id');
+    //     alert(index);
+    // }); 
     </script>
     <!-- Comment Section End -->
 @endsection

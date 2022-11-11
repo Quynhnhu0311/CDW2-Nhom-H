@@ -69,4 +69,22 @@ class HomeController extends Controller
         $comment->rating_value = $rating;
         $comment->save();
     }
+    public function show_comment($id)
+    {
+        $detail = DB::table('products')->join('protypes','protypes.type_id','=','products.type_id')
+        ->join('manufactures','manufactures.manu_id','=','products.manu_id')->where('products.product_id',$id)->get();
+        foreach($detail as $related) {
+            $type_id = $related->type_id;
+        }
+        /* Realated Product */
+        $related_product = DB::table('products')->join('protypes','protypes.type_id','=','products.type_id')->where('protypes.type_id',$type_id)->paginate(8);
+        foreach($detail as $comment) {
+            $comment_id = $comment->product_id;
+        }
+        /* Show Comment and Rating Product */
+        $comment_all = DB::table('comments')->join('products','products.product_id','=','comments.product_id')
+        ->where('comments.product_id',$comment_id)
+        ->join('customers','customers.id','=','comments.id')->get();
+        return view('show-comment',compact('detail','related_product','comment_all'));
+    }
 }
