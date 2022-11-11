@@ -26,8 +26,8 @@
                 <div class="shop__sidebar">
                     <div class="shop__sidebar__search">
                         <form>
-                            <input type="text" id="search-shop-input" placeholder="Search...">
-                            <button type="submit"><span class="icon_search"></span></button>
+                            <input type="text" id="search-shop-input" onkeydown="return (event.keyCode!=13);" placeholder="Search...">
+                            <button type="submit" disabled><span class="icon_search"></span></button>
                         </form>
                     </div>
                     <div class="shop__sidebar__accordion">
@@ -43,15 +43,6 @@
                                                 @foreach($protypes as $protype)
                                                 <li class="ajax-protype" value="{{$protype->type_id}}"><a>{{$protype->type_name}}</a></li>
                                                 @endforeach
-                                                <!-- <li><a href="#">Men (20)</a></li>
-                                                <li><a href="#">Bags (20)</a></li>
-                                                <li><a href="#">Clothing (20)</a></li>
-                                                <li><a href="#">Shoes (20)</a></li>
-                                                <li><a href="#">Accessories (20)</a></li>
-                                                <li><a href="#">Kids (20)</a></li>
-                                                <li><a href="#">Kids (20)</a></li>
-                                                <li><a href="#">Kids (20)</a></li> -->
-
                                             </ul>
                                         </div>
                                     </div>
@@ -68,11 +59,6 @@
                                                 @foreach($manufactures as $manufacture)
                                                 <li class="ajax-manufacture" value="{{$manufacture->manu_id}}"><a>{{$manufacture->manu_name}}</a></li>
                                                 @endforeach
-                                                <!-- <li><a href="#">Louis Vuitton</a></li>
-                                                <li><a href="#">Chanel</a></li>
-                                                <li><a href="#">Hermes</a></li>
-                                                <li><a href="#">Gucci</a></li> -->
-
                                             </ul>
                                         </div>
                                     </div>

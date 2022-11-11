@@ -39,5 +39,4 @@ Route::get('/{name?}', [MyController::class, 'index']);
 //Search
 Route::get('/ajax-search-product/{key}', [ProductController::class, 'ajaxSearch'])->name('ajax-search-product');
 Route::get('/ajax-search-product-shop/{key}', [ProductController::class, 'ajaxSearch_shop'])->name('ajax-search-product-shop');
-Route::get('/ajax-search-product-shop/{key}/{type_key}', [ProductController::class, 'ajaxSearch_shop'])->name('ajax-search-product-shop');
 Route::get('/ajax-search-product-shop/{key}/{type_key}/{manu_key}', [ProductController::class, 'ajaxSearch_shop'])->name('ajax-search-product-shop');
