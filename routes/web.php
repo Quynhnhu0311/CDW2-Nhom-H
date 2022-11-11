@@ -26,6 +26,8 @@ Route::get('feature/{feature_id}', [HomeController::class, 'show_product_home'])
 //Products
 Route::get('/tat-ca-san-pham', [ProductController::class, 'all_products']);
 
+//Send mail
+Route::get('/emails-register-user', [UserController::class, 'send_mail']);
 
 //Login
 Route::post('/login-user', [UserController::class, 'login_user']);

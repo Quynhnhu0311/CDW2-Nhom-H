@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 use DB;
+use Illuminate\Support\Facades\Mail;
 use Session;
 use Illuminate\Support\Facades\Validator;
 
@@ -56,13 +57,12 @@ class UserController extends Controller
             return Redirect::to('/login');
         }
     }
-    //detail user
-    function delail_user(Request $request)
+    function send_mail()
     {
-        $user_email = $request->email;
-        $user_pass = md5($request->pass);
-        $result = DB::table('users')->where('email', $user_email)
-            ->where('password', $user_pass)->first();
-        return $result;
+        $name = 'ly tat loi';
+        Mail::send('emails-register-user', compact('name'), function ($email) use ($name) {
+            $email->subject('Demo test mail');
+            $email->to('lytatloizz.no1@gmail.com', $name);
+        });
     }
 }
