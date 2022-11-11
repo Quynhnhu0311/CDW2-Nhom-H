@@ -390,11 +390,9 @@
     </script>
 
 <script>
-    $(document).ready(function() {
-        $('.rate').click(function(){
-            $('.rate').removeAttr('id','rating');
-            $(this).attr('id','rating');
-        });
+    $('.rate').click(function(){
+        $('.rate').removeAttr('id','rating');
+        $(this).attr('id','rating');
     });
     function load_comment(){
         var product_id = $('#product_id').val();
@@ -411,9 +409,14 @@
         var id_user_comment = $('#id_user_comment').val();
         var comment_content = $('#comment_content').val();
         var rating = $('#rating').val();
+        if(id_user_comment == ""){
+            swal({
+                    title: "Login to comment !",
+                });
+        }
         if(rating == 0 || comment_content == ""){
             swal({
-                    title: "Vui Lòng bình luận và đánh giá sản phẩm !",
+                    title: "You have not commented or rated yet !",
                 });
         }else {
             var _token = $('input[name = _token]').val();
