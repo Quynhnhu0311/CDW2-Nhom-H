@@ -33,7 +33,7 @@ class UserController extends Controller
         //Account Admin
         $admin_result = DB::table('admins')->where('admin_email', $user_email)
                                            ->where('admin_password', $user_pass)->first();
-
+        
         if ($result) {
             Session::put('name', $result->name);
             Session::put('id', $result->id);
