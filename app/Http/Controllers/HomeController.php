@@ -45,6 +45,7 @@ class HomeController extends Controller
     //Detail Product and Related Product
     public function show_details($id)
     {
+        $manufactures = DB::table('manufactures')->get();
         $detail = DB::table('products')->join('protypes','protypes.type_id','=','products.type_id')
         ->join('manufactures','manufactures.manu_id','=','products.manu_id')->where('products.product_id',$id)->get();
         foreach($detail as $related) {
@@ -59,7 +60,7 @@ class HomeController extends Controller
         $comment_all = DB::table('comments')->join('products','products.product_id','=','comments.product_id')
         ->where('comments.product_id',$comment_id)
         ->join('users','users.id','=','comments.id')->get();
-        return view('shop-details',compact('detail','related_product','comment_all'));
+        return view('shop-details',compact('detail','related_product','comment_all','manufactures'));
     }
     //Add Comment Product
     public function comment_product_ajax(Request $request){
