@@ -283,6 +283,7 @@ ol {
 	border-bottom: 2px solid #333;
 	background: 0 0;
 	color: #999;
+	margin-top: 30%;
 }
 
 .search-close-switch {
@@ -310,7 +311,12 @@ ol {
 	-ms-flex-pack: center;
 	justify-content: center;
 }
-
+.search-result{
+	background-color: white; 
+	display: flex; 
+	border: 1px solid red; 
+	padding: 1%;
+}
 /*---------------------
   Header
 -----------------------*/

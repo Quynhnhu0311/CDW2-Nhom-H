@@ -12,9 +12,10 @@ use Session;
 
 class HomeController extends Controller
 {
-    function home() {
-        $newArrivals = Product::where('feature_id','=',1)->get();
-        $bestSellers = Product::where('feature_id','=',2)->get();
+    function home()
+    {
+        $newArrivals = Product::where('feature_id', '=', 1)->get();
+        $bestSellers = Product::where('feature_id', '=', 2)->get();
         $features = DB::table('features')->get();
         $products_feature =Product::where('feature_id','=',1)->Paginate(4);
         $duplicate = DB::table('favorites')->join('products','products.product_id','=','favorites.product_id')->get();
@@ -29,8 +30,9 @@ class HomeController extends Controller
                             ->with('duplicate', $duplicate);
     }
     // Show Product Home Page
-    public function show_product_home($feature_id) {
-        $bestSellers = Product::where('feature_id','=',2)->get();
+    public function show_product_home($feature_id)
+    {
+        $bestSellers = Product::where('feature_id', '=', 2)->get();
         $features = DB::table('features')->get();
         $feature_id = Feature::where('feature_id',$feature_id)->first();
         $products_feature = Product::where('feature_id',$feature_id->feature_id)->Paginate(4);

@@ -1,94 +1,86 @@
 @extends('layout')
 @section('content')
-    <!-- Breadcrumb Section Begin -->
-    <section class="breadcrumb-option">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb__text">
-                        <h4>Shop</h4>
-                        <div class="breadcrumb__links">
-                            <a href="/">Home</a>
-                            <span>Shop</span>
-                        </div>
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__text">
+                    <h4>Shop</h4>
+                    <div class="breadcrumb__links">
+                        <a href="/">Home</a>
+                        <span>Shop</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Breadcrumb Section End -->
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
 
-    <!-- Shop Section Begin -->
-    <section class="shop spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="shop__sidebar">
-                        <div class="shop__sidebar__search">
-                            <form action="#">
-                                <input type="text" placeholder="Search...">
-                                <button type="submit"><span class="icon_search"></span></button>
-                            </form>
-                        </div>
-                        <div class="shop__sidebar__accordion">
-                            <div class="accordion" id="accordionExample">
-                                <div class="card">
-                                    <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseOne">Categories</a>
-                                    </div>
-                                    <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <div class="shop__sidebar__categories">
-                                                <ul class="nice-scroll">
-                                                    <li><a href="#">Men (20)</a></li>
-                                                    <li><a href="#">Women (20)</a></li>
-                                                    <li><a href="#">Bags (20)</a></li>
-                                                    <li><a href="#">Clothing (20)</a></li>
-                                                    <li><a href="#">Shoes (20)</a></li>
-                                                    <li><a href="#">Accessories (20)</a></li>
-                                                    <li><a href="#">Kids (20)</a></li>
-                                                    <li><a href="#">Kids (20)</a></li>
-                                                    <li><a href="#">Kids (20)</a></li>
-                                                </ul>
-                                            </div>
+<!-- Shop Section Begin -->
+<section class="shop spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="shop__sidebar">
+                    <div class="shop__sidebar__search">
+                        <form>
+                            <input type="text" id="search-shop-input" onkeydown="return (event.keyCode!=13);" value="" placeholder="Search...">
+                            <button type="submit" disabled><span class="icon_search"></span></button>
+                        </form>
+                    </div>
+                    <div class="shop__sidebar__accordion">
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseOne">Categories</a>
+                                </div>
+                                <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="shop__sidebar__categories">
+                                            <ul class="nice-scroll">
+                                                @foreach($protypes as $protype)
+                                                <li class="ajax-protype" value="{{$protype->type_id}}"><a>{{$protype->type_name}}</a></li>
+                                                @endforeach
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card">
-                                    <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseTwo">Branding</a>
-                                    </div>
-                                    <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <div class="shop__sidebar__brand">
-                                                <ul>
-                                                    <li><a href="#">Louis Vuitton</a></li>
-                                                    <li><a href="#">Chanel</a></li>
-                                                    <li><a href="#">Hermes</a></li>
-                                                    <li><a href="#">Gucci</a></li>
-                                                </ul>
-                                            </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseTwo">Branding</a>
+                                </div>
+                                <div id="collapseTwo" class="collapse show" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="shop__sidebar__brand">
+                                            <ul>
+                                                @foreach($manufactures as $manufacture)
+                                                <li class="ajax-manufacture" value="{{$manufacture->manu_id}}"><a>{{$manufacture->manu_name}}</a></li>
+                                                @endforeach
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card">
-                                    <div class="card-heading">
-                                        <a data-toggle="collapse" data-target="#collapseThree">Filter Price</a>
-                                    </div>
-                                    <div id="collapseThree" class="collapse show" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <div class="shop__sidebar__price">
-                                                <ul>
-                                                    <form>
-                                                        <div id="slider-range"></div>
-                                                        <input type="text" id="amount" readonly>
-                                                        <input type="hidden" name="start_price" id="start_price">
-                                                        <input type="hidden" name="end_price" id="end_price">
-                                                        <br>
-                                                        <input type="submit" name="filter_price" value="Filter" class="btn btn-default">
-                                                    </form>
-                                                </ul>
-                                            </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseThree">Filter Price</a>
+                                </div>
+                                <div id="collapseThree" class="collapse show" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="shop__sidebar__price">
+                                            <ul>
+                                                <form>
+                                                    <div id="slider-range"></div>
+                                                    <input type="text" id="amount" readonly>
+                                                    <input type="hidden" name="start_price" id="start_price">
+                                                    <input type="hidden" name="end_price" id="end_price">
+                                                    <br>
+                                                    <input type="submit" name="filter_price" value="Filter" class="btn btn-default">
+                                                </form>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -96,13 +88,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-9">
-                    <div class="shop__product__option">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class="shop__product__option__left">
-                                    <p>Showing 1–12 of 126 results</p>
-                                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="shop__product__option">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="shop__product__option__left">
+                                <p>Showing 1–12 of 126 results</p>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="shop__product__option__right">
@@ -182,7 +174,69 @@
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Shop Section End -->
-
+    </div>
+</section>
+<script>
+    const search = document.querySelector('#search-shop-input');
+    let ajax_protype = document.querySelectorAll('.ajax-protype');
+    let ajax_manufacture = document.querySelectorAll('.ajax-manufacture');
+    let type, manu = 1;
+    search.addEventListener('keyup', function() {
+        let _text = $(this).val();
+        if (_text != '') {
+            $.ajax({
+                url: "{{ url('./ajax-search-product-shop') }}/" + _text,
+                type: 'GET',
+                success: function(res) {
+                    $(".shop-resutl").html(res);
+                    $('.show-all-products').hide();
+                    $(".ajax-resutl").show();
+                }
+            })
+        } else {
+            // $(".ajax-resutl").hide();
+        }
+    })
+    ajax_protype.forEach((item) => {
+        item.addEventListener('click', () => {
+            let _value = type = item.value;
+            let _search;
+            if (search.value != '') {
+                _search = search.value;
+            } else {
+                _search = " ";
+            }
+            $.ajax({
+                url: "{{ url('./ajax-search-product-shop') }}/" + _search + "/" + _value + "/" + manu,
+                type: 'GET',
+                success: function(res) {
+                    $(".shop-resutl").html(res);
+                    $('.show-all-products').hide();
+                    $(".ajax-resutl").show();
+                }
+            })
+        })
+    })
+    ajax_manufacture.forEach((item) => {
+        item.addEventListener('click', () => {
+            let _value = manu = item.value;
+            let _search;
+            if (search.value != '') {
+                _search = search.value;
+            } else {
+                _search = " ";
+            }
+            $.ajax({
+                url: "{{ url('./ajax-search-product-shop') }}/" + _search + "/" + type + "/" + _value,
+                type: 'GET',
+                success: function(res) {
+                    $(".shop-resutl").html(res);
+                    $('.show-all-products').hide();
+                    $(".ajax-resutl").show();
+                }
+            })
+        })
+    })
+</script>
+<!-- Shop Section End -->
 @endsection

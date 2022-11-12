@@ -10,8 +10,13 @@
     <title>Male-Fashion | Template</title>
 
     <!-- Google Font -->
+<<<<<<< HEAD
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
         rel="stylesheet">
+=======
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+>>>>>>> origin/function_search
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ url ('css/select.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url ('css/bootstrap.min.css') }}" type="text/css">
@@ -45,14 +50,13 @@
         <div class="offcanvas__option">
             <div class="offcanvas__links">
                 <?php
-                    $name = Session::get('name');
-                    if($name){
-                        echo $name;
-                        echo '<li><a href="/logout-user">Log out</a></li>';
-                    }
-                    else{
-                        echo '<a href="#">Sign in</a>';
-                    }
+                $name = Session::get('name');
+                if ($name) {
+                    echo $name;
+                    echo '<li><a href="/logout-user">Log out</a></li>';
+                } else {
+                    echo '<a href="#">Sign in</a>';
+                }
                 ?>
                 <a href="#">FAQs</a>
             </div>
@@ -92,18 +96,17 @@
                         <div class="header__top__right">
                             <div class="header__top__links">
                                 <?php
-                                    $name = Session::get('name');
-                                    if($name){
-                                        echo '<div class="header__top__hover">
-                                                <span>'.$name.'<i class="arrow_carrot-down"></i></span>
+                                $name = Session::get('name');
+                                if ($name) {
+                                    echo '<div class="header__top__hover">
+                                                <span>' . $name . '<i class="arrow_carrot-down"></i></span>
                                                 <ul>
                                                     <a href="/logout-user"><li>LOG OUT</li></a>
                                                 </ul>
                                             </div>';
-                                    }
-                                    else{
-                                        echo '<a href="/login">Sign in</a>';
-                                    }
+                                } else {
+                                    echo '<a href="/login">Sign in</a>';
+                                }
                                 ?>
                                 <a href="#">FAQs</a>
                             </div>
@@ -131,7 +134,13 @@
                     <nav class="header__menu mobile-menu">
                         <ul>
                             <li class="active"><a href="/">Home</a></li>
-                            <li><a href="/tat-ca-san-pham">Shop</a></li>
+                            <li><a href="/tat-ca-san-pham">Shop</a>
+                                <ul class="dropdown">
+                                    @foreach($manufactures as $manufacture)
+                                    <li><a href="#">{{$manufacture->manu_name}}</a></li>
+                                    @endforeach
+                                </ul>
+                            </li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="{{ url ('about')}}">About Us</a></li>
@@ -243,10 +252,13 @@
 
     <!-- Search Begin -->
     <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="h-100 d-flex justify-content-center">
             <div class="search-close-switch">+</div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
+            <form class="search-model-form" action="tat-ca-san-pham">
+                <input type="text" id="search-input" name="searchValue" placeholder="Search here.....">
+                <div class="input-result">
+
+                </div>
             </form>
         </div>
     </div>
@@ -259,6 +271,7 @@
     <script src="{{ url ('js/data.json') }}"></script>
     <!-- <script src="{{ url ('js/jquery.min.js') }}"></script>
     <script src="{{ url ('js/jquery-3.3.1.min.js') }}"></script> -->
+    <script src="{{ url ('js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ url ('js/bootstrap.min.js') }}"></script>
     <script src="{{ url ('js/jquery.nice-select.min.js') }}"></script>
     <script src="{{ url ('js/jquery.nicescroll.min.js') }}"></script>
@@ -280,7 +293,7 @@
         });
 
     </script>
-    
+
     <script type="text/javascript">
         $(document).ready(function() {
             $('.add-to-cart-btn').click(function() {
@@ -428,6 +441,25 @@
         }
         comment_content = '';
     });
+    </script>
+    
+    <script>
+        document.querySelector('#search-input').addEventListener('keyup', function() {
+            let _text = $(this).val();
+            if (_text != '') {
+                $.ajax({
+                    url: "{{ url('./ajax-search-product') }}/" + _text,
+                    type: 'GET',
+                    success: function(res) {
+                        document.querySelector('.input-result').style.display = "block";
+                        document.querySelector('.input-result').innerHTML = res;
+                    }
+                })
+            } else {
+                document.querySelector('.input-result').style.display = "none";
+                document.querySelector('.input-result').innerHTML = ' ';
+            }
+        })
     </script>
 </body>
 

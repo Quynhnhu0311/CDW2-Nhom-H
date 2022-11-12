@@ -31,4 +31,14 @@ class ProductController extends Controller
 
         return view('shop')->with('products',$products);
     }
+    public function ajaxSearch()
+    {
+        $data = Product::search()->paginate(6);
+        return view('ajaxSearch', compact('data'));
+    }
+    public function ajaxSearch_shop()
+    {
+        $data = Product::search()->paginate(6);
+        return view('ajaxSearch-shop', compact('data'));
+    }
 }
