@@ -17,6 +17,7 @@ class HomeController extends Controller
         $newArrivals = Product::where('feature_id', '=', 1)->get();
         $bestSellers = Product::where('feature_id', '=', 2)->get();
         $features = DB::table('features')->get();
+        $manufactures = DB::table('manufactures')->get();
         $products_feature =Product::where('feature_id','=',1)->Paginate(4);
         $duplicate = DB::table('favorites')->join('products','products.product_id','=','favorites.product_id')->get();
         $min_price = DB::table('products')->min('product_price');
@@ -27,7 +28,8 @@ class HomeController extends Controller
                             ->with('bestSellers',$bestSellers)
                             ->with('features', $features)
                             ->with('products_feature',$products_feature)
-                            ->with('duplicate', $duplicate);
+                            ->with('duplicate', $duplicate)
+                            ->with('manufactures', $manufactures);
     }
     // Show Product Home Page
     public function show_product_home($feature_id)
