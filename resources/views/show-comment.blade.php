@@ -1,5 +1,5 @@
-@foreach($comment_all as $comment_all)
 <div class="show-comment">
+    @foreach($comment_all as $comment_all)
     <div class="comment-item">
         <div class="info-comment">
             <div class="avatar">
@@ -18,5 +18,5 @@
             <p>{{ $comment_all->comment_content }}</p>
         </div>
     </div>
+    @endforeach
 </div>
-@endforeach
