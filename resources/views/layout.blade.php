@@ -131,7 +131,7 @@
                             <li><a href="/tat-ca-san-pham">Shop</a>
                                 <ul class="dropdown">
                                     @foreach($manufactures as $manufacture)
-                                    <li><a href="#">{{$manufacture->manu_name}}</a></li>
+                                    <li><a href="\tat-ca-san-pham\{{$manufacture->manu_id}}">{{$manufacture->manu_name}}</a></li>
                                     @endforeach
                                 </ul>
                             </li>
