@@ -56,22 +56,17 @@ class HomeController extends Controller
         ->join('users','users.id','=','comments.id')->get();
         return view('shop-details',compact('detail','related_product','comment_all'));
     }
-    //Add Comment Product
-    public function comment_product(Request $request) {
-        $comment = array();
-        $comment['id'] = $request->id;
-        $comment['product_id'] = $request->product_id;
-        $comment['comment_content'] = $request->comment_content;
-        $comment['rating_value'] = $request->rating;
-        $id = Session::get('id');
-        // Nếu User đã đăng nhập mới được bình luận
-        if($id) {
-            DB::table('comments')->insert($comment);
-            return Redirect::to('shop-details/'.$comment['product_id']);
-        // Không cho phép bình luận khi chưa đăng nhập
-        }else {
-             Session::put('message_cmt','Vui lòng đăng nhập để được bình luận!');
-             return Redirect::to('shop-details/'.$comment['product_id']);
-        }
+
+    public function comment_product_ajax(Request $request){
+        $comment_product_id = $request->product_id;
+        $id = $request->id_user_comment;
+        $comment_content = $request->comment_content;
+        $rating = $request->rating;
+        $comment = new Comment();
+        $comment->product_id = $comment_product_id;
+        $comment->id = $id;
+        $comment->comment_content = $comment_content;
+        $comment->rating_value = $rating;
+        $comment->save();
     }
 }

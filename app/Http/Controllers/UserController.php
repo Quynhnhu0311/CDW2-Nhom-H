@@ -34,6 +34,7 @@ class UserController extends Controller
         $admin_result = DB::table('admins')->where('admin_email', $user_email)
                                            ->where('admin_password', $user_pass)->first();
 
+
         //Required Captcha
         $request->validate([
                 'g-recaptcha-response' => 'required|captcha'
@@ -46,7 +47,6 @@ class UserController extends Controller
         if ($result) {
             Session::put('name', $result->name);
             Session::put('id', $result->id);
-
             return Redirect::to('/');
         }
         elseif($admin_result) {

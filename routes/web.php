@@ -75,7 +75,9 @@ Route::get('/feature/{feature_id}', [HomeController::class, 'show_product_home']
 Route::get('/tat-ca-san-pham', [ProductController::class, 'all_products']);
 
 //Comment Product
-Route::post('/shop-details/{id}', [HomeController::class, 'comment_product'])->name('comment-product');;
+//Comment-Php// Route::post('/shop-details/{id}', [HomeController::class, 'comment_product'])->name('comment-product');;
+//Comment-Ajax//
+Route::post('/send-comment', [HomeController::class, 'comment_product_ajax'])->name('ajax.comment');;
 
 //Favorite Product
 Route::post('/favorite', [FavoriteController::class,'add_favorite'])->name('add-favorite');
