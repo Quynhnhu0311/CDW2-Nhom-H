@@ -42,8 +42,8 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => env('MAIL_HOST', 'smtp.gmail.com'),
-            'port' => env('MAIL_PORT', 535),
+            'host' => env('MAIL_HOST', 'smtp.googlemail.com'),
+            'port' => env('MAIL_PORT', 587),
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
@@ -90,8 +90,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'lytatloizz.no3@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'Group H'),
+        'address' => env('MAIL_FROM_ADDRESS', '15911hth@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'Leader Group H'),
     ],
 
     /*
