@@ -113,16 +113,16 @@
                     </div>
                     <form>
                         @csrf
-                        <div class="row">
+                        <div class="row shop-resutl">
                             @foreach($products as $row => $allProducts)
-                            <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="col-lg-4 col-md-6 col-sm-6 show-products">
                                 <div class="product__item">
                                     <div class="product__item__pic set-bg" data-setbg="{{ asset('./img/product/'.$allProducts->product_img) }}">
                                         <ul class="product__hover">
                                             <form action="{{ url('favorite') }}" method="POST" enctype="multipart/form-data">
-                                            {{ csrf_field() }}
+                                                {{ csrf_field() }}
                                                 <input type="hidden" value="{{ $allProducts->product_id }}" name="favorite_product_id">
-                                                <?php  $id = Session::get('id'); ?>
+                                                <?php $id = Session::get('id'); ?>
                                                 <input type="hidden" value="<?php echo $id ?>" name="favorite_user_id">
                                                 <input name="submit-favorite" value="" type="submit">
                                             </form>
@@ -165,10 +165,10 @@
                             @endforeach
                         </div>
                         <div class="store-filter clearfix">
-                        <ul class="store-pagination">
-                            {{ $products->links() }}
-                        </ul>
-                    </div>
+                            <ul class="store-pagination">
+                                {{ $products->links() }}
+                            </ul>
+                        </div>
                     </form>
 
                 </div>
@@ -189,13 +189,9 @@
                 type: 'GET',
                 success: function(res) {
                     $(".shop-resutl").html(res);
-                    $('.show-all-products').hide();
-                    $(".ajax-resutl").show();
                 }
             })
-        } else {
-            // $(".ajax-resutl").hide();
-        }
+        } else {}
     })
     ajax_protype.forEach((item) => {
         item.addEventListener('click', () => {
