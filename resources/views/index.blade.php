@@ -1,16 +1,16 @@
 @extends('layout')
 @section('content')
-<!-- Hero Section Begin -->
-<section class="hero">
-    <div class="hero__slider owl-carousel">
-        <div class="hero__items set-bg" data-setbg="img/hero/hero-1.jpg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-5 col-lg-7 col-md-8">
-                        <div class="hero__text">
-                            <h6>Summer Collection</h6>
-                            <h2>Fall - Winter Collections 2030</h2>
-                            <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
+    <!-- Hero Section Begin -->
+    <section class="hero">
+        <div class="hero__slider owl-carousel">
+            <div class="hero__items set-bg" data-setbg="{{ asset ('img/hero/hero-1.jpg') }}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-7 col-md-8">
+                            <div class="hero__text">
+                                <h6>Summer Collection</h6>
+                                <h2>Fall - Winter Collections 2030</h2>
+                                <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
                                 commitment to exceptional quality.</p>
                             <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
                             <div class="hero__social">
@@ -23,15 +23,14 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="hero__items set-bg" data-setbg="img/hero/hero-2.jpg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-5 col-lg-7 col-md-8">
-                        <div class="hero__text">
-                            <h6>Summer Collection</h6>
-                            <h2>Fall - Winter Collections 2030</h2>
-                            <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
+            <div class="hero__items set-bg" data-setbg="{{ asset ('img/hero/hero-2.jpg') }}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-7 col-md-8">
+                            <div class="hero__text">
+                                <h6>Summer Collection</h6>
+                                <h2>Fall - Winter Collections 2030</h2>
+                                <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
                                 commitment to exceptional quality.</p>
                             <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
                             <div class="hero__social">
@@ -49,40 +48,41 @@
 </section>
 <!-- Hero Section End -->
 
-<!-- Banner Section Begin -->
-<section class="banner spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-7 offset-lg-4">
-                <div class="banner__item">
-                    <div class="banner__item__pic">
-                        <img src="img/banner/banner-1.jpg" alt="">
-                    </div>
-                    <div class="banner__item__text">
-                        <h2>Clothing Collections 2030</h2>
-                        <a href="#">Shop now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-5">
-                <div class="banner__item banner__item--middle">
-                    <div class="banner__item__pic">
-                        <img src="img/banner/banner-2.jpg" alt="">
-                    </div>
-                    <div class="banner__item__text">
-                        <h2>Accessories</h2>
-                        <a href="#">Shop now</a>
+    <!-- Banner Section Begin -->
+    <section class="banner spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 offset-lg-4">
+                    <div class="banner__item">
+                        <div class="banner__item__pic">
+                            <img src="{{ asset ('img/banner/banner-1.jpg') }}" alt="">
+                        </div>
+                        <div class="banner__item__text">
+                            <h2>Clothing Collections 2030</h2>
+                            <a href="#">Shop now</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-7">
-                <div class="banner__item banner__item--last">
-                    <div class="banner__item__pic">
-                        <img src="img/banner/banner-3.jpg" alt="">
+                <div class="col-lg-5">
+                    <div class="banner__item banner__item--middle">
+                        <div class="banner__item__pic">
+                            <img src="{{ asset ('img/banner/banner-2.jpg') }}" alt="">
+                        </div>
+                        <div class="banner__item__text">
+                            <h2>Accessories</h2>
+                            <a href="#">Shop now</a>
+                        </div>
                     </div>
-                    <div class="banner__item__text">
-                        <h2>Shoes Spring 2030</h2>
-                        <a href="#">Shop now</a>
+                </div>
+                <div class="col-lg-7">
+                    <div class="banner__item banner__item--last">
+                        <div class="banner__item__pic">
+                            <img src="{{ asset ('img/banner/banner-3.jpg') }}" alt="">
+                        </div>
+                        <div class="banner__item__text">
+                            <h2>Shoes Spring 2030</h2>
+                            <a href="#">Shop now</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -106,44 +106,60 @@
                     @endforeach
                 </ul>
             </div>
-        </div>
-        <div class="row product__filter">
-            @foreach($products_feature as $row => $bestSellers)
-            <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix best-sellers">
-                <div class="product__item">
-                    <div class="product__item__pic set-bg" data-setbg="{{ asset('/img/product/'.$bestSellers->product_img) }}">
-                        <ul class="product__hover">
-                            <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                            <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                            <li><a href="/shop-details/{{ $bestSellers->product_id }}"><img src="img/icon/search.png" alt=""></a></li>
-                        </ul>
-                    </div>
-                    <div class="product__item__text">
-                        <h6>{{ $bestSellers->product_name }}</h6>
-                        <a href="#" class="add-cart">+ Add To Cart</a>
-                        <div class="rating">
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
-                            <i class="fa fa-star-o"></i>
+            <form>
+                @csrf
+                <div class="row product__filter">
+                    @foreach($products_feature as $row => $bestSellers)
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix best-sellers">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="{{ asset('/img/product/'.$bestSellers->product_img) }}">
+                                    <ul class="product__hover">
+                                        <form action="{{ url ('favorite')}}" method="POST" enctype="multipart/form-data">
+                                        {{ csrf_field() }}
+                                            <input type="hidden" value="{{ $bestSellers->product_id }}" name="favorite_product_id">
+                                            <?php  $id = Session::get('id'); ?>
+                                            <input type="hidden" value="<?php echo $id ?>" name="favorite_user_id">
+                                            <input style="" name="submit-favorite" value="" type="submit"  >
+                                        </form>
+                                        <li><a href="#"><img src="{{ asset('img/icon/compare.png') }}" alt=""> <span>Compare</span></a></li>
+                                        <li><a href="/shop-details/{{ $bestSellers->product_id }}"><img src="{{ asset ('img/icon/search.png') }}" alt=""></a></li>
+                                    </ul>
+                                </div>
+                                <div class="product__item__text">
+                                    <h6 >{{ $bestSellers->product_name }}</h6>
+                                    <div class="add-to-cart">
+                                        <input type="hidden" value="{{ $bestSellers->product_id }}" class="cart_product_id_{{ $bestSellers->product_id }}">
+                                        <input type="hidden" value="{{ $bestSellers->product_name }}" class="cart_product_name_{{ $bestSellers->product_id }}">
+                                        <input type="hidden" value="{{ $bestSellers->product_price }}" class="cart_product_price_{{ $bestSellers->product_id }}">
+                                        <input type="hidden" value="{{ $bestSellers->product_img }}" class="cart_product_image_{{ $bestSellers->product_id }}">
+                                        <input type="hidden" value="1" class="cart_product_qty_{{ $bestSellers->product_id }}">
+                                        <button type="button" class="add-to-cart-btn" data-id="{{ $bestSellers->product_id }}" name="add-cart">+ Add To Cart</button>
+                                    </div>
+                                    <div class="rating">
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+                                    <h5>{{ number_format($bestSellers->product_price) }}đ</h5>
+                                    <div class="product__color__select">
+                                        <label for="pc-1">
+                                            <input type="radio" id="pc-1">
+                                        </label>
+                                        <label class="active black" for="pc-2">
+                                            <input type="radio" id="pc-2">
+                                        </label>
+                                        <label class="grey" for="pc-3">
+                                            <input type="radio" id="pc-3">
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h5>{{ number_format($bestSellers->product_price) }}đ</h5>
-                        <div class="product__color__select">
-                            <label for="pc-1">
-                                <input type="radio" id="pc-1">
-                            </label>
-                            <label class="active black" for="pc-2">
-                                <input type="radio" id="pc-2">
-                            </label>
-                            <label class="grey" for="pc-3">
-                                <input type="radio" id="pc-3">
-                            </label>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-            </div>
-            @endforeach
+            </form>
         </div>
     </div>
 </section>

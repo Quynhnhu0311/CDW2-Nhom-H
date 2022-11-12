@@ -12,14 +12,14 @@ use function PHPSTORM_META\type;
 class Product extends Model
 {
     use HasFactory;
-    function manufacture()
-    {
-        return $this->belongsTo(Manufactue::class, 'manu_id');
-    }
+    protected $fillable = [
+        'product_name','product_price','product_img','product_qty','product_sold','product_description','type_id','manu_id','feature_id'
+    ];
+    protected $primaryKey = 'product_id ';
+    protected $table = 'products';
 
-    function protype()
-    {
-        return $this->belongsTo(Protype::class, 'type_id');
+    function manufacture(){
+        return $this->belongsTo(Manufacture::class,'manu_id');
     }
 
     public function scopeSearch($query)

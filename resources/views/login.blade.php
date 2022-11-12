@@ -45,6 +45,7 @@
                             echo '<span class="text-alert" style="color:red;">'.$message.'</span>';
                             Session::put('message',null);
                         }
+                        session()->forget(['message']);
                     ?>
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
 						<input class="input100" type="text" name="email">
@@ -58,7 +59,10 @@
 						<input class="input100" type="password" name="pass">
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
-
+                    <div class="captcha">
+                        {!! NoCaptcha::renderJs() !!}
+                        {!! NoCaptcha::display() !!}
+                    </div>
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
