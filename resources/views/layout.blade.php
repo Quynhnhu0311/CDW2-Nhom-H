@@ -36,10 +36,7 @@
     @if (session('success'))
     <div class="popup">
         <p>{{ session('success') }}</p>
-<<<<<<< HEAD
-=======
         <span class="close-favorite">OK</span>
->>>>>>> origin/favorite_product
     </div>
     @endif
     <!-- Offcanvas Menu Begin -->
@@ -272,20 +269,18 @@
     <script src="{{ url ('js/owl.carousel.min.js') }}"></script>
     <script src="{{ url ('js/main.js') }}"></script>
     <script src="{{ url ('js/sweetalert.js') }}"></script>
-<<<<<<< HEAD
     <script src="{{ url ('js/jquery-ui.js') }}"></script>
 
     <!-- Chức năng thêm sản phẩm vào giỏ hàng -->
-=======
     <script>
         $(document).ready(function() {
             $(".close-favorite").click(function() {
                 $(this).parent().toggleClass('active');
             });
-        }); 
+        });
 
     </script>
->>>>>>> origin/favorite_product
+    
     <script type="text/javascript">
         $(document).ready(function() {
             $('.add-to-cart-btn').click(function() {
