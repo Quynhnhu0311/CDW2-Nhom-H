@@ -120,9 +120,9 @@
                                     <div class="product__item__pic set-bg" data-setbg="{{ asset('./img/product/'.$allProducts->product_img) }}">
                                         <ul class="product__hover">
                                             <form action="{{ url('favorite') }}" method="POST" enctype="multipart/form-data">
-                                            {{ csrf_field() }}
+                                                {{ csrf_field() }}
                                                 <input type="hidden" value="{{ $allProducts->product_id }}" name="favorite_product_id">
-                                                <?php  $id = Session::get('id'); ?>
+                                                <?php $id = Session::get('id'); ?>
                                                 <input type="hidden" value="<?php echo $id ?>" name="favorite_user_id">
                                                 <input name="submit-favorite" value="" type="submit">
                                             </form>
@@ -165,10 +165,10 @@
                             @endforeach
                         </div>
                         <div class="store-filter clearfix">
-                        <ul class="store-pagination">
-                            {{ $products->links() }}
-                        </ul>
-                    </div>
+                            <ul class="store-pagination">
+                                {{ $products->links() }}
+                            </ul>
+                        </div>
                     </form>
 
                 </div>
