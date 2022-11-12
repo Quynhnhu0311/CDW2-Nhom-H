@@ -34,12 +34,13 @@ class HomeController extends Controller
     // Show Product Home Page
     public function show_product_home($feature_id)
     {
+        $manufactures = DB::table('manufactures')->get();
         $bestSellers = Product::where('feature_id', '=', 2)->get();
         $features = DB::table('features')->get();
         $feature_id = Feature::where('feature_id',$feature_id)->first();
         $products_feature = Product::where('feature_id',$feature_id->feature_id)->Paginate(4);
         $duplicate = DB::table('favorites')->join('products','products.product_id','=','favorites.product_id')->get();
-        return view('/index',compact('bestSellers','features','products_feature','duplicate'));
+        return view('/index',compact('bestSellers','features','products_feature','duplicate','manufactures'));
     }
     //Detail Product and Related Product
     public function show_details($id)

@@ -9,7 +9,8 @@ use DB;
 class ProductController extends Controller
 {
     function all_products() {
-
+        $protypes = DB::table('protypes')->get();
+        $manufactures = DB::table('manufactures')->get();
         if(isset($_GET['sort_by'])) {
             $sort_by = $_GET['sort_by'];
             if($sort_by == 'giam_dan') {
@@ -29,7 +30,9 @@ class ProductController extends Controller
             $products = DB::table('products')->orderby('product_id','desc')->paginate(6);
         }
 
-        return view('shop')->with('products',$products);
+        return view('shop')->with('products',$products)
+                            ->with('protypes', $protypes)
+                            ->with('manufactures', $manufactures);
     }
     public function ajaxSearch()
     {

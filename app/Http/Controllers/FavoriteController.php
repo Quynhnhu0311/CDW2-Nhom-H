@@ -30,11 +30,12 @@ class FavoriteController extends Controller
         }
     }
     public function show_favorite_user($id){
+        $manufactures = DB::table('manufactures')->get();
         $id_user = Session::get('id');
         $duplicate = DB::table('favorites')->get();
         $favorite = DB::table('favorites')->join('products','products.product_id','=','favorites.product_id')
         ->join('users','users.id','=','favorites.id')->where('favorites.id',$id_user)->get();
-        return View('favorite',compact('favorite','duplicate'));
+        return View('favorite',compact('favorite','duplicate','manufactures'));
     }
     public function delete_favorite_user($favorite_id) {
         $id = Session::get('id');

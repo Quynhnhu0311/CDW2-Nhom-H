@@ -23,11 +23,13 @@ class CartController extends Controller
 
     function gio_hang(Request $request) {
         $this->AuthLogin();
+        $manufactures = DB::table('manufactures')->get();
         $meta_desc = "Giỏ hàng của bạn";
         $meta_keywords = "Giỏ hàng Ajax";
         $meta_title = "Giỏ hàng Ajax";
         $url_canonical = $request->url();
-        return view('shopping-cart')->with('url_canonical',$url_canonical);
+        return view('shopping-cart')->with('url_canonical',$url_canonical)
+                                    ->with('manufactures',$manufactures);
     }
 
     public function add_cart_ajax(Request $request) {

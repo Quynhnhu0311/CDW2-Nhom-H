@@ -29,6 +29,7 @@ class CheckoutController extends Controller
 
     function confirm_order(Request $request) {
         $this->AuthLogin();
+        $manufactures = DB::table('manufactures')->get();
         $data = $request->all();
 
         //Thông tin shipping
@@ -89,61 +90,61 @@ class CheckoutController extends Controller
             }
         }
 
-    //Send Mail
-    $title_mail = "Đơn hàng xác nhận";
-    $customer = DB::table('customers')->find(Session::get('id'));
-    $data['email'][] = $customer->email;
+        //Send Mail
+        $title_mail = "Đơn hàng xác nhận";
+        $customer = DB::table('customers')->find(Session::get('id'));
+        $data['email'][] = $customer->email;
 
-    if(Session::get('cart')==true){
-        foreach(Session::get('cart') as $key => $cart_mail){
-            $cart_array[] = array(
-                'product_name' => $cart_mail['product_name'],
-                'product_price' => $cart_mail['product_price'],
-                'product_qty' => $cart_mail['product_qty']
+        if(Session::get('cart')==true){
+            foreach(Session::get('cart') as $key => $cart_mail){
+                $cart_array[] = array(
+                    'product_name' => $cart_mail['product_name'],
+                    'product_price' => $cart_mail['product_price'],
+                    'product_qty' => $cart_mail['product_qty']
 
-            );
+                );
+            }
         }
-    }
 
-    if(Session::get('coupon')==true){
-        foreach(Session::get('coupon') as $row => $coupon_mail){
+        if(Session::get('coupon')==true){
+            foreach(Session::get('coupon') as $row => $coupon_mail){
+                $coupon_array = array(
+                    'coupon_code' => $data['order_coupon']
+                );
+            }
+        }
+        else{
             $coupon_array = array(
-                'coupon_code' => $data['order_coupon']
+                'coupon_code' => 0
             );
         }
-    }
-    else{
-        $coupon_array = array(
-            'coupon_code' => 0
+
+        $shipping_array = array(
+            'customer_name' => $customer->name,
+            'shipping_fistname' =>  $data['shipping_fistname'],
+            'shipping_lastname' =>  $data['shipping_lastname'],
+            'shipping_email' => $data['shipping_email'],
+            'shipping_province' => $data['shipping_province'],
+            'shipping_district' => $data['shipping_district'],
+            'shipping_town' => $data['shipping_town'],
+            'shipping_address' => $data['shipping_address'],
+            'shipping_phone' => $data['shipping_phone'],
+            'shipping_note' => $data['shipping_note']
         );
-    }
 
-    $shipping_array = array(
-        'customer_name' => $customer->name,
-        'shipping_fistname' =>  $data['shipping_fistname'],
-        'shipping_lastname' =>  $data['shipping_lastname'],
-        'shipping_email' => $data['shipping_email'],
-        'shipping_province' => $data['shipping_province'],
-        'shipping_district' => $data['shipping_district'],
-        'shipping_town' => $data['shipping_town'],
-        'shipping_address' => $data['shipping_address'],
-        'shipping_phone' => $data['shipping_phone'],
-        'shipping_note' => $data['shipping_note']
-    );
+        $ordercode_mail = array(
+            'order_code' => $checkout_code
+        );
 
-    $ordercode_mail = array(
-        'order_code' => $checkout_code
-    );
+        Mail::send('mail_order', ['cart_array'=>$cart_array, 'coupon_array'=>$coupon_array, 'shipping_array' => $shipping_array, 'code' => $ordercode_mail]
+        , function($message) use ($title_mail,$data){
+            $message->to($data['email'])->subject($title_mail);
+            $message->from($data['email'],$title_mail);
+        });
 
-    Mail::send('mail_order', ['cart_array'=>$cart_array, 'coupon_array'=>$coupon_array, 'shipping_array' => $shipping_array, 'code' => $ordercode_mail]
-    , function($message) use ($title_mail,$data){
-        $message->to($data['email'])->subject($title_mail);
-        $message->from($data['email'],$title_mail);
-    });
+        $request->session()->forget(['cart']);
+        $request->session()->forget(['coupon']);
 
-    $request->session()->forget(['cart']);
-    $request->session()->forget(['coupon']);
-
-    return view('/success');
+        return view('/success')->with('manufactures',$manufactures);
     }
 }
