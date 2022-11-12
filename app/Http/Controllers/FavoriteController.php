@@ -23,7 +23,11 @@ class FavoriteController extends Controller
                 return Redirect::to('favorite/'.$id);
             }
             else {
+<<<<<<< HEAD
                 return Redirect('/')->with('success', 'Sản Phẩm này đã nằm trong danh sách yêu thích !');;
+=======
+                return Redirect('/')->with('success', 'Sản Phẩm này đã nằm trong danh sách yêu thích của bạn !');
+>>>>>>> origin/favorite_product
             }
         }else {
             return Redirect::to('/');
