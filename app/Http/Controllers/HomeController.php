@@ -59,7 +59,8 @@ class HomeController extends Controller
         $comment_all = DB::table('comments')->join('products','products.product_id','=','comments.product_id')
         ->where('comments.product_id',$comment_id)
         ->join('users','users.id','=','comments.id')->get();
-        return view('shop-details',compact('detail','related_product','comment_all'));
+        $manufactures = DB::table('manufactures')->get();
+        return view('shop-details',compact('detail','related_product','comment_all','manufactures'));
     }
     //Add Comment Product
     public function comment_product_ajax(Request $request){

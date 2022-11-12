@@ -26,7 +26,7 @@ class FavoriteController extends Controller
                 return Redirect('/')->with('success', 'Sản Phẩm này đã nằm trong danh sách yêu thích !');
             }
         }else {
-            return Redirect::to('/')->with('success', 'Sản Phẩm này đã nằm trong danh sách yêu thích !');
+            return Redirect::to('/')->with('success', 'Login to Favorite !');
         }
     }
     public function show_favorite_user($id){

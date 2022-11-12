@@ -407,20 +407,33 @@
     </script>
 
     <script>
-    $(function(){
-        $('.rate').click(function(){
-            $('.rate').removeAttr('id','rating');
-            $(this).attr('id','rating');
-        });
+    $('.rate').click(function(){
+        $('.rate').removeAttr('id','rating');
+        $(this).attr('id','rating');
     });
+    function load_comment(){
+        var product_id = $('#product_id').val();
+        $.ajax({
+            url: "{{ url('./show_comment') }}/" + product_id,
+            type : 'GET',
+            success: function(show_comment) {
+                $(".show-comment").html(show_comment);
+            }
+        });
+    }
     $('#btn-comment').click(function() {
         var product_id = $('#product_id').val();
         var id_user_comment = $('#id_user_comment').val();
         var comment_content = $('#comment_content').val();
         var rating = $('#rating').val();
+        if(id_user_comment == ""){
+            swal({
+                    title: "Login to comment !",
+                });
+        }
         if(rating == 0 || comment_content == ""){
             swal({
-                    title: "Vui Lòng bình luận và đánh giá sản phẩm !",
+                    title: "You have not commented or rated yet !",
                 });
         }else {
             var _token = $('input[name = _token]').val();
@@ -429,11 +442,12 @@
                 method : "POST",
                 data : {product_id: product_id, id_user_comment :id_user_comment, comment_content:comment_content, rating : rating , _token: _token},
                 success: function(data) {
-                    $('#test').html('<p>Testing</p>');
+                    $('#test').html('<p>Successful comment</p>');
+                    load_comment();
                 }
             });
         }
-        comment_content = '';
+        // $('#comment_content').innerHTML = '';
     });
     </script>
 
