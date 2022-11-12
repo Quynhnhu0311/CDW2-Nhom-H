@@ -129,7 +129,7 @@
                             <span class="label">New</span>
                             <ul class="product__hover">
                                 <form action="{{ url('favorite') }}" method="POST" enctype="multipart/form-data">
-                                {{ csrf_field() }}   
+                                {{ csrf_field() }}
                                     <input type="hidden" value="{{ $related->product_id }}" name="favorite_product_id">
                                     <?php  $id = Session::get('id'); ?>
                                         <input type="hidden" value="<?php echo $id ?>" name="favorite_user_id">
@@ -169,9 +169,9 @@
             <div class="title">
                 <h2>Comment</h2>
             </div>
+            @foreach($comment_all as $comment_all)
             <div class="show-comment">
                 <div class="comment-item">
-                    @foreach($comment_all as $comment_all)
                     <div class="info-comment">
                         <div class="avatar">
                             <img src="{{ asset ('img/avatar.jpg') }}" alt="">
@@ -188,9 +188,9 @@
                     <div class="content-comment">
                         <p>{{ $comment_all->comment_content }}</p>
                     </div>
-                    @endforeach
                 </div>
             </div>
+            @endforeach
             <div class="comment-items">
                 <div class="comment-item">
                     <div class="info-comment">
@@ -198,7 +198,7 @@
                             <img src="{{ asset ('img/avatar.jpg') }}" alt="">
                         </div>
                         <div class="name">
-                            <?php 
+                            <?php
                             $name = Session::get('name');
                             ?>
                             <h2><?php echo $name ?></h2>
@@ -208,7 +208,7 @@
                         @foreach($detail as $product_detail)
                         <form action=""  enctype="multipart/form-data">
                         @endforeach
-                            <?php 
+                            <?php
                             $id = Session::get('id');
                             ?>
                             <div class="rates">
@@ -232,7 +232,7 @@
                             <button type="button" name="submit-comment" id="btn-comment">Gửi Bình Luận</button>
                         </form>
                         <div id="test"></div>
-                        <?php 
+                        <?php
                         $message_cmt = Session::get('message_cmt');
                         if($message_cmt){
                             echo '<span class="text-alert" style="color:red;">'.$message_cmt.'</span>';
@@ -244,5 +244,17 @@
             </div>
         </div>
     </section>
+    <script>
+    // function remove_background(product_id) {
+    //     for(var count = 1; count <= 5; count++){
+    //         $('#'+ product_id + '-' + count).css('color','#ccc');
+    //     }
+    // }
+    // $(document).on('mouseenter', '.ratings', function(){
+    //     var index = $(this).data("index");
+    //     // var product_id = $(this).data('product_id');
+    //     alert(index);
+    // });
+    </script>
     <!-- Comment Section End -->
 @endsection

@@ -10,13 +10,8 @@
     <title>Male-Fashion | Template</title>
 
     <!-- Google Font -->
-<<<<<<< HEAD
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
         rel="stylesheet">
-=======
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-
->>>>>>> origin/function_search
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ url ('css/select.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url ('css/bootstrap.min.css') }}" type="text/css">
@@ -269,8 +264,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="{{ url ('js/data.json') }}"></script>
-    <!-- <script src="{{ url ('js/jquery.min.js') }}"></script>
-    <script src="{{ url ('js/jquery-3.3.1.min.js') }}"></script> -->
+    <!-- <script src="{{ url ('js/jquery.min.js') }}"></script>-->
     <script src="{{ url ('js/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ url ('js/bootstrap.min.js') }}"></script>
     <script src="{{ url ('js/jquery.nice-select.min.js') }}"></script>
@@ -442,7 +436,7 @@
         comment_content = '';
     });
     </script>
-    
+
     <script>
         document.querySelector('#search-input').addEventListener('keyup', function() {
             let _text = $(this).val();
