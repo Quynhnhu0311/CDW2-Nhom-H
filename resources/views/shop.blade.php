@@ -115,7 +115,7 @@
                         @csrf
                         <div class="row shop-resutl">
                             @foreach($products as $row => $allProducts)
-                            <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="col-lg-4 col-md-6 col-sm-6 show-products">
                                 <div class="product__item">
                                     <div class="product__item__pic set-bg" data-setbg="{{ asset('./img/product/'.$allProducts->product_img) }}">
                                         <ul class="product__hover">
@@ -189,13 +189,9 @@
                 type: 'GET',
                 success: function(res) {
                     $(".shop-resutl").html(res);
-                    $('.show-all-products').hide();
-                    $(".ajax-resutl").show();
                 }
             })
-        } else {
-            // $(".ajax-resutl").hide();
-        }
+        } else {}
     })
     ajax_protype.forEach((item) => {
         item.addEventListener('click', () => {
