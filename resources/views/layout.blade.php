@@ -425,7 +425,7 @@
                 method : "POST",
                 data : {product_id: product_id, id_user_comment :id_user_comment, comment_content:comment_content, rating : rating , _token: _token},
                 success: function(data) {
-                    $('#test').html('<p>Testing</p>');
+                    $('#test').html('<p>Comment successful</p>');
                     load_comment();
                 }
             });
