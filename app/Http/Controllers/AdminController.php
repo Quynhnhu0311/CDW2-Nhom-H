@@ -42,7 +42,7 @@ class AdminController extends Controller
 
     //Add Manufactures Admin
     public function save_manufacture(Request $request){
-
+        $this->AuthLogin();
         $data = array();
         $data['manu_name'] = $request->manu_name;
         $data['manu_qty'] = $request->manu_qty;

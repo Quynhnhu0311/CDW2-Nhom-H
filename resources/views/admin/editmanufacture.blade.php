@@ -23,34 +23,34 @@
     <section class="content">
       @foreach($manufactures as $row)
       <form action="{{url ('update_datamanu/'.$row->manu_id) }}" method="post" enctype="multipart/form-data">
-      {{ csrf_field() }}
+        {{ csrf_field() }}
        @method('PUT')
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card card-primary">
-            <div class="card-header">
-              <h3 class="card-title">General</h3>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">General</h3>
 
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                  <i class="fas fa-minus"></i>
-                </button>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
               </div>
-            </div>
-            <div class="card-body">
-              <div class="form-group">
-                <label for="inputName">Manu Name</label>
-                <input type="text" id="inputName" value="{{$row->manu_name}}" class="form-control" name="manu_name" required>
-              <div class="form-group">
-                <label for="inputName">Manu Name</label>
-                <input type="number" id="inputQty" value="{{$row->manu_qty}}" class="form-control" name="manu_qty" required>
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="inputName">Manu Name</label>
+                  <input type="text" id="inputName" value="{{$row->manu_name}}" class="form-control" name="manu_name" required>
+                <div class="form-group">
+                  <label for="inputName">Manu Name</label>
+                  <input type="number" id="inputQty" value="{{$row->manu_qty}}" class="form-control" name="manu_qty" required>
+                </div>
               </div>
+              <!-- /.card-body -->
             </div>
-            <!-- /.card-body -->
+            <!-- /.card -->
           </div>
-          <!-- /.card -->
         </div>
-      </div>
       @endforeach
       <div class="row">
         <div class="col-12">
