@@ -28,7 +28,11 @@ class AdminController extends Controller
     //Show Manufacture Admin
     public function show_dashboard(){
         $this->AuthLogin();
-        return view('admin.dashboard');
+        $product=Product::all()->count();
+        $protype=Protype::all()->count();
+        $manu=Manufacture::all()->count();
+        $order=Order::all()->count();
+        return view('admin.dashboard',compact('product','protype','manu','order'));
     }
 
     /*----- Logout Admin -----*/
