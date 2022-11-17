@@ -110,6 +110,46 @@ class AdminController extends Controller
         DB::table('manufactures')->where('manu_id',$manu_id)->delete();
         return Redirect::to('admin.manufacture');
     }
+    ////////////////////////////////////////// PROTYPES /////////////////////////////////////////
+
+    //Show Protypes in admin
+    public function show_admin_protype(){
+        $this->AuthLogin();
+        $protype=DB::table('protypes')->get();
+
+        return view('admin.protype',compact('protype'));
+    }
+    //Edit Protypes in admin
+    public function show_edit_protype($type_id){
+        $this->AuthLogin();
+        $protype=DB::table('protypes')->where('type_id',$type_id)->get();
+        return view('admin.editprotype',compact('protype'));
+    }
+    //Update Protype in admin
+    public function update_admin_protype(Request $request, $type_id){
+        $this->AuthLogin();
+        $data = array();
+        $data['type_name']=$request->type_name;
+        $data['type_qty']=$request->type_qty;
+        DB::table('protypes')->where('type_id',$type_id)->update($data);
+        return Redirect::to('admin.protype')->with("status","Update Protype Successfully");
+    }
+    //Add Protype in admin
+    public function add_admin_protype(Request $request){
+        $this->AuthLogin();
+        $data['type_name']=$request->type_name;
+        $data['type_qty']=$request->type_qty;
+        $protypes=DB::table('protypes')->insert($data);
+        return Redirect::to('admin.protype')->with("status","Add Protype Successfully");
+    }
+    //Delete Protype in admin
+    public function delete_admin_protype($type_id){
+        $this->AuthLogin();
+        DB::table('protypes')->where('type_id',$type_id)->delete();
+        return Redirect::to('admin.protype');
+    }
+    
+    ////////////////////////////////////////////////////////////////////////////////////////////
 
 
     /*----- Show Products -----*/

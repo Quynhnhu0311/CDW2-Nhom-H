@@ -274,6 +274,28 @@
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <p>
+                                    Protypes
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url ('/admin.protype')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Protypes</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url ('/admin.addprotype') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Protype</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <p>
                                     Products
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
