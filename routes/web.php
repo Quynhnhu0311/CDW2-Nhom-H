@@ -78,6 +78,11 @@ Route::post('/update-coupon/{coupon_id}', [AdminController::class,'update_coupon
 Route::get('/delete-coupon/{coupon_id}', [AdminController::class,'delete_coupon']);
 Route::post('/save-coupon', [AdminController::class,'save_coupon']);
 
+//Show Comment in Admin
+Route::get('/admin.comment',[AdminController::class,'show_admin_comment']);
+//Delete Comment in Admin
+Route::DELETE('deletecomment/{comment_id}',[AdminController::class,'delete_admin_comment']);
+
 /* =====Front-End===== */
 //Home
 Route::get('/', [HomeController::class, 'home']);
