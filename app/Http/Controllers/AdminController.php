@@ -336,4 +336,19 @@ class AdminController extends Controller
         return view('admin.coupons')->with('get_all_coupon', $get_all_coupon);
         //return Redirect::to('admin.coupons');
     }
+
+    //Show Comment in admin
+    public function show_admin_comment(){
+        $this->AuthLogin();
+        $comment = DB::table('comments')->join('products','comments.product_id','=','products.product_id')
+        ->join('customers','comments.id','=','customers.id')->get();
+        return view('admin.comment',compact('comment'));
+    }
+
+    //Delete Comment in admin
+    public function delete_admin_comment($comment_id){
+        $this->AuthLogin();
+        DB::table('comments')->where('comment_id',$comment_id)->delete();
+        return Redirect::to('admin.comment');
+    }
 }
