@@ -54,18 +54,18 @@
                   </tr>
               </thead>
               <tbody>
-                  @foreach($protype as $data)
+                  @foreach($protypes as $row => $protypes)
                   <tr>
-                      <td>{{$data->type_id}}</td>
-                      <td><a>{{$data->type_name}}</a><br/></td>
-                      <td><a>{{$data->type_qty}}</a><br/></td>
+                      <td>{{$protypes->type_id}}</td>
+                      <td><a>{{$protypes->type_name}}</a><br/></td>
+                      <td><a>{{$protypes->type_qty}}</a><br/></td>
                       <td class="project-actions text-right">
-                      <a class="btn btn-info btn-sm" href="admin.editprotype/{{$data->type_id}}">
+                      <a class="btn btn-info btn-sm" href="admin.editprotype/{{$protypes->type_id}}">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                           </a>
-                          <form class="btn btn-danger btn-sm" method="POST" action="deleteprotype/{{$data->type_id}}" onsubmit="return confirm('Bạn Có Muốn Xóa Không?')">
+                          <form class="btn btn-danger btn-sm" method="POST" action="deleteprotype/{{$protypes->type_id}}" onsubmit="return confirm('Bạn Có Muốn Xóa Không?')">
                           @method('DELETE')
                           @csrf
                           <i class="fas fa-trash">

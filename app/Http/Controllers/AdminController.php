@@ -115,15 +115,15 @@ class AdminController extends Controller
     //Show Protypes in admin
     public function show_admin_protype(){
         $this->AuthLogin();
-        $protype=DB::table('protypes')->get();
+        $protypes = DB::table('protypes')->get();
 
-        return view('admin.protype',compact('protype'));
+        return view('admin.protype')->with('protypes',$protypes);
     }
     //Edit Protypes in admin
     public function show_edit_protype($type_id){
         $this->AuthLogin();
-        $protype=DB::table('protypes')->where('type_id',$type_id)->get();
-        return view('admin.editprotype',compact('protype'));
+        $protypes=DB::table('protypes')->where('type_id',$type_id)->get();
+        return view('admin.editprotype')->with('protypes',$protypes);
     }
     //Update Protype in admin
     public function update_admin_protype(Request $request, $type_id){

@@ -21,8 +21,8 @@
 
     <!-- Main content -->
     <section class="content">
-      @foreach($protype as $row)
-      <form action="{{url ('update_protype/'.$row->type_id) }}" method="post" enctype="multipart/form-data">
+      @foreach($protypes as $row => $protypes)
+      <form action="{{url ('update_protype/'.$protypes->type_id) }}" method="post" enctype="multipart/form-data">
       {{ csrf_field() }}
        @method('PUT')
       <div class="row">
@@ -40,10 +40,10 @@
             <div class="card-body">
               <div class="form-group">
                 <label for="inputName">Manu Name</label>
-                <input type="text" id="inputName" value="{{$row->type_name}}" class="form-control" name="type_name" required>
+                <input type="text" id="inputName" value="{{$protypes->type_name}}" class="form-control" name="type_name" required>
               <div class="form-group">
                 <label for="inputName">Quantity</label>
-                <input type="number" id="inputQty" value="{{$row->type_qty}}" class="form-control" name="type_qty" required>
+                <input type="number" id="inputQty" value="{{$protypes->type_qty}}" class="form-control" name="type_qty" required>
               </div>
             </div>
             <!-- /.card-body -->
