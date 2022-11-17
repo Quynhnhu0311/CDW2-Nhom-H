@@ -32,7 +32,7 @@ class AdminController extends Controller
         $protype=Protype::all()->count();
         $manu=Manufacture::all()->count();
         $order=Order::all()->count();
-        return view('admin.dashboard',compact('product','protype','manu','order'));
+        return view('dashboard',compact('product','protype','manu','order'));
     }
 
     /*----- Logout Admin -----*/

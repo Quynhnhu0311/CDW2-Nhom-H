@@ -27,7 +27,7 @@ use App\Http\Controllers\OrderController;
 */
 /*====== Authen ===== */
 //Authenticate
-Route::get('/admin.dashboard',[AdminController::class, 'show_dashboard']);
+Route::get('/dashboard',[AdminController::class, 'show_dashboard']);
 
 //Login And Logout Admin
 // Route::get('/login-admin', [AdminController::class, 'login_admin']);
