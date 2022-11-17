@@ -21,6 +21,11 @@
 
     <!-- Main content -->
     <section class="content">
+    @if (session('error'))
+    <div class="popup">
+        <p style="color:#e47878;font-weight:bold;margin-left: 10px;">{{ session('error') }}</p>
+    </div>
+    @endif
       <form action="{{url ('savemanufacture') }}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="row">

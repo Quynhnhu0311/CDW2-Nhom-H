@@ -41,7 +41,7 @@ Route::DELETE('deletemanufacture/{id}',[AdminController::class, 'destroy_manu'])
 //Add Manufactures
 Route::post('/savemanufacture',[AdminController::class, 'save_manufacture']);
 //Show Edit Page Manufacture
-Route::get('editmanufacture/{manu_id}',[AdminController::class, 'edit_manufacture']);
+Route::get('admin.editmanufacture/{manu_id}',[AdminController::class, 'edit_manufacture']);
 //Update Manufactures
 Route::put('update_datamanu/{manu_id}',[AdminController::class, 'update_manufacture']);
 

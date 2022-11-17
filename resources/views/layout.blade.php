@@ -449,6 +449,9 @@
         }
         // $('#comment_content').innerHTML = '';
     });
+    // //Kiếm tra điều kiện kí tự 
+    // var $input_name_manu = $('#inputName').val();
+    // if($input_name_manu)
     </script>
 
     <script>

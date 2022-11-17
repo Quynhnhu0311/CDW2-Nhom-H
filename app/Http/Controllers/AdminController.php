@@ -46,8 +46,14 @@ class AdminController extends Controller
         $data = array();
         $data['manu_name'] = $request->manu_name;
         $data['manu_qty'] = $request->manu_qty;
-        DB::table('manufactures')->insert($data);
-        return Redirect::to('admin.manufacture');
+        $kitu = strlen($request->manu_name);
+        if($kitu > 100){
+            return Redirect::to('admin.addmanufacture')->with('error', 'Trường Manu Name không nhập quá 100 kí tự !');;
+        }
+        else if ($kitu <= 100) {
+            DB::table('manufactures')->insert($data);
+            return Redirect::to('admin.manufacture');
+        }
     }
      //Edit manufacture
      public function edit_manufacture($manu_id)
@@ -66,9 +72,14 @@ class AdminController extends Controller
          // $iddata =  Product::find($id);
          $data['manu_name'] = $request->manu_name;
          $data['manu_qty'] = $request->manu_qty;
-         DB::table('manufactures')->where('manu_id',$manu_id)->update($data);
-
-         return Redirect::to('admin.manufacture')->with("status","Data Update Successfully");
+         $kitu = strlen($request->manu_name);
+         if($kitu > 100){
+             return Redirect::to('admin.editmanufacture/'.$manu_id)->with('error', 'Trường Manu Name không nhập quá 100 kí tự !');;
+         }
+         else if ($kitu <= 100) {
+            DB::table('manufactures')->where('manu_id',$manu_id)->update($data);
+            return Redirect::to('admin.manufacture')->with("status","Data Update Successfully");
+         }
     }
 
      //Show Add manufactures admin
