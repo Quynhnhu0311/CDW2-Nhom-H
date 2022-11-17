@@ -390,6 +390,9 @@
     </script>
 
 <script>
+    $('.btn-rep-comment').click(function() {
+        $(this).parent().children().children('.rep-comment').css('display','block');
+    });
     $('.rate').click(function(){
         $('.rate').removeAttr('id','rating');
         $(this).attr('id','rating');
@@ -415,6 +418,33 @@
                 });
         }
         if(rating == 0 || comment_content == ""){
+            swal({
+                    title: "You have not commented or rated yet !",
+                });
+        }else {
+            var _token = $('input[name = _token]').val();
+            $.ajax({
+                url : "{{ url('/send-comment') }}",
+                method : "POST",
+                data : {product_id: product_id, id_user_comment :id_user_comment, comment_content:comment_content, rating : rating , _token: _token},
+                success: function(data) {
+                    $('#test').html('<p>Comment successful</p>');
+                    load_comment();
+                }
+            });
+        }
+        comment_content = '';
+    });
+    $('#btn-comment-rep').click(function() {
+        var product_id_rep = $('#product_id_rep').val();
+        var id_user_comment_rep = $('#id_user_comment_rep').val();
+        var comment_content_Rep = $('#comment_content_rep').val();
+        if(id_user_comment_rep == ""){
+            swal({
+                    title: "Login to comment !",
+                });
+        }
+        if(comment_content_rep == ""){
             swal({
                     title: "You have not commented or rated yet !",
                 });

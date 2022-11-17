@@ -27,7 +27,7 @@ class UserController extends Controller
         $user_pass = md5($request->pass);
 
         //Account Customer
-        $result = DB::table('users')->where('email', $user_email)
+        $result = DB::table('customers')->where('email', $user_email)
                                     ->where('password', $user_pass)->first();
 
         //Account Admin

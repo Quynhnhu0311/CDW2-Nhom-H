@@ -53,11 +53,24 @@ class HomeController extends Controller
         /* Show Comment and Rating Product */
         $comment_all = DB::table('comments')->join('products','products.product_id','=','comments.product_id')
         ->where('comments.product_id',$comment_id)
-        ->join('users','users.id','=','comments.id')->get();
+        ->join('customers','customers.id','=','comments.id')->get();
         return view('shop-details',compact('detail','related_product','comment_all'));
     }
     //Add Comment Product
     public function comment_product_ajax(Request $request){
+        $comment_product_id = $request->product_id;
+        $id = $request->id_user_comment;
+        $comment_content = $request->comment_content;
+        $rating = $request->rating;
+        $comment = new Comment();
+        $comment->product_id = $comment_product_id;
+        $comment->id = $id;
+        $comment->comment_content = $comment_content;
+        $comment->rating_value = $rating;
+        $comment->save();
+    }
+    //Add Rep Comment Product
+    public function rep_comment_product_ajax(Request $request){
         $comment_product_id = $request->product_id;
         $id = $request->id_user_comment;
         $comment_content = $request->comment_content;
