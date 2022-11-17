@@ -136,7 +136,7 @@
                                     <label for="paypal">
                                         Paypal
                                         <input type="checkbox" id="paypal">
-                                        <span class="checkmark"></span>
+                                        <span class="checkmark"></span>     
                                     </label>
                                 </div>
                                 <button type="submit" class="site-btn">PLACE ORDER</button>
