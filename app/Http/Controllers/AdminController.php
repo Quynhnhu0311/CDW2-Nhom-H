@@ -25,6 +25,7 @@ class AdminController extends Controller
             return Redirect::to('login')->send();
         }
     }
+
     //Show Manufacture Admin
     public function show_dashboard(){
         $this->AuthLogin();
@@ -148,7 +149,7 @@ class AdminController extends Controller
         DB::table('protypes')->where('type_id',$type_id)->delete();
         return Redirect::to('admin.protype');
     }
-    
+
     ////////////////////////////////////////////////////////////////////////////////////////////
 
 
