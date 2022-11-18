@@ -8,6 +8,7 @@ use App\Models\Order;
 use App\Models\Detail_order;
 use App\Models\Product;
 use App\Models\Coupon;
+use App\Models\Customer;
 use Cart;
 use DB;
 use Session;
@@ -110,12 +111,14 @@ class CartController extends Controller
         }
     }
 
-    function view_order() {
+    function view_order($id) {
         $this->AuthLogin();
         $manufactures = DB::table('manufactures')->get();
-        $show_Orders = Order::all();
+        $show_Orders = Order::where('customer_id',$id)->get();
+
+
         return view('view-cart')->with('show_Orders',$show_Orders)
-                                    ->with('manufactures',$manufactures);
+                                ->with('manufactures',$manufactures);
     }
 
     function view_detail_order($order_code) {

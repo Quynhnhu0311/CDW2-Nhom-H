@@ -91,6 +91,7 @@
                             <div class="header__top__links">
                                 <?php
                                 $name = Session::get('name');
+                                $id = Session::get('id');
                                 if ($name) {
                                     echo '<div class="header__top__hover">
                                                 <span>' . $name . '<i class="arrow_carrot-down"></i></span>
@@ -106,7 +107,7 @@
                             <div class="header__top__hover">
                                 <span>My Order <i class="arrow_carrot-down"></i></span>
                                 <ul>
-                                    <a href="/view-order"><li>Order History</li></a>
+                                    <a href="/view-order/{{$id}}"><li>Order History</li></a>
                                 </ul>
                             </div>
                         </div>

@@ -110,7 +110,7 @@ Route::get('/delete-product-cart/{session_id}', [CartController::class,'delete_p
 Route::post('/update-cart', [CartController::class,'update_cart']);
 
 //Order
-Route::get('/view-order', [CartController::class,'view_order']);
+Route::get('/view-order/{id}', [CartController::class,'view_order']);
 Route::get('/view-detail-order/{order_code}', [CartController::class,'view_detail_order']);
 
 
