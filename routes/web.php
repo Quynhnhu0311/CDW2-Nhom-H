@@ -74,10 +74,10 @@ Route::post('/update-order-qty-product', [OrderController::class,'update_order_q
 /*----- Coupons -----*/
 Route::get('/coupons', [AdminController::class,'show_all_coupons'])->name('viewCouponList');
 Route::get('/add-coupon', [AdminController::class,'add_coupon']);
+Route::post('/save-coupon', [AdminController::class,'save_coupon']);
 Route::get('/edit-coupon/{coupon_id}', [AdminController::class,'edit_coupon']);
 Route::post('/update-coupon/{coupon_id}', [AdminController::class,'update_coupon']);
 Route::get('/delete-coupon/{coupon_id}', [AdminController::class,'delete_coupon']);
-Route::post('/save-coupon', [AdminController::class,'save_coupon']);
 
 /* =====Front-End===== */
 //Home

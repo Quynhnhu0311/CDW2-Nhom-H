@@ -148,7 +148,7 @@ class AdminController extends Controller
         DB::table('protypes')->where('type_id',$type_id)->delete();
         return Redirect::to('admin.protype');
     }
-    
+
     ////////////////////////////////////////////////////////////////////////////////////////////
 
 
