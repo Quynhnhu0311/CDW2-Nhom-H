@@ -16,8 +16,8 @@ class Users extends Seeder
         \DB::table('users')->insert([
             'name' => 'quynhnhu',
             'email' => 'quynhnhu@gmail.com',
-            'password' => '123123',
-            'status' => 'true',
+            'password' => md5('123123'),
+            'status' => 'true'
         ]);
     }
 }

@@ -13,7 +13,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'default' => env('MAIL_MAILER', 'sendmail'),
+=======
+    'default' => env('MAIL_MAILER', 'smtp'),
+>>>>>>> main
     'stream' => [
         'ssl' => [
             'allow_self_signed' => true,
