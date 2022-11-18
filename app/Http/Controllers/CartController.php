@@ -114,8 +114,7 @@ class CartController extends Controller
     function view_order($id) {
         $this->AuthLogin();
         $manufactures = DB::table('manufactures')->get();
-        $show_Orders = Order::where('customer_id',$id)->get();
-
+        $show_Orders = Order::where('customer_id',$id)->get(); 
 
         return view('view-cart')->with('show_Orders',$show_Orders)
                                 ->with('manufactures',$manufactures);

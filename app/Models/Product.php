@@ -22,6 +22,10 @@ class Product extends Model
         return $this->belongsTo(Manufacture::class,'manu_id');
     }
 
+    function protype(){
+        return $this->belongsTo(Protype::class,'type_id');
+    }
+
     public function scopeSearch($query)
     {
         if (request('key')) {
