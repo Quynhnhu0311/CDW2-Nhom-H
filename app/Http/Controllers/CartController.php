@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\Order;
+use App\Models\Detail_order;
+use App\Models\Product;
+use App\Models\Coupon;
 use Cart;
 use DB;
 use Session;
@@ -104,5 +108,29 @@ class CartController extends Controller
         else{
             return redirect()->back()->with('message_delete','Update số lượng thất bại!');
         }
+    }
+
+    function view_order() {
+        $this->AuthLogin();
+        $manufactures = DB::table('manufactures')->get();
+        $show_Orders = Order::all();
+        return view('view-cart')->with('show_Orders',$show_Orders)
+                                    ->with('manufactures',$manufactures);
+    }
+
+    function view_detail_order($order_code) {
+        $this->AuthLogin();
+        $manufactures = DB::table('manufactures')->get();
+        $show_detail_order = Detail_order::where('order_code',$order_code)->get();
+
+        foreach($show_detail_order as $key => $order_coupon){
+            $coupon_code = $order_coupon->coupon_code;
+        }
+
+        $coupon = Coupon::where('coupon_code',$coupon_code)->first();
+
+        return view('view-detail-cart')->with('manufactures',$manufactures)
+                                        ->with('coupon',$coupon)
+                                        ->with('show_detail_order',$show_detail_order);
     }
 }

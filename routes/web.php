@@ -70,6 +70,7 @@ Route::get('/detail-order/{order_code}', [AdminController::class,'detail_order']
 Route::post('/update-order-qty', [OrderController::class,'update_order_qty']);
 Route::post('/update-order-qty-product', [OrderController::class,'update_order_qty_product']);
 
+
 /*----- Coupons -----*/
 Route::get('/coupons', [AdminController::class,'show_all_coupons'])->name('viewCouponList');
 Route::get('/add-coupon', [AdminController::class,'add_coupon']);
@@ -107,6 +108,11 @@ Route::post('/add-cart-ajax', [CartController::class,'add_cart_ajax']);
 Route::get('/gio-hang', [CartController::class,'gio_hang']);
 Route::get('/delete-product-cart/{session_id}', [CartController::class,'delete_product_cart']);
 Route::post('/update-cart', [CartController::class,'update_cart']);
+
+//Order
+Route::get('/view-order', [CartController::class,'view_order']);
+Route::get('/view-detail-order/{order_code}', [CartController::class,'view_detail_order']);
+
 
 //Coupon
 Route::post('/check-coupon', [CouponController::class,'check_coupon']);

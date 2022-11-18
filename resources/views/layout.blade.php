@@ -102,14 +102,11 @@
                                     echo '<a href="/login">Sign in</a>';
                                 }
                                 ?>
-                                <a href="#">FAQs</a>
                             </div>
                             <div class="header__top__hover">
-                                <span>Usd <i class="arrow_carrot-down"></i></span>
+                                <span>My Order <i class="arrow_carrot-down"></i></span>
                                 <ul>
-                                    <li>USD</li>
-                                    <li>EUR</li>
-                                    <li>USD</li>
+                                    <a href="/view-order"><li>Order History</li></a>
                                 </ul>
                             </div>
                         </div>
@@ -421,7 +418,7 @@ x`
 <<<<<<< HEAD
         // $('#comment_content').innerHTML = '';
     });
-    // //Kiếm tra điều kiện kí tự 
+    // //Kiếm tra điều kiện kí tự
     // var $input_name_manu = $('#inputName').val();
     // if($input_name_manu)
 =======
