@@ -416,13 +416,6 @@ x`
                 }
             });
         }
-<<<<<<< HEAD
-        // $('#comment_content').innerHTML = '';
-    });
-    // //Kiếm tra điều kiện kí tự
-    // var $input_name_manu = $('#inputName').val();
-    // if($input_name_manu)
-=======
         $('#btn-comment').click(function() {
             var product_id = $('#product_id').val();
             var id_user_comment = $('#id_user_comment').val();
@@ -457,7 +450,6 @@ x`
             }
             // $('#comment_content').innerHTML = '';
         });
->>>>>>> 4a3af6fd3991b75ceac17b613898f468ff090827
     </script>
 
     <script>

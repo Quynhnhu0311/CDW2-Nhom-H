@@ -42,6 +42,7 @@ class CartController extends Controller
         $data = $request->all();
         $session_id = substr(md5(microtime()),rand(0,26),5);
         $cart = Session::get('cart');
+        $customer_id = Session::get('id');
         if($cart == true){
             $is_avaiable = 0;
             foreach($cart as $key => $value) {
@@ -51,24 +52,28 @@ class CartController extends Controller
             }
             if($is_avaiable == 0) {
                 $cart[] = array(
-                    'session_id' => $session_id,
+                    'customer_id' => $customer_id,
                     'product_id' => $data['cart_product_id'],
+                    'product_qty' => $data['cart_product_qty'],
+                    'product_image' => $data['cart_product_image'],
                     'product_name' => $data['cart_product_name'],
                     'product_price' => $data['cart_product_price'],
-                    'product_image' => $data['cart_product_image'],
-                    'product_qty' => $data['cart_product_qty'],
+                    'session_id' => $session_id
                 );
+                DB::table('carts')->insert($cart);
                 Session::put('cart',$cart);
             }
         }else{
             $cart[] = array(
-                'session_id' => $session_id,
+                'customer_id' => $customer_id,
                 'product_id' => $data['cart_product_id'],
+                'product_qty' => $data['cart_product_qty'],
+                'product_image' => $data['cart_product_image'],
                 'product_name' => $data['cart_product_name'],
                 'product_price' => $data['cart_product_price'],
-                'product_image' => $data['cart_product_image'],
-                'product_qty' => $data['cart_product_qty'],
+                'session_id' => $session_id
             );
+            DB::table('carts')->insert($cart);
             Session::put('cart',$cart);
         }
         Session::save();
@@ -114,7 +119,7 @@ class CartController extends Controller
     function view_order($id) {
         $this->AuthLogin();
         $manufactures = DB::table('manufactures')->get();
-        $show_Orders = Order::where('customer_id',$id)->get(); 
+        $show_Orders = Order::where('customer_id',$id)->get();
 
         return view('view-cart')->with('show_Orders',$show_Orders)
                                 ->with('manufactures',$manufactures);
