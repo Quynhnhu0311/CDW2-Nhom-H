@@ -33,8 +33,10 @@ class CartController extends Controller
         $meta_keywords = "Giỏ hàng Ajax";
         $meta_title = "Giỏ hàng Ajax";
         $url_canonical = $request->url();
+        $cart = DB::table('carts')->get();
         return view('shopping-cart')->with('url_canonical',$url_canonical)
-                                    ->with('manufactures',$manufactures);
+                                    ->with('manufactures',$manufactures)
+                                    ->with('cart',$cart);
     }
 
     public function add_cart_ajax(Request $request) {
@@ -61,7 +63,7 @@ class CartController extends Controller
                     'session_id' => $session_id
                 );
                 DB::table('carts')->insert($cart);
-                Session::put('cart',$cart);
+                //Session::put('cart',$cart);
             }
         }else{
             $cart[] = array(
@@ -74,7 +76,7 @@ class CartController extends Controller
                 'session_id' => $session_id
             );
             DB::table('carts')->insert($cart);
-            Session::put('cart',$cart);
+            //Session::put('cart',$cart);
         }
         Session::save();
     }
@@ -82,6 +84,7 @@ class CartController extends Controller
     function delete_product_cart($session_id) {
         $this->AuthLogin();
         $cart = Session::get('cart');
+        $carts = DB::table('carts')->where('session_id',$session_id)->delete();
         if($cart == true) {
             foreach($cart as $key => $val) {
                 if($val['session_id'] == $session_id) {
@@ -100,15 +103,18 @@ class CartController extends Controller
         $this->AuthLogin();
         $data = $request->all();
         $cart = Session::get('cart');
-        if($cart == true){
+        $cart_prod = DB::table('carts')->get();
+        $id_session = $data['session_id'];
+        $product_id = $data['product_id'];
+        if($id_session == true){
             foreach($data['cart_qty'] as $key => $qty){
-                foreach($cart as $session => $val){
-                    if($val['session_id'] == $key){
+                foreach($cart_prod as $session => $val){
+                    if($val->session_id == $key){
                         $cart[$session]['product_qty'] = $qty;
                     }
                 }
             }
-            Session::put('cart',$cart);
+            DB::update('update carts set product_qty = ? where product_id = ?',[$qty,$product_id]);
             return redirect()->back()->with('message_delete','Update số lượng thành công!');
         }
         else{
