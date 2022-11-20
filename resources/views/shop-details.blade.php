@@ -35,13 +35,6 @@
                                     </div>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
-                                    <div class="product__thumb__pic set-bg" data-setbg="img/shop-details/thumb-4.png">
-                                        <i class="fa fa-play"></i>
-                                    </div>
-                                </a>
-                            </li>
                         </ul>
                     </div>
                     <div class="col-lg-6 col-md-9">
@@ -59,12 +52,6 @@
                             <div class="tab-pane" id="tabs-3" role="tabpanel">
                                 <div class="product__details__pic__item">
                                     <img src="{{ asset ('/product_detail->product_img') }}" alt="">
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="tabs-4" role="tabpanel">
-                                <div class="product__details__pic__item">
-                                    <img src="{{ asset ('/product_detail->product_img') }}" alt="">
-                                    <a href="https://www.youtube.com/watch?v=8PJ3_p7VqHw&list=RD8PJ3_p7VqHw&start_radio=1" class="video-popup"><i class="fa fa-play"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -88,48 +75,12 @@
                                     <i class="fa fa-star-o"></i>
                                     <span> - 5 Reviews</span>
                                 </div>
-                                <h3>{{ number_format($product_detail->product_price) }} VND <span>70.00</span></h3>
+                                <h3>{{ number_format($product_detail->product_price) }} VND</h3>
                                 <p>{{ $product_detail->product_description }}</p>
-                                <div class="product__details__option">
-                                    <div class="product__details__option__size">
-                                        <span>Size:</span>
-                                        <label for="xxl">xxl
-                                            <input type="radio" id="xxl">
-                                        </label>
-                                        <label class="active" for="xl">xl
-                                            <input type="radio" id="xl">
-                                        </label>
-                                        <label for="l">l
-                                            <input type="radio" id="l">
-                                        </label>
-                                        <label for="sm">s
-                                            <input type="radio" id="sm">
-                                        </label>
-                                    </div>
-                                    <div class="product__details__option__color">
-                                        <span>Color:</span>
-                                        <label class="c-1" for="sp-1">
-                                            <input type="radio" id="sp-1">
-                                        </label>
-                                        <label class="c-2" for="sp-2">
-                                            <input type="radio" id="sp-2">
-                                        </label>
-                                        <label class="c-3" for="sp-3">
-                                            <input type="radio" id="sp-3">
-                                        </label>
-                                        <label class="c-4" for="sp-4">
-                                            <input type="radio" id="sp-4">
-                                        </label>
-                                        <label class="c-9" for="sp-9">
-                                            <input type="radio" id="sp-9">
-                                        </label>
-                                    </div>
-                                </div>
                                 <div class="product__details__cart__option">
                                     <div class="quantity">
                                         <div class="pro-qty">
                                             <input type="text" value="1">
-                                        </div>
                                     </div>
                                     <input type="hidden" value="{{ $product_detail->product_id }}" class="cart_product_id_{{ $product_detail->product_id }}">
                                     <input type="hidden" value="{{ $product_detail->product_name }}" class="cart_product_name_{{ $product_detail->product_id }}">
@@ -140,15 +91,13 @@
                                 </div>
                                 <div class="product__details__btns__option">
                                     <a href="#"><i class="fa fa-heart"></i> add to wishlist</a>
-                                    <a href="#"><i class="fa fa-exchange"></i> Add To Compare</a>
                                 </div>
                                 <div class="product__details__last__option">
                                     <h5><span>Guaranteed Safe Checkout</span></h5>
                                     <img src="img/shop-details/details-payment.png" alt="">
                                     <ul>
-                                        <li><span>SKU:</span> 3812912</li>
-                                        <li><span>Categories:</span> Clothes</li>
-                                        <li><span>Tag:</span> Clothes, Skin, Body</li>
+                                        <li><span>Categories: </span>{{ $product_detail->type_name }} </li>
+                                        <li><span>Manufactures: </span>{{ $product_detail->manu_name }} </li>
                                     </ul>
                                 </div>
                             </div>
@@ -176,7 +125,13 @@
                         <div class="product__item__pic set-bg" data-setbg="{{ asset('/img/product/'.$related->product_img) }}">
                             <span class="label">New</span>
                             <ul class="product__hover">
-                                <li><a href="#"><img src="{{ asset ('img/icon/heart.png') }}" alt=""></a></li>
+                                <form action="{{ url('favorite') }}" method="POST" enctype="multipart/form-data">
+                                {{ csrf_field() }}
+                                    <input type="hidden" value="{{ $related->product_id }}" name="favorite_product_id">
+                                    <?php  $id = Session::get('id'); ?>
+                                        <input type="hidden" value="<?php echo $id ?>" name="favorite_user_id">
+                                        <input name="submit-favorite" value="" type="submit">
+                                </form>
                                 <li><a href="#"><img src="{{ asset ('img/icon/compare.png') }}" alt=""> <span>Compare</span></a></li>
                                 <li><a href="/shop-details/{{ $related->product_id }}"><img src="{{ asset ('img/icon/search.png') }}" alt=""></a></li>
                             </ul>
@@ -196,18 +151,7 @@
                                 <i class="fa fa-star-o"></i>
                                 <i class="fa fa-star-o"></i>
                             </div>
-                            <h5>{{ $related->product_price }}</h5>
-                            <div class="product__color__select">
-                                <label for="pc-1">
-                                    <input type="radio" id="pc-1">
-                                </label>
-                                <label class="active black" for="pc-2">
-                                    <input type="radio" id="pc-2">
-                                </label>
-                                <label class="grey" for="pc-3">
-                                    <input type="radio" id="pc-3">
-                                </label>
-                            </div>
+                            <h5>{{ number_format($related->product_price) }} VND</h5>
                         </div>
                     </div>
                     </div>
@@ -223,8 +167,8 @@
                 <h2>Comment</h2>
             </div>
             <div class="show-comment">
+                @foreach($comment_all as $comment_all)
                 <div class="comment-item">
-                    @foreach($comment_all as $comment_all)
                     <div class="info-comment">
                         <div class="avatar">
                             <img src="{{ asset ('img/avatar.jpg') }}" alt="">
@@ -241,8 +185,8 @@
                     <div class="content-comment">
                         <p>{{ $comment_all->comment_content }}</p>
                     </div>
-                    @endforeach
                 </div>
+                @endforeach
             </div>
             <div class="comment-items">
                 <div class="comment-item">
@@ -251,7 +195,7 @@
                             <img src="{{ asset ('img/avatar.jpg') }}" alt="">
                         </div>
                         <div class="name">
-                            <?php 
+                            <?php
                             $name = Session::get('name');
                             ?>
                             <h2><?php echo $name ?></h2>
@@ -259,32 +203,33 @@
                     </div>
                     <div class="content-comment">
                         @foreach($detail as $product_detail)
-                        <form action="  route('comment-product',['id' => $product_detail->product_id])" method="POST"  enctype="multipart/form-data">
+                        <form action=""  enctype="multipart/form-data">
                         @endforeach
-                        {{ csrf_field() }}
-                            <?php 
+                            <?php
                             $id = Session::get('id');
                             ?>
-                            <div class="rate">
-                                <input type="radio" id="star5" class="rate" name="rating" value="5"/>
-                                <label for="star5" title="text">5 stars</label>
-                                <input type="radio" checked id="star4" class="rate" name="rating" value="4"/>
+                            <div class="rates">
+                                <input type="radio" id="rating" class="rate" value="0" />
+                                <input type="radio" checked id="star5"  class="rate" name="rating" value="5" />
+                                <label for="star5"  class="" title="text">5 stars</label>
+                                <input type="radio"  id="star4" class="rate" name="rating" value="4" />
                                 <label for="star4" title="text">4 stars</label>
-                                <input type="radio" id="star3" class="rate" name="rating" value="3"/>
+                                <input type="radio" id="star3" class="rate" name="rating" value="3" />
                                 <label for="star3" title="text">3 stars</label>
-                                <input type="radio" id="star2" class="rate" name="rating" value="2">
+                                <input type="radio" id="star2" class="rate" name="rating" value="2"  />
                                 <label for="star2" title="text">2 stars</label>
-                                <input type="radio" id="star1" class="rate" name="rating" value="1"/>
+                                <input type="radio" id="star1" class="rate" name="rating" value="1" />
                                 <label for="star1" title="text">1 star</label>
                             </div>
-                            <input type="hidden" name="id" value="<?php echo $id ?>">
+                            <input type="hidden" id="id_user_comment" name="id" value="<?php echo $id ?>">
                             @foreach($detail as $product_detail)
-                            <input type="hidden" name="product_id" value="{{$product_detail->product_id }}">
+                            <input type="hidden" id="product_id" name="comment_product_id" value="{{$product_detail->product_id }}">
                             @endforeach
-                            <textarea placeholder="" name="comment_content" id="" cols="100%" rows="5"></textarea>
-                            <input type="submit" name="submit-comment">
+                            <textarea placeholder="" name="comment_content" id="comment_content" cols="100%" rows="5"></textarea>
+                            <button type="button" name="submit-comment" id="btn-comment">Gửi Bình Luận</button>
                         </form>
-                        <?php 
+                        <div id="test"></div>
+                        <?php
                         $message_cmt = Session::get('message_cmt');
                         if($message_cmt){
                             echo '<span class="text-alert" style="color:red;">'.$message_cmt.'</span>';
@@ -302,11 +247,11 @@
     //         $('#'+ product_id + '-' + count).css('color','#ccc');
     //     }
     // }
-    $(document).on('mouseenter', '.ratings', function(){
-        var index = $(this).data("index");
-        // var product_id = $(this).data('product_id');
-        alert(index);
-    }); 
+    // $(document).on('mouseenter', '.ratings', function(){
+    //     var index = $(this).data("index");
+    //     // var product_id = $(this).data('product_id');
+    //     alert(index);
+    // });
     </script>
     <!-- Comment Section End -->
 @endsection

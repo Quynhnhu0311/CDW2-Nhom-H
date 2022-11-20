@@ -16,7 +16,7 @@ class CreateDetailOrdersTable extends Migration
         Schema::create('detail_orders', function (Blueprint $table) {
             $table->id('detailorder_id');
             $table->double('product_id',11);
-            $table->string('coupon_code',50);
+            $table->string('coupon_code',50)->nullable();
             $table->string('product_name',100);
             $table->double('product_price',11);
             $table->string('order_code',20);

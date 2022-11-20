@@ -14,9 +14,10 @@ class Users extends Seeder
     public function run()
     {
         \DB::table('users')->insert([
-            'name'=>'quynhnhu',
-            'email'=>'quynhnhu@gmail.com',
-            'password'=>'123123'
+            'name' => 'quynhnhu',
+            'email' => 'quynhnhu@gmail.com',
+            'password' => md5('123123'),
+            'status' => 'true'
         ]);
     }
 }
