@@ -194,6 +194,27 @@
                     @if($id != $comment_all->id)
                     <button class="btn-rep-comment">Rep Comment</button>
                     @endif
+                    @foreach($comment_rep as $rep_comment)
+                    @if($comment_all->comment_id == $rep_comment->comment_id)
+                    <div class="show-comment-rep">
+                        <div class="comment-item">
+                            <div class="content-comment">
+                                <div class="info-comment">
+                                    <div class="avatar-comment-rep">
+                                        <img src="{{ asset ('img/avatar.jpg') }}" alt="">
+                                    </div>
+                                    <div class="name">
+                                        <h2>{{  $rep_comment->name  }}</h2>
+                                        <div class="content-comment">
+                                            <p>{{ $rep_comment->comment_content }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+                    @endforeach
                     <div class="comment-items">
                         <div class="comment-item  rep-comment">
                             <div class="info-comment">
@@ -208,18 +229,14 @@
                                 </div>
                             </div>
                             <div class="content-comment">
-                                @foreach($detail as $product_detail)
                                 <form action=""  enctype="multipart/form-data">
-                                @endforeach
                                     <?php 
                                     $id = Session::get('id');
                                     ?>
-                                    <input type="hidden" id="id_user_comment_rep" name="id_comment_rep" value="<?php echo $id ?>">
-                                    @foreach($detail as $product_detail)
-                                    <input type="hidden" id="product_id_rep" name="comment_product_id_rep" value="{{$product_detail->product_id }}">
-                                    @endforeach
-                                    <textarea placeholder="" name="comment_content_rep" id="comment_content_rep" cols="90%" rows="1"></textarea>
-                                    <button type="button" name="submit-comment" id="btn-comment-rep">Gửi Bình Luận</button>
+                                    <input type="hidden" class="id_user_comment_rep" name="id_user_comment_rep" value="<?php echo $id ?>">
+                                    <input type="hidden" class="comment_id" name="comment_id" value="{{$comment_all->comment_id }}">
+                                    <textarea placeholder="" name="comment_content_rep_name" class="comment_content_rep" cols="90%" rows="1"></textarea>
+                                    <button type="button" name="submit-comment" class="btn-comment-rep">Gửi Bình Luận</button>
                                 </form>
                                 <div id="test"></div>
                                 <?php 

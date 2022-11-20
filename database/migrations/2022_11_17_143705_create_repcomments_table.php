@@ -14,7 +14,10 @@ class CreateRepcommentsTable extends Migration
     public function up()
     {
         Schema::create('repcomments', function (Blueprint $table) {
-            $table->id();
+            $table->id('rep_comment_id');
+            $table->double('comment_id',11);
+            $table->double('id',11);
+            $table->string('comment_content',150);
             $table->timestamps();
         });
     }
