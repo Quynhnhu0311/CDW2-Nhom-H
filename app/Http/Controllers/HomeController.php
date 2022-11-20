@@ -98,12 +98,8 @@ class HomeController extends Controller
         $comment_all = DB::table('comments')->join('products','products.product_id','=','comments.product_id')
         ->where('comments.product_id',$comment_id)
         ->join('customers','customers.id','=','comments.id')->get();
-        foreach($comment_all as $all_comment){
-            $id_comment = $all_comment->comment_id;
-        }
-        $comment_rep = DB::table('repcomments')->join('comments','comments.comment_id','=','repcomments.comment_id')
-        ->where('repcomments.comment_id',$id_comment)->get();
-        return view('show-comment',compact('detail','related_product','comment_all','comment_rep'));
+        $comment_rep = DB::table('repcomments')->join('customers','customers.id','=','repcomments.id')->get();
+        return view('show-comment-rep',compact('detail','related_product','comment_all','comment_rep'));
     }
     public function show_comment($id)
     {

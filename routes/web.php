@@ -58,6 +58,7 @@ Route::get('/tat-ca-san-pham', [ProductController::class, 'all_products']);
 Route::post('/send-comment', [HomeController::class, 'comment_product_ajax'])->name('ajax.comment');
 Route::post('/send-comment-rep', [HomeController::class, 'rep_comment_product_ajax'])->name('ajax.comment-rep');
 Route::get('/show_comment/{id}', [HomeController::class, 'show_comment'])->name('ajax.show-comment');
+Route::get('/show_comment_rep/{id}', [HomeController::class, 'show_comment_rep'])->name('ajax.show-comment');
 
 //Favorite Product
 Route::post('/favorite', [FavoriteController::class,'add_favorite'])->name('add-favorite');

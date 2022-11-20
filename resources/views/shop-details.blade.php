@@ -194,9 +194,9 @@
                     @if($id != $comment_all->id)
                     <button class="btn-rep-comment">Rep Comment</button>
                     @endif
-                    @foreach($comment_rep as $rep_comment)
-                    @if($comment_all->comment_id == $rep_comment->comment_id)
                     <div class="show-comment-rep">
+                        @foreach($comment_rep as $rep_comment)
+                        @if($comment_all->comment_id == $rep_comment->comment_id)
                         <div class="comment-item">
                             <div class="content-comment">
                                 <div class="info-comment">
@@ -212,9 +212,9 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
+                        @endforeach
                     </div>
-                    @endif
-                    @endforeach
                     <div class="comment-items">
                         <div class="comment-item  rep-comment">
                             <div class="info-comment">

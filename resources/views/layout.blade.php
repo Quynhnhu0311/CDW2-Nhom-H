@@ -408,11 +408,12 @@
         });
     }
     function load_comment_rep(){
+        var product_id = $('#product_id').val();
         $.ajax({
-            url: "{{ url('./show_comment') }}/" + product_id,
+            url: "{{ url('./show_comment_rep') }}/" + product_id,
             type : 'GET',
-            success: function(show_comment) {
-                $(".show-comment").html(show_comment);
+            success: function(show_comment_rep) {
+                $(".show-comment-rep").html(show_comment_rep);
             }
         });
     }
@@ -474,6 +475,7 @@
                     },
                 success: function(data) {
                     $('#test').html('<p>Comment successful</p>');
+                    load_comment_rep();
                 }
             });
         }
