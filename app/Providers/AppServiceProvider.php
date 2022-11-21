@@ -5,6 +5,10 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Pagination\Paginator;
+use App\Models\Product;
+use App\Models\Protype;
+use App\Models\Manufacture;
+use App\Models\Order;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,8 +29,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
         Schema::defaultStringLength(191);
-        Paginator::useBootstrap();
+        view()->composer('*',function($view){
+            
+            Paginator::useBootstrap();
+
+            $product=Product::all()->count();
+            $protype=Protype::all()->count();
+            $manu=Manufacture::all()->count();
+            $order=Order::all()->count();
+            $view->with('product',$product)->with('protype',$protype)->with('manu',$manu)->with('order',$order);
+        });
     }
 }

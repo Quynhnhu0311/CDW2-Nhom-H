@@ -7,17 +7,23 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Manufactures</h1>
+            <h1>Protypes</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-              <li class="breadcrumb-item active">Manufactures</li>
+              <li class="breadcrumb-item active">Protype</li>
             </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
+    @if(session()->has('status'))
+            <div class="alert text-alert">
+                {{ session()->get('status') }}
+            </div>
+            <?php session()->forget(['status']); ?>
+        @endif
 
     <!-- Main content -->
     <section class="content">
@@ -25,7 +31,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Manufactures</h3>
+          <h3 class="card-title">Protypes</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -48,18 +54,18 @@
                   </tr>
               </thead>
               <tbody>
-                  @foreach($manufactures as $row)
+                  @foreach($protypes as $row => $protypes)
                   <tr>
-                      <td>{{$row->manu_id}}</td>
-                      <td><a>{{$row->manu_name}}</a><br/></td>
-                      <td><a>{{$row->manu_qty}}</a><br/></td>
+                      <td>{{$protypes->type_id}}</td>
+                      <td><a>{{$protypes->type_name}}</a><br/></td>
+                      <td><a>{{$protypes->type_qty}}</a><br/></td>
                       <td class="project-actions text-right">
-                      <a class="btn btn-info btn-sm" href="admin.editmanufacture/{{$row->manu_id}}">
+                      <a class="btn btn-info btn-sm" href="admin.editprotype/{{$protypes->type_id}}">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                           </a>
-                          <form class="btn btn-danger btn-sm" method="POST" action="deletemanufacture/{{$row->manu_id}}" onsubmit="return confirm('Bạn Có Muốn Xóa Không?')">
+                          <form class="btn btn-danger btn-sm" method="POST" action="deleteprotype/{{$protypes->type_id}}" onsubmit="return confirm('Bạn Có Muốn Xóa Không?')">
                           @method('DELETE')
                           @csrf
                           <i class="fas fa-trash">

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ url ('dist/css/adminlte.css') }}">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="{{ url ('css/sweetalert.css') }}" type="text/css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
 </head>
 
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -230,7 +231,7 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
-                            <a href="#" class="nav-link active">
+                            <a href="{{ url ('admin.dashboard')}}" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -256,6 +257,28 @@
                                     <a href="{{ url ('/admin.addmanufacture') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add Manufactures</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <p>
+                                    Protypes
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url ('/admin.protype')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Protypes</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url ('/admin.addprotype') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Protype</p>
                                     </a>
                                 </li>
                             </ul>
@@ -319,6 +342,7 @@
                                     </a>
                                 </li>
                             </ul>
+                            
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
@@ -379,6 +403,8 @@
     <script src="{{ url ('plugins/raphael/raphael.min.js') }}"></script>
     <script src="{{ url ('plugins/jquery-mapael/jquery.mapael.min.js') }}"></script>
     <script src="{{ url ('plugins/jquery-mapael/maps/usa_states.min.js') }}"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <!-- ChartJS -->
     <script src="{{ url ('plugins/chart.js/Chart.min.js') }}"></script>
     <script src="{{ url ('js/sweetalert.js') }}"></script>
@@ -492,6 +518,37 @@
         //         }
         //     });
         // });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var colorDanger = "#FF1744";
+            Morris.Donut({
+            element: 'donut',
+            resize: true,
+            colors: [
+                '#E0F7FA',
+                '#B2EBF2',
+                '#80DEEA',
+                '#4DD0E1',
+                '#26C6DA',
+                '#00BCD4',
+                '#00ACC1',
+                '#0097A7',
+                '#00838F',
+                '#006064'
+            ],
+            //labelColor:"#cccccc", // text color
+            //backgroundColor: '#333333', // border color
+
+            /////// vào Provider để tạo biến 
+            data: [
+                {label:"Product", value:<?php echo $product?>, color:colorDanger},
+                {label:"Order", value:<?php echo $order?>},
+                {label:"Protype", value:<?php echo $protype?>},
+                {label:"Manufacture", value:<?php echo $manu?>}
+            ]
+            });
+        });
     </script>
 </body>
 

@@ -21,40 +21,45 @@
 
     <!-- Main content -->
     <section class="content">
+    @if (session('error'))
+    <div class="popup">
+        <p style="color:#e47878;font-weight:bold;margin-left: 10px;">{{ session('error') }}</p>
+    </div>
+    @endif
       <form action="{{url ('savemanufacture') }}" method="post" enctype="multipart/form-data">
-      {{ csrf_field() }}
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card card-primary">
-            <div class="card-header">
-              <h3 class="card-title">General</h3>
+        {{ csrf_field() }}
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">General</h3>
 
-              <div class="card-tools">
-                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                  <i class="fas fa-minus"></i>
-                </button>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
               </div>
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="inputName">Manu Name</label>
+                  <input type="text" id="inputName" class="form-control" name="manu_name" required>
+                </div>
+                <div class="form-group">
+                  <label for="inputName">Manu Quantity</label>
+                  <input type="number" id="inputQty" class="form-control" name="manu_qty" required>
+                </div>
+              </div>
+              <!-- /.card-body -->
             </div>
-            <div class="card-body">
-              <div class="form-group">
-                <label for="inputName">Manu Name</label>
-                <input type="text" id="inputName" class="form-control" name="manu_name" required>
-              </div>
-              <div class="form-group">
-                <label for="inputName">Manu Quantity</label>
-                <input type="number" id="inputQty" class="form-control" name="manu_qty" required>
-              </div>
-            </div>
-            <!-- /.card-body -->
+            <!-- /.card -->
           </div>
-          <!-- /.card -->
         </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <input name="submit" type="submit" value="Create new Manufacture" class="btn btn-success float-right">
+        <div class="row">
+          <div class="col-12">
+            <input name="submit" type="submit" value="Create new Manufacture" class="btn btn-success float-right">
+          </div>
         </div>
-      </div>
       </form>
     </section>
     <!-- /.content -->
