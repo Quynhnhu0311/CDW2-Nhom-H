@@ -22,6 +22,5 @@ class DatabaseSeeder extends Seeder
         $this->call([Blog::class]);
         $this->call([Admins::class]);
         $this->call([Customers::class]);
-        $this->call([Staffs::class]);
     }
 }
