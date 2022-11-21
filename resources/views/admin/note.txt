@@ -1,0 +1,31 @@
+ <!-- @foreach($show_AllOrders as $key => $show_Order)
+                            <tbody>
+                                <tr>
+                                    <td>{{ $i++ }}</td>
+                                    <td>
+                                        {{ $show_Order->customer->name }}
+                                    </td>
+                                    <td>
+                                        {{ $show_Order->order_code }}
+                                    </td>
+                                    <td>
+                                        {{ $show_Order->created_at }}
+                                    </td>
+                                    <td>
+                                        @if($show_Order->order_status == 1)
+                                            Đơn hàng mới
+                                        @elseif($show_Order->order_status == 2)
+                                            Đã xử lý  - Đã giao hàng
+                                        @else
+                                            Đã Hủy Đơn Hàng
+                                        @endif
+                                    </td>
+                                    <td class="project-actions text-right">
+                                        <a class="btn btn-info btn-sm view" href="/detail-order/{{ $show_Order->order_code }}">
+                                            <i class="far fa-eye"></i>
+                                            View
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        @endforeach -->
