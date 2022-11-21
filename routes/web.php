@@ -72,12 +72,20 @@ Route::post('/update-order-qty-product', [OrderController::class, 'update_order_
 
 
 /*----- Coupons -----*/
-Route::get('/coupons', [AdminController::class,'show_all_coupons'])->name('viewCouponList');
-Route::get('/add-coupon', [AdminController::class,'add_coupon']);
-Route::post('/save-coupon', [AdminController::class,'save_coupon']);
-Route::get('/edit-coupon/{coupon_id}', [AdminController::class,'edit_coupon']);
-Route::post('/update-coupon/{coupon_id}', [AdminController::class,'update_coupon']);
-Route::get('/delete-coupon/{coupon_id}', [AdminController::class,'delete_coupon']);
+Route::get('/coupons', [AdminController::class, 'show_all_coupons'])->name('viewCouponList');
+Route::get('/add-coupon', [AdminController::class, 'add_coupon']);
+Route::get('/edit-coupon/{coupon_id}', [AdminController::class, 'edit_coupon']);
+Route::post('/update-coupon/{coupon_id}', [AdminController::class, 'update_coupon']);
+Route::get('/delete-coupon/{coupon_id}', [AdminController::class, 'delete_coupon']);
+Route::post('/save-coupon', [AdminController::class, 'save_coupon']);
+
+/*----- Staff -----*/
+Route::get('/admin.staffs', [AdminController::class, 'show_staffs']);
+Route::post('/save-staff', [AdminController::class, 'save_staff']);
+Route::get('/admin.editstaff/{key}', [AdminController::class, 'edit_staff']);
+Route::post('/update-staff', [AdminController::class, 'update_staff']);
+Route::get('/delete-staff/{key}', [AdminController::class, 'delete_staff']);
+
 
 /* =====Front-End===== */
 //Home
