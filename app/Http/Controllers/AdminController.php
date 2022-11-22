@@ -11,6 +11,7 @@ use App\Models\Coupon;
 use App\Models\Manufacture;
 use App\Models\Order;
 use App\Models\Staff;
+use App\Models\Admin;
 use DB;
 use Illuminate\Support\Facades\DB as FacadesDB;
 use Illuminate\Support\Facades\Validator;
@@ -23,6 +24,7 @@ class AdminController extends Controller
     // Chặn Admin
     public function AuthLogin(){
         $id_admin = Session::get('admin_id');
+        echo $id_admin;
         if($id_admin){
             return Redirect::to('admin.dashboard');
         }else{
