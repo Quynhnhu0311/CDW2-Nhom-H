@@ -41,9 +41,20 @@ Route::DELETE('deletemanufacture/{id}', [AdminController::class, 'destroy_manu']
 //Add Manufactures
 Route::post('/savemanufacture', [AdminController::class, 'save_manufacture']);
 //Show Edit Page Manufacture
-Route::get('editmanufacture/{manu_id}', [AdminController::class, 'edit_manufacture']);
+Route::get('admin.editmanufacture/{manu_id}',[AdminController::class, 'edit_manufacture']);
 //Update Manufactures
 Route::put('update_datamanu/{manu_id}', [AdminController::class, 'update_manufacture']);
+
+//Show Protypes page
+Route::get('/admin.protype',[AdminController::class,'show_admin_protype']);
+//Show EditProtype page
+Route::get('/admin.editprotype/{type_id}',[AdminController::class,'show_edit_protype']);
+//Update Protypes
+Route::put('update_protype/{type_id}',[AdminController::class,'update_admin_protype']);
+//Add Protypes
+Route::post('/addprotype',[AdminController::class,'add_admin_protype']);
+//Delete Protypes
+Route::DELETE('deleteprotype/{type_id}',[AdminController::class,'delete_admin_protype']);
 
 /*----- Products -----*/
 Route::get('/products', [AdminController::class, 'show_all_products'])->name('viewProductList');
@@ -58,6 +69,7 @@ Route::get('/orders', [AdminController::class, 'show_all_orders'])->name('viewOr
 Route::get('/detail-order/{order_code}', [AdminController::class, 'detail_order']);
 Route::post('/update-order-qty', [OrderController::class, 'update_order_qty']);
 Route::post('/update-order-qty-product', [OrderController::class, 'update_order_qty_product']);
+
 
 /*----- Coupons -----*/
 Route::get('/coupons', [AdminController::class, 'show_all_coupons'])->name('viewCouponList');
@@ -104,6 +116,11 @@ Route::post('/add-cart-ajax', [CartController::class, 'add_cart_ajax']);
 Route::get('/gio-hang', [CartController::class, 'gio_hang']);
 Route::get('/delete-product-cart/{session_id}', [CartController::class, 'delete_product_cart']);
 Route::post('/update-cart', [CartController::class, 'update_cart']);
+
+//Order
+Route::get('/view-order/{id}', [CartController::class,'view_order']);
+Route::get('/view-detail-order/{order_code}', [CartController::class,'view_detail_order']);
+
 
 //Coupon
 Route::post('/check-coupon', [CouponController::class, 'check_coupon']);

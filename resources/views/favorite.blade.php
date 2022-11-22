@@ -60,11 +60,6 @@
                                                 <button type="button" class="add-to-cart-btn" data-id="{{ $favorite_id->product_id }}" name="add-cart">+ Add To Cart</button>
                                             </div>
                                         </td>
-                                        <!-- <td class="cart__close">
-                                            <a href="">
-                                                <i class="fa fa-close"></i>
-                                            </a>
-                                        </td> -->
                                         <td>
                                             <form class="btn btn-danger btn-sm" method="POST" action="{{ $favorite_id->favorite_id }}" onsubmit="return confirm('Bạn Có Muốn Xóa Không?')">
                                                 @method('DELETE')

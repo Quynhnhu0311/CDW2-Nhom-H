@@ -91,6 +91,7 @@
                             <div class="header__top__links">
                                 <?php
                                 $name = Session::get('name');
+                                $id = Session::get('id');
                                 if ($name) {
                                     echo '<div class="header__top__hover">
                                                 <span>' . $name . '<i class="arrow_carrot-down"></i></span>
@@ -102,14 +103,11 @@
                                     echo '<a href="/login">Sign in</a>';
                                 }
                                 ?>
-                                <a href="#">FAQs</a>
                             </div>
                             <div class="header__top__hover">
-                                <span>Usd <i class="arrow_carrot-down"></i></span>
+                                <span>My Order <i class="arrow_carrot-down"></i></span>
                                 <ul>
-                                    <li>USD</li>
-                                    <li>EUR</li>
-                                    <li>USD</li>
+                                    <a href="/view-order/{{$id}}"><li>Order History</li></a>
                                 </ul>
                             </div>
                         </div>
@@ -250,7 +248,7 @@
             <form class="search-model-form" action="tat-ca-san-pham">
                 <input type="text" id="search-input" name="searchValue" placeholder="Search here.....">
                 <div class="input-result">
-
+x`
                 </div>
             </form>
         </div>
@@ -330,7 +328,6 @@
         $(function() {
             apiProvince = (prodvince) => {
                 let district;
-
                 prodvince.forEach(element => {
                     $('#province').append(`<option value="${element.code}">${element.name}</option>`)
                 });

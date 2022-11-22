@@ -43,12 +43,13 @@ class HomeController extends Controller
         $duplicate = DB::table('favorites')->join('products', 'products.product_id', '=', 'favorites.product_id')->get();
         return view('/index', compact('bestSellers', 'features', 'products_feature', 'duplicate', 'manufactures'));
     }
-    //Detail Product and Related Product
+    //Detail Product and Related Product and Comment
     public function show_details($id)
     {
-        $detail = DB::table('products')->join('protypes', 'protypes.type_id', '=', 'products.type_id')
-            ->join('manufactures', 'manufactures.manu_id', '=', 'products.manu_id')->where('products.product_id', $id)->get();
-        foreach ($detail as $related) {
+        $manufactures = DB::table('manufactures')->get();
+        $detail = DB::table('products')->join('protypes','protypes.type_id','=','products.type_id')
+        ->join('manufactures','manufactures.manu_id','=','products.manu_id')->where('products.product_id',$id)->get();
+        foreach($detail as $related) {
             $type_id = $related->type_id;
         }
         /* Realated Product */

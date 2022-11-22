@@ -52,38 +52,38 @@
                                 <?php
                                     $subtotal = 0;
                                 ?>
-                                @if(Session::get('cart'))
-                                    @foreach(Session::get('cart') as $key => $cart)
+                                    @foreach($cart as $key => $cart)
                                         <?php
-                                            $cartPrice = $cart['product_qty'] * $cart['product_price'];
+                                            $cartPrice = $cart->product_qty * $cart->product_price;
                                             $subtotal += $cartPrice;
                                         ?>
                                         <tr>
                                             <td class="product__cart__item">
                                                 <div class="product__cart__item__pic">
-                                                    <img src="{{ asset('/img/product/'.$cart['product_image']) }}" alt="">
+                                                    <img src="{{ asset('/img/product/'.$cart->product_image) }}" alt="">
                                                 </div>
                                                 <div class="product__cart__item__text">
-                                                    <h6>{{ $cart['product_name'] }}</h6>
-                                                    <h5>{{ number_format($cart['product_price']) }}đ</h5>
+                                                    <h6>{{ $cart->product_name }}</h6>
+                                                    <h5>{{ number_format($cart->product_price) }}đ</h5>
+                                                    <input type="hidden"  name="product_id" value="{{ $cart->product_id }}">
+                                                    <input type="hidden"  name="session_id" value="{{ $cart->session_id }}">
                                                 </div>
                                             </td>
                                             <td class="quantity__item">
                                                 <div class="quantity">
                                                     <div class="pro-qty-2">
-                                                        <input type="text" class="cart_quantity" min="1" name="cart_qty[{{ $cart['session_id'] }}]" value="{{ $cart['product_qty'] }}">
+                                                        <input type="text" class="cart_quantity" min="1" name="cart_qty[{{ $cart->session_id }}]" value="{{ $cart->product_qty }}">
                                                     </div>
                                                 </div>
                                             </td>
                                             <td class="cart__price">{{ number_format($cartPrice) }}đ</td>
                                             <td class="cart__close">
-                                                <a href="/delete-product-cart/{{ $cart['session_id'] }}">
+                                                <a href="/delete-product-cart/{{ $cart->session_id }}">
                                                     <i class="fa fa-close"></i>
                                                 </a>
                                             </td>
                                         </tr>
                                     @endforeach
-                                @endif
                             </tbody>
                         </table>
                     </div>

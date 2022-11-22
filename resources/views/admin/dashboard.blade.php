@@ -28,14 +28,12 @@
                     <div class="row">
                         <div class="col-12 col-sm-6 col-md-3">
                             <div class="info-box">
-                                <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
+                                <span class="info-box-icon bg-info elevation-1"><i class="fab fa-product-hunt"></i></span>
 
                                 <div class="info-box-content">
-                                    <span class="info-box-text">CPU Traffic</span>
-                                    <span class="info-box-number">
-                                        10
-                                        <small>%</small>
-                                    </span>
+                                    <span class="info-box-text">Products</span>
+                                    <span class="info-box-number"><?php echo $product ?></span>
+                                    
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -45,11 +43,11 @@
                         <div class="col-12 col-sm-6 col-md-3">
                             <div class="info-box mb-3">
                                 <span class="info-box-icon bg-danger elevation-1"><i
-                                        class="fas fa-thumbs-up"></i></span>
+                                        class="fab fa-medium"></i></span>
 
                                 <div class="info-box-content">
-                                    <span class="info-box-text">Likes</span>
-                                    <span class="info-box-number">41,410</span>
+                                    <span class="info-box-text">Manufactures</span>
+                                    <span class="info-box-number"><?php echo $manu ?></span>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -63,11 +61,11 @@
                         <div class="col-12 col-sm-6 col-md-3">
                             <div class="info-box mb-3">
                                 <span class="info-box-icon bg-success elevation-1"><i
-                                        class="fas fa-shopping-cart"></i></span>
+                                        class="fab fa-tumblr-square"></i></span>
 
                                 <div class="info-box-content">
-                                    <span class="info-box-text">Sales</span>
-                                    <span class="info-box-number">760</span>
+                                    <span class="info-box-text">Protypes</span>
+                                    <span class="info-box-number"><?php echo $protype ?></span>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -76,11 +74,11 @@
                         <!-- /.col -->
                         <div class="col-12 col-sm-6 col-md-3">
                             <div class="info-box mb-3">
-                                <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+                                <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-shopping-cart"></i></span>
 
                                 <div class="info-box-content">
-                                    <span class="info-box-text">New Members</span>
-                                    <span class="info-box-number">2,000</span>
+                                    <span class="info-box-text">Order</span>
+                                    <span class="info-box-number"><?php echo $order ?></span>
                                 </div>
                                 <!-- /.info-box-content -->
                             </div>
@@ -89,6 +87,13 @@
                         <!-- /.col -->
                     </div>
                     <!-- /.row -->
+
+                    <div class="row">
+                        <div class="col-md-4 col-xs-12">
+                            <p>Thống kê tổng số lượng sản phẩm</p>
+                            <div id="donut"></div>
+                        </div>
+                    </div>
 
                     <div class="row">
                         <div class="col-md-12">
