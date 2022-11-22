@@ -53,23 +53,23 @@
                     @foreach($show_staffs as $staff)
                     <tr>
                         <td>
-                            {{ $staff->id }}
+                            {{ $staff->admin_id }}
                         </td>
                         <td>
-                            {{ $staff->staff_name }}
+                            {{ $staff->admin_name }}
                         </td>
                         <td>
-                            {{ $staff->staff_email }}
+                            {{ $staff->admin_email }}
                         </td>
                         <td>
-                            <input type="password" style="background: none; color: white;border:none" disabled value="{{ $staff->staff_password }}">
+                            <input type="password" style="background: none; color: white;border:none" disabled value="{{ $staff->admin_password }}">
                         </td>
                         <td class="project-actions text-right">
-                            <a class="btn btn-info btn-sm edit-coupon" href="admin.editstaff/{{$staff->id}}">
+                            <a class="btn btn-info btn-sm edit-coupon" href="admin.editstaff/{{$staff->admin_id}}">
                                 <i class="fas fa-pencil-alt"></i>
                                 Edit
                             </a>
-                            <a class="btn btn-danger btn-sm delete-coupon" onclick="location.href='delete-staff/{{$staff->id}}'">
+                            <a class="btn btn-danger btn-sm delete-coupon" onclick="location.href='delete-staff/{{$staff->admin_id}}'">
                                 <i class="fas fa-trash"></i>
                                 Delete
                             </a>

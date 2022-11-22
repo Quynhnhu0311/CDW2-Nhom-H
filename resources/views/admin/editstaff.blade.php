@@ -7,12 +7,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Staff Add</h1>
+          <h1>Staff Edit</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-            <li class="breadcrumb-item active">Staff Add</li>
+            <li class="breadcrumb-item active">Staff Edit</li>
           </ol>
         </div>
       </div>
@@ -37,14 +37,14 @@
             </div>
             @foreach($edit_staff as $staff)
             <div class="card-body">
-              <input type="hidden" id="inputName" class="form-control" name="staff_id" value="{{$staff->id}}" required>
+              <input type="hidden" id="inputName" class="form-control" name="staff_id" value="{{$staff->admin_id}}" required>
               <div class="form-group">
                 <label for="inputName">Staff Name</label>
-                <input type="text" id="inputName" class="form-control" name="staff_name" value="{{$staff->staff_name}}" required>
+                <input type="text" id="inputName" class="form-control" name="staff_name" value="{{$staff->admin_name}}" required>
               </div>
               <div class="form-group">
                 <label for="inputName">Staff Email</label>
-                <input type="email" id="inputName" class="form-control" name="staff_email" value="{{$staff->staff_email}}" required>
+                <input type="email" id="inputName" class="form-control" name="admin_email" value="{{$staff->admin_email}}" required>
                 <?php
                 $message = Session::get('message');
                 if ($message) {
@@ -55,7 +55,7 @@
               </div>
               <div class="form-group">
                 <label for="inputName">Staff Password</label>
-                <input type="password" id="inputName" class="form-control" name="staff_password" value="{{$staff->staff_password}}" required>
+                <input type="password" id="inputName" class="form-control" name="staff_password" value="{{$staff->admin_password}}" required>
               </div>
             </div>
             @endforeach

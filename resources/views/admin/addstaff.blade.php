@@ -42,7 +42,7 @@
               </div>
               <div class="form-group">
                 <label for="inputName">Staff Email</label>
-                <input type="email" id="inputName" class="form-control" name="staff_email" required>
+                <input type="email" id="inputName" class="form-control" name="admin_email" required>
                 <?php
                 $message = Session::get('message');
                 if ($message) {
