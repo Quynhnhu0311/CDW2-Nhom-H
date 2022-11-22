@@ -25,8 +25,7 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__wobble" src="{{ asset ('dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo"
-                height="60" width="60">
+            <img class="animation__wobble" src="{{ asset ('dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo" height="60" width="60">
         </div>
 
         <!-- Navbar -->
@@ -54,8 +53,7 @@
                     <div class="navbar-search-block">
                         <form class="form-inline">
                             <div class="input-group input-group-sm">
-                                <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                                    aria-label="Search">
+                                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
                                 <div class="input-group-append">
                                     <button class="btn btn-navbar" type="submit">
                                         <i class="fas fa-search"></i>
@@ -79,8 +77,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="{{ asset ('dist/img/user1-128x128.jpg') }}" alt="User Avatar"
-                                    class="img-size-50 mr-3 img-circle">
+                                <img src="{{ asset ('dist/img/user1-128x128.jpg') }}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         Brad Diesel
@@ -96,8 +93,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="{{ asset ('dist/img/user8-128x128.jpg') }}" alt="User Avatar"
-                                    class="img-size-50 img-circle mr-3">
+                                <img src="{{ asset ('dist/img/user8-128x128.jpg') }}" alt="User Avatar" class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         John Pierce
@@ -113,13 +109,11 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="{{ asset ('dist/img/user3-128x128.jpg') }}" alt="User Avatar"
-                                    class="img-size-50 img-circle mr-3">
+                                <img src="{{ asset ('dist/img/user3-128x128.jpg') }}" alt="User Avatar" class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         Nora Silvester
-                                        <span class="float-right text-sm text-warning"><i
-                                                class="fas fa-star"></i></span>
+                                        <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
                                     </h3>
                                     <p class="text-sm">The subject goes here</p>
                                     <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
@@ -174,19 +168,18 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <?php
-                            $admin_name = Session::get('admin_name');
-                            if($admin_name){
-                                echo '<a href="/logout-admin" class="dropdown-item">
+                        $admin_name = Session::get('admin_name');
+                        if ($admin_name) {
+                            echo '<a href="/logout-admin" class="dropdown-item">
                                         <i class="fas fa-sign-out-alt"></i> Log Out
                                       </a>
                                       <div class="dropdown-divider"></div>';
-                            }
-                            else{
-                                echo '<a href="/login" class="dropdown-item">
+                        } else {
+                            echo '<a href="/login" class="dropdown-item">
                                         <i class="fas fa-sign-out-alt"></i> Log In
                                       </a>
                                       <div class="dropdown-divider"></div>';
-                            }
+                        }
                         ?>
                     </div>
                 </li>
@@ -198,8 +191,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
-                <img src="{{ asset ('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-                    style="opacity: .8">
+                <img src="{{ asset ('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">AdminGoupH</span>
             </a>
 
@@ -212,10 +204,10 @@
                     </div>
                     <div class="info">
                         <?php
-                            $admin_name = Session::get('admin_name');
-                            if($admin_name){
-                                echo '<a href="#" class="d-block">'.$admin_name.'</a>';
-                            }
+                        $admin_name = Session::get('admin_name');
+                        if ($admin_name) {
+                            echo '<a href="#" class="d-block">' . $admin_name . '</a>';
+                        }
                         ?>
 
                     </div>
@@ -224,8 +216,7 @@
                 <!-- SidebarSearch Form -->
                 <div class="form-inline">
                     <div class="input-group" data-widget="sidebar-search">
-                        <input class="form-control form-control-sidebar" type="search" placeholder="Search"
-                            aria-label="Search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
                         <div class="input-group-append">
                             <button class="btn btn-sidebar">
                                 <i class="fas fa-search fa-fw"></i>
@@ -236,8 +227,7 @@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
@@ -354,6 +344,28 @@
                             </ul>
                             
                         </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <p>
+                                    Staffs
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url ('/admin.staffs')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Manage Staffs</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url ('/admin.addstaff') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Staffs</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -407,7 +419,7 @@
     --------------------------->
     <script type="text/javascript">
         $(document).ready(function() {
-            $('.update_order_qty').change(function(){
+            $('.update_order_qty').change(function() {
                 var order_status = $(this).val();
                 var order_id = $(this).children(":selected").attr("id");
                 var _token = $('input[name="_token"]').val();
@@ -426,13 +438,13 @@
                     url: "{{ url('/update-order-qty') }}",
                     method: "POST",
                     data: {
-                        order_status:order_status,
-                        order_id:order_id,
-                        _token:_token,
-                        order_product_qty:order_product_qty,
-                        order_product_id:order_product_id
+                        order_status: order_status,
+                        order_id: order_id,
+                        _token: _token,
+                        order_product_qty: order_product_qty,
+                        order_product_id: order_product_id
                     },
-                    success: function(data){
+                    success: function(data) {
                         alert("Cập Nhật Đơn Hàng Thành Công!");
                         // location.reload();
                     }
@@ -443,7 +455,7 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $('.update_quantity_product').click(function(){
+            $('.update_quantity_product').click(function() {
                 var order_prd_id = $(this).data('product_id');
                 var order_qty = $('.order_qty_' + order_prd_id).val();
                 var order_code = $('.order_code').val();
@@ -456,12 +468,12 @@
                     url: "{{ url('/update-order-qty-product') }}",
                     method: "POST",
                     data: {
-                        order_prd_id:order_prd_id,
-                        order_qty:order_qty,
-                        _token:_token,
-                        order_code:order_code
+                        order_prd_id: order_prd_id,
+                        order_qty: order_qty,
+                        _token: _token,
+                        order_code: order_code
                     },
-                    success: function(data){
+                    success: function(data) {
                         alert("Cập Nhật Số Lượng Thành Công!");
                         // location.reload();
                     }
@@ -539,4 +551,5 @@
         });
     </script>
 </body>
+
 </html>
