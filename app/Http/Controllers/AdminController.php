@@ -21,20 +21,19 @@ session_start();
 class AdminController extends Controller
 {
     // Chặn Admin
-    public function AuthLogin()
+    public function StaffLogin()
     {
         $id_admin = Session::get('admin_id');
         $id_staff = Session::get('staff_id');
-        if($id_admin){
+        if($id_admin || $id_staff){
             return Redirect::to('admin.dashboard');
         } else {
             return Redirect::to('login')->send();
         }
     }
-    public function StaffLogin()
+    public function  AuthLogin()
     {
-        $id_staff = Session::get('staff_id');
-        if($id_staff){
+        if($id_admin){
             return Redirect::to('admin.dashboard');
         } else {
             return Redirect::to('login')->send();
@@ -44,7 +43,7 @@ class AdminController extends Controller
     //Show Manufacture Admin
     public function show_dashboard()
     {
-        $this->AuthLogin();
+        $this->StaffLogin();
         $product = Product::all()->count();
         $protype = Protype::all()->count();
         $manu = Manufacture::all()->count();
@@ -179,7 +178,7 @@ class AdminController extends Controller
     /*----- Show Products -----*/
     function show_all_products()
     {
-        $this->AuthLogin();
+        $this->StaffLogin();
         $show_Allproducts = Product::all();
         return view('admin.products')->with('show_Allproducts', $show_Allproducts);
     }
@@ -187,7 +186,7 @@ class AdminController extends Controller
     //Edit Product
     function edit_product($product_id)
     {
-        $this->AuthLogin();
+        $this->StaffLogin();
         $show_Allproducts = Product::all();
         $type_product = Protype::orderby('type_id', 'desc')->get();
         $manu_product = Manufacture::orderby('manu_id', 'desc')->get();
@@ -201,7 +200,7 @@ class AdminController extends Controller
     //Update Product
     function update_product(Request $request, $product_id)
     {
-        $this->AuthLogin();
+        $this->StaffLogin();
         $data = array();
         $data['product_name'] = $request->product_name;
         $data['manu_id'] = $request->manufacture;
@@ -242,7 +241,7 @@ class AdminController extends Controller
     //Delete Product
     function delete_product($product_id)
     {
-        $this->AuthLogin();
+        $this->StaffLogin();
         $show_Allproducts = Product::all();
         DB::table('products')->where('product_id', $product_id)->delete();
         Session::put('message_deleteProduct', 'Xóa Sản Phẩm Thành Công!');
@@ -252,7 +251,7 @@ class AdminController extends Controller
     //Add Product
     function add_product()
     {
-        $this->AuthLogin();
+        $this->StaffLogin();
         $getProtypes = DB::table('protypes')->get();
         $getManufactures = DB::table('manufactures')->get();
         $getFeatures = DB::table('features')->get();
@@ -264,7 +263,7 @@ class AdminController extends Controller
     //Save Product
     function save_product(Request $request)
     {
-        $this->AuthLogin();
+        $this->StaffLogin();
         $data = array();
         $data['product_name'] = $request->product_name;
         $data['product_price'] = $request->product_price;
