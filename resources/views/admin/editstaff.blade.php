@@ -37,7 +37,7 @@
             </div>
             @foreach($edit_staff as $staff)
             <div class="card-body">
-              <input type="hidden" id="inputName" class="form-control" name="staff_id" value="{{$staff->id}}" required>
+              <input type="hidden" id="inputName" class="form-control" name="staff_id" value="{{$staff->staff_id}}" required>
               <div class="form-group">
                 <label for="inputName">Staff Name</label>
                 <input type="text" id="inputName" class="form-control" name="staff_name" value="{{$staff->staff_name}}" required>

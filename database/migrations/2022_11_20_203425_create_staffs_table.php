@@ -14,11 +14,12 @@ class CreateStaffsTable extends Migration
     public function up()
     {
         Schema::create('staffs', function (Blueprint $table) {
-            $table->id();
+            $table->id('staff_id');
             $table->string('staff_name');
             $table->string('staff_email')->unique();
             $table->string('staff_password');
             $table->tinyInteger('status');
+            $table->string('token')->nullable();
             $table->timestamps();
         });
     }
