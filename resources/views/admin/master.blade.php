@@ -224,7 +224,7 @@
                         </div>
                     </div>
                 </div>
-
+                <?php   $id_admin = Session::get('admin_id'); ?>
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -239,6 +239,7 @@
                                 </p>
                             </a>
                         </li>
+                        @if($id_admin)
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <p>
@@ -283,6 +284,7 @@
                                 </li>
                             </ul>
                         </li>
+                        @endif
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <p>
@@ -344,6 +346,7 @@
                             </ul>
                             
                         </li>
+                        @if($id_admin)
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <p>
@@ -366,6 +369,7 @@
                                 </li>
                             </ul>
                         </li>
+                        @endif
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

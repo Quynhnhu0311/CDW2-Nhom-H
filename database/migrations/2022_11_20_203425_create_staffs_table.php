@@ -19,6 +19,7 @@ class CreateStaffsTable extends Migration
             $table->string('staff_email')->unique();
             $table->string('staff_password');
             $table->tinyInteger('status');
+            $table->string('token')->nullable();
             $table->timestamps();
         });
     }
