@@ -28,7 +28,8 @@ class AdminController extends Controller
         $id_staff = Session::get('staff_id');
         if($id_admin || $id_staff){
             return Redirect::to('admin.dashboard');
-        } else {
+        }
+        else {
             return Redirect::to('login')->send();
         }
     }
