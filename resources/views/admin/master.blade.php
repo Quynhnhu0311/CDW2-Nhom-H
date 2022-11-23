@@ -169,12 +169,20 @@
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <?php
                         $admin_name = Session::get('admin_name');
+                        $staff_id = Session::get('staff_id');
                         if ($admin_name) {
                             echo '<a href="/logout-admin" class="dropdown-item">
                                         <i class="fas fa-sign-out-alt"></i> Log Out
                                       </a>
                                       <div class="dropdown-divider"></div>';
-                        } else {
+                        }
+                        elseif($staff_id) {
+                            echo '<a href="/logout-admin" class="dropdown-item">
+                                        <i class="fas fa-sign-out-alt"></i> Log Out
+                                      </a>
+                                      <div class="dropdown-divider"></div>';
+                        }
+                         else {
                             echo '<a href="/login" class="dropdown-item">
                                         <i class="fas fa-sign-out-alt"></i> Log In
                                       </a>
@@ -205,8 +213,12 @@
                     <div class="info">
                         <?php
                         $admin_name = Session::get('admin_name');
+                        $staff_name = Session::get('staff_name');
                         if ($admin_name) {
                             echo '<a href="#" class="d-block">' . $admin_name . '</a>';
+                        }
+                        elseif($staff_name) {
+                            echo '<a href="#" class="d-block">' . $staff_name . '</a>';
                         }
                         ?>
 
