@@ -25,9 +25,13 @@ class AdminController extends Controller
     {
         $id_admin = Session::get('admin_id');
         $id_staff = Session::get('staff_id');
-        if($id_admin || $id_staff){
+        if($id_admin){
             return Redirect::to('admin.dashboard');
-        } else {
+        }
+        elseif ($id_staff){
+            return Redirect::to('admin.dashboard');
+        }
+        else {
             return Redirect::to('login')->send();
         }
     }
@@ -56,8 +60,12 @@ class AdminController extends Controller
     {
         Session::put('admin_name', null);
         Session::put('admin_id', null);
+        Session::put('staff_name', null);
+        Session::put('staff_id', null);
         $request->session()->forget(['admin_id']);
         $request->session()->forget(['admin_name']);
+        $request->session()->forget(['staff_name']);
+        $request->session()->forget(['staff_id']);
         return Redirect::to('/login');
     }
 
