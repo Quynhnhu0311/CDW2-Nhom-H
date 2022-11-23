@@ -35,7 +35,10 @@ class UserController extends Controller
         //Account Admin
         $admin_result = DB::table('admins')->where('admin_email', $user_email)
                                            ->where('admin_password', $user_pass)->first();
-        $admin = Admin::all();
+
+        //Account Staff
+        $staff_result = DB::table('staffs')->where('staff_email', $user_email)
+                                           ->where('staff_password', $user_pass)->first();
 
         //Required Captcha
         $request->validate([
@@ -52,19 +55,14 @@ class UserController extends Controller
             return Redirect::to('/');
         }
         elseif($admin_result) {
-            foreach($admin as $key => $admin_permission){
-                $permission_type = $admin_permission->permission;
-                if($permission_type == 1)  {
-                    Session::put('admin_name', $admin_result->admin_name);
-                    Session::put('admin_id', $admin_result->admin_id);
-                    return Redirect::to('/admin.dashboard');
-                }
-                elseif($permission_type == 2) {
-                    Session::put('admin_name', $admin_result->admin_name);
-                    Session::put('admin_id', $admin_result->admin_id);
-                    return Redirect::to('/');
-                }
-            }
+            Session::put('admin_name', $admin_result->admin_name);
+            Session::put('admin_id', $admin_result->admin_id);
+            return Redirect::to('/admin.dashboard');
+        }
+        elseif($staff_result) {
+            Session::put('staff_name', $staff_result->staff_name);
+            Session::put('staff_id', $staff_result->staff_id);
+            return Redirect::to('/admin.dashboard');
         }
         else {
             Session::put('message', 'Mật khẩu hoặc tài khoản bị sai. Vui lòng nhập lại!');

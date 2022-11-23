@@ -24,9 +24,14 @@ class AdminController extends Controller
     public function AuthLogin()
     {
         $id_admin = Session::get('admin_id');
+        $id_staff = Session::get('staff_id');
         if ($id_admin) {
             return Redirect::to('admin.dashboard');
-        } else {
+        }
+        elseif($id_staff) {
+            return Redirect::to('admin.dashboard');
+        }
+        else {
             return Redirect::to('login')->send();
         }
     }
