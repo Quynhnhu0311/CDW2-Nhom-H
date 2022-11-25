@@ -18,6 +18,7 @@
     </section>
     <!-- Breadcrumb Section End -->
 
+<<<<<<< HEAD
     <!-- Shop Section Begin -->
     <section class="shop spad">
         <div class="container">
@@ -51,6 +52,34 @@
                                                     <li><a href="#">Kids (20)</a></li>
                                                 </ul>
                                             </div>
+=======
+<!-- Shop Section Begin -->
+<section class="shop spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="shop__sidebar">
+                    <div class="shop__sidebar__search">
+                        <form>
+                            <input type="text" id="search-shop-input" onkeydown="return (event.keyCode!=13);" value="" placeholder="Search...">
+                            <button type="submit" ><span class="icon_search"></span></button>
+                        </form>
+                    </div>
+                    <div class="shop__sidebar__accordion">
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-heading">
+                                    <a data-toggle="collapse" data-target="#collapseOne">Categories</a>
+                                </div>
+                                <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                    <div class="card-body">
+                                        <div class="shop__sidebar__categories">
+                                            <ul class="nice-scroll">
+                                                @foreach($protypes as $protype)
+                                                <li class="ajax-protype" value="{{$protype->type_id}}"><a>{{$protype->type_name}}</a></li>
+                                                @endforeach
+                                            </ul>
+>>>>>>> main
                                         </div>
                                     </div>
                                 </div>
@@ -193,6 +222,7 @@
                                     <p>Showing 1–12 of 126 results</p>
                                 </div>
                             </div>
+<<<<<<< HEAD
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="shop__product__option__right">
                                     <p>Sort by Price:</p>
@@ -202,6 +232,20 @@
                                         <option value="">$55 - $100</option>
                                     </select>
                                 </div>
+=======
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="shop__product__option__right">
+                                <form action="">
+                                    @csrf
+                                    <p>Sort by Price:</p>
+                                    <select name="sort" id="sort">
+                                        <option value="{{Request::url()}}?sort_by=none">---Select---</option>
+                                        <option value="{{Request::url()}}?sort_by=tang_dan">Low To High</option>
+                                        <option selected value="{{Request::url()}}?sort_by=giam_dan">High To Low</option>
+                                    </select>
+                                </form>
+>>>>>>> main
                             </div>
                         </div>
                     </div>

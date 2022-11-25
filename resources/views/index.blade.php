@@ -107,6 +107,7 @@
                     </ul>
                 </div>
             </div>
+<<<<<<< HEAD
             <div class="row product__filter">
                 @foreach($products_feature as $row => $bestSellers)
                     <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix best-sellers">
@@ -127,6 +128,25 @@
                                     <i class="fa fa-star-o"></i>
                                     <i class="fa fa-star-o"></i>
                                     <i class="fa fa-star-o"></i>
+=======
+            <form>
+                @csrf
+                <div class="row product__filter">
+                    @foreach($products_feature as $row => $bestSellers)
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix best-sellers">
+                            <div class="product__item">
+                                <div class="product__item__pic set-bg" data-setbg="{{ asset('/img/product/'.$bestSellers->product_img) }}">
+                                    <ul class="product__hover">
+                                        <form action="{{ url ('favorite')}}" method="POST" enctype="multipart/form-data">
+                                        {{ csrf_field() }}
+                                            <input type="hidden" value="{{ $bestSellers->product_id }}" name="favorite_product_id">
+                                            <?php  $id = Session::get('id'); ?>
+                                            <input type="hidden" value="<?php echo $id ?>" name="favorite_user_id">
+                                            <input style="" name="submit-favorite" value="" type="submit"  >
+                                        </form>
+                                        <li><a href="/shop-details/{{ $bestSellers->product_id }}"><img src="{{ asset ('img/icon/search.png') }}" alt=""></a></li>
+                                    </ul>
+>>>>>>> main
                                 </div>
                                 <h5>{{ number_format($bestSellers->product_price) }}đ</h5>
                                 <div class="product__color__select">

@@ -3882,6 +3882,14 @@ ol {
 >>>>>>> function_login_and_logout
 =======
 }
+<<<<<<< HEAD
 >>>>>>> layout_login_and_register
 =======
 >>>>>>> show_feature_product
+=======
+
+.header__top__hover li:hover {
+    background-color: #000;
+    color: #fff;
+}
+>>>>>>> main
