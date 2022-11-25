@@ -26,22 +26,22 @@ class AdminController extends Controller
     {
         $id_admin = Session::get('admin_id');
         $id_staff = Session::get('staff_id');
-        if($id_admin || $id_staff){
-            return Redirect::to('admin.dashboard');
-        }
-        else {
-            return Redirect::to('login')->send();
-        }
-    }
-    public function  AuthLogin()
-    {
-        if($id_admin){
+        if ($id_admin || $id_staff) {
             return Redirect::to('admin.dashboard');
         } else {
             return Redirect::to('login')->send();
         }
     }
-    
+    public function  AuthLogin()
+    {
+        $id_admin = Session::get('admin_id');
+        if ($id_admin) {
+            return Redirect::to('admin.dashboard');
+        } else {
+            return Redirect::to('login')->send();
+        }
+    }
+
     //Show Manufacture Admin
     public function show_dashboard()
     {
