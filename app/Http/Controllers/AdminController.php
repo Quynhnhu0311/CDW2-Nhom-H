@@ -10,6 +10,7 @@ use App\Models\Protype;
 use App\Models\Coupon;
 use App\Models\Manufacture;
 use App\Models\Order;
+use App\Models\Blog;
 use DB;
 use Session;
 session_start();
@@ -401,5 +402,66 @@ class AdminController extends Controller
         $this->AuthLogin();
         DB::table('comments')->where('comment_id',$comment_id)->delete();
         return Redirect::to('admin.comment');
+    }
+    public function show_admin_blog(){
+        $this->AuthLogin();
+        $blogs = DB::table('blog')->get();
+
+        return view('admin.blog')->with('blogs',$blogs);
+    }
+    //Show Edit Blog
+    function edit_admin_blog($blog_id) {
+        $this->AuthLogin();
+        $blogs = DB::table('blog')->where('blog_id',$blog_id)->get();
+        return view('admin.editblog')->with('blogs',$blogs);
+    }
+
+    //Update Blog
+    function update_admin_blog(Request $request, $blog_id) {
+        $this->AuthLogin();
+        $data = array();
+        $data['blog_title'] = $request->blog_title;
+        $data['blog_description'] = $request->blog_description;
+        $data['blog_author'] = $request->blog_author;
+        $get_image = $request->file('blog_img');
+        if($get_image){
+            $get_name_image = $get_image->getClientOriginalName();
+            $name_image = current(explode('.',$get_name_image));
+            $new_image = $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
+            $get_image->move('./img/blog/',$new_image);
+            $data['blog_img'] = $new_image;
+            DB::table('blog')->where('blog_id',$blog_id)->update($data);
+            Session::put('message_image','Cập Nhật Hình Ảnh Thành Công!');
+            return Redirect::to('admin.editblog');
+        }
+        DB::table('blog')->where('blog_id',$blog_id)->update($data);
+        Session::put('message_update','Cập Nhật Thành Công!');
+        return Redirect::to('admin.blog');
+    }
+    function delete_admin_blog($blog_id){
+        $this->AuthLogin();
+        DB::table('blog')->where('blog_id',$blog_id)->delete();
+        return Redirect::to('admin.blog');
+    }
+    function add_admin_blog(Request $request){
+        $this->AuthLogin();
+        $data = array();
+        $data['blog_title'] = $request->blog_title;
+        $data['blog_description'] = $request->blog_description;
+        $data['blog_Author'] = $request->blog_author;
+        $get_image = $request->file('blog_img');
+        if($get_image){
+            $get_name_image = $get_image->getClientOriginalName();
+            $name_image = current(explode('.',$get_name_image));
+            $new_image = $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
+            $get_image->move('./img/blog',$new_image);
+            $data['blog_img'] = $new_image;
+            DB::table('blog')->insert($data);
+            Session::put('message_image','Thêm Hình Ảnh Thành Công!');
+            return Redirect::to('admin.addblog');
+        }
+        // DB::table('blog')->insert($data);
+        // Session::put('message_update','Thêm Thành Công!');
+        // return Redirect::to('admin.blog');
     }
 }

@@ -7,29 +7,23 @@
         <div class="container-fluid">
             <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Manage Products</h1>
+                <h1>Manage Blogs</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="/admin.dashboard">Home</a></li>
-                <li class="breadcrumb-item active">Products</li>
+                <li class="breadcrumb-item active">Blogs</li>
                 </ol>
             </div>
             </div>
         </div><!-- /.container-fluid -->
-        </section>
-        @if(session()->has('message_deleteProduct'))
-            <div class="alert text-alert">
-                {{ session()->get('message_deleteProduct') }}
-            </div>
-            <?php session()->forget(['message_deleteProduct']); ?>
-        @endif
+        
         <!-- Main content -->
         <section class="content">
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
-                <h3 class="card-title">Products</h3>
+                <h3 class="card-title">Blogs</h3>
                 <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                     <i class="fas fa-minus"></i>
@@ -43,53 +37,48 @@
                     <table class="table table-striped projects">
                         <thead>
                             <tr>
-                                <th style="width: 2%">
+                                <th style="width: 5%">
                                     ID
                                 </th>
                                 <th style="width: 15%"> Image </th>
-                                <th style="width: 20%"> Name </th>
-                                <th style="width: 10%"> Price </th>
-                                <th  style="width: 8%">Quantity</th>
-                                <th  style="width: 8%">Sold</th>
-                                <th  style="width: 10%">Protype</th>
-                                <th  style="width: 10%">Manufacture</th>
-                                <th  style="width: 30%">Action</th>
+                                <th style="width: 20%"> Title </th>
+                                <th style="width: 30%"> Description </th>
+                                <th  style="width: 10%">Author</th>
+                                <th  style="width: 20%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($show_Allproducts as $key => $show_Allproducts)
+                            @foreach($blogs as $data)
                             <tr>
-                                <td>{{ $show_Allproducts->product_id }}</td>
+                                <td>{{ $data->blog_id }}</td>
                                 <td>
-                                    <img src="{{ asset('/img/product/'.$show_Allproducts->product_img) }}" alt=""><br/>
+                                    <img src="{{ asset('/img/blog/'.$data->blog_img) }}" alt=""><br/>
                                 </td>
                                 <td>
-                                    {{ $show_Allproducts->product_name }}
+                                    {{ $data->blog_title }}
                                 </td>
                                 <td>
-                                    {{ number_format($show_Allproducts->product_price) }}đ
+                                    {{ Str::words($data->blog_description,15) }}
                                 </td>
                                 <td>
-                                    {{ $show_Allproducts->product_qty }}
-                                </td>
-                                <td>
-                                    {{ $show_Allproducts->product_sold }}
-                                </td>
-                                <td>
-                                    {{ $show_Allproducts->type_name }}
-                                </td>
-                                <td>
-                                    {{ $show_Allproducts->manufacture->manu_name }}
+                                    {{ $data->blog_author }}
                                 </td>
                                 <td class="project-actions text-right">
-                                    <a class="btn btn-info btn-sm product" href="/edit-product/{{ $show_Allproducts->product_id }}">
+                                    <a class="btn btn-info btn-sm product" href="/admin.editblog/{{ $data->blog_id }}">
                                         <i class="fas fa-pencil-alt"></i>
                                         Edit
                                     </a>
-                                    <a onclick="return confirm('Bạn có chắc muốn xóa product này không?')" class="btn btn-danger btn-sm" href="/delete-product/{{ $show_Allproducts->product_id }}">
+                                    <!-- <a onclick="return confirm('Bạn có chắc muốn xóa blog này không?')" class="btn btn-danger btn-sm" href="/deleteblog/{{ $data->blog_id }}">
                                         <i class="fas fa-trash"></i>
                                         Delete
-                                    </a>
+                                    </a> -->
+                                    <form class="btn btn-danger btn-sm" method="POST" action="deleteblog/{{$data->blog_id}}" onsubmit="return confirm('Bạn Có Muốn Xóa Không?')">
+                                    @method('DELETE')
+                                    @csrf
+                                    <i class="fas fa-trash">
+                                        </i>
+                                    <button style="background-color: #e74c3c;border:0" type="submit">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                             @endforeach

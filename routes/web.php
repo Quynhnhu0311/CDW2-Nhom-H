@@ -14,6 +14,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\InfomationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -82,6 +83,20 @@ Route::post('/save-coupon', [AdminController::class,'save_coupon']);
 Route::get('/admin.comment',[AdminController::class,'show_admin_comment']);
 //Delete Comment in Admin
 Route::DELETE('deletecomment/{comment_id}',[AdminController::class,'delete_admin_comment']);
+
+//Show Blog in Admin
+Route::get('/admin.blog',[AdminController::class,'show_admin_blog']);
+//Edit Blog in Admin
+Route::get('/admin.editblog/{blog_id}',[AdminController::class,'edit_admin_blog']);
+//Update Blog in Admin
+Route::post('admin.updateblog/{blog_id}',[AdminController::class,'update_admin_blog']);
+//Add Blog in Admin
+Route::post('admin.addblog',[AdminController::class,'add_admin_blog']);
+//Delete Blog in Admin
+Route::DELETE('deleteblog/{blog_id}',[AdminController::class,'delete_admin_blog']);
+
+//Show infomation
+Route::get('/info',[InfomationController::class,'show_info']);
 
 /* =====Front-End===== */
 //Home

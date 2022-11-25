@@ -370,6 +370,28 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <p>
+                                    Blog
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url ('/admin.blog')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Manage Blog</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url ('/admin.addblog')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Blog</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
