@@ -2,11 +2,6 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
-=======
-use App\Models\Product;
-use App\Models\Admin;
->>>>>>> main
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
@@ -23,53 +18,13 @@ class UserController extends Controller
     {
         $user_email = $request->email;
         $user_pass = md5($request->pass);
-<<<<<<< HEAD
         $result = DB::table('users')->where('email', $user_email)
             ->where('password', $user_pass)->first();
-=======
-
-        //Account Customer
-        $result = DB::table('customers')->where('email', $user_email)
-                                        ->where('password', $user_pass)->first();
-
-        //Account Admin
-        $admin_result = DB::table('admins')->where('admin_email', $user_email)
-                                           ->where('admin_password', $user_pass)->first();
-
-        //Account Staff
-        $staff_result = DB::table('staffs')->where('staff_email', $user_email)
-                                           ->where('staff_password', $user_pass)->first();
-
-        //Required Captcha
-        $request->validate([
-                'g-recaptcha-response' => 'required|captcha'
-            ],
-            [
-                'g-recaptcha-response.required' => 'Please check You are not a robot'
-            ]
-        );
-
->>>>>>> main
         if ($result) {
             Session::put('name', $result->name);
             Session::put('id', $result->id);
             return Redirect::to('/');
-<<<<<<< HEAD
         } else {
-=======
-        }
-        elseif($admin_result) {
-            Session::put('admin_name', $admin_result->admin_name);
-            Session::put('admin_id', $admin_result->admin_id);
-            return Redirect::to('/admin.dashboard');
-        }
-        elseif($staff_result) {
-            Session::put('staff_name', $staff_result->staff_name);
-            Session::put('staff_id', $staff_result->staff_id);
-            return Redirect::to('/admin.dashboard');
-        }
-        else {
->>>>>>> main
             Session::put('message', 'Mật khẩu hoặc tài khoản bị sai. Vui lòng nhập lại!');
             return Redirect::to('/login');
         }

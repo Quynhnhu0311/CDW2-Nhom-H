@@ -36,7 +36,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-<<<<<<< HEAD
                                 <tr>
                                     <td class="product__cart__item">
                                         <div class="product__cart__item__pic">
@@ -117,54 +116,6 @@
                                     <td class="cart__price">$ 30.00</td>
                                     <td class="cart__close"><i class="fa fa-close"></i></td>
                                 </tr>
-=======
-                                @if(session()->has('message_delete'))
-                                    <div class="alert text-alert">
-                                        {{ session()->get('message_delete') }}
-                                    </div>
-                                    <?php session()->forget(['message_delete']); ?>
-                                @elseif(session()->has('error'))
-                                    <div class="alert alert-danger">
-                                        {{ session()->get('error') }}
-                                    </div>
-                                    <?php session()->forget(['error']); ?>
-                                @endif
-                                <?php
-                                    $subtotal = 0;
-                                ?>
-                                    @foreach($cart as $key => $cart)
-                                        <?php
-                                            $cartPrice = $cart->product_qty * $cart->product_price;
-                                            $subtotal += $cartPrice;
-                                        ?>
-                                        <tr>
-                                            <td class="product__cart__item">
-                                                <div class="product__cart__item__pic">
-                                                    <img src="{{ asset('/img/product/'.$cart->product_image) }}" alt="">
-                                                </div>
-                                                <div class="product__cart__item__text">
-                                                    <h6>{{ $cart->product_name }}</h6>
-                                                    <h5>{{ number_format($cart->product_price) }}đ</h5>
-                                                    <input type="hidden"  name="product_id" value="{{ $cart->product_id }}">
-                                                    <input type="hidden"  name="session_id" value="{{ $cart->session_id }}">
-                                                </div>
-                                            </td>
-                                            <td class="quantity__item">
-                                                <div class="quantity">
-                                                    <div class="pro-qty-2">
-                                                        <input type="text" class="cart_quantity" min="1" name="cart_qty[{{ $cart->session_id }}]" value="{{ $cart->product_qty }}">
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="cart__price">{{ number_format($cartPrice) }}đ</td>
-                                            <td class="cart__close">
-                                                <a href="/delete-product-cart/{{ $cart->session_id }}">
-                                                    <i class="fa fa-close"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                    @endforeach
->>>>>>> main
                             </tbody>
                         </table>
                     </div>

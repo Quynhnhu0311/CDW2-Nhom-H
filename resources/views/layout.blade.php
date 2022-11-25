@@ -82,18 +82,10 @@
                         <div class="header__top__right">
                             <div class="header__top__links">
                                 <?php
-<<<<<<< HEAD
                                     $name = Session::get('name');
                                     if($name){
                                         echo '<div class="header__top__hover">
                                                 <span>'.$name.'<i class="arrow_carrot-down"></i></span>
-=======
-                                $name = Session::get('name');
-                                $id = Session::get('id');
-                                if ($name) {
-                                    echo '<div class="header__top__hover">
-                                                <span>' . $name . '<i class="arrow_carrot-down"></i></span>
->>>>>>> main
                                                 <ul>
                                                     <a href="/logout-user"><li>LOG OUT</li></a>
                                                 </ul>
@@ -103,11 +95,14 @@
                                         echo '<a href="/login">Sign in</a>';
                                     }
                                 ?>
+                                <a href="#">FAQs</a>
                             </div>
                             <div class="header__top__hover">
-                                <span>My Order <i class="arrow_carrot-down"></i></span>
+                                <span>Usd <i class="arrow_carrot-down"></i></span>
                                 <ul>
-                                    <a href="/view-order/{{$id}}"><li>Order History</li></a>
+                                    <li>USD</li>
+                                    <li>EUR</li>
+                                    <li>USD</li>
                                 </ul>
                             </div>
                         </div>
@@ -228,16 +223,8 @@
     <div class="search-model">
         <div class="h-100 d-flex align-items-center justify-content-center">
             <div class="search-close-switch">+</div>
-<<<<<<< HEAD
             <form class="search-model-form">
                 <input type="text" id="search-input" placeholder="Search here.....">
-=======
-            <form class="search-model-form" action="tat-ca-san-pham">
-                <input type="text" id="search-input" name="searchValue" placeholder="Search here.....">
-                <div class="input-result">
-x`
-                </div>
->>>>>>> main
             </form>
         </div>
     </div>
@@ -254,270 +241,6 @@ x`
     <!-- <script src="{{ url ('js/mixitup.min.js') }}"></script> -->
     <script src="{{ url ('js/owl.carousel.min.js') }}"></script>
     <script src="{{ url ('js/main.js') }}"></script>
-<<<<<<< HEAD
-=======
-    <script src="{{ url ('js/sweetalert.js') }}"></script>
-    <script src="{{ url ('js/jquery-ui.js') }}"></script>
-
-    <!-- Chức năng thêm sản phẩm vào giỏ hàng -->
-    <script>
-        $(document).ready(function() {
-            $(".close-favorite").click(function() {
-                $(this).parent().toggleClass('active');
-            });
-        });
-    </script>
-
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('.add-to-cart-btn').click(function() {
-                var id = $(this).data('id');
-                var cart_product_id = $('.cart_product_id_' + id).val();
-                var cart_product_name = $('.cart_product_name_' + id).val();
-                var cart_product_price = $('.cart_product_price_' + id).val();
-                var cart_product_image = $('.cart_product_image_' + id).val();
-                var cart_product_qty = $('.cart_product_qty_' + id).val();
-                var _token = $('input[name="_token"]').val();
-                $.ajax({
-                    url: "{{url('/add-cart-ajax')}}",
-                    method: 'POST',
-                    data: {
-                        cart_product_id: cart_product_id,
-                        cart_product_name: cart_product_name,
-                        cart_product_price: cart_product_price,
-                        cart_product_image: cart_product_image,
-                        cart_product_qty: cart_product_qty,
-                        _token: _token
-                    },
-                    success: function(data) {
-                        swal({
-                                title: "Add Cart Successfully!",
-                                text: "Please go to cart to review your shopping cart",
-                                showCancelButton: true,
-                                cancelButtonText: "See More",
-                                confirmButtonClass: "btn-success",
-                                confirmButtonText: "Go To Cart",
-                                closeOnConfirm: false
-                            },
-                            function() {
-                                window.location.href = "{{ url('/gio-hang') }}";
-                            });
-                    }
-                });
-            });
-        });
-    </script>
-
-    <!-- API lấy ra địa chỉ -->
-    <script>
-        $(function() {
-            apiProvince = (prodvince) => {
-                let district;
-                prodvince.forEach(element => {
-                    $('#province').append(`<option value="${element.code}">${element.name}</option>`)
-                });
-                $('#province').change(function() {
-                    $('#district').html('<option value="-1">Select District</option>')
-                    $('#town').html('<option value = "-1"> Select Town </option>')
-                    let value = $(this).val();
-                    $.each(prodvince, function(index, element) {
-                        if (element.code == value) {
-                            district = element.districts;
-                            $.each(element.districts, function(index, element1) {
-                                $('#district').append(
-                                    `<option value="${element1.code}">${element1.name}</option>`
-                                )
-                            })
-
-                        }
-                    })
-                });
-                $('#district').change(function() {
-                    $('#town').html('<option value = "-1"> Select Town </option>')
-                    let value = $(this).val();
-                    $.each(district, function(index, element) {
-                        if (element.code == value) {
-                            element.wards.forEach(element1 => {
-                                $('#town').append(
-                                    `<option value="${element1.code}">${element1.name}</option>`
-                                )
-                            });
-                        }
-                    })
-                });
-            }
-            prodvince = JSON.parse(data);
-            apiProvince(prodvince);
-        });
-    </script>
-
-    <!-- Lọc giá sản phẩm -->
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#slider-range").slider({
-                orientation: "horizon",
-                range: true,
-                min: 5000,
-                max: 2000000,
-                step: 10000,
-                values: [10000, 1000000],
-                slide: function(event, ui) {
-                    $("#amount").val(ui.values[0] + "VNĐ" + " - " + ui.values[1] + "VNĐ");
-                    $("#start_price").val(ui.values[0]);
-                    $("#end_price").val(ui.values[1]);
-                }
-            });
-            $("#amount").val($("#slider-range").slider("values", 0) + "VNĐ" +
-                " - " + $("#slider-range").slider("values", 1) + "VNĐ");
-        });
-    </script>
-
-    <!-- Sắp xếp theo giá -->
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $("#sort").on('change', function() {
-                var url = $(this).val();
-                if (url) {
-                    window.location = url;
-                }
-                return false;
-            });
-        });
-    </script>
-
-    <script>
-        $('.rate').click(function() {
-            $('.rate').removeAttr('id', 'rating');
-            $(this).attr('id', 'rating');
-        });
-
-        function load_comment() {
-            var product_id = $('#product_id').val();
-            $.ajax({
-                url: "{{ url('./show_comment') }}/" + product_id,
-                type: 'GET',
-                success: function(show_comment) {
-                    $(".show-comment").html(show_comment);
-                }
-            });
-        }
-        $('#btn-comment').click(function() {
-            var product_id = $('#product_id').val();
-            var id_user_comment = $('#id_user_comment').val();
-            var comment_content = $('#comment_content').val();
-            var rating = $('#rating').val();
-            if (id_user_comment == "") {
-                swal({
-                    title: "Login to comment !",
-                });
-            }
-            if (rating == 0 || comment_content == "") {
-                swal({
-                    title: "You have not commented or rated yet !",
-                });
-            } else {
-                var _token = $('input[name = _token]').val();
-                $.ajax({
-                    url: "{{ url('/send-comment') }}",
-                    method: "POST",
-                    data: {
-                        product_id: product_id,
-                        id_user_comment: id_user_comment,
-                        comment_content: comment_content,
-                        rating: rating,
-                        _token: _token
-                    },
-                    success: function(data) {
-                        $('#test').html('<p>Successful comment</p>');
-                        load_comment();
-                    }
-                });
-            }
-            // $('#comment_content').innerHTML = '';
-        });
-    </script>
-
-    <script>
-        document.querySelector('#search-input').addEventListener('keyup', function() {
-            let _text = $(this).val();
-            if (_text != '') {
-                $.ajax({
-                    url: "{{ url('./ajax-search-product') }}/" + _text,
-                    type: 'GET',
-                    success: function(res) {
-                        document.querySelector('.input-result').style.display = "block";
-                        document.querySelector('.input-result').innerHTML = res;
-                    }
-                })
-            } else {
-                document.querySelector('.input-result').style.display = "none";
-                document.querySelector('.input-result').innerHTML = ' ';
-            }
-        })
-    </script>
-    <script>
-        const search = document.querySelector('#search-shop-input');
-        let ajax_protype = document.querySelectorAll('.ajax-protype');
-        let ajax_manufacture = document.querySelectorAll('.ajax-manufacture');
-        let type, manu = 1;
-        search.addEventListener('keyup', function() {
-            let _text = $(this).val();
-            if (_text != '') {
-                $.ajax({
-                    url: "{{ url('./ajax-search-product-shop') }}/" + _text,
-                    type: 'GET',
-                    success: function(res) {
-                        $(".shop-resutl").html(res);
-                        $('.show-all-products').hide();
-                        $(".ajax-resutl").show();
-                    }
-                })
-            } else {
-                // $(".ajax-resutl").hide();
-            }
-        })
-        ajax_protype.forEach((item) => {
-            item.addEventListener('click', () => {
-                let _value = type = item.value;
-                let _search;
-                if (search.value != '') {
-                    _search = search.value;
-                } else {
-                    _search = " ";
-                }
-                $.ajax({
-                    url: "{{ url('./ajax-search-product-shop') }}/" + _search + "/" + _value + "/" + manu,
-                    type: 'GET',
-                    success: function(res) {
-                        $(".shop-resutl").html(res);
-                        $('.show-all-products').hide();
-                        $(".ajax-resutl").show();
-                    }
-                })
-            })
-        })
-        ajax_manufacture.forEach((item) => {
-            item.addEventListener('click', () => {
-                let _value = manu = item.value;
-                let _search;
-                if (search.value != '') {
-                    _search = search.value;
-                } else {
-                    _search = " ";
-                }
-                $.ajax({
-                    url: "{{ url('./ajax-search-product-shop') }}/" + _search + "/" + type + "/" + _value,
-                    type: 'GET',
-                    success: function(res) {
-                        $(".shop-resutl").html(res);
-                        $('.show-all-products').hide();
-                        $(".ajax-resutl").show();
-                    }
-                })
-            })
-        })
-    </script>
->>>>>>> main
 </body>
 
 </html>
