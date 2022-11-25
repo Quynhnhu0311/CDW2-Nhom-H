@@ -27,45 +27,65 @@ use App\Http\Controllers\OrderController;
 */
 /*====== Authen ===== */
 //Authenticate
-Route::get('/admin.dashboard',[AdminController::class, 'show_dashboard']);
+Route::get('/admin.dashboard', [AdminController::class, 'show_dashboard']);
 
 //Login And Logout Admin
 // Route::get('/login-admin', [AdminController::class, 'login_admin']);
 Route::get('/logout-admin', [AdminController::class, 'logout_admin']);
 
 //Show manufactures
-Route::get('/admin.addmanufacture',[AdminController::class, 'show_admin_addmanufacture']);
-Route::get('/admin.manufacture',[AdminController::class, 'show_admin_manufacture']);
+Route::get('/admin.addmanufacture', [AdminController::class, 'show_admin_addmanufacture']);
+Route::get('/admin.manufacture', [AdminController::class, 'show_admin_manufacture']);
 //Delete Manufactures
-Route::DELETE('deletemanufacture/{id}',[AdminController::class, 'destroy_manu']);
+Route::DELETE('deletemanufacture/{id}', [AdminController::class, 'destroy_manu']);
 //Add Manufactures
-Route::post('/savemanufacture',[AdminController::class, 'save_manufacture']);
+Route::post('/savemanufacture', [AdminController::class, 'save_manufacture']);
 //Show Edit Page Manufacture
-Route::get('editmanufacture/{manu_id}',[AdminController::class, 'edit_manufacture']);
+Route::get('admin.editmanufacture/{manu_id}',[AdminController::class, 'edit_manufacture']);
 //Update Manufactures
-Route::put('update_datamanu/{manu_id}',[AdminController::class, 'update_manufacture']);
+Route::put('update_datamanu/{manu_id}', [AdminController::class, 'update_manufacture']);
+
+//Show Protypes page
+Route::get('/admin.protype',[AdminController::class,'show_admin_protype']);
+//Show EditProtype page
+Route::get('/admin.editprotype/{type_id}',[AdminController::class,'show_edit_protype']);
+//Update Protypes
+Route::put('update_protype/{type_id}',[AdminController::class,'update_admin_protype']);
+//Add Protypes
+Route::post('/addprotype',[AdminController::class,'add_admin_protype']);
+//Delete Protypes
+Route::DELETE('deleteprotype/{type_id}',[AdminController::class,'delete_admin_protype']);
 
 /*----- Products -----*/
-Route::get('/products', [AdminController::class,'show_all_products'])->name('viewProductList');
-Route::get('/edit-product/{product_id}', [AdminController::class,'edit_product']);
-Route::post('/update-product/{product_id}', [AdminController::class,'update_product']);
-Route::get('/delete-product/{product_id}', [AdminController::class,'delete_product']);
-Route::get('/add-product', [AdminController::class,'add_product']);
-Route::post('/save-product', [AdminController::class,'save_product']);
+Route::get('/products', [AdminController::class, 'show_all_products'])->name('viewProductList');
+Route::get('/edit-product/{product_id}', [AdminController::class, 'edit_product']);
+Route::post('/update-product/{product_id}', [AdminController::class, 'update_product']);
+Route::get('/delete-product/{product_id}', [AdminController::class, 'delete_product']);
+Route::get('/add-product', [AdminController::class, 'add_product']);
+Route::post('/save-product', [AdminController::class, 'save_product']);
 
 /*----- Orders -----*/
-Route::get('/orders', [AdminController::class,'show_all_orders'])->name('viewOrderList');
-Route::get('/detail-order/{order_code}', [AdminController::class,'detail_order']);
-Route::post('/update-order-qty', [OrderController::class,'update_order_qty']);
-Route::post('/update-order-qty-product', [OrderController::class,'update_order_qty_product']);
+Route::get('/orders', [AdminController::class, 'show_all_orders'])->name('viewOrderList');
+Route::get('/detail-order/{order_code}', [AdminController::class, 'detail_order']);
+Route::post('/update-order-qty', [OrderController::class, 'update_order_qty']);
+Route::post('/update-order-qty-product', [OrderController::class, 'update_order_qty_product']);
+
 
 /*----- Coupons -----*/
-Route::get('/coupons', [AdminController::class,'show_all_coupons'])->name('viewCouponList');
-Route::get('/add-coupon', [AdminController::class,'add_coupon']);
-Route::get('/edit-coupon/{coupon_id}', [AdminController::class,'edit_coupon']);
-Route::post('/update-coupon/{coupon_id}', [AdminController::class,'update_coupon']);
-Route::get('/delete-coupon/{coupon_id}', [AdminController::class,'delete_coupon']);
-Route::post('/save-coupon', [AdminController::class,'save_coupon']);
+Route::get('/coupons', [AdminController::class, 'show_all_coupons'])->name('viewCouponList');
+Route::get('/add-coupon', [AdminController::class, 'add_coupon']);
+Route::get('/edit-coupon/{coupon_id}', [AdminController::class, 'edit_coupon']);
+Route::post('/update-coupon/{coupon_id}', [AdminController::class, 'update_coupon']);
+Route::get('/delete-coupon/{coupon_id}', [AdminController::class, 'delete_coupon']);
+Route::post('/save-coupon', [AdminController::class, 'save_coupon']);
+
+/*----- Staff -----*/
+Route::get('/admin.staffs', [AdminController::class, 'show_staffs']);
+Route::post('/save-staff', [AdminController::class, 'save_staff']);
+Route::get('/admin.editstaff/{key}', [AdminController::class, 'edit_staff']);
+Route::post('/update-staff', [AdminController::class, 'update_staff']);
+Route::get('/delete-staff/{key}', [AdminController::class, 'delete_staff']);
+
 
 /* =====Front-End===== */
 //Home
@@ -83,7 +103,7 @@ Route::post('/send-comment', [HomeController::class, 'comment_product_ajax'])->n
 Route::get('/show_comment/{id}', [HomeController::class, 'show_comment'])->name('ajax.show-comment');
 
 //Favorite Product
-Route::post('/favorite', [FavoriteController::class,'add_favorite'])->name('add-favorite');
+Route::post('/favorite', [FavoriteController::class, 'add_favorite'])->name('add-favorite');
 Route::get('/favorite/{favorite_id}', [FavoriteController::class, 'show_favorite_user'])->name('showfavorite');
 Route::DELETE('favorite/{favorite_id}', [FavoriteController::class, 'delete_favorite_user']);
 
@@ -92,21 +112,26 @@ Route::post('/login-user', [UserController::class, 'login_user']);
 Route::get('/logout-user', [UserController::class, 'logout_user']);
 
 //Cart
-Route::post('/add-cart-ajax', [CartController::class,'add_cart_ajax']);
-Route::get('/gio-hang', [CartController::class,'gio_hang']);
-Route::get('/delete-product-cart/{session_id}', [CartController::class,'delete_product_cart']);
-Route::post('/update-cart', [CartController::class,'update_cart']);
+Route::post('/add-cart-ajax', [CartController::class, 'add_cart_ajax']);
+Route::get('/gio-hang', [CartController::class, 'gio_hang']);
+Route::get('/delete-product-cart/{session_id}', [CartController::class, 'delete_product_cart']);
+Route::post('/update-cart', [CartController::class, 'update_cart']);
+
+//Order
+Route::get('/view-order/{id}', [CartController::class,'view_order']);
+Route::get('/view-detail-order/{order_code}', [CartController::class,'view_detail_order']);
+
 
 //Coupon
-Route::post('/check-coupon', [CouponController::class,'check_coupon']);
-Route::get('/delete-coupon', [CouponController::class,'delete_coupon']);
+Route::post('/check-coupon', [CouponController::class, 'check_coupon']);
+Route::get('/delete-coupon', [CouponController::class, 'delete_coupon']);
 
 //Blog
-Route::get('/blog', [BlogController::class,'blog']);
-Route::get('/blog-detail/{id}', [BlogController::class,'blog_detail']);
+Route::get('/blog', [BlogController::class, 'blog']);
+Route::get('/blog-detail/{id}', [BlogController::class, 'blog_detail']);
 
 //Checkout
-Route::post('/confirm-order', [CheckoutController::class,'confirm_order']);
+Route::post('/confirm-order', [CheckoutController::class, 'confirm_order']);
 //Register
 Route::post('/register-user', [UserController::class, 'register_user']);
 

@@ -27,7 +27,7 @@
                     <div class="shop__sidebar__search">
                         <form>
                             <input type="text" id="search-shop-input" onkeydown="return (event.keyCode!=13);" value="" placeholder="Search...">
-                            <button type="submit" disabled><span class="icon_search"></span></button>
+                            <button type="submit" ><span class="icon_search"></span></button>
                         </form>
                     </div>
                     <div class="shop__sidebar__accordion">
@@ -96,26 +96,26 @@
                             <div class="shop__product__option__left">
                                 <p>Showing 1–12 of 126 results</p>
                             </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class="shop__product__option__right">
-                                    <form action="">
-                                        @csrf
-                                        <p>Sort by Price:</p>
-                                        <select name="sort" id="sort">
-                                            <option value="{{Request::url()}}?sort_by=none">---Select---</option>
-                                            <option value="{{Request::url()}}?sort_by=tang_dan">Low To High</option>
-                                            <option value="{{Request::url()}}?sort_by=giam_dan">High To Low</option>
-                                        </select>
-                                    </form>
-                                </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="shop__product__option__right">
+                                <form action="">
+                                    @csrf
+                                    <p>Sort by Price:</p>
+                                    <select name="sort" id="sort">
+                                        <option value="{{Request::url()}}?sort_by=none">---Select---</option>
+                                        <option value="{{Request::url()}}?sort_by=tang_dan">Low To High</option>
+                                        <option selected value="{{Request::url()}}?sort_by=giam_dan">High To Low</option>
+                                    </select>
+                                </form>
                             </div>
                         </div>
                     </div>
                     <form>
                         @csrf
-                        <div class="row">
+                        <div class="row shop-resutl">
                             @foreach($products as $row => $allProducts)
-                            <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="col-lg-4 col-md-6 col-sm-6 show-products">
                                 <div class="product__item">
                                     <div class="product__item__pic set-bg" data-setbg="{{ asset('./img/product/'.$allProducts->product_img) }}">
                                         <ul class="product__hover">
@@ -189,13 +189,9 @@
                 type: 'GET',
                 success: function(res) {
                     $(".shop-resutl").html(res);
-                    $('.show-all-products').hide();
-                    $(".ajax-resutl").show();
                 }
             })
-        } else {
-            // $(".ajax-resutl").hide();
-        }
+        } else {}
     })
     ajax_protype.forEach((item) => {
         item.addEventListener('click', () => {

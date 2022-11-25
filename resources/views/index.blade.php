@@ -121,7 +121,6 @@
                                             <input type="hidden" value="<?php echo $id ?>" name="favorite_user_id">
                                             <input style="" name="submit-favorite" value="" type="submit"  >
                                         </form>
-                                        <li><a href="#"><img src="{{ asset('img/icon/compare.png') }}" alt=""> <span>Compare</span></a></li>
                                         <li><a href="/shop-details/{{ $bestSellers->product_id }}"><img src="{{ asset ('img/icon/search.png') }}" alt=""></a></li>
                                     </ul>
                                 </div>

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{{ url ('dist/css/adminlte.css') }}">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="{{ url ('css/sweetalert.css') }}" type="text/css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
 </head>
 
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -24,8 +25,7 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__wobble" src="{{ asset ('dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo"
-                height="60" width="60">
+            <img class="animation__wobble" src="{{ asset ('dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo" height="60" width="60">
         </div>
 
         <!-- Navbar -->
@@ -53,8 +53,7 @@
                     <div class="navbar-search-block">
                         <form class="form-inline">
                             <div class="input-group input-group-sm">
-                                <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                                    aria-label="Search">
+                                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
                                 <div class="input-group-append">
                                     <button class="btn btn-navbar" type="submit">
                                         <i class="fas fa-search"></i>
@@ -78,8 +77,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="{{ asset ('dist/img/user1-128x128.jpg') }}" alt="User Avatar"
-                                    class="img-size-50 mr-3 img-circle">
+                                <img src="{{ asset ('dist/img/user1-128x128.jpg') }}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         Brad Diesel
@@ -95,8 +93,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="{{ asset ('dist/img/user8-128x128.jpg') }}" alt="User Avatar"
-                                    class="img-size-50 img-circle mr-3">
+                                <img src="{{ asset ('dist/img/user8-128x128.jpg') }}" alt="User Avatar" class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         John Pierce
@@ -112,13 +109,11 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="{{ asset ('dist/img/user3-128x128.jpg') }}" alt="User Avatar"
-                                    class="img-size-50 img-circle mr-3">
+                                <img src="{{ asset ('dist/img/user3-128x128.jpg') }}" alt="User Avatar" class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         Nora Silvester
-                                        <span class="float-right text-sm text-warning"><i
-                                                class="fas fa-star"></i></span>
+                                        <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
                                     </h3>
                                     <p class="text-sm">The subject goes here</p>
                                     <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
@@ -173,19 +168,18 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <?php
-                            $admin_name = Session::get('admin_name');
-                            if($admin_name){
-                                echo '<a href="/logout-admin" class="dropdown-item">
+                        $admin_name = Session::get('admin_name');
+                        if ($admin_name) {
+                            echo '<a href="/logout-admin" class="dropdown-item">
                                         <i class="fas fa-sign-out-alt"></i> Log Out
                                       </a>
                                       <div class="dropdown-divider"></div>';
-                            }
-                            else{
-                                echo '<a href="/login" class="dropdown-item">
+                        } else {
+                            echo '<a href="/login" class="dropdown-item">
                                         <i class="fas fa-sign-out-alt"></i> Log In
                                       </a>
                                       <div class="dropdown-divider"></div>';
-                            }
+                        }
                         ?>
                     </div>
                 </li>
@@ -197,8 +191,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
-                <img src="{{ asset ('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-                    style="opacity: .8">
+                <img src="{{ asset ('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">AdminGoupH</span>
             </a>
 
@@ -211,10 +204,10 @@
                     </div>
                     <div class="info">
                         <?php
-                            $admin_name = Session::get('admin_name');
-                            if($admin_name){
-                                echo '<a href="#" class="d-block">'.$admin_name.'</a>';
-                            }
+                        $admin_name = Session::get('admin_name');
+                        if ($admin_name) {
+                            echo '<a href="#" class="d-block">' . $admin_name . '</a>';
+                        }
                         ?>
 
                     </div>
@@ -223,8 +216,7 @@
                 <!-- SidebarSearch Form -->
                 <div class="form-inline">
                     <div class="input-group" data-widget="sidebar-search">
-                        <input class="form-control form-control-sidebar" type="search" placeholder="Search"
-                            aria-label="Search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
                         <div class="input-group-append">
                             <button class="btn btn-sidebar">
                                 <i class="fas fa-search fa-fw"></i>
@@ -232,15 +224,14 @@
                         </div>
                     </div>
                 </div>
-
+                <?php   $id_admin = Session::get('admin_id'); ?>
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
-                            <a href="#" class="nav-link active">
+                            <a href="{{ url ('admin.dashboard')}}" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -248,6 +239,7 @@
                                 </p>
                             </a>
                         </li>
+                        @if($id_admin)
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <p>
@@ -270,6 +262,29 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <p>
+                                    Protypes
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url ('/admin.protype')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Protypes</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url ('/admin.addprotype') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Protype</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        @endif
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <p>
@@ -329,7 +344,32 @@
                                     </a>
                                 </li>
                             </ul>
+                            
                         </li>
+                        @if($id_admin)
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <p>
+                                    Staffs
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url ('/admin.staffs')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Manage Staffs</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url ('/admin.addstaff') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Staffs</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        @endif
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -367,6 +407,8 @@
     <script src="{{ url ('plugins/raphael/raphael.min.js') }}"></script>
     <script src="{{ url ('plugins/jquery-mapael/jquery.mapael.min.js') }}"></script>
     <script src="{{ url ('plugins/jquery-mapael/maps/usa_states.min.js') }}"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <!-- ChartJS -->
     <script src="{{ url ('plugins/chart.js/Chart.min.js') }}"></script>
     <script src="{{ url ('js/sweetalert.js') }}"></script>
@@ -381,7 +423,7 @@
     --------------------------->
     <script type="text/javascript">
         $(document).ready(function() {
-            $('.update_order_qty').change(function(){
+            $('.update_order_qty').change(function() {
                 var order_status = $(this).val();
                 var order_id = $(this).children(":selected").attr("id");
                 var _token = $('input[name="_token"]').val();
@@ -400,13 +442,13 @@
                     url: "{{ url('/update-order-qty') }}",
                     method: "POST",
                     data: {
-                        order_status:order_status,
-                        order_id:order_id,
-                        _token:_token,
-                        order_product_qty:order_product_qty,
-                        order_product_id:order_product_id
+                        order_status: order_status,
+                        order_id: order_id,
+                        _token: _token,
+                        order_product_qty: order_product_qty,
+                        order_product_id: order_product_id
                     },
-                    success: function(data){
+                    success: function(data) {
                         alert("Cập Nhật Đơn Hàng Thành Công!");
                         // location.reload();
                     }
@@ -417,7 +459,7 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $('.update_quantity_product').click(function(){
+            $('.update_quantity_product').click(function() {
                 var order_prd_id = $(this).data('product_id');
                 var order_qty = $('.order_qty_' + order_prd_id).val();
                 var order_code = $('.order_code').val();
@@ -430,12 +472,12 @@
                     url: "{{ url('/update-order-qty-product') }}",
                     method: "POST",
                     data: {
-                        order_prd_id:order_prd_id,
-                        order_qty:order_qty,
-                        _token:_token,
-                        order_code:order_code
+                        order_prd_id: order_prd_id,
+                        order_qty: order_qty,
+                        _token: _token,
+                        order_code: order_code
                     },
-                    success: function(data){
+                    success: function(data) {
                         alert("Cập Nhật Số Lượng Thành Công!");
                         // location.reload();
                     }
@@ -481,5 +523,37 @@
         //     });
         // });
     </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var colorDanger = "#FF1744";
+            Morris.Donut({
+            element: 'donut',
+            resize: true,
+            colors: [
+                '#E0F7FA',
+                '#B2EBF2',
+                '#80DEEA',
+                '#4DD0E1',
+                '#26C6DA',
+                '#00BCD4',
+                '#00ACC1',
+                '#0097A7',
+                '#00838F',
+                '#006064'
+            ],
+            //labelColor:"#cccccc", // text color
+            //backgroundColor: '#333333', // border color
+
+            /////// vào Provider để tạo biến 
+            data: [
+                {label:"Product", value:<?php echo $product?>, color:colorDanger},
+                {label:"Order", value:<?php echo $order?>},
+                {label:"Protype", value:<?php echo $protype?>},
+                {label:"Manufacture", value:<?php echo $manu?>}
+            ]
+            });
+        });
+    </script>
 </body>
+
 </html>

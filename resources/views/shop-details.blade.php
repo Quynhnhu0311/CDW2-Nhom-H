@@ -90,9 +90,6 @@
                                     <button type="button" class="add-to-cart-btn primary-btn" data-id="{{ $product_detail->product_id }}" name="add-cart">add to cart</button>
                                 </div>
                                 <div class="product__details__btns__option">
-                                    <a href="#" class="primary-btn">add to cart</a>
-                                </div>
-                                <div class="product__details__btns__option">
                                     <a href="#"><i class="fa fa-heart"></i> add to wishlist</a>
                                 </div>
                                 <div class="product__details__last__option">
@@ -169,8 +166,8 @@
             <div class="title">
                 <h2>Comment</h2>
             </div>
-            @foreach($comment_all as $comment_all)
             <div class="show-comment">
+                @foreach($comment_all as $comment_all)
                 <div class="comment-item">
                     <div class="info-comment">
                         <div class="avatar">
@@ -189,8 +186,8 @@
                         <p>{{ $comment_all->comment_content }}</p>
                     </div>
                 </div>
+                @endforeach
             </div>
-            @endforeach
             <div class="comment-items">
                 <div class="comment-item">
                     <div class="info-comment">

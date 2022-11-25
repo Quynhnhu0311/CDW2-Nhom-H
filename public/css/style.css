@@ -4177,18 +4177,6 @@ select#town {
     text-align:center;
     font-size:15px;
 }
-.popup {
-	position: fixed;
-	background-color: red;
-	z-index: 9999;
-	top:50%;
-	left: 50%;
-	transform: translateX(-50%) translateY(-50%);
-	transition: 0.5s;
-	border-radius: 20px;
-	height: 50px;
-	color:rgba(0, 0, 0, 0.7);
-}
 
 /* Button Filter */
 input.btn.btn-default {
@@ -4265,4 +4253,9 @@ div#slider-range.ui-slider.ui-corner-all.ui-slider-horizontal.ui-widget.ui-widge
 	100% {
 		transform: translateX(-50%) translateY(-50%) scale(0);
 	}
+}
+
+.header__top__hover li:hover {
+    background-color: #000;
+    color: #fff;
 }

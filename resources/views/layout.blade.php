@@ -10,8 +10,7 @@
     <title>Male-Fashion | Template</title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{ url ('css/select.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url ('css/bootstrap.min.css') }}" type="text/css">
@@ -92,6 +91,7 @@
                             <div class="header__top__links">
                                 <?php
                                 $name = Session::get('name');
+                                $id = Session::get('id');
                                 if ($name) {
                                     echo '<div class="header__top__hover">
                                                 <span>' . $name . '<i class="arrow_carrot-down"></i></span>
@@ -103,14 +103,11 @@
                                     echo '<a href="/login">Sign in</a>';
                                 }
                                 ?>
-                                <a href="#">FAQs</a>
                             </div>
                             <div class="header__top__hover">
-                                <span>Usd <i class="arrow_carrot-down"></i></span>
+                                <span>My Order <i class="arrow_carrot-down"></i></span>
                                 <ul>
-                                    <li>USD</li>
-                                    <li>EUR</li>
-                                    <li>USD</li>
+                                    <a href="/view-order/{{$id}}"><li>Order History</li></a>
                                 </ul>
                             </div>
                         </div>
@@ -159,14 +156,14 @@
                         $subqty = 0;
                         ?>
                         @if(Session::has('cart') != null)
-                            @foreach(Session::get('cart') as $key => $cart)
-                            <?php
-                                $subqty += $cart['product_qty']++;
-                            ?>
-                            @endforeach
-                                <a href="/gio-hang"><img src="{{ asset ('img/icon/cart.png') }}" alt=""> <span>{{$subqty}}</span></a>
+                        @foreach(Session::get('cart') as $key => $cart)
+                        <?php
+                        $subqty += $cart['product_qty']++;
+                        ?>
+                        @endforeach
+                        <a href="/gio-hang"><img src="{{ asset ('img/icon/cart.png') }}" alt=""> <span>{{$subqty}}</span></a>
                         @else
-                                <a href="/gio-hang"><img src="{{ asset ('img/icon/cart.png') }}" alt=""> <span>0</span></a>
+                        <a href="/gio-hang"><img src="{{ asset ('img/icon/cart.png') }}" alt=""> <span>0</span></a>
                         @endif
                     </div>
                 </div>
@@ -232,10 +229,9 @@
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         <p>Copyright ©
                             <script>
-                            document.write(new Date().getFullYear());
+                                document.write(new Date().getFullYear());
                             </script>2020
-                            All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                         </p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
@@ -252,7 +248,7 @@
             <form class="search-model-form" action="tat-ca-san-pham">
                 <input type="text" id="search-input" name="searchValue" placeholder="Search here.....">
                 <div class="input-result">
-
+x`
                 </div>
             </form>
         </div>
@@ -285,7 +281,6 @@
                 $(this).parent().toggleClass('active');
             });
         });
-
     </script>
 
     <script type="text/javascript">
@@ -333,7 +328,6 @@
         $(function() {
             apiProvince = (prodvince) => {
                 let district;
-
                 prodvince.forEach(element => {
                     $('#province').append(`<option value="${element.code}">${element.name}</option>`)
                 });
@@ -347,7 +341,7 @@
                             $.each(element.districts, function(index, element1) {
                                 $('#district').append(
                                     `<option value="${element1.code}">${element1.name}</option>`
-                                    )
+                                )
                             })
 
                         }
@@ -361,7 +355,7 @@
                             element.wards.forEach(element1 => {
                                 $('#town').append(
                                     `<option value="${element1.code}">${element1.name}</option>`
-                                    )
+                                )
                             });
                         }
                     })
@@ -375,30 +369,30 @@
     <!-- Lọc giá sản phẩm -->
     <script type="text/javascript">
         $(document).ready(function() {
-            $( "#slider-range" ).slider({
+            $("#slider-range").slider({
                 orientation: "horizon",
                 range: true,
                 min: 5000,
                 max: 2000000,
                 step: 10000,
-                values: [ 10000, 1000000 ],
-                slide: function( event, ui ) {
-                    $( "#amount" ).val( ui.values[ 0 ] + "VNĐ" + " - " + ui.values[ 1 ] + "VNĐ" );
-                    $( "#start_price" ).val( ui.values[ 0 ]);
-                    $( "#end_price" ).val( ui.values[ 1 ]);
+                values: [10000, 1000000],
+                slide: function(event, ui) {
+                    $("#amount").val(ui.values[0] + "VNĐ" + " - " + ui.values[1] + "VNĐ");
+                    $("#start_price").val(ui.values[0]);
+                    $("#end_price").val(ui.values[1]);
                 }
             });
-            $( "#amount" ).val( $( "#slider-range" ).slider( "values", 0 ) + "VNĐ" +
-            " - " + $( "#slider-range" ).slider( "values", 1 ) + "VNĐ" );
-        } );
+            $("#amount").val($("#slider-range").slider("values", 0) + "VNĐ" +
+                " - " + $("#slider-range").slider("values", 1) + "VNĐ");
+        });
     </script>
 
     <!-- Sắp xếp theo giá -->
     <script type="text/javascript">
         $(document).ready(function() {
-            $( "#sort" ).on('change', function(){
+            $("#sort").on('change', function() {
                 var url = $(this).val();
-                if(url) {
+                if (url) {
                     window.location = url;
                 }
                 return false;
@@ -407,34 +401,55 @@
     </script>
 
     <script>
-    $(function(){
-        $('.rate').click(function(){
-            $('.rate').removeAttr('id','rating');
-            $(this).attr('id','rating');
+        $('.rate').click(function() {
+            $('.rate').removeAttr('id', 'rating');
+            $(this).attr('id', 'rating');
         });
-    });
-    $('#btn-comment').click(function() {
-        var product_id = $('#product_id').val();
-        var id_user_comment = $('#id_user_comment').val();
-        var comment_content = $('#comment_content').val();
-        var rating = $('#rating').val();
-        if(rating == 0 || comment_content == ""){
-            swal({
-                    title: "Vui Lòng bình luận và đánh giá sản phẩm !",
-                });
-        }else {
-            var _token = $('input[name = _token]').val();
+
+        function load_comment() {
+            var product_id = $('#product_id').val();
             $.ajax({
-                url : "{{ url('/send-comment') }}",
-                method : "POST",
-                data : {product_id: product_id, id_user_comment :id_user_comment, comment_content:comment_content, rating : rating , _token: _token},
-                success: function(data) {
-                    $('#test').html('<p>Testing</p>');
+                url: "{{ url('./show_comment') }}/" + product_id,
+                type: 'GET',
+                success: function(show_comment) {
+                    $(".show-comment").html(show_comment);
                 }
             });
         }
-        comment_content = '';
-    });
+        $('#btn-comment').click(function() {
+            var product_id = $('#product_id').val();
+            var id_user_comment = $('#id_user_comment').val();
+            var comment_content = $('#comment_content').val();
+            var rating = $('#rating').val();
+            if (id_user_comment == "") {
+                swal({
+                    title: "Login to comment !",
+                });
+            }
+            if (rating == 0 || comment_content == "") {
+                swal({
+                    title: "You have not commented or rated yet !",
+                });
+            } else {
+                var _token = $('input[name = _token]').val();
+                $.ajax({
+                    url: "{{ url('/send-comment') }}",
+                    method: "POST",
+                    data: {
+                        product_id: product_id,
+                        id_user_comment: id_user_comment,
+                        comment_content: comment_content,
+                        rating: rating,
+                        _token: _token
+                    },
+                    success: function(data) {
+                        $('#test').html('<p>Successful comment</p>');
+                        load_comment();
+                    }
+                });
+            }
+            // $('#comment_content').innerHTML = '';
+        });
     </script>
 
     <script>
@@ -453,6 +468,68 @@
                 document.querySelector('.input-result').style.display = "none";
                 document.querySelector('.input-result').innerHTML = ' ';
             }
+        })
+    </script>
+    <script>
+        const search = document.querySelector('#search-shop-input');
+        let ajax_protype = document.querySelectorAll('.ajax-protype');
+        let ajax_manufacture = document.querySelectorAll('.ajax-manufacture');
+        let type, manu = 1;
+        search.addEventListener('keyup', function() {
+            let _text = $(this).val();
+            if (_text != '') {
+                $.ajax({
+                    url: "{{ url('./ajax-search-product-shop') }}/" + _text,
+                    type: 'GET',
+                    success: function(res) {
+                        $(".shop-resutl").html(res);
+                        $('.show-all-products').hide();
+                        $(".ajax-resutl").show();
+                    }
+                })
+            } else {
+                // $(".ajax-resutl").hide();
+            }
+        })
+        ajax_protype.forEach((item) => {
+            item.addEventListener('click', () => {
+                let _value = type = item.value;
+                let _search;
+                if (search.value != '') {
+                    _search = search.value;
+                } else {
+                    _search = " ";
+                }
+                $.ajax({
+                    url: "{{ url('./ajax-search-product-shop') }}/" + _search + "/" + _value + "/" + manu,
+                    type: 'GET',
+                    success: function(res) {
+                        $(".shop-resutl").html(res);
+                        $('.show-all-products').hide();
+                        $(".ajax-resutl").show();
+                    }
+                })
+            })
+        })
+        ajax_manufacture.forEach((item) => {
+            item.addEventListener('click', () => {
+                let _value = manu = item.value;
+                let _search;
+                if (search.value != '') {
+                    _search = search.value;
+                } else {
+                    _search = " ";
+                }
+                $.ajax({
+                    url: "{{ url('./ajax-search-product-shop') }}/" + _search + "/" + type + "/" + _value,
+                    type: 'GET',
+                    success: function(res) {
+                        $(".shop-resutl").html(res);
+                        $('.show-all-products').hide();
+                        $(".ajax-resutl").show();
+                    }
+                })
+            })
         })
     </script>
 </body>

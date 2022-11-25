@@ -14,7 +14,8 @@ class MyController extends Controller
      */
     public function index($name = 'index')
     {
-        return view($name);
+        $manufactures = DB::table('manufactures')->get();
+        return view($name, compact('manufactures'));
     }
 
     /**

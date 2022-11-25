@@ -13,4 +13,5 @@ class Detail_order extends Model
     ];
     protected $primaryKey = 'detailorder_id';
     protected $table = 'detail_orders';
+
 }
