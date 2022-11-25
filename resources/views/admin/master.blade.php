@@ -7,8 +7,7 @@
     <title>AdminGroupH | Dashboard </title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{ url ('plugins/fontawesome-free/css/all.min.css') }}">
     <!-- overlayScrollbars -->
@@ -26,8 +25,7 @@
 
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__wobble" src="{{ asset ('dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo"
-                height="60" width="60">
+            <img class="animation__wobble" src="{{ asset ('dist/img/AdminLTELogo.png') }}" alt="AdminLTELogo" height="60" width="60">
         </div>
 
         <!-- Navbar -->
@@ -234,7 +232,7 @@
                         </div>
                     </div>
                 </div>
-                <?php   $id_admin = Session::get('admin_id'); ?>
+                <?php $id_admin = Session::get('admin_id'); ?>
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
@@ -397,6 +395,22 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <p>
+                                    Customers
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url ('/admin.customers')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Manage Customers</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         @endif
                         <li class="nav-item">
                             <a href="#" class="nav-link">
@@ -428,7 +442,6 @@
             </div>
             <!-- /.sidebar -->
         </aside>
-
         @yield('content-admin')
 
         <!-- Main Footer -->
@@ -510,113 +523,113 @@
     </script>
 
     <script type="text/javascript">
-    $(document).ready(function() {
-        $('.update_quantity_product').click(function() {
-            var order_prd_id = $(this).data('product_id');
-            var order_qty = $('.order_qty_' + order_prd_id).val();
-            var order_code = $('.order_code').val();
-            var _token = $('input[name="_token"]').val();
+        $(document).ready(function() {
+            $('.update_quantity_product').click(function() {
+                var order_prd_id = $(this).data('product_id');
+                var order_qty = $('.order_qty_' + order_prd_id).val();
+                var order_code = $('.order_code').val();
+                var _token = $('input[name="_token"]').val();
 
-            // alert(order_prd_id);
-            // alert(order_qty);
-            // alert(order_code);
-            $.ajax({
-                url: "{{ url('/update-order-qty-product') }}",
-                method: "POST",
-                data: {
-                    order_prd_id: order_prd_id,
-                    order_qty: order_qty,
-                    _token: _token,
-                    order_code: order_code
-                },
-                success: function(data) {
-                    alert("Cập Nhật Số Lượng Thành Công!");
-                    // location.reload();
-                }
+                // alert(order_prd_id);
+                // alert(order_qty);
+                // alert(order_code);
+                $.ajax({
+                    url: "{{ url('/update-order-qty-product') }}",
+                    method: "POST",
+                    data: {
+                        order_prd_id: order_prd_id,
+                        order_qty: order_qty,
+                        _token: _token,
+                        order_code: order_code
+                    },
+                    success: function(data) {
+                        alert("Cập Nhật Số Lượng Thành Công!");
+                        // location.reload();
+                    }
+                });
             });
         });
-    });
     </script>
 
     <script type="text/javascript">
-    // $(document).ready(function() {
-    //     $('#btnCreateCoupon').click(function(){
-    //         var order_prd_id = $(this).data('product_id');
-    //         var product_price = $('.product_price').val();
-    //         var product_name = $('.product_name').val();
-    //         var product_qty = $('.product_qty').val();
-    //         var manu_id = $('.manu_id').val();
-    //         var type_id = $('.type_id').val();
-    //         var feature_id = $('.feature_id').val();
-    //         var product_description = $('.product_description').val();
-    //         var product_img = $('.product_img').val();
-    //         var product_sold = $('.product_sold').val();
-    //         var _token = $('input[name="_token"]').val();
+        // $(document).ready(function() {
+        //     $('#btnCreateCoupon').click(function(){
+        //         var order_prd_id = $(this).data('product_id');
+        //         var product_price = $('.product_price').val();
+        //         var product_name = $('.product_name').val();
+        //         var product_qty = $('.product_qty').val();
+        //         var manu_id = $('.manu_id').val();
+        //         var type_id = $('.type_id').val();
+        //         var feature_id = $('.feature_id').val();
+        //         var product_description = $('.product_description').val();
+        //         var product_img = $('.product_img').val();
+        //         var product_sold = $('.product_sold').val();
+        //         var _token = $('input[name="_token"]').val();
 
-    //         var coupon_condition = $('#inputCondition').val();
-    //         var coupon_number = $('#inputNumber').val();
+        //         var coupon_condition = $('#inputCondition').val();
+        //         var coupon_number = $('#inputNumber').val();
 
-    //         if(coupon_condition == 1 && coupon_number < 1000){
-    //             swal({
-    //                 title: "Error!",
-    //                 text: "Your Discount Field Error. Please Re-Enter!",
-    //                 cancelButtonText: "OK",
-    //                 confirmButtonClass: "btn-success"
-    //             });
-    //         }
-    //         else if(coupon_condition == 2 && coupon_number > 100){
-    //             swal({
-    //                 title: "Error!",
-    //                 text: "Your Discount Field Error. Please Re-Enter!",
-    //                 cancelButtonText: "OK",
-    //                 confirmButtonClass: "btn-success"
-    //             });
-    //         }
-    //     });
-    // });
+        //         if(coupon_condition == 1 && coupon_number < 1000){
+        //             swal({
+        //                 title: "Error!",
+        //                 text: "Your Discount Field Error. Please Re-Enter!",
+        //                 cancelButtonText: "OK",
+        //                 confirmButtonClass: "btn-success"
+        //             });
+        //         }
+        //         else if(coupon_condition == 2 && coupon_number > 100){
+        //             swal({
+        //                 title: "Error!",
+        //                 text: "Your Discount Field Error. Please Re-Enter!",
+        //                 cancelButtonText: "OK",
+        //                 confirmButtonClass: "btn-success"
+        //             });
+        //         }
+        //     });
+        // });
     </script>
     <script type="text/javascript">
-    $(document).ready(function() {
-        var colorDanger = "#FF1744";
-        Morris.Donut({
-            element: 'donut',
-            resize: true,
-            colors: [
-                '#E0F7FA',
-                '#B2EBF2',
-                '#80DEEA',
-                '#4DD0E1',
-                '#26C6DA',
-                '#00BCD4',
-                '#00ACC1',
-                '#0097A7',
-                '#00838F',
-                '#006064'
-            ],
-            //labelColor:"#cccccc", // text color
-            //backgroundColor: '#333333', // border color
+        $(document).ready(function() {
+            var colorDanger = "#FF1744";
+            Morris.Donut({
+                element: 'donut',
+                resize: true,
+                colors: [
+                    '#E0F7FA',
+                    '#B2EBF2',
+                    '#80DEEA',
+                    '#4DD0E1',
+                    '#26C6DA',
+                    '#00BCD4',
+                    '#00ACC1',
+                    '#0097A7',
+                    '#00838F',
+                    '#006064'
+                ],
+                //labelColor:"#cccccc", // text color
+                //backgroundColor: '#333333', // border color
 
-            /////// vào Provider để tạo biến 
-            data: [{
-                    label: "Product",
-                    value: <?php echo $product?>,
-                    color: colorDanger
-                },
-                {
-                    label: "Order",
-                    value: <?php echo $order?>
-                },
-                {
-                    label: "Protype",
-                    value: <?php echo $protype?>
-                },
-                {
-                    label: "Manufacture",
-                    value: <?php echo $manu?>
-                }
-            ]
+                /////// vào Provider để tạo biến 
+                data: [{
+                        label: "Product",
+                        value: <?php echo $product ?>,
+                        color: colorDanger
+                    },
+                    {
+                        label: "Order",
+                        value: <?php echo $order ?>
+                    },
+                    {
+                        label: "Protype",
+                        value: <?php echo $protype ?>
+                    },
+                    {
+                        label: "Manufacture",
+                        value: <?php echo $manu ?>
+                    }
+                ]
+            });
         });
-    });
     </script>
 </body>
 

@@ -13,6 +13,7 @@ use App\Models\Order;
 use App\Models\Blog;
 use App\Models\Staff;
 use App\Models\Admin;
+use App\Models\Customer;
 use DB;
 use Illuminate\Support\Facades\DB as FacadesDB;
 use Illuminate\Support\Facades\Validator;
@@ -426,74 +427,81 @@ class AdminController extends Controller
     }
 
     //Show Comment in admin
-    public function show_admin_comment(){
+    public function show_admin_comment()
+    {
         $this->AuthLogin();
-        $comment = DB::table('comments')->join('products','comments.product_id','=','products.product_id')
-        ->join('customers','comments.id','=','customers.id')->get();
-        return view('admin.comment',compact('comment'));
+        $comment = DB::table('comments')->join('products', 'comments.product_id', '=', 'products.product_id')
+            ->join('customers', 'comments.id', '=', 'customers.customer_id')->get();
+        return view('admin.comment', compact('comment'));
     }
 
     //Delete Comment in admin
-    public function delete_admin_comment($comment_id){
+    public function delete_admin_comment($comment_id)
+    {
         $this->AuthLogin();
-        DB::table('comments')->where('comment_id',$comment_id)->delete();
+        DB::table('comments')->where('comment_id', $comment_id)->delete();
         return Redirect::to('admin.comment');
     }
-    public function show_admin_blog(){
+    public function show_admin_blog()
+    {
         $this->AuthLogin();
         $blogs = DB::table('blog')->get();
 
-        return view('admin.blog')->with('blogs',$blogs);
+        return view('admin.blog')->with('blogs', $blogs);
     }
     //Show Edit Blog
-    function edit_admin_blog($blog_id) {
+    function edit_admin_blog($blog_id)
+    {
         $this->AuthLogin();
-        $blogs = DB::table('blog')->where('blog_id',$blog_id)->get();
-        return view('admin.editblog')->with('blogs',$blogs);
+        $blogs = DB::table('blog')->where('blog_id', $blog_id)->get();
+        return view('admin.editblog')->with('blogs', $blogs);
     }
 
     //Update Blog
-    function update_admin_blog(Request $request, $blog_id) {
+    function update_admin_blog(Request $request, $blog_id)
+    {
         $this->AuthLogin();
         $data = array();
         $data['blog_title'] = $request->blog_title;
         $data['blog_description'] = $request->blog_description;
         $data['blog_author'] = $request->blog_author;
         $get_image = $request->file('blog_img');
-        if($get_image){
+        if ($get_image) {
             $get_name_image = $get_image->getClientOriginalName();
-            $name_image = current(explode('.',$get_name_image));
-            $new_image = $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
-            $get_image->move('./img/blog/',$new_image);
+            $name_image = current(explode('.', $get_name_image));
+            $new_image = $name_image . rand(0, 99) . '.' . $get_image->getClientOriginalExtension();
+            $get_image->move('./img/blog/', $new_image);
             $data['blog_img'] = $new_image;
-            DB::table('blog')->where('blog_id',$blog_id)->update($data);
-            Session::put('message_image','Cập Nhật Hình Ảnh Thành Công!');
+            DB::table('blog')->where('blog_id', $blog_id)->update($data);
+            Session::put('message_image', 'Cập Nhật Hình Ảnh Thành Công!');
             return Redirect::to('admin.editblog');
         }
-        DB::table('blog')->where('blog_id',$blog_id)->update($data);
-        Session::put('message_update','Cập Nhật Thành Công!');
+        DB::table('blog')->where('blog_id', $blog_id)->update($data);
+        Session::put('message_update', 'Cập Nhật Thành Công!');
         return Redirect::to('admin.blog');
     }
-    function delete_admin_blog($blog_id){
+    function delete_admin_blog($blog_id)
+    {
         $this->AuthLogin();
-        DB::table('blog')->where('blog_id',$blog_id)->delete();
+        DB::table('blog')->where('blog_id', $blog_id)->delete();
         return Redirect::to('admin.blog');
     }
-    function add_admin_blog(Request $request){
+    function add_admin_blog(Request $request)
+    {
         $this->AuthLogin();
         $data = array();
         $data['blog_title'] = $request->blog_title;
         $data['blog_description'] = $request->blog_description;
         $data['blog_Author'] = $request->blog_author;
         $get_image = $request->file('blog_img');
-        if($get_image){
+        if ($get_image) {
             $get_name_image = $get_image->getClientOriginalName();
-            $name_image = current(explode('.',$get_name_image));
-            $new_image = $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
-            $get_image->move('./img/blog',$new_image);
+            $name_image = current(explode('.', $get_name_image));
+            $new_image = $name_image . rand(0, 99) . '.' . $get_image->getClientOriginalExtension();
+            $get_image->move('./img/blog', $new_image);
             $data['blog_img'] = $new_image;
             DB::table('blog')->insert($data);
-            Session::put('message_image','Thêm Hình Ảnh Thành Công!');
+            Session::put('message_image', 'Thêm Hình Ảnh Thành Công!');
             return Redirect::to('admin.addblog');
         }
         // DB::table('blog')->insert($data);
@@ -564,5 +572,49 @@ class AdminController extends Controller
         $staff = Staff::find(request('key'));
         $staff->delete();
         return Redirect::to('admin.staffs');
+    }
+
+    /*----- Show Customers -----*/
+    //
+    function show_customers()
+    {
+        $show_customers = DB::table('customers')->get();
+        return view('admin.customers', compact('show_customers'));
+    }
+    public function edit_customer(Request $request)
+    {
+        $this->AuthLogin();
+        $key = request('key');
+        $edit_customer = Customer::where('customer_id', $key)->get();
+        return view('admin.editcustomer', compact('edit_customer'));
+    }
+    public function update_customer(Request $request)
+    {
+        $this->AuthLogin();
+        $id = $request->customer_id;
+        //Check_email
+        $input['customer_email'] = $request->customer_email;
+        $rules = array('customer_email' => 'unique:customers,customer_email');
+        $validator = Validator::make($input, $rules);
+        if ($validator->fails()) {
+            Session::put('message', 'Tài khoản này đã tồn tại. Vui lòng nhập lại!');
+            return Redirect::to('admin.editcustomer/' . $id);
+        } else {
+            // Update customer.
+            $customer = Customer::find($id);
+            $customer->customer_name = $request->customer_name;
+            $customer->customer_email = $request->customer_email;
+            $customer->customer_password = md5($request->customer_password);
+            $customer->status = 0;
+            $customer->save();
+            return Redirect::to('admin.customers');
+        }
+    }
+    public function delete_customer()
+    {
+        $this->AuthLogin();
+        $customer = Customer::find(request('key'));
+        $customer->delete();
+        return Redirect::to('admin.customers');
     }
 }
