@@ -7,7 +7,8 @@
     <title>AdminGroupH | Dashboard </title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{ url ('plugins/fontawesome-free/css/all.min.css') }}">
     <!-- overlayScrollbars -->
@@ -174,19 +175,18 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <?php
-                            $admin_name = Session::get('admin_name');
-                            if($admin_name){
-                                echo '<a href="/logout-admin" class="dropdown-item">
+                        $admin_name = Session::get('admin_name');
+                        if ($admin_name) {
+                            echo '<a href="/logout-admin" class="dropdown-item">
                                         <i class="fas fa-sign-out-alt"></i> Log Out
                                       </a>
                                       <div class="dropdown-divider"></div>';
-                            }
-                            else{
-                                echo '<a href="/login" class="dropdown-item">
+                        } else {
+                            echo '<a href="/login" class="dropdown-item">
                                         <i class="fas fa-sign-out-alt"></i> Log In
                                       </a>
                                       <div class="dropdown-divider"></div>';
-                            }
+                        }
                         ?>
                     </div>
                 </li>
@@ -198,8 +198,8 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
-                <img src="{{ asset ('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-                    style="opacity: .8">
+                <img src="{{ asset ('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
+                    class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">AdminGoupH</span>
             </a>
 
@@ -208,14 +208,15 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
+                            alt="User Image">
                     </div>
                     <div class="info">
                         <?php
-                            $admin_name = Session::get('admin_name');
-                            if($admin_name){
-                                echo '<a href="#" class="d-block">'.$admin_name.'</a>';
-                            }
+                        $admin_name = Session::get('admin_name');
+                        if ($admin_name) {
+                            echo '<a href="#" class="d-block">' . $admin_name . '</a>';
+                        }
                         ?>
 
                     </div>
@@ -233,7 +234,7 @@
                         </div>
                     </div>
                 </div>
-
+                <?php   $id_admin = Session::get('admin_id'); ?>
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
@@ -249,6 +250,7 @@
                                 </p>
                             </a>
                         </li>
+                        @if($id_admin)
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <p>
@@ -293,6 +295,7 @@
                                 </li>
                             </ul>
                         </li>
+                        @endif
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <p>
@@ -352,7 +355,7 @@
                                     </a>
                                 </li>
                             </ul>
-                            
+
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
@@ -369,12 +372,38 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
+                        </li>    
+                        
+                        @if($id_admin)
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <p>
-                                    Blog
+                                    Staffs
                                     <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url ('/admin.staffs')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Manage Staffs</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url ('/admin.addstaff') }}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Add Staffs</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        @endif
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <p>
+                                    <i class="right fas fa-angle-left"></i>
+                                    Blog
+                                    
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
@@ -384,7 +413,7 @@
                                         <p>Manage Blog</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <li>
                                     <a href="{{ url ('/admin.addblog')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add Blog</p>
@@ -392,6 +421,7 @@
                                 </li>
                             </ul>
                         </li>
+
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -444,111 +474,111 @@
         Update Order Status
     --------------------------->
     <script type="text/javascript">
-        $(document).ready(function() {
-            $('.update_order_qty').change(function(){
-                var order_status = $(this).val();
-                var order_id = $(this).children(":selected").attr("id");
-                var _token = $('input[name="_token"]').val();
+    $(document).ready(function() {
+        $('.update_order_qty').change(function() {
+            var order_status = $(this).val();
+            var order_id = $(this).children(":selected").attr("id");
+            var _token = $('input[name="_token"]').val();
 
-                order_product_qty = [];
-                $("input[name='order_product_qty']").each(function() {
-                    order_product_qty.push($(this).val());
-                });
+            order_product_qty = [];
+            $("input[name='order_product_qty']").each(function() {
+                order_product_qty.push($(this).val());
+            });
 
-                order_product_id = [];
-                $("input[name='order_product_id']").each(function() {
-                    order_product_id.push($(this).val());
-                });
+            order_product_id = [];
+            $("input[name='order_product_id']").each(function() {
+                order_product_id.push($(this).val());
+            });
 
-                $.ajax({
-                    url: "{{ url('/update-order-qty') }}",
-                    method: "POST",
-                    data: {
-                        order_status:order_status,
-                        order_id:order_id,
-                        _token:_token,
-                        order_product_qty:order_product_qty,
-                        order_product_id:order_product_id
-                    },
-                    success: function(data){
-                        alert("Cập Nhật Đơn Hàng Thành Công!");
-                        // location.reload();
-                    }
-                });
+            $.ajax({
+                url: "{{ url('/update-order-qty') }}",
+                method: "POST",
+                data: {
+                    order_status: order_status,
+                    order_id: order_id,
+                    _token: _token,
+                    order_product_qty: order_product_qty,
+                    order_product_id: order_product_id
+                },
+                success: function(data) {
+                    alert("Cập Nhật Đơn Hàng Thành Công!");
+                    // location.reload();
+                }
             });
         });
+    });
     </script>
 
     <script type="text/javascript">
-        $(document).ready(function() {
-            $('.update_quantity_product').click(function(){
-                var order_prd_id = $(this).data('product_id');
-                var order_qty = $('.order_qty_' + order_prd_id).val();
-                var order_code = $('.order_code').val();
-                var _token = $('input[name="_token"]').val();
+    $(document).ready(function() {
+        $('.update_quantity_product').click(function() {
+            var order_prd_id = $(this).data('product_id');
+            var order_qty = $('.order_qty_' + order_prd_id).val();
+            var order_code = $('.order_code').val();
+            var _token = $('input[name="_token"]').val();
 
-                // alert(order_prd_id);
-                // alert(order_qty);
-                // alert(order_code);
-                $.ajax({
-                    url: "{{ url('/update-order-qty-product') }}",
-                    method: "POST",
-                    data: {
-                        order_prd_id:order_prd_id,
-                        order_qty:order_qty,
-                        _token:_token,
-                        order_code:order_code
-                    },
-                    success: function(data){
-                        alert("Cập Nhật Số Lượng Thành Công!");
-                        // location.reload();
-                    }
-                });
+            // alert(order_prd_id);
+            // alert(order_qty);
+            // alert(order_code);
+            $.ajax({
+                url: "{{ url('/update-order-qty-product') }}",
+                method: "POST",
+                data: {
+                    order_prd_id: order_prd_id,
+                    order_qty: order_qty,
+                    _token: _token,
+                    order_code: order_code
+                },
+                success: function(data) {
+                    alert("Cập Nhật Số Lượng Thành Công!");
+                    // location.reload();
+                }
             });
         });
+    });
     </script>
 
     <script type="text/javascript">
-        // $(document).ready(function() {
-        //     $('#btnCreateCoupon').click(function(){
-        //         var order_prd_id = $(this).data('product_id');
-        //         var product_price = $('.product_price').val();
-        //         var product_name = $('.product_name').val();
-        //         var product_qty = $('.product_qty').val();
-        //         var manu_id = $('.manu_id').val();
-        //         var type_id = $('.type_id').val();
-        //         var feature_id = $('.feature_id').val();
-        //         var product_description = $('.product_description').val();
-        //         var product_img = $('.product_img').val();
-        //         var product_sold = $('.product_sold').val();
-        //         var _token = $('input[name="_token"]').val();
+    // $(document).ready(function() {
+    //     $('#btnCreateCoupon').click(function(){
+    //         var order_prd_id = $(this).data('product_id');
+    //         var product_price = $('.product_price').val();
+    //         var product_name = $('.product_name').val();
+    //         var product_qty = $('.product_qty').val();
+    //         var manu_id = $('.manu_id').val();
+    //         var type_id = $('.type_id').val();
+    //         var feature_id = $('.feature_id').val();
+    //         var product_description = $('.product_description').val();
+    //         var product_img = $('.product_img').val();
+    //         var product_sold = $('.product_sold').val();
+    //         var _token = $('input[name="_token"]').val();
 
-        //         var coupon_condition = $('#inputCondition').val();
-        //         var coupon_number = $('#inputNumber').val();
+    //         var coupon_condition = $('#inputCondition').val();
+    //         var coupon_number = $('#inputNumber').val();
 
-        //         if(coupon_condition == 1 && coupon_number < 1000){
-        //             swal({
-        //                 title: "Error!",
-        //                 text: "Your Discount Field Error. Please Re-Enter!",
-        //                 cancelButtonText: "OK",
-        //                 confirmButtonClass: "btn-success"
-        //             });
-        //         }
-        //         else if(coupon_condition == 2 && coupon_number > 100){
-        //             swal({
-        //                 title: "Error!",
-        //                 text: "Your Discount Field Error. Please Re-Enter!",
-        //                 cancelButtonText: "OK",
-        //                 confirmButtonClass: "btn-success"
-        //             });
-        //         }
-        //     });
-        // });
+    //         if(coupon_condition == 1 && coupon_number < 1000){
+    //             swal({
+    //                 title: "Error!",
+    //                 text: "Your Discount Field Error. Please Re-Enter!",
+    //                 cancelButtonText: "OK",
+    //                 confirmButtonClass: "btn-success"
+    //             });
+    //         }
+    //         else if(coupon_condition == 2 && coupon_number > 100){
+    //             swal({
+    //                 title: "Error!",
+    //                 text: "Your Discount Field Error. Please Re-Enter!",
+    //                 cancelButtonText: "OK",
+    //                 confirmButtonClass: "btn-success"
+    //             });
+    //         }
+    //     });
+    // });
     </script>
     <script type="text/javascript">
-        $(document).ready(function(){
-            var colorDanger = "#FF1744";
-            Morris.Donut({
+    $(document).ready(function() {
+        var colorDanger = "#FF1744";
+        Morris.Donut({
             element: 'donut',
             resize: true,
             colors: [
@@ -567,14 +597,27 @@
             //backgroundColor: '#333333', // border color
 
             /////// vào Provider để tạo biến 
-            data: [
-                {label:"Product", value:<?php echo $product?>, color:colorDanger},
-                {label:"Order", value:<?php echo $order?>},
-                {label:"Protype", value:<?php echo $protype?>},
-                {label:"Manufacture", value:<?php echo $manu?>}
+            data: [{
+                    label: "Product",
+                    value: <?php echo $product?>,
+                    color: colorDanger
+                },
+                {
+                    label: "Order",
+                    value: <?php echo $order?>
+                },
+                {
+                    label: "Protype",
+                    value: <?php echo $protype?>
+                },
+                {
+                    label: "Manufacture",
+                    value: <?php echo $manu?>
+                }
             ]
-            });
         });
+    });
     </script>
 </body>
+
 </html>

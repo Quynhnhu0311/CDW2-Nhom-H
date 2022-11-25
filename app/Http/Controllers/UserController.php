@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
@@ -35,6 +36,9 @@ class UserController extends Controller
         $admin_result = DB::table('admins')->where('admin_email', $user_email)
                                            ->where('admin_password', $user_pass)->first();
 
+        //Account Staff
+        $staff_result = DB::table('staffs')->where('staff_email', $user_email)
+                                           ->where('staff_password', $user_pass)->first();
 
         //Required Captcha
         $request->validate([
@@ -53,6 +57,11 @@ class UserController extends Controller
         elseif($admin_result) {
             Session::put('admin_name', $admin_result->admin_name);
             Session::put('admin_id', $admin_result->admin_id);
+            return Redirect::to('/admin.dashboard');
+        }
+        elseif($staff_result) {
+            Session::put('staff_name', $staff_result->staff_name);
+            Session::put('staff_id', $staff_result->staff_id);
             return Redirect::to('/admin.dashboard');
         }
         else {
