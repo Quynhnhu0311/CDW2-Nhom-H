@@ -41,20 +41,20 @@ Route::DELETE('deletemanufacture/{id}', [AdminController::class, 'destroy_manu']
 //Add Manufactures
 Route::post('/savemanufacture', [AdminController::class, 'save_manufacture']);
 //Show Edit Page Manufacture
-Route::get('admin.editmanufacture/{manu_id}',[AdminController::class, 'edit_manufacture']);
+Route::get('admin.editmanufacture/{manu_id}', [AdminController::class, 'edit_manufacture']);
 //Update Manufactures
 Route::put('update_datamanu/{manu_id}', [AdminController::class, 'update_manufacture']);
 
 //Show Protypes page
-Route::get('/admin.protype',[AdminController::class,'show_admin_protype']);
+Route::get('/admin.protype', [AdminController::class, 'show_admin_protype']);
 //Show EditProtype page
-Route::get('/admin.editprotype/{type_id}',[AdminController::class,'show_edit_protype']);
+Route::get('/admin.editprotype/{type_id}', [AdminController::class, 'show_edit_protype']);
 //Update Protypes
-Route::put('update_protype/{type_id}',[AdminController::class,'update_admin_protype']);
+Route::put('update_protype/{type_id}', [AdminController::class, 'update_admin_protype']);
 //Add Protypes
-Route::post('/addprotype',[AdminController::class,'add_admin_protype']);
+Route::post('/addprotype', [AdminController::class, 'add_admin_protype']);
 //Delete Protypes
-Route::DELETE('deleteprotype/{type_id}',[AdminController::class,'delete_admin_protype']);
+Route::DELETE('deleteprotype/{type_id}', [AdminController::class, 'delete_admin_protype']);
 
 /*----- Products -----*/
 Route::get('/products', [AdminController::class, 'show_all_products'])->name('viewProductList');
@@ -86,6 +86,11 @@ Route::get('/admin.editstaff/{key}', [AdminController::class, 'edit_staff']);
 Route::post('/update-staff', [AdminController::class, 'update_staff']);
 Route::get('/delete-staff/{key}', [AdminController::class, 'delete_staff']);
 
+/*----- Customer -----*/
+Route::get('/admin.customers', [AdminController::class, 'show_customers']);
+Route::get('/admin.editcustomer/{key}', [AdminController::class, 'edit_customer']);
+Route::post('/update-customer', [AdminController::class, 'update_customer']);
+Route::get('/delete-customer/{key}', [AdminController::class, 'delete_customer']);
 
 /* =====Front-End===== */
 //Home
@@ -118,8 +123,8 @@ Route::get('/delete-product-cart/{session_id}', [CartController::class, 'delete_
 Route::post('/update-cart', [CartController::class, 'update_cart']);
 
 //Order
-Route::get('/view-order/{id}', [CartController::class,'view_order']);
-Route::get('/view-detail-order/{order_code}', [CartController::class,'view_detail_order']);
+Route::get('/view-order/{id}', [CartController::class, 'view_order']);
+Route::get('/view-detail-order/{order_code}', [CartController::class, 'view_detail_order']);
 
 
 //Coupon

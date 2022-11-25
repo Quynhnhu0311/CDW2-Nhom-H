@@ -12,6 +12,7 @@ use App\Models\Manufacture;
 use App\Models\Order;
 use App\Models\Staff;
 use App\Models\Admin;
+use App\Models\Customer;
 use DB;
 use Illuminate\Support\Facades\DB as FacadesDB;
 use Illuminate\Support\Facades\Validator;
@@ -488,5 +489,49 @@ class AdminController extends Controller
         $staff = Staff::find(request('key'));
         $staff->delete();
         return Redirect::to('admin.staffs');
+    }
+
+    /*----- Show Customers -----*/
+    //
+    function show_customers()
+    {
+        $show_customers = DB::table('customers')->get();
+        return view('admin.customers', compact('show_customers'));
+    }
+    public function edit_customer(Request $request)
+    {
+        $this->AuthLogin();
+        $key = request('key');
+        $edit_customer = Customer::where('customer_id', $key)->get();
+        return view('admin.editcustomer', compact('edit_customer'));
+    }
+    public function update_customer(Request $request)
+    {
+        $this->AuthLogin();
+        $id = $request->customer_id;
+        //Check_email
+        $input['customer_email'] = $request->customer_email;
+        $rules = array('customer_email' => 'unique:customers,customer_email');
+        $validator = Validator::make($input, $rules);
+        if ($validator->fails()) {
+            Session::put('message', 'Tài khoản này đã tồn tại. Vui lòng nhập lại!');
+            return Redirect::to('admin.editcustomer/' . $id);
+        } else {
+            // Update customer.
+            $customer = Customer::find($id);
+            $customer->customer_name = $request->customer_name;
+            $customer->customer_email = $request->customer_email;
+            $customer->customer_password = md5($request->customer_password);
+            $customer->status = 0;
+            $customer->save();
+            return Redirect::to('admin.customers');
+        }
+    }
+    public function delete_customer()
+    {
+        $this->AuthLogin();
+        $customer = Customer::find(request('key'));
+        $customer->delete();
+        return Redirect::to('admin.customers');
     }
 }

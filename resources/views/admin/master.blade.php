@@ -224,7 +224,7 @@
                         </div>
                     </div>
                 </div>
-                <?php   $id_admin = Session::get('admin_id'); ?>
+                <?php $id_admin = Session::get('admin_id'); ?>
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -344,7 +344,7 @@
                                     </a>
                                 </li>
                             </ul>
-                            
+
                         </li>
                         @if($id_admin)
                         <li class="nav-item">
@@ -369,6 +369,22 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <p>
+                                    Customers
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{ url ('/admin.customers')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Manage Customers</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         @endif
                     </ul>
                 </nav>
@@ -376,7 +392,6 @@
             </div>
             <!-- /.sidebar -->
         </aside>
-
         @yield('content-admin')
 
         <!-- Main Footer -->
@@ -524,33 +539,45 @@
         // });
     </script>
     <script type="text/javascript">
-        $(document).ready(function(){
+        $(document).ready(function() {
             var colorDanger = "#FF1744";
             Morris.Donut({
-            element: 'donut',
-            resize: true,
-            colors: [
-                '#E0F7FA',
-                '#B2EBF2',
-                '#80DEEA',
-                '#4DD0E1',
-                '#26C6DA',
-                '#00BCD4',
-                '#00ACC1',
-                '#0097A7',
-                '#00838F',
-                '#006064'
-            ],
-            //labelColor:"#cccccc", // text color
-            //backgroundColor: '#333333', // border color
+                element: 'donut',
+                resize: true,
+                colors: [
+                    '#E0F7FA',
+                    '#B2EBF2',
+                    '#80DEEA',
+                    '#4DD0E1',
+                    '#26C6DA',
+                    '#00BCD4',
+                    '#00ACC1',
+                    '#0097A7',
+                    '#00838F',
+                    '#006064'
+                ],
+                //labelColor:"#cccccc", // text color
+                //backgroundColor: '#333333', // border color
 
-            /////// vào Provider để tạo biến 
-            data: [
-                {label:"Product", value:<?php echo $product?>, color:colorDanger},
-                {label:"Order", value:<?php echo $order?>},
-                {label:"Protype", value:<?php echo $protype?>},
-                {label:"Manufacture", value:<?php echo $manu?>}
-            ]
+                /////// vào Provider để tạo biến 
+                data: [{
+                        label: "Product",
+                        value: <?php echo $product ?>,
+                        color: colorDanger
+                    },
+                    {
+                        label: "Order",
+                        value: <?php echo $order ?>
+                    },
+                    {
+                        label: "Protype",
+                        value: <?php echo $protype ?>
+                    },
+                    {
+                        label: "Manufacture",
+                        value: <?php echo $manu ?>
+                    }
+                ]
             });
         });
     </script>
