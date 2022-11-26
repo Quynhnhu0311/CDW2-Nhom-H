@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
@@ -13,6 +12,7 @@ use App\Models\Manufacture;
 use App\Models\Order;
 use App\Models\Blog;
 use App\Models\Staff;
+use App\Models\Admin;
 use App\Models\Customer;
 use DB;
 use Illuminate\Support\Facades\DB as FacadesDB;
