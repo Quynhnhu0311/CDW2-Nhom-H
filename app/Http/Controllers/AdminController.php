@@ -13,7 +13,6 @@ use App\Models\Manufacture;
 use App\Models\Order;
 use App\Models\Blog;
 use App\Models\Staff;
-use App\Models\Admin;
 use App\Models\Customer;
 use DB;
 use Illuminate\Support\Facades\DB as FacadesDB;
