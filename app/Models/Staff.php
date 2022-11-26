@@ -13,12 +13,12 @@ class Staff extends Model
     protected $fillable = [
         'staff_name', 'staff_email ', 'staff_password'
     ];
-    protected $primaryKey = 'id';
+    protected $primaryKey = 'staff_id';
     protected $table = 'staffs';
 
     public function scopeSearch($query, $key)
     {
-        $query = $query->where('id', $key);
+        $query = $query->where('staff_id', $key);
         return $query;
     }
 }

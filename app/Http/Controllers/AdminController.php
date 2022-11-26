@@ -11,7 +11,10 @@ use App\Models\Protype;
 use App\Models\Coupon;
 use App\Models\Manufacture;
 use App\Models\Order;
+use App\Models\Blog;
 use App\Models\Staff;
+use App\Models\Admin;
+use App\Models\Customer;
 use DB;
 use Illuminate\Support\Facades\DB as FacadesDB;
 use Illuminate\Support\Facades\Validator;
@@ -22,7 +25,17 @@ session_start();
 class AdminController extends Controller
 {
     // Chặn Admin
-    public function AuthLogin()
+    public function StaffLogin()
+    {
+        $id_admin = Session::get('admin_id');
+        $id_staff = Session::get('staff_id');
+        if ($id_admin || $id_staff) {
+            return Redirect::to('admin.dashboard');
+        } else {
+            return Redirect::to('login')->send();
+        }
+    }
+    public function  AuthLogin()
     {
         $id_admin = Session::get('admin_id');
         if ($id_admin) {
@@ -35,7 +48,7 @@ class AdminController extends Controller
     //Show Manufacture Admin
     public function show_dashboard()
     {
-        $this->AuthLogin();
+        $this->StaffLogin();
         $product = Product::all()->count();
         $protype = Protype::all()->count();
         $manu = Manufacture::all()->count();
@@ -170,7 +183,7 @@ class AdminController extends Controller
     /*----- Show Products -----*/
     function show_all_products()
     {
-        $this->AuthLogin();
+        $this->StaffLogin();
         $show_Allproducts = Product::all();
         return view('admin.products')->with('show_Allproducts', $show_Allproducts);
     }
@@ -178,7 +191,7 @@ class AdminController extends Controller
     //Edit Product
     function edit_product($product_id)
     {
-        $this->AuthLogin();
+        $this->StaffLogin();
         $show_Allproducts = Product::all();
         $type_product = Protype::orderby('type_id', 'desc')->get();
         $manu_product = Manufacture::orderby('manu_id', 'desc')->get();
@@ -192,7 +205,7 @@ class AdminController extends Controller
     //Update Product
     function update_product(Request $request, $product_id)
     {
-        $this->AuthLogin();
+        $this->StaffLogin();
         $data = array();
         $data['product_name'] = $request->product_name;
         $data['manu_id'] = $request->manufacture;
@@ -233,7 +246,7 @@ class AdminController extends Controller
     //Delete Product
     function delete_product($product_id)
     {
-        $this->AuthLogin();
+        $this->StaffLogin();
         $show_Allproducts = Product::all();
         DB::table('products')->where('product_id', $product_id)->delete();
         Session::put('message_deleteProduct', 'Xóa Sản Phẩm Thành Công!');
@@ -243,7 +256,7 @@ class AdminController extends Controller
     //Add Product
     function add_product()
     {
-        $this->AuthLogin();
+        $this->StaffLogin();
         $getProtypes = DB::table('protypes')->get();
         $getManufactures = DB::table('manufactures')->get();
         $getFeatures = DB::table('features')->get();
@@ -255,7 +268,7 @@ class AdminController extends Controller
     //Save Product
     function save_product(Request $request)
     {
-        $this->AuthLogin();
+        $this->StaffLogin();
         $data = array();
         $data['product_name'] = $request->product_name;
         $data['product_price'] = $request->product_price;
@@ -414,31 +427,113 @@ class AdminController extends Controller
         //return Redirect::to('admin.coupons');
     }
 
+    //Show Comment in admin
+    public function show_admin_comment()
+    {
+        $this->AuthLogin();
+        $comment = DB::table('comments')->join('products', 'comments.product_id', '=', 'products.product_id')
+            ->join('customers', 'comments.id', '=', 'customers.customer_id')->get();
+        return view('admin.comment', compact('comment'));
+    }
+
+    //Delete Comment in admin
+    public function delete_admin_comment($comment_id)
+    {
+        $this->AuthLogin();
+        DB::table('comments')->where('comment_id', $comment_id)->delete();
+        return Redirect::to('admin.comment');
+    }
+    public function show_admin_blog()
+    {
+        $this->AuthLogin();
+        $blogs = DB::table('blog')->get();
+
+        return view('admin.blog')->with('blogs', $blogs);
+    }
+    //Show Edit Blog
+    function edit_admin_blog($blog_id)
+    {
+        $this->AuthLogin();
+        $blogs = DB::table('blog')->where('blog_id', $blog_id)->get();
+        return view('admin.editblog')->with('blogs', $blogs);
+    }
+
+    //Update Blog
+    function update_admin_blog(Request $request, $blog_id)
+    {
+        $this->AuthLogin();
+        $data = array();
+        $data['blog_title'] = $request->blog_title;
+        $data['blog_description'] = $request->blog_description;
+        $data['blog_author'] = $request->blog_author;
+        $get_image = $request->file('blog_img');
+        if ($get_image) {
+            $get_name_image = $get_image->getClientOriginalName();
+            $name_image = current(explode('.', $get_name_image));
+            $new_image = $name_image . rand(0, 99) . '.' . $get_image->getClientOriginalExtension();
+            $get_image->move('./img/blog/', $new_image);
+            $data['blog_img'] = $new_image;
+            DB::table('blog')->where('blog_id', $blog_id)->update($data);
+            Session::put('message_image', 'Cập Nhật Hình Ảnh Thành Công!');
+            return Redirect::to('admin.editblog');
+        }
+        DB::table('blog')->where('blog_id', $blog_id)->update($data);
+        Session::put('message_update', 'Cập Nhật Thành Công!');
+        return Redirect::to('admin.blog');
+    }
+    function delete_admin_blog($blog_id)
+    {
+        $this->AuthLogin();
+        DB::table('blog')->where('blog_id', $blog_id)->delete();
+        return Redirect::to('admin.blog');
+    }
+    function add_admin_blog(Request $request)
+    {
+        $this->AuthLogin();
+        $data = array();
+        $data['blog_title'] = $request->blog_title;
+        $data['blog_description'] = $request->blog_description;
+        $data['blog_Author'] = $request->blog_author;
+        $get_image = $request->file('blog_img');
+        if ($get_image) {
+            $get_name_image = $get_image->getClientOriginalName();
+            $name_image = current(explode('.', $get_name_image));
+            $new_image = $name_image . rand(0, 99) . '.' . $get_image->getClientOriginalExtension();
+            $get_image->move('./img/blog', $new_image);
+            $data['blog_img'] = $new_image;
+            DB::table('blog')->insert($data);
+            Session::put('message_image', 'Thêm Hình Ảnh Thành Công!');
+            return Redirect::to('admin.addblog');
+        }
+        // DB::table('blog')->insert($data);
+        // Session::put('message_update','Thêm Thành Công!');
+        // return Redirect::to('admin.blog');
+    }
     /*----- Show Staff -----*/
     //
     function show_staffs()
     {
-        $show_staffs = DB::table('admins')->get();
+        $show_staffs = DB::table('staffs')->get();
         return view('admin.staffs', compact('show_staffs'));
     }
 
     public function save_staff(Request $request)
     {
         //Check_email
-        $input['admin_email '] = $request->admin_email;
-        $rules = array('admin_email ' => 'unique:admins,admin_email');
+        $input['staff_email'] = $request->staff_email;
+        $rules = array('staff_email' => 'unique:staffs,staff_email');
         $validator = Validator::make($input, $rules);
         if ($validator->fails()) {
             Session::put('message', 'Tài khoản này đã tồn tại. Vui lòng nhập lại!');
             return Redirect::to('admin.addstaff');
         } else {
             // Register the new staff.
-            $staff = new Admin;
-            $staff->admin_name = $request->staff_name;
-            $staff->admin_email  = $request->admin_email;
-            $staff->admin_password = md5($request->staff_password);
-            $staff->permission = 0;
-            $staff->token = md5('zxy');
+            $staff = new Staff;
+            $staff->staff_name = $request->staff_name;
+            $staff->staff_email = $request->staff_email;
+            $staff->staff_password = md5($request->staff_password);
+            $staff->status = 0;
+            $staff->token = md5('xyz');
             $staff->save();
             return Redirect::to('admin.staffs');
         }
@@ -447,7 +542,7 @@ class AdminController extends Controller
     {
         $this->AuthLogin();
         $key = request('key');
-        $edit_staff = Admin::where('admin_id', $key)->get();
+        $edit_staff = Staff::where('staff_id', $key)->get();
         return view('admin.editstaff', compact('edit_staff'));
     }
     public function update_staff(Request $request)
@@ -455,20 +550,19 @@ class AdminController extends Controller
         $this->AuthLogin();
         $id = $request->staff_id;
         //Check_email
-        $input['admin_email'] = $request->admin_email;
-        $rules = array('admin_email' => 'unique:admins,admin_email');
+        $input['staff_email'] = $request->staff_email;
+        $rules = array('staff_email' => 'unique:staffs,staff_email');
         $validator = Validator::make($input, $rules);
         if ($validator->fails()) {
             Session::put('message', 'Tài khoản này đã tồn tại. Vui lòng nhập lại!');
             return Redirect::to('admin.editstaff/' . $id);
         } else {
             // Register the new staff.
-            $staff = Admin::find($id);
-            $staff->admin_name = $request->staff_name;
-            $staff->admin_email = $request->admin_email;
-            $staff->admin_password = md5($request->staff_password);
-            $staff->permission = 0;
-            $staff->token = md5('zxy');
+            $staff = Staff::find($id);
+            $staff->staff_name = $request->staff_name;
+            $staff->staff_email = $request->staff_email;
+            $staff->staff_password = md5($request->staff_password);
+            $staff->status = 0;
             $staff->save();
             return Redirect::to('admin.staffs');
         }
@@ -476,8 +570,52 @@ class AdminController extends Controller
     public function delete_staff()
     {
         $this->AuthLogin();
-        $staff = Admin::find(request('key'));
+        $staff = Staff::find(request('key'));
         $staff->delete();
         return Redirect::to('admin.staffs');
+    }
+
+    /*----- Show Customers -----*/
+    //
+    function show_customers()
+    {
+        $show_customers = DB::table('customers')->get();
+        return view('admin.customers', compact('show_customers'));
+    }
+    public function edit_customer(Request $request)
+    {
+        $this->AuthLogin();
+        $key = request('key');
+        $edit_customer = Customer::where('customer_id', $key)->get();
+        return view('admin.editcustomer', compact('edit_customer'));
+    }
+    public function update_customer(Request $request)
+    {
+        $this->AuthLogin();
+        $id = $request->customer_id;
+        //Check_email
+        $input['customer_email'] = $request->customer_email;
+        $rules = array('customer_email' => 'unique:customers,customer_email');
+        $validator = Validator::make($input, $rules);
+        if ($validator->fails()) {
+            Session::put('message', 'Tài khoản này đã tồn tại. Vui lòng nhập lại!');
+            return Redirect::to('admin.editcustomer/' . $id);
+        } else {
+            // Update customer.
+            $customer = Customer::find($id);
+            $customer->customer_name = $request->customer_name;
+            $customer->customer_email = $request->customer_email;
+            $customer->customer_password = md5($request->customer_password);
+            $customer->status = 0;
+            $customer->save();
+            return Redirect::to('admin.customers');
+        }
+    }
+    public function delete_customer()
+    {
+        $this->AuthLogin();
+        $customer = Customer::find(request('key'));
+        $customer->delete();
+        return Redirect::to('admin.customers');
     }
 }

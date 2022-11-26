@@ -14,10 +14,10 @@ class Customers extends Seeder
     public function run()
     {
         \DB::table('customers')->insert([
-            'name' => 'quynhnhu',
-            'email' => 'quynhnhu@gmail.com',
-            'password' => md5('123123'),
-            'status' => 'true'
+            'customer_name' => 'quynhnhu',
+            'customer_email' => 'quynhnhu@gmail.com',
+            'customer_password' => md5('123123'),
+            'status' => 0
         ]);
     }
 }

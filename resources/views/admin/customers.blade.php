@@ -7,12 +7,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Manage Staff</h1>
+                    <h1>Manage Customer</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="/admin.dashboard">Home</a></li>
-                        <li class="breadcrumb-item active">Staff</li>
+                        <li class="breadcrumb-item active">Customer</li>
                     </ol>
                 </div>
             </div>
@@ -44,32 +44,32 @@
                             <th style="width: 5%">
                                 ID
                             </th>
-                            <th style="width: 15%"> Staff Name </th>
-                            <th style="width: 20%"> Staff Email </th>
-                            <th style="width: 15%"> Staff Password </th>
+                            <th style="width: 15%"> Customer Name </th>
+                            <th style="width: 20%"> Customer Email </th>
+                            <th style="width: 15%"> Customer Password </th>
                             <th style="width: 20%">Action</th>
                         </tr>
                     </thead>
-                    @foreach($show_staffs as $staff)
+                    @foreach($show_customers as $customer)
                     <tr>
                         <td>
-                            {{ $staff->staff_id }}
+                            {{ $customer->customer_id }}
                         </td>
                         <td>
-                            {{ $staff->staff_name }}
+                            {{ $customer->customer_name }}
                         </td>
                         <td>
-                            {{ $staff->staff_email }}
+                            {{ $customer->customer_email }}
                         </td>
                         <td>
-                            <input type="password" style="background: none; color: white;border:none" disabled value="{{ $staff->staff_password }}">
+                            <input type="password" style="background: none; color: white;border:none" disabled value="{{ $customer->customer_password }}">
                         </td>
                         <td class="project-actions text-right">
-                            <a class="btn btn-info btn-sm edit-coupon" href="admin.editstaff/{{$staff->staff_id}}">
+                            <a class="btn btn-info btn-sm edit-coupon" href="admin.editcustomer/{{$customer->customer_id}}">
                                 <i class="fas fa-pencil-alt"></i>
                                 Edit
                             </a>
-                            <a class="btn btn-danger btn-sm delete-coupon" onclick="location.href='delete-staff/{{$staff->staff_id}}'">
+                            <a class="btn btn-danger btn-sm delete-coupon" onclick="location.href='delete-customer/{{$customer->customer_id}}'">
                                 <i class="fas fa-trash"></i>
                                 Delete
                             </a>

@@ -7,12 +7,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1>Staff Edit</h1>
+          <h1>Customer Edit</h1>
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="index.php">Home</a></li>
-            <li class="breadcrumb-item active">Staff Edit</li>
+            <li class="breadcrumb-item active">Customer Edit</li>
           </ol>
         </div>
       </div>
@@ -21,7 +21,7 @@
 
   <!-- Main content -->
   <section class="content">
-    <form action="{{url ('update-staff') }}" method="post" enctype="multipart/form-data">
+    <form action="{{url ('update-customer') }}" method="post" enctype="multipart/form-data">
       @csrf
       <div class="row">
         <div class="col-md-12">
@@ -35,16 +35,16 @@
                 </button>
               </div>
             </div>
-            @foreach($edit_staff as $staff)
+            @foreach($edit_customer as $customer)
             <div class="card-body">
-              <input type="hidden" id="inputName" class="form-control" name="staff_id" value="{{$staff->staff_id}}" required>
+              <input type="hidden" id="inputName" class="form-control" name="customer_id" value="{{$customer->customer_id}}" required>
               <div class="form-group">
-                <label for="inputName">Staff Name</label>
-                <input type="text" id="inputName" class="form-control" name="staff_name" value="{{$staff->staff_name}}" required>
+                <label for="inputName">customer Name</label>
+                <input type="text" id="inputName" class="form-control" name="customer_name" value="{{$customer->customer_name}}" required>
               </div>
               <div class="form-group">
-                <label for="inputName">Staff Email</label>
-                <input type="email" id="inputName" class="form-control" name="staff_email" value="{{$staff->staff_email}}" required>
+                <label for="inputName">customer Email</label>
+                <input type="email" id="inputName" class="form-control" name="customer_email" value="{{$customer->customer_email}}" required>
                 <?php
                 $message = Session::get('message');
                 if ($message) {
@@ -54,8 +54,8 @@
                 ?>
               </div>
               <div class="form-group">
-                <label for="inputName">Staff Password</label>
-                <input type="password" id="inputName" class="form-control" name="staff_password" value="{{$staff->staff_password}}" required>
+                <label for="inputName">customer Password</label>
+                <input type="password" id="inputName" class="form-control" name="customer_password" value="{{$customer->customer_password}}" required>
               </div>
             </div>
             @endforeach
@@ -66,7 +66,7 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <input name="submit" type="submit" value="Update Staff" class="btn btn-success float-right">
+          <input name="submit" type="submit" value="Update customer" class="btn btn-success float-right">
         </div>
       </div>
     </form>
