@@ -84,18 +84,17 @@
                                 $total = 0;
                                 $subTotal = 0;
                             ?>
-                            @if(Session::get('cart') == true)
                                 <h4 class="order__title">Your order</h4>
                                 <div class="checkout__order__products">Product
                                     <span>Total</span>
                                 </div>
                                 <ul class="checkout__total__products">
-                                @foreach(Session::get('cart') as $key => $cart)
+                                @foreach($cart as $key => $cart)
                                     <?php
-                                        $total = $cart['product_price'] * $cart['product_qty'];
+                                        $total = $cart->product_price * $cart->product_qty;
                                         $subTotal += $total;
                                     ?>
-                                    <li>{{ $cart['product_name'] }} | x{{ $cart['product_qty'] }}
+                                    <li>{{ $cart->product_name }} | x{{ $cart->product_qty }}
                                         <span>{{ number_format($total) }}đ</span>
                                     </li>
                                 @endforeach
@@ -136,11 +135,10 @@
                                     <label for="paypal">
                                         Paypal
                                         <input type="checkbox" id="paypal">
-                                        <span class="checkmark"></span>     
+                                        <span class="checkmark"></span>
                                     </label>
                                 </div>
                                 <button type="submit" class="site-btn">PLACE ORDER</button>
-                            @endif
                         </div>
                     </div>
                 </div>

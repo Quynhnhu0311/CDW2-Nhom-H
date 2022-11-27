@@ -52,8 +52,8 @@ class UserController extends Controller
         );
 
         if ($result) {
-            Session::put('customer_name', $result->customer_name);
-            Session::put('customer_id', $result->customer_id);
+            Session::put('customer_name', $result->name);
+            Session::put('customer_id', $result->id);
             return Redirect::to('/');
         } elseif ($admin_result) {
             Session::put('admin_name', $admin_result->admin_name);

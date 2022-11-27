@@ -157,6 +157,7 @@ Route::get('/blog-detail/{id}', [BlogController::class, 'blog_detail']);
 
 //Checkout
 Route::post('/confirm-order', [CheckoutController::class, 'confirm_order']);
+Route::get('/checkoutPage', [CheckoutController::class, 'checkout_page']);
 //Register
 Route::post('/register-user', [UserController::class, 'register_user']);
 

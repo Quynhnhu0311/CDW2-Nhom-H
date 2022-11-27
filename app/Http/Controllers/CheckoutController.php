@@ -18,7 +18,7 @@ session_start();
 class CheckoutController extends Controller
 {
     function AuthLogin() {
-        $customer_id = Session::get('id');
+        $customer_id = Session::get('customer_id');
         if($customer_id){
             return Redirect::to('/');
         }
@@ -27,8 +27,16 @@ class CheckoutController extends Controller
         }
     }
 
+    function checkout_page() {
+        $cart = DB::table('carts')->get();
+        $manufactures = DB::table('manufactures')->get();
+        return view('checkout')->with('cart',$cart)
+                                ->with('manufactures',$manufactures);
+    }
+
     function confirm_order(Request $request) {
         $this->AuthLogin();
+        $carts = DB::table('carts')->get();
         $manufactures = DB::table('manufactures')->get();
         $data = $request->all();
 
@@ -49,7 +57,7 @@ class CheckoutController extends Controller
 
         //Thông tin Order
         $order = new Order;
-        $order->customer_id = Session::get('id');
+        $order->customer_id = Session::get('customer_id');
         $order->shipping_id = $id_shipping;
         $order->order_code = $checkout_code;
         $order->order_status = 1;
@@ -65,9 +73,8 @@ class CheckoutController extends Controller
         }
 
         //Thông tin Detail Order
-        if(Session::get('cart')){
             if(Session::get('coupon')==true){
-                foreach(Session::get('cart') as $key => $cart){
+                foreach($carts as $key => $cart){
                     $order_detail = new Detail_order;
                     $order_detail->order_code = $checkout_code;
                     $order_detail->product_id = $cart['product_id'];
@@ -78,32 +85,29 @@ class CheckoutController extends Controller
                     $order_detail->save();
                 }
             }else{
-                foreach(Session::get('cart') as $key => $cart){
+                foreach($carts as $key => $cart){
                     $order_detail = new Detail_order;
                     $order_detail->order_code = $checkout_code;
-                    $order_detail->product_id = $cart['product_id'];
-                    $order_detail->product_name	 = $cart['product_name'];
-                    $order_detail->product_price = $cart['product_price'];
-                    $order_detail->product_qty = $cart['product_qty'];
+                    $order_detail->product_id = $cart->product_id;
+                    $order_detail->product_name	 = $cart->product_name;
+                    $order_detail->product_price = $cart->product_price;
+                    $order_detail->product_qty = $cart->product_qty;
                     $order_detail->save();
                 }
             }
-        }
 
         //Send Mail
         $title_mail = "Đơn hàng xác nhận";
-        $customer = DB::table('customers')->find(Session::get('id'));
+        $customer = DB::table('customers')->find(Session::get('customer_id'));
         $data['email'][] = $customer->email;
 
-        if(Session::get('cart')==true){
-            foreach(Session::get('cart') as $key => $cart_mail){
+            foreach($carts as $key => $cart_mail){
                 $cart_array[] = array(
-                    'product_name' => $cart_mail['product_name'],
-                    'product_price' => $cart_mail['product_price'],
-                    'product_qty' => $cart_mail['product_qty']
+                    'product_name' => $cart_mail->product_name,
+                    'product_price' => $cart_mail->product_price,
+                    'product_qty' => $cart_mail->product_qty
 
                 );
-            }
         }
 
         if(Session::get('coupon')==true){
@@ -141,10 +145,11 @@ class CheckoutController extends Controller
             $message->to($data['email'])->subject($title_mail);
             $message->from($data['email'],$title_mail);
         });
-
-        $request->session()->forget(['cart']);
+        foreach($carts as $key => $carts){
+            $id = $carts->product_id;
+        }
+        DB::table('carts')->delete();
         $request->session()->forget(['coupon']);
-
         return view('/success')->with('manufactures',$manufactures);
     }
 }
