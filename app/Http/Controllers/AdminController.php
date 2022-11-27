@@ -34,7 +34,7 @@ class AdminController extends Controller
             return Redirect::to('login')->send();
         }
     }
-    public function  AuthLogin()
+    public function AuthLogin()
     {
         $id_admin = Session::get('admin_id');
         if ($id_admin) {
@@ -206,6 +206,9 @@ class AdminController extends Controller
     {
         $this->StaffLogin();
         $data = array();
+        $type_product = Protype::orderby('type_id', 'desc')->get();
+        $manu_product = Manufacture::orderby('manu_id', 'desc')->get();
+        $edit_product = Product::where('product_id', $product_id)->get();
         $data['product_name'] = $request->product_name;
         $data['manu_id'] = $request->manufacture;
         $data['type_id'] = $request->protype;
@@ -213,33 +216,54 @@ class AdminController extends Controller
         $data['product_qty'] = $request->product_qty;
         $data['product_description'] = $request->product_description;
         $get_image = $request->file('product_img');
+        $kituName = strlen($request->product_name);
+        $kituDiscription = strlen($request->product_description);
         if ($get_image) {
-            /*-----Fix Undefined variable-----*/
-            $edit_product = Product::where('product_id', $product_id)->get();
-            $type_product = Protype::orderby('type_id', 'desc')->get();
-            $manu_product = Manufacture::orderby('manu_id', 'desc')->get();
-            /*-----End Fix-----*/
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.', $get_name_image));
             $new_image = $name_image . rand(0, 99) . '.' . $get_image->getClientOriginalExtension();
             $get_image->move('./img/product/', $new_image);
             $data['product_img'] = $new_image;
-            DB::table('products')->where('product_id', $product_id)->update($data);
-            Session::put('message_image', 'Cập Nhật Hình Ảnh Thành Công!');
-            return view('admin.editproduct')->with('edit_product', $edit_product)
-                ->with('type_product', $type_product)
-                ->with('manu_product', $manu_product);
+            if($kituName > 100){
+                Session::put('message_err', 'Trường Product Name không nhập quá 100 kí tự !!');
+                return view('admin.editproduct')->with('type_product', $type_product)
+                                                ->with('manu_product', $manu_product)
+                                                ->with('edit_product', $edit_product);
+            }
+            elseif($kituDiscription > 500){
+                Session::put('message_err', 'Trường Discription không nhập quá 500 kí tự !!');
+                return view('admin.editproduct')->with('type_product', $type_product)
+                                                ->with('manu_product', $manu_product)
+                                                ->with('edit_product', $edit_product);
+            }
+            else{
+                DB::table('products')->insert($data);
+                Product::where('product_id', $product_id)->update($data);
+                Session::put('message_add', 'CẬP NHẬT THÀNH CÔNG!');
+                return view('admin.editproduct')->with('type_product', $type_product)
+                                                ->with('manu_product', $manu_product)
+                                                ->with('edit_product', $edit_product);
+            }
         }
-        DB::table('products')->where('product_id', $product_id)->update($data);
-        /*-----Fix Undefined variable-----*/
-        $edit_product = Product::where('product_id', $product_id)->get();
-        $type_product = Protype::orderby('type_id', 'desc')->get();
-        $manu_product = Manufacture::orderby('manu_id', 'desc')->get();
-        /*-----End Fix-----*/
-        Session::put('message_update', 'Cập Nhật Thành Công!');
-        return view('admin.editproduct')->with('edit_product', $edit_product)
-            ->with('type_product', $type_product)
-            ->with('manu_product', $manu_product);
+        elseif($kituName > 100){
+            Session::put('message_err', 'Trường Product Name không nhập quá 100 kí tự !!');
+            return view('admin.editproduct')->with('type_product', $type_product)
+                                            ->with('manu_product', $manu_product)
+                                            ->with('edit_product', $edit_product);
+        }
+        elseif($kituDiscription > 500){
+            Session::put('message_err', 'Trường Discription không nhập quá 500 kí tự !!');
+            return view('admin.editproduct')->with('type_product', $type_product)
+                                            ->with('manu_product', $manu_product)
+                                            ->with('edit_product', $edit_product);
+        }
+        else{
+            DB::table('products')->where('product_id', $product_id)->update($data);
+            Session::put('message_update', 'CẬP NHẬT THÀNH CÔNG!');
+            return view('admin.editproduct')->with('type_product', $type_product)
+                                            ->with('manu_product', $manu_product)
+                                            ->with('edit_product', $edit_product);
+        }
     }
 
     //Delete Product
@@ -280,31 +304,28 @@ class AdminController extends Controller
         $data['product_sold'] = $request->product_sold;
         $get_image = $request->file('product_img');
 
-        /*-----Fix Undefined variable-----*/
-        $getProtypes = DB::table('protypes')->get();
-        $getManufactures = DB::table('manufactures')->get();
-        $getFeatures = DB::table('features')->get();
-        /*-----End Fix-----*/
-
         if ($get_image) {
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.', $get_name_image));
             $new_image = $name_image . rand(0, 99) . '.' . $get_image->getClientOriginalExtension();
             $get_image->move('./img/product/', $new_image);
             $data['product_img'] = $new_image;
-            DB::table('products')->insert($data);
-            Session::put('message_add', 'THÊM THÀNH CÔNG!');
-            return view('admin.addproduct')->with('getProtypes', $getProtypes)
-                ->with('getManufactures', $getManufactures)
-                ->with('getFeatures', $getFeatures);
+            $kituName = strlen($request->product_name);
+            $kituDiscription = strlen($request->product_description);
+            if($kituName > 100){
+                Session::put('message_err', 'Trường Product Name không nhập quá 100 kí tự !!');
+                return Redirect::to('admin.addproduct');
+            }
+            elseif($kituDiscription > 500){
+                Session::put('message_err', 'Trường Discription không nhập quá 500 kí tự !!');
+                return Redirect::to('admin.addproduct');
+            }
+            else{
+                DB::table('products')->insert($data);
+                Session::put('message_add', 'THÊM THÀNH CÔNG!');
+                return Redirect::to('admin.addproduct');
+            }
         }
-        $data['product_img'] = '';
-        $data['product_sold'] = 0;
-        DB::table('products')->insert($data);
-        Session::put('message_add', 'THÊM THÀNH CÔNG!');
-        return view('admin.addproduct')->with('getProtypes', $getProtypes)
-            ->with('getManufactures', $getManufactures)
-            ->with('getFeatures', $getFeatures);
     }
 
     /*----- Show Orders -----*/
@@ -374,17 +395,37 @@ class AdminController extends Controller
         $data['coupon_qty'] = $request->coupon_qty;
         $data['coupon_condition'] = $request->coupon_condition;
         $data['coupon_number'] = $request->coupon_number;
+        $kituCouponName = strlen($request->coupon_name);
+        $kituCouponCode = strlen($request->coupon_code);
 
         if ($data['coupon_condition'] == 1 && $data['coupon_number'] < 1000) {
-            Session::put('message_add_error', 'Thêm Coupon Không Thành Công!');
-            return view('admin.addcoupon');
+            if($kituCouponName > 100 || $kituCouponCode > 50){
+                Session::put('message_kitu_error', 'TRƯỜNG NHẬP KHÔNG HỢP LỆ !!');
+                return Redirect::to('admin.addcoupon');
+            }
+            else {
+                Session::put('message_add_error', 'TRƯỜNG COUPON NUMBER KHÔNG HỢP LỆ!');
+                return view('admin.addcoupon');
+            }
         } elseif ($data['coupon_condition'] == 2 && $data['coupon_number'] > 100) {
-            Session::put('message_add_error', 'Thêm Coupon Không Thành Công!');
-            return view('admin.addcoupon');
+            if($kituCouponName > 100 || $kituCouponCode > 50){
+                Session::put('message_kitu_error', 'TRƯỜNG NHẬP KHÔNG HỢP LỆ !!');
+                return Redirect::to('admin.addcoupon');
+            }
+            else {
+                Session::put('message_add_error', 'TRƯỜNG COUPON NUMBER KHÔNG HỢP LỆ!');
+                return view('admin.addcoupon');
+            }
         } else {
-            DB::table('coupons')->insert($data);
-            Session::put('message_add', 'Thêm Coupon Thành Công!');
-            return view('admin.addcoupon');
+            if($kituCouponName > 100 || $kituCouponCode > 50){
+                Session::put('message_kitu_error', 'TRƯỜNG NHẬP KHÔNG HỢP LỆ !!');
+                return Redirect::to('admin.addcoupon');
+            }
+            else {
+                DB::table('coupons')->insert($data);
+                Session::put('message_add', 'Thêm Coupon Thành Công!');
+                return view('admin.addcoupon');
+            }
         }
     }
 
@@ -403,27 +444,30 @@ class AdminController extends Controller
         $this->AuthLogin();
         $data = array();
         $edit_coupon = Coupon::where('coupon_id', $coupon_id)->get();
-
         $data['coupon_name'] = $request->coupon_name;
         $data['coupon_code'] = $request->coupon_code;
         $data['coupon_qty'] = $request->coupon_qty;
         $data['coupon_number'] = $request->coupon_number;
-        DB::table('coupons')->where('coupon_id', $coupon_id)->update($data);
-
-        Session::put('message_update_coupon', 'Cập Nhật Thành Công!');
-
-        return view('admin.editcoupon')->with('edit_coupon', $edit_coupon);
+        $kituCouponName = strlen($request->coupon_name);
+        $kituCouponCode = strlen($request->coupon_code);
+        if($kituCouponName > 100 || $kituCouponCode > 50){
+            Session::put('message_kitu_error', 'TRƯỜNG NHẬP KHÔNG HỢP LỆ !!');
+            return view('admin.editcoupon')->with('edit_coupon', $edit_coupon);
+        }
+        else {
+            DB::table('coupons')->where('coupon_id', $coupon_id)->update($data);
+            Session::put('message_update_coupon', 'Cập Nhật Thành Công!');
+            return view('admin.editcoupon')->with('edit_coupon', $edit_coupon);
+        }
     }
 
     //Delete Coupon
     public function delete_coupon($coupon_id)
     {
         $this->AuthLogin();
-        $get_all_coupon = DB::table('coupons')->get();
         DB::table('coupons')->where('coupon_id', $coupon_id)->delete();
         Session::put('message_deleteCoupon', 'Xóa Coupon Thành Công!');
-        return view('admin.coupons')->with('get_all_coupon', $get_all_coupon);
-        //return Redirect::to('admin.coupons');
+        return Redirect::to('admin.coupons');
     }
 
     //Show Comment in admin

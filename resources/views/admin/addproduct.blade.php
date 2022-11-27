@@ -39,6 +39,11 @@
                                 {{ session()->get('message_add') }}
                             </div>
                             <?php session()->forget(['message_add']); ?>
+                        @elseif(session()->has('message_err'))
+                            <div class="alert alert-danger">
+                                {{ session()->get('message_err') }}
+                            </div>
+                            <?php session()->forget(['message_err']); ?>
                         @endif
                         <div class="card-body">
                             <div class="form-group">

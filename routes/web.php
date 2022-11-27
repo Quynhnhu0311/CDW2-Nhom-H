@@ -58,7 +58,7 @@ Route::post('/addprotype', [AdminController::class, 'add_admin_protype']);
 Route::DELETE('deleteprotype/{type_id}', [AdminController::class, 'delete_admin_protype']);
 
 /*----- Products -----*/
-Route::get('/products', [AdminController::class, 'show_all_products'])->name('viewProductList');
+Route::get('/admin.products', [AdminController::class, 'show_all_products'])->name('viewProductList');
 Route::get('/edit-product/{product_id}', [AdminController::class, 'edit_product']);
 Route::post('/update-product/{product_id}', [AdminController::class, 'update_product']);
 Route::get('/delete-product/{product_id}', [AdminController::class, 'delete_product']);
@@ -66,14 +66,14 @@ Route::get('/add-product', [AdminController::class, 'add_product']);
 Route::post('/save-product', [AdminController::class, 'save_product']);
 
 /*----- Orders -----*/
-Route::get('/orders', [AdminController::class, 'show_all_orders'])->name('viewOrderList');
+Route::get('/admin.orders', [AdminController::class, 'show_all_orders'])->name('viewOrderList');
 Route::get('/detail-order/{order_code}', [AdminController::class, 'detail_order']);
 Route::post('/update-order-qty', [OrderController::class, 'update_order_qty']);
 Route::post('/update-order-qty-product', [OrderController::class, 'update_order_qty_product']);
 
 
 /*----- Coupons -----*/
-Route::get('/coupons', [AdminController::class, 'show_all_coupons'])->name('viewCouponList');
+Route::get('/admin.coupons', [AdminController::class, 'show_all_coupons'])->name('viewCouponList');
 Route::get('/add-coupon', [AdminController::class, 'add_coupon']);
 Route::get('/edit-coupon/{coupon_id}', [AdminController::class, 'edit_coupon']);
 Route::post('/update-coupon/{coupon_id}', [AdminController::class, 'update_coupon']);
