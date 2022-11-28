@@ -30,16 +30,16 @@ class UserController extends Controller
         $user_pass = md5($request->pass);
 
         //Account Customer
-        $result = DB::table('customers')->where('email', $user_email)
-                                    ->where('password', $user_pass)->first();
+        $result = DB::table('customers')->where('customer_email', $user_email)
+            ->where('customer_password', $user_pass)->first();
 
         //Account Admin
         $admin_result = DB::table('admins')->where('admin_email', $user_email)
-                                            ->where('admin_password', $user_pass)->first();
+            ->where('admin_password', $user_pass)->first();
 
         //Account Staff
         $staff_result = DB::table('staffs')->where('staff_email', $user_email)
-                                            ->where('staff_password', $user_pass)->first();
+            ->where('staff_password', $user_pass)->first();
 
         //Required Captcha
         $request->validate(

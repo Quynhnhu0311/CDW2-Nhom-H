@@ -28,14 +28,9 @@ class AdminController extends Controller
     {
         $id_admin = Session::get('admin_id');
         $id_staff = Session::get('staff_id');
-<<<<<<< HEAD
-        if($id_admin){
+        if ($id_admin) {
             return Redirect::to('admin.dashboard');
-        }
-        elseif ($id_staff){
-=======
-        if ($id_admin || $id_staff) {
->>>>>>> c880f04bb66e98145a83523f7fb983864a3409d2
+        } elseif ($id_staff) {
             return Redirect::to('admin.dashboard');
         } else {
             return Redirect::to('login')->send();
@@ -235,45 +230,40 @@ class AdminController extends Controller
             $new_image = $name_image . rand(0, 99) . '.' . $get_image->getClientOriginalExtension();
             $get_image->move('./img/product/', $new_image);
             $data['product_img'] = $new_image;
-            if($kituName > 100){
+            if ($kituName > 100) {
                 Session::put('message_err', 'Trường Product Name không nhập quá 100 kí tự !!');
                 return view('admin.editproduct')->with('type_product', $type_product)
-                                                ->with('manu_product', $manu_product)
-                                                ->with('edit_product', $edit_product);
-            }
-            elseif($kituDiscription > 500){
+                    ->with('manu_product', $manu_product)
+                    ->with('edit_product', $edit_product);
+            } elseif ($kituDiscription > 500) {
                 Session::put('message_err', 'Trường Discription không nhập quá 500 kí tự !!');
                 return view('admin.editproduct')->with('type_product', $type_product)
-                                                ->with('manu_product', $manu_product)
-                                                ->with('edit_product', $edit_product);
-            }
-            else{
+                    ->with('manu_product', $manu_product)
+                    ->with('edit_product', $edit_product);
+            } else {
                 DB::table('products')->insert($data);
                 Product::where('product_id', $product_id)->update($data);
                 Session::put('message_add', 'CẬP NHẬT THÀNH CÔNG!');
                 return view('admin.editproduct')->with('type_product', $type_product)
-                                                ->with('manu_product', $manu_product)
-                                                ->with('edit_product', $edit_product);
+                    ->with('manu_product', $manu_product)
+                    ->with('edit_product', $edit_product);
             }
-        }
-        elseif($kituName > 100){
+        } elseif ($kituName > 100) {
             Session::put('message_err', 'Trường Product Name không nhập quá 100 kí tự !!');
             return view('admin.editproduct')->with('type_product', $type_product)
-                                            ->with('manu_product', $manu_product)
-                                            ->with('edit_product', $edit_product);
-        }
-        elseif($kituDiscription > 500){
+                ->with('manu_product', $manu_product)
+                ->with('edit_product', $edit_product);
+        } elseif ($kituDiscription > 500) {
             Session::put('message_err', 'Trường Discription không nhập quá 500 kí tự !!');
             return view('admin.editproduct')->with('type_product', $type_product)
-                                            ->with('manu_product', $manu_product)
-                                            ->with('edit_product', $edit_product);
-        }
-        else{
+                ->with('manu_product', $manu_product)
+                ->with('edit_product', $edit_product);
+        } else {
             DB::table('products')->where('product_id', $product_id)->update($data);
             Session::put('message_update', 'CẬP NHẬT THÀNH CÔNG!');
             return view('admin.editproduct')->with('type_product', $type_product)
-                                            ->with('manu_product', $manu_product)
-                                            ->with('edit_product', $edit_product);
+                ->with('manu_product', $manu_product)
+                ->with('edit_product', $edit_product);
         }
     }
 
@@ -323,15 +313,13 @@ class AdminController extends Controller
             $data['product_img'] = $new_image;
             $kituName = strlen($request->product_name);
             $kituDiscription = strlen($request->product_description);
-            if($kituName > 100){
+            if ($kituName > 100) {
                 Session::put('message_err', 'Trường Product Name không nhập quá 100 kí tự !!');
                 return Redirect::to('admin.addproduct');
-            }
-            elseif($kituDiscription > 500){
+            } elseif ($kituDiscription > 500) {
                 Session::put('message_err', 'Trường Discription không nhập quá 500 kí tự !!');
                 return Redirect::to('admin.addproduct');
-            }
-            else{
+            } else {
                 DB::table('products')->insert($data);
                 Session::put('message_add', 'THÊM THÀNH CÔNG!');
                 return Redirect::to('admin.addproduct');
@@ -410,29 +398,26 @@ class AdminController extends Controller
         $kituCouponCode = strlen($request->coupon_code);
 
         if ($data['coupon_condition'] == 1 && $data['coupon_number'] < 1000) {
-            if($kituCouponName > 100 || $kituCouponCode > 50){
+            if ($kituCouponName > 100 || $kituCouponCode > 50) {
                 Session::put('message_kitu_error', 'TRƯỜNG NHẬP KHÔNG HỢP LỆ !!');
                 return Redirect::to('admin.addcoupon');
-            }
-            else {
+            } else {
                 Session::put('message_add_error', 'TRƯỜNG COUPON NUMBER KHÔNG HỢP LỆ!');
                 return view('admin.addcoupon');
             }
         } elseif ($data['coupon_condition'] == 2 && $data['coupon_number'] > 100) {
-            if($kituCouponName > 100 || $kituCouponCode > 50){
+            if ($kituCouponName > 100 || $kituCouponCode > 50) {
                 Session::put('message_kitu_error', 'TRƯỜNG NHẬP KHÔNG HỢP LỆ !!');
                 return Redirect::to('admin.addcoupon');
-            }
-            else {
+            } else {
                 Session::put('message_add_error', 'TRƯỜNG COUPON NUMBER KHÔNG HỢP LỆ!');
                 return view('admin.addcoupon');
             }
         } else {
-            if($kituCouponName > 100 || $kituCouponCode > 50){
+            if ($kituCouponName > 100 || $kituCouponCode > 50) {
                 Session::put('message_kitu_error', 'TRƯỜNG NHẬP KHÔNG HỢP LỆ !!');
                 return Redirect::to('admin.addcoupon');
-            }
-            else {
+            } else {
                 DB::table('coupons')->insert($data);
                 Session::put('message_add', 'Thêm Coupon Thành Công!');
                 return view('admin.addcoupon');
@@ -461,11 +446,10 @@ class AdminController extends Controller
         $data['coupon_number'] = $request->coupon_number;
         $kituCouponName = strlen($request->coupon_name);
         $kituCouponCode = strlen($request->coupon_code);
-        if($kituCouponName > 100 || $kituCouponCode > 50){
+        if ($kituCouponName > 100 || $kituCouponCode > 50) {
             Session::put('message_kitu_error', 'TRƯỜNG NHẬP KHÔNG HỢP LỆ !!');
             return view('admin.editcoupon')->with('edit_coupon', $edit_coupon);
-        }
-        else {
+        } else {
             DB::table('coupons')->where('coupon_id', $coupon_id)->update($data);
             Session::put('message_update_coupon', 'Cập Nhật Thành Công!');
             return view('admin.editcoupon')->with('edit_coupon', $edit_coupon);
