@@ -177,7 +177,9 @@
                             <img src="{{ asset ('img/avatar.jpg') }}" alt="">
                         </div>
                         <div class="name">
-                            <h2>{{ $comment_all->name }}</h2>
+                            @foreach($comment_all->customers as $comment_name)
+                            <h2>{{ $comment_name->name }}</h2>
+                            @endforeach
                             <div class="rating">
                                 @for($i = 1; $i <= $comment_all->rating_value; $i++)
                                 <i class="ratings fa fa-star-o"></i>
@@ -195,8 +197,7 @@
                     <button class="btn-rep-comment">Rep Comment</button>
                     @endif
                     <div class="show-comment-rep">
-                        @foreach($comment_rep as $rep_comment)
-                        @if($comment_all->comment_id == $rep_comment->comment_id)
+                        @foreach($comment_all->repcomment as $repcomments)
                         <div class="comment-item">
                             <div class="content-comment">
                                 <div class="info-comment">
@@ -204,15 +205,16 @@
                                         <img src="{{ asset ('img/avatar.jpg') }}" alt="">
                                     </div>
                                     <div class="name">
-                                        <h2>{{  $rep_comment->name  }}</h2>
-                                        <div class="content-comment">
-                                            <p>{{ $rep_comment->comment_content }}</p>
+                                        @foreach($repcomments->customers as $comment_name_rep)
+                                        <h2>{{ $comment_name_rep->name }}</h2>
+                                        @endforeach
+                                        <div id="content-comment-rep-{{ $comment_all->comment_id }}">
+                                            <p>{{  $repcomments->comment_content }}</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        @endif
                         @endforeach
                     </div>
                     <div class="comment-items">
@@ -229,14 +231,18 @@
                                 </div>
                             </div>
                             <div class="content-comment">
-                                <form action=""  enctype="multipart/form-data">
+                                @foreach($detail as $product_detail)
+                                <form action="{{ url ('send-comment-rep' ) }}" method="POST" enctype="multipart/form-data">
+                                    <input type="hidden" name="product_id_detail" value="{{ $product_detail->product_id }}">
+                                @endforeach
+                                {{ csrf_field() }}   
                                     <?php 
                                     $id = Session::get('id');
                                     ?>
                                     <input type="hidden" class="id_user_comment_rep" name="id_user_comment_rep" value="<?php echo $id ?>">
-                                    <input type="hidden" class="comment_id" name="comment_id" value="{{$comment_all->comment_id }}">
-                                    <textarea placeholder="" name="comment_content_rep_name" class="comment_content_rep" cols="90%" rows="1"></textarea>
-                                    <button type="button" name="submit-comment" class="btn-comment-rep">Gửi Bình Luận</button>
+                                    <input type="hidden" id="comment_id-{{$comment_all->comment_id }}" name="comment_id" value="{{$comment_all->comment_id }}">
+                                    <textarea placeholder="" name="comment_content_rep" id="comment_content_rep_{{ $comment_all->comment_id }}" cols="90%" rows="1"></textarea>
+                                    <button type="submit" data-id="{{ $comment_all->comment_id }}" name="submit-comment" class="btn-comment-rep">Gửi Bình Luận</button>
                                 </form>
                                 <div id="test"></div>
                                 <?php 

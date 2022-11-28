@@ -390,30 +390,22 @@
     </script>
 
 <script>
+    var product_id = $('#product_id').val();
     $('.btn-rep-comment').click(function() {
         $(this).parent().children().children('.rep-comment').css('display','block');
+        $('.show-comment-rep').removeClass('active');
+        $(this).parent().children('.show-comment-rep').addClass('active');
     });
     $('.rate').click(function(){
         $('.rate').removeAttr('id','rating');
         $(this).attr('id','rating');
     });
     function load_comment(){
-        var product_id = $('#product_id').val();
         $.ajax({
-            url: "{{ url('./show_comment') }}/" + product_id,
+            url: "{{ url('show_comment') }}/" + product_id,
             type : 'GET',
             success: function(show_comment) {
                 $(".show-comment").html(show_comment);
-            }
-        });
-    }
-    function load_comment_rep(){
-        var product_id = $('#product_id').val();
-        $.ajax({
-            url: "{{ url('./show_comment_rep') }}/" + product_id,
-            type : 'GET',
-            success: function(show_comment_rep) {
-                $(".show-comment-rep").html(show_comment_rep);
             }
         });
     }
@@ -435,7 +427,7 @@
         }else {
             var _token = $('input[name = _token]').val();
             $.ajax({
-                url : "{{ url('/send-comment') }}",
+                url : "{{ url('send-comment') }}",
                 method : "POST",
                 data : {product_id: product_id, id_user_comment :id_user_comment, comment_content:comment_content, rating : rating , _token: _token},
                 success: function(data) {
@@ -446,42 +438,7 @@
         }
         comment_content = '';
     });
-    $('.comment_content_rep').click(function (){
-        $(this).attr('id','comment_content_rep');
-        $(this).parent().children('.comment_id').attr('id','comment_id');
-    });
-    $('.btn-comment-rep').click(function() {
-        var id_user_comment_rep = $('.id_user_comment_rep').val();
-        var comment_id = $('#comment_id').val();
-        var comment_content_rep = $('#comment_content_rep').val(); 
-        if(id_user_comment_rep == ""){
-            swal({
-                    title: "Login to comment !",
-            });
-        }
-        if(comment_content_rep == ""){
-            swal({
-                    title: "You have not commented !",
-            });
-        }else {
-            var _token = $('input[name = _token]').val();
-            $.ajax({
-                url : "{{ url('/send-comment-rep') }}",
-                method : "POST",
-                data : {id_user_comment_rep :id_user_comment_rep,
-                    comment_id : comment_id,
-                     comment_content_rep: comment_content_rep,
-                      _token: _token
-                    },
-                success: function(data) {
-                    $('#test').html('<p>Comment successful</p>');
-                    load_comment_rep();
-                }
-            });
-        }
-        comment_content = '';
-    });
-    </script>
+</script>
 </body>
 
 </html>

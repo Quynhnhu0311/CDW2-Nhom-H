@@ -52,11 +52,9 @@ class HomeController extends Controller
             $comment_id = $comment->product_id;
         }
         /* Show Comment and Rating Product */
-        $comment_all = DB::table('comments')->join('products','products.product_id','=','comments.product_id')
-        ->where('comments.product_id',$comment_id)
-        ->join('customers','customers.id','=','comments.id')->get();
-        $comment_rep = DB::table('repcomments')->join('customers','customers.id','=','repcomments.id')->get();
-        return view('shop-details',compact('detail','related_product','comment_all','comment_rep'));
+        $comment_all = Comment::join('products','products.product_id','=','comments.product_id')
+        ->where('comments.product_id',$comment_id)->get();
+        return view('shop-details',compact('detail','related_product','comment_all'));
     }
     //Add Comment Product
     public function comment_product_ajax(Request $request){
@@ -73,6 +71,7 @@ class HomeController extends Controller
     }
     //Add Rep Comment Product
     public function rep_comment_product_ajax(Request $request){
+        $id_product = $request->product_id_detail;
         $id = $request->id_user_comment_rep;
         $comment_id = $request->comment_id;
         $comment_content = $request->comment_content_rep;
@@ -81,25 +80,7 @@ class HomeController extends Controller
         $comment_rep->comment_id = $comment_id;
         $comment_rep->comment_content = $comment_content;
         $comment_rep->save();
-    }
-    public function show_comment_rep($id)
-    {
-        $detail = DB::table('products')->join('protypes','protypes.type_id','=','products.type_id')
-        ->join('manufactures','manufactures.manu_id','=','products.manu_id')->where('products.product_id',$id)->get();
-        foreach($detail as $related) {
-            $type_id = $related->type_id;
-        }
-        /* Realated Product */
-        $related_product = DB::table('products')->join('protypes','protypes.type_id','=','products.type_id')->where('protypes.type_id',$type_id)->paginate(8);
-        foreach($detail as $comment) {
-            $comment_id = $comment->product_id;
-        }
-        /* Show Comment and Rating Product */
-        $comment_all = DB::table('comments')->join('products','products.product_id','=','comments.product_id')
-        ->where('comments.product_id',$comment_id)
-        ->join('customers','customers.id','=','comments.id')->get();
-        $comment_rep = DB::table('repcomments')->join('customers','customers.id','=','repcomments.id')->get();
-        return view('show-comment-rep',compact('detail','related_product','comment_all','comment_rep'));
+        return Redirect::to('shop-details/'.$id_product);
     }
     public function show_comment($id)
     {
@@ -114,9 +95,8 @@ class HomeController extends Controller
             $comment_id = $comment->product_id;
         }
         /* Show Comment and Rating Product */
-        $comment_all = DB::table('comments')->join('products','products.product_id','=','comments.product_id')
-        ->where('comments.product_id',$comment_id)
-        ->join('customers','customers.id','=','comments.id')->get();
+        $comment_all = Comment::join('products','products.product_id','=','comments.product_id')
+        ->where('comments.product_id',$comment_id)->get();
         return view('show-comment',compact('detail','related_product','comment_all'));
     }
 }
