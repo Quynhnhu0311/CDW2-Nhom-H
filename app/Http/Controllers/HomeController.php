@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Feature;
 use App\Models\Comment;
+use App\Models\Repcomment;
 use App\Models\Favorite;
 use DB;
 use Illuminate\Support\Facades\Redirect;
@@ -59,11 +60,9 @@ class HomeController extends Controller
             $comment_id = $comment->product_id;
         }
         /* Show Comment and Rating Product */
-        $comment_all = DB::table('comments')->join('products', 'products.product_id', '=', 'comments.product_id')
-            ->where('comments.product_id', $comment_id)
-            ->join('users', 'users.id', '=', 'comments.id')->get();
-        $manufactures = DB::table('manufactures')->get();
-        return view('shop-details', compact('detail', 'related_product', 'comment_all', 'manufactures'));
+        $comment_all = Comment::join('products','products.product_id','=','comments.product_id')
+        ->where('comments.product_id',$comment_id)->get();
+        return view('shop-details',compact('detail','related_product','comment_all'));
     }
     //Add Comment Product
     public function comment_product_ajax(Request $request)
@@ -79,6 +78,24 @@ class HomeController extends Controller
         $comment->rating_value = $rating;
         $comment->save();
     }
+    //Add Rep Comment Product
+    public function rep_comment_product_ajax(Request $request){
+        $id_product = $request->product_id_detail;
+        $id = $request->id_user_comment_rep;
+        $comment_id = $request->comment_id;
+        $comment_content = $request->comment_content_rep;
+        $comment_rep = new Repcomment();
+        $comment_rep->id = $id;
+        $comment_rep->comment_id = $comment_id;
+        $comment_rep->comment_content = $comment_content;
+        $kitu = strlen($request->comment_content_rep);
+        if ($kitu > 150) {
+            return Redirect::to('shop-details/'.$id_product)->with('error-comment', 'Nội dung bình luận không nhập quá 150 kí tự !');
+        }else if ($kitu <= 150) {
+            $comment_rep->save();
+            return Redirect::to('shop-details/'.$id_product);
+        }
+    }
     public function show_comment($id)
     {
         $detail = DB::table('products')->join('protypes', 'protypes.type_id', '=', 'products.type_id')
@@ -92,9 +109,8 @@ class HomeController extends Controller
             $comment_id = $comment->product_id;
         }
         /* Show Comment and Rating Product */
-        $comment_all = DB::table('comments')->join('products', 'products.product_id', '=', 'comments.product_id')
-            ->where('comments.product_id', $comment_id)
-            ->join('customers', 'customers.id', '=', 'comments.id')->get();
-        return view('show-comment', compact('detail', 'related_product', 'comment_all'));
+        $comment_all = Comment::join('products','products.product_id','=','comments.product_id')
+        ->where('comments.product_id',$comment_id)->get();
+        return view('show-comment',compact('detail','related_product','comment_all'));
     }
 }

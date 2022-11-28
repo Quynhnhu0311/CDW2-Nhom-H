@@ -1,6 +1,11 @@
 @extends('layout')
 @section('content')
-
+    @if (session('error-comment'))
+    <div class="popup">
+        <p style="color:#e47878;font-weight:bold;margin-left: 10px;">{{ session('error-comment') }}</p>
+        <span class="close-favorite">OK</span>
+    </div>
+    @endif
     @foreach($detail as $product_detail)
     <section class="shop-details">
         <div class="product__details__pic">
@@ -174,7 +179,9 @@
                             <img src="{{ asset ('img/avatar.jpg') }}" alt="">
                         </div>
                         <div class="name">
-                            <h2>{{ $comment_all->name }}</h2>
+                            @foreach($comment_all->customers as $comment_name)
+                            <h2>{{ $comment_name->name }}</h2>
+                            @endforeach
                             <div class="rating">
                                 @for($i = 1; $i <= $comment_all->rating_value; $i++)
                                 <i class="ratings fa fa-star-o"></i>
@@ -185,7 +192,73 @@
                     <div class="content-comment">
                         <p>{{ $comment_all->comment_content }}</p>
                     </div>
+                    <?php
+                         $id = Session::get('id');
+                    ?>
+                    @if($id != $comment_all->id)
+                    <button class="btn-rep-comment">Rep Comment</button>
+                    @endif
+                    <div class="show-comment-rep">
+                        @foreach($comment_all->repcomment as $repcomments)
+                        <div class="comment-item">
+                            <div class="content-comment">
+                                <div class="info-comment">
+                                    <div class="avatar-comment-rep">
+                                        <img src="{{ asset ('img/avatar.jpg') }}" alt="">
+                                    </div>
+                                    <div class="name">
+                                        @foreach($repcomments->customers as $comment_name_rep)
+                                        <h2>{{ $comment_name_rep->name }}</h2>
+                                        @endforeach
+                                        <div id="content-comment-rep-{{ $comment_all->comment_id }}">
+                                            <p>{{  $repcomments->comment_content }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
+                    </div>
+                    <div class="comment-items">
+                        <div class="comment-item  rep-comment">
+                            <div class="info-comment">
+                                <div class="avatar-rep-comment">
+                                    <img src="{{ asset ('img/avatar.jpg') }}" alt="">
+                                </div>
+                                <div class="name">
+                                    <?php 
+                                    $name = Session::get('name');
+                                    ?>
+                                    <h2><?php echo $name ?></h2>
+                                </div>
+                            </div>
+                            <div class="content-comment">
+                                @foreach($detail as $product_detail)
+                                <form action="{{ url ('send-comment-rep' ) }}" method="POST" enctype="multipart/form-data">
+                                    <input type="hidden" name="product_id_detail" value="{{ $product_detail->product_id }}">
+                                @endforeach
+                                {{ csrf_field() }}   
+                                    <?php 
+                                    $id = Session::get('id');
+                                    ?>
+                                    <input type="hidden" class="id_user_comment_rep" name="id_user_comment_rep" value="<?php echo $id ?>">
+                                    <input type="hidden" id="comment_id-{{$comment_all->comment_id }}" name="comment_id" value="{{$comment_all->comment_id }}">
+                                    <textarea placeholder="" name="comment_content_rep" id="comment_content_rep_{{ $comment_all->comment_id }}" cols="90%" rows="1"></textarea>
+                                    <button type="submit" data-id="{{ $comment_all->comment_id }}" name="submit-comment" class="btn-comment-rep">Gửi Bình Luận</button>
+                                </form>
+                                <div id="test"></div>
+                                <?php 
+                                $message_cmt = Session::get('message_cmt');
+                                if($message_cmt){
+                                    echo '<span class="text-alert" style="color:red;">'.$message_cmt.'</span>';
+                                    Session::put('message_cmt',null);
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="line-comment"></div>
                 @endforeach
             </div>
             <div class="comment-items">

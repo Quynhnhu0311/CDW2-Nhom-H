@@ -28,7 +28,14 @@ class AdminController extends Controller
     {
         $id_admin = Session::get('admin_id');
         $id_staff = Session::get('staff_id');
+<<<<<<< HEAD
+        if($id_admin){
+            return Redirect::to('admin.dashboard');
+        }
+        elseif ($id_staff){
+=======
         if ($id_admin || $id_staff) {
+>>>>>>> c880f04bb66e98145a83523f7fb983864a3409d2
             return Redirect::to('admin.dashboard');
         } else {
             return Redirect::to('login')->send();
@@ -60,8 +67,12 @@ class AdminController extends Controller
     {
         Session::put('admin_name', null);
         Session::put('admin_id', null);
+        Session::put('staff_name', null);
+        Session::put('staff_id', null);
         $request->session()->forget(['admin_id']);
         $request->session()->forget(['admin_name']);
+        $request->session()->forget(['staff_name']);
+        $request->session()->forget(['staff_id']);
         return Redirect::to('/login');
     }
 
@@ -74,7 +85,7 @@ class AdminController extends Controller
         $data['manu_qty'] = $request->manu_qty;
         $kitu = strlen($request->manu_name);
         if ($kitu > 100) {
-            return Redirect::to('admin.addmanufacture')->with('error', 'Trường Manu Name không nhập quá 100 kí tự !');;
+            return Redirect::to('admin.addmanufacture')->with('error', 'Trường Manu Name không nhập quá 100 kí tự !');
         } else if ($kitu <= 100) {
             DB::table('manufactures')->insert($data);
             return Redirect::to('admin.manufacture');

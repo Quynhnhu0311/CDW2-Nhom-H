@@ -127,11 +127,6 @@
                         <ul>
                             <li class="active"><a href="/">Home</a></li>
                             <li><a href="/tat-ca-san-pham">Shop</a>
-                                <ul class="dropdown">
-                                    @foreach($manufactures as $manufacture)
-                                    <li><a href="#">{{$manufacture->manu_name}}</a></li>
-                                    @endforeach
-                                </ul>
                             </li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
@@ -246,10 +241,10 @@ x`
     <!-- Js Plugins -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
     <script src="{{ url ('js/data.json') }}"></script>
-    <!-- <script src="{{ url ('js/jquery.min.js') }}"></script>-->
-    <script src="{{ url ('js/jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ url ('js/jquery-3.6.0.js') }}"></script>
+    <script src="{{ url ('js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ url ('js/bootstrap.min.js') }}"></script>
     <script src="{{ url ('js/jquery.nice-select.min.js') }}"></script>
     <script src="{{ url ('js/jquery.nicescroll.min.js') }}"></script>
@@ -388,29 +383,35 @@ x`
         });
     </script>
 
-    <script>
-        $('.rate').click(function() {
-            $('.rate').removeAttr('id', 'rating');
-            $(this).attr('id', 'rating');
+<script>
+    var product_id = $('#product_id').val();
+    $('.btn-rep-comment').click(function() {
+        $(this).parent().children().children('.rep-comment').css('display','block');
+        $('.show-comment-rep').removeClass('active');
+        $(this).parent().children('.show-comment-rep').addClass('active');
+    });
+    $('.rate').click(function(){
+        $('.rate').removeAttr('id','rating');
+        $(this).attr('id','rating');
+    });
+    function load_comment(){
+        $.ajax({
+            url: "{{ url('show_comment') }}/" + product_id,
+            type : 'GET',
+            success: function(show_comment) {
+                $(".show-comment").html(show_comment);
+            }
         });
+    }
+    $('#btn-comment').click(function() {
+        var product_id = $('#product_id').val();
+        var id_user_comment = $('#id_user_comment').val();
+        var comment_content = $('#comment_content').val();
+        const condition_content = comment_content.length;
+        var rating = $('#rating').val();
 
-        function load_comment() {
-            var product_id = $('#product_id').val();
-            $.ajax({
-                url: "{{ url('./show_comment') }}/" + product_id,
-                type: 'GET',
-                success: function(show_comment) {
-                    $(".show-comment").html(show_comment);
-                }
-            });
-        }
-        $('#btn-comment').click(function() {
-            var product_id = $('#product_id').val();
-            var id_user_comment = $('#id_user_comment').val();
-            var comment_content = $('#comment_content').val();
-            var rating = $('#rating').val();
-            if (id_user_comment == "") {
-                swal({
+        if(id_user_comment == ""){
+            swal({
                     title: "Login to comment !",
                 });
             }
@@ -418,108 +419,26 @@ x`
                 swal({
                     title: "You have not commented or rated yet !",
                 });
-            } else {
-                var _token = $('input[name = _token]').val();
-                $.ajax({
-                    url: "{{ url('/send-comment') }}",
-                    method: "POST",
-                    data: {
-                        product_id: product_id,
-                        id_user_comment: id_user_comment,
-                        comment_content: comment_content,
-                        rating: rating,
-                        _token: _token
-                    },
-                    success: function(data) {
-                        $('#test').html('<p>Successful comment</p>');
-                        load_comment();
-                    }
+            }else if(condition_content > 150) {
+                swal({
+                    title: "Nội dung bình luận không Quá 150 kì tự !",
                 });
             }
-            // $('#comment_content').innerHTML = '';
-        });
-    </script>
-
-    <script>
-        document.querySelector('#search-input').addEventListener('keyup', function() {
-            let _text = $(this).val();
-            if (_text != '') {
-                $.ajax({
-                    url: "{{ url('./ajax-search-product') }}/" + _text,
-                    type: 'GET',
-                    success: function(res) {
-                        document.querySelector('.input-result').style.display = "block";
-                        document.querySelector('.input-result').innerHTML = res;
-                    }
-                })
-            } else {
-                document.querySelector('.input-result').style.display = "none";
-                document.querySelector('.input-result').innerHTML = ' ';
-            }
-        })
-    </script>
-    <script>
-        const search = document.querySelector('#search-shop-input');
-        let ajax_protype = document.querySelectorAll('.ajax-protype');
-        let ajax_manufacture = document.querySelectorAll('.ajax-manufacture');
-        let type, manu = 1;
-        search.addEventListener('keyup', function() {
-            let _text = $(this).val();
-            if (_text != '') {
-                $.ajax({
-                    url: "{{ url('./ajax-search-product-shop') }}/" + _text,
-                    type: 'GET',
-                    success: function(res) {
-                        $(".shop-resutl").html(res);
-                        $('.show-all-products').hide();
-                        $(".ajax-resutl").show();
-                    }
-                })
-            } else {
-                // $(".ajax-resutl").hide();
-            }
-        })
-        ajax_protype.forEach((item) => {
-            item.addEventListener('click', () => {
-                let _value = type = item.value;
-                let _search;
-                if (search.value != '') {
-                    _search = search.value;
-                } else {
-                    _search = " ";
+        else {
+            var _token = $('input[name = _token]').val();
+            $.ajax({
+                url : "{{ url('send-comment') }}",
+                method : "POST",
+                data : {product_id: product_id, id_user_comment :id_user_comment, comment_content:comment_content, rating : rating , _token: _token},
+                success: function(data) {
+                    $('#test').html('<p>Comment successful</p>');
+                    load_comment();
                 }
-                $.ajax({
-                    url: "{{ url('./ajax-search-product-shop') }}/" + _search + "/" + _value + "/" + manu,
-                    type: 'GET',
-                    success: function(res) {
-                        $(".shop-resutl").html(res);
-                        $('.show-all-products').hide();
-                        $(".ajax-resutl").show();
-                    }
-                })
-            })
-        })
-        ajax_manufacture.forEach((item) => {
-            item.addEventListener('click', () => {
-                let _value = manu = item.value;
-                let _search;
-                if (search.value != '') {
-                    _search = search.value;
-                } else {
-                    _search = " ";
-                }
-                $.ajax({
-                    url: "{{ url('./ajax-search-product-shop') }}/" + _search + "/" + type + "/" + _value,
-                    type: 'GET',
-                    success: function(res) {
-                        $(".shop-resutl").html(res);
-                        $('.show-all-products').hide();
-                        $(".ajax-resutl").show();
-                    }
-                })
-            })
-        })
-    </script>
+            });
+        }
+        comment_content = '';
+    });
+</script>
 </body>
 
 </html>

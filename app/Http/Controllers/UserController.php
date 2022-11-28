@@ -31,7 +31,7 @@ class UserController extends Controller
 
         //Account Customer
         $result = DB::table('customers')->where('email', $user_email)
-                                        ->where('password', $user_pass)->first();
+                                    ->where('password', $user_pass)->first();
 
         //Account Admin
         $admin_result = DB::table('admins')->where('admin_email', $user_email)
