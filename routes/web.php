@@ -12,6 +12,7 @@ use App\Http\Controllers\CouponController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\InfomationController;
@@ -94,23 +95,23 @@ Route::post('/update-customer', [AdminController::class, 'update_customer']);
 Route::get('/delete-customer/{key}', [AdminController::class, 'delete_customer']);
 
 //Show Comment in Admin
-Route::get('/admin.comment',[AdminController::class,'show_admin_comment']);
+Route::get('/admin.comment', [AdminController::class, 'show_admin_comment']);
 //Delete Comment in Admin
-Route::DELETE('deletecomment/{comment_id}',[AdminController::class,'delete_admin_comment']);
+Route::DELETE('deletecomment/{comment_id}', [AdminController::class, 'delete_admin_comment']);
 
 //Show Blog in Admin
-Route::get('/admin.blog',[AdminController::class,'show_admin_blog']);
+Route::get('/admin.blog', [AdminController::class, 'show_admin_blog']);
 //Edit Blog in Admin
-Route::get('/admin.editblog/{blog_id}',[AdminController::class,'edit_admin_blog']);
+Route::get('/admin.editblog/{blog_id}', [AdminController::class, 'edit_admin_blog']);
 //Update Blog in Admin
-Route::post('admin.updateblog/{blog_id}',[AdminController::class,'update_admin_blog']);
+Route::post('admin.updateblog/{blog_id}', [AdminController::class, 'update_admin_blog']);
 //Add Blog in Admin
-Route::post('admin.addblog',[AdminController::class,'add_admin_blog']);
+Route::post('admin.addblog', [AdminController::class, 'add_admin_blog']);
 //Delete Blog in Admin
-Route::DELETE('deleteblog/{blog_id}',[AdminController::class,'delete_admin_blog']);
+Route::DELETE('deleteblog/{blog_id}', [AdminController::class, 'delete_admin_blog']);
 
 //Show infomation
-Route::get('/info',[InfomationController::class,'show_info']);
+Route::get('/info', [InfomationController::class, 'show_info']);
 
 /* =====Front-End===== */
 //Home
@@ -158,7 +159,8 @@ Route::get('/blog-detail/{id}', [BlogController::class, 'blog_detail']);
 //Checkout
 Route::post('/confirm-order', [CheckoutController::class, 'confirm_order']);
 //Register
-Route::post('/register-user', [UserController::class, 'register_user']);
+Route::post('/register-user', [CustomerController::class, 'processing_register']);
+Route::get('/email-register-user', [CustomerController::class, 'email_register']);
 
 //Show all Page
 Route::get('/{name?}', [MyController::class, 'index']);
