@@ -112,7 +112,6 @@
                     </div>
                     <div class="cart__total">
                         <h6>Cart total</h6>
-                        @if(Session::get('cart') == true)
                             <ul>
                                 <li>Subtotal <span>{{ number_format($subtotal) }}đ</span></li>
                                 @if(Session::get('coupon'))
@@ -135,13 +134,12 @@
                                     <li>Total <span>{{ number_format($subtotal) }}đ</span></li>
                                 @endif
                             </ul>
-                        @endif
                         <div class="delete-coupons">
                             @if(Session::get('coupon'))
                                 <a href="/delete-coupon" class="delete_discount primary-btn">Delete Discount</a>
                             @endif
                         </div>
-                        <a href="/checkout" class="checkout_cart primary-btn">Proceed to checkout</a>
+                        <a href="/checkoutPage" class="checkout_cart primary-btn">Proceed to checkout</a>
                     </div>
                 </div>
             </div>

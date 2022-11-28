@@ -42,11 +42,11 @@
                                     {{ session()->get('message_update') }}
                                 </div>
                                 <?php session()->forget(['message_update']); ?>
-                            @elseif(session()->has('message_image'))
-                                <div class="alert text-alert">
-                                    {{ session()->get('message_image') }}
+                                @elseif(session()->has('message_err'))
+                                <div class="alert alert-danger">
+                                    {{ session()->get('message_err') }}
                                 </div>
-                                <?php session()->forget(['message_image']); ?>
+                                <?php session()->forget(['message_err']); ?>
                             @endif
                             <div class="card-body">
                                 <div class="form-group">

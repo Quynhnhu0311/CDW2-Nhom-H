@@ -39,8 +39,13 @@
                                 {{ session()->get('message_add') }}
                             </div>
                             <?php session()->forget(['message_add']); ?>
+                        @elseif(session()->has('message_kitu_error'))
+                            <div class="alert alert-danger">
+                                {{ session()->get('message_kitu_error') }}
+                            </div>
+                            <?php session()->forget(['message_kitu_error']); ?>
                         @elseif(session()->has('message_add_error'))
-                            <div class="alert text-alert-error">
+                            <div class="alert alert-danger">
                                 {{ session()->get('message_add_error') }}
                             </div>
                             <?php session()->forget(['message_add_error']); ?>

@@ -24,7 +24,8 @@ class UserController extends Controller
     //     }
     // }
 
-    function login_user(Request $request, $name = 'index'){
+    function login_user(Request $request, $name = 'index')
+    {
         $user_email = $request->email;
         $user_pass = md5($request->pass);
 
@@ -34,14 +35,15 @@ class UserController extends Controller
 
         //Account Admin
         $admin_result = DB::table('admins')->where('admin_email', $user_email)
-                                           ->where('admin_password', $user_pass)->first();
+                                            ->where('admin_password', $user_pass)->first();
 
         //Account Staff
         $staff_result = DB::table('staffs')->where('staff_email', $user_email)
-                                           ->where('staff_password', $user_pass)->first();
+                                            ->where('staff_password', $user_pass)->first();
 
         //Required Captcha
-        $request->validate([
+        $request->validate(
+            [
                 'g-recaptcha-response' => 'required|captcha'
             ],
             [
@@ -50,29 +52,27 @@ class UserController extends Controller
         );
 
         if ($result) {
-            Session::put('name', $result->name);
-            Session::put('id', $result->id);
+            Session::put('customer_name', $result->name);
+            Session::put('customer_id', $result->id);
             return Redirect::to('/');
-        }
-        elseif($admin_result) {
+        } elseif ($admin_result) {
             Session::put('admin_name', $admin_result->admin_name);
             Session::put('admin_id', $admin_result->admin_id);
             return Redirect::to('/admin.dashboard');
-        }
-        elseif($staff_result) {
+        } elseif ($staff_result) {
             Session::put('staff_name', $staff_result->staff_name);
             Session::put('staff_id', $staff_result->staff_id);
             return Redirect::to('/admin.dashboard');
-        }
-        else {
+        } else {
             Session::put('message', 'Mật khẩu hoặc tài khoản bị sai. Vui lòng nhập lại!');
             return Redirect::to('/login');
         }
     }
 
-    function logout_user(Request $request) {
-        Session::put('name',null);
-        Session::put('id',null);
+    function logout_user(Request $request)
+    {
+        Session::put('name', null);
+        Session::put('id', null);
         $request->session()->forget(['cart']);
         $request->session()->forget(['coupon']);
         $request->session()->forget(['id']);
@@ -108,7 +108,7 @@ class UserController extends Controller
         $user_email = $request->email;
         $user_pass = md5($request->pass);
         $result = DB::table('customers')->where('email', $user_email)
-                                        ->where('password', $user_pass)->first();
+            ->where('password', $user_pass)->first();
         return $result;
     }
 }

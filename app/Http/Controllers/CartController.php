@@ -17,7 +17,7 @@ session_start();
 class CartController extends Controller
 {
     function AuthLogin() {
-        $customer_id = Session::get('id');
+        $customer_id = Session::get('customer_id');
         if($customer_id){
             return Redirect::to('/');
         }
@@ -43,29 +43,9 @@ class CartController extends Controller
         $this->AuthLogin();
         $data = $request->all();
         $session_id = substr(md5(microtime()),rand(0,26),5);
-        $cart = Session::get('cart');
-        $customer_id = Session::get('id');
-        if($cart == true){
-            $is_avaiable = 0;
-            foreach($cart as $key => $value) {
-                if($value['product_id'] == $data['cart_product_id']){
-                    $is_avaiable++;
-                }
-            }
-            if($is_avaiable == 0) {
-                $cart[] = array(
-                    'customer_id' => $customer_id,
-                    'product_id' => $data['cart_product_id'],
-                    'product_qty' => $data['cart_product_qty'],
-                    'product_image' => $data['cart_product_image'],
-                    'product_name' => $data['cart_product_name'],
-                    'product_price' => $data['cart_product_price'],
-                    'session_id' => $session_id
-                );
-                DB::table('carts')->insert($cart);
-                //Session::put('cart',$cart);
-            }
-        }else{
+        $customer_id = Session::get('customer_id');
+        $cart_prod = DB::table('carts')->get();
+        if($cart_prod){
             $cart[] = array(
                 'customer_id' => $customer_id,
                 'product_id' => $data['cart_product_id'],
@@ -76,9 +56,7 @@ class CartController extends Controller
                 'session_id' => $session_id
             );
             DB::table('carts')->insert($cart);
-            //Session::put('cart',$cart);
         }
-        Session::save();
     }
 
     function delete_product_cart($session_id) {
@@ -102,7 +80,6 @@ class CartController extends Controller
     public function update_cart(Request $request) {
         $this->AuthLogin();
         $data = $request->all();
-        $cart = Session::get('cart');
         $cart_prod = DB::table('carts')->get();
         $id_session = $data['session_id'];
         $product_id = $data['product_id'];

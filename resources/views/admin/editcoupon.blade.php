@@ -42,6 +42,11 @@
                                     {{ session()->get('message_update_coupon') }}
                                 </div>
                                 <?php session()->forget(['message_update_coupon']); ?>
+                            @elseif(session()->has('message_kitu_error'))
+                                <div class="alert alert-danger">
+                                    {{ session()->get('message_kitu_error') }}
+                                </div>
+                                <?php session()->forget(['message_kitu_error']); ?>
                             @endif
                             <div class="card-body">
                                 <div class="form-group">

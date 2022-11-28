@@ -90,8 +90,8 @@
                         <div class="header__top__right">
                             <div class="header__top__links">
                                 <?php
-                                $name = Session::get('name');
-                                $id = Session::get('id');
+                                $name = Session::get('customer_name');
+                                $id = Session::get('customer_id');
                                 if ($name) {
                                     echo '<div class="header__top__hover">
                                                 <span>' . $name . '<i class="arrow_carrot-down"></i></span>

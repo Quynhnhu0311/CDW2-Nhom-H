@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Models\Product;
+use App\Models\Protype;
+use App\Models\Manufacture;
 
 class MyController extends Controller
 {
@@ -14,8 +17,15 @@ class MyController extends Controller
      */
     public function index($name = 'index')
     {
+        $get_all_coupon = DB::table('coupons')->get();
         $manufactures = DB::table('manufactures')->get();
-        return view($name, compact('manufactures'));
+        $getProtypes = DB::table('protypes')->get();
+        $getManufactures = DB::table('manufactures')->get();
+        $manufactures = DB::table('manufactures')->get();
+        $getFeatures = DB::table('features')->get();
+        $type_product = Protype::orderby('type_id', 'desc')->get();
+        $manu_product = Manufacture::orderby('manu_id', 'desc')->get();
+        return view($name, compact('manufactures','getProtypes','getManufactures','getFeatures','type_product','manu_product','get_all_coupon','manufactures'));
     }
 
     /**
