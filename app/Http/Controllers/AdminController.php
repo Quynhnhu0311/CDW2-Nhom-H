@@ -79,7 +79,7 @@ class AdminController extends Controller
         $data['manu_qty'] = $request->manu_qty;
         $kitu = strlen($request->manu_name);
         if ($kitu > 100) {
-            return Redirect::to('admin.addmanufacture')->with('error', 'Trường Manu Name không nhập quá 100 kí tự !');;
+            return Redirect::to('admin.addmanufacture')->with('error', 'Trường Manu Name không nhập quá 100 kí tự !');
         } else if ($kitu <= 100) {
             DB::table('manufactures')->insert($data);
             return Redirect::to('admin.manufacture');
