@@ -9,6 +9,7 @@ use App\Models\Detail_order;
 use App\Models\Product;
 use App\Models\Coupon;
 use App\Models\Customer;
+use App\Models\Carts;
 use Cart;
 use DB;
 use Session;
@@ -29,6 +30,7 @@ class CartController extends Controller
     function gio_hang(Request $request) {
         $this->AuthLogin();
         $manufactures = DB::table('manufactures')->get();
+        //$show_Carts = Order::where('customer_id',$id)->get();
         $meta_desc = "Giỏ hàng của bạn";
         $meta_keywords = "Giỏ hàng Ajax";
         $meta_title = "Giỏ hàng Ajax";
@@ -43,9 +45,19 @@ class CartController extends Controller
         $this->AuthLogin();
         $data = $request->all();
         $session_id = substr(md5(microtime()),rand(0,26),5);
+        $product_id = $data['cart_product_id'];
         $customer_id = Session::get('customer_id');
-        $cart_prod = DB::table('carts')->get();
-        if($cart_prod){
+        $cart_prod = Carts::all();
+
+        foreach($cart_prod as $key => $value){
+            $cart_product_id = $value['product_id'];
+        }
+
+        if($cart_product_id == $data['cart_product_id']){
+            $new_cart = $value->product_qty +1;
+            DB::update('update carts set product_qty = ? where product_id = ?',[$new_cart,$product_id]);
+        }
+        else{
             $cart[] = array(
                 'customer_id' => $customer_id,
                 'product_id' => $data['cart_product_id'],

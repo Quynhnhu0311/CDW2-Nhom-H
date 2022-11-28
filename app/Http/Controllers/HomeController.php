@@ -25,6 +25,7 @@ class HomeController extends Controller
         $max_price = DB::table('products')->max('product_price');
 
 
+
         return view('/index')->with('newArrivals', $newArrivals)
             ->with('bestSellers', $bestSellers)
             ->with('features', $features)

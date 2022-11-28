@@ -150,21 +150,9 @@
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
                         <a href="#" class="search-switch"><img src="{{ asset ('img/icon/search.png') }}" alt=""></a>
-                        <?php $id = Session::get('id'); ?>
+                        <?php $id = Session::get('customer_id'); ?>
                         <a href="/favorite/<?php echo $id ?>"><img src="{{ asset ('img/icon/heart.png') }}" alt=""></a>
-                        <?php
-                        $subqty = 0;
-                        ?>
-                        @if(Session::has('cart') != null)
-                        @foreach(Session::get('cart') as $key => $cart)
-                        <?php
-                        $subqty += $cart['product_qty']++;
-                        ?>
-                        @endforeach
-                        <a href="/gio-hang"><img src="{{ asset ('img/icon/cart.png') }}" alt=""> <span>{{$subqty}}</span></a>
-                        @else
                         <a href="/gio-hang"><img src="{{ asset ('img/icon/cart.png') }}" alt=""> <span>0</span></a>
-                        @endif
                     </div>
                 </div>
             </div>
