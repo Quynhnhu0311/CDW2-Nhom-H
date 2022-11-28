@@ -33,7 +33,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" action="/register-user" method="POST" oninput='repass.setCustomValidity(repass.value != pass.value ? "Passwords do not match." : "")'>
+				<form class="login100-form " action="/register-user" method="POST" oninput='repass.setCustomValidity(repass.value != pass.value ? "Passwords do not match." : "")'>
 					@csrf
 					<span class="login100-form-title p-b-26">
 						Welcome
@@ -48,8 +48,8 @@
 						Session::put('message', null);
 					}
 					?>
-					<div class="wrap-input100 validate-input">
-						<input class="input100" type="text" name="name" require>
+					<div class="wrap-input100 validate-input" data-validate="Enter user name">
+						<input class="input100" type="text" name="name">
 						<span class="focus-input100" data-placeholder="Name"></span>
 					</div>
 
@@ -62,7 +62,7 @@
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-						<input class="input100" type="password" name="pass" require>
+						<input class="input100" type="password" name="pass">
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
 
@@ -70,7 +70,7 @@
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-						<input class="input100" type="password" name="repass" require>
+						<input class="input100" type="password" name="repass">
 						<span class="focus-input100" data-placeholder="Confirm Password"></span>
 					</div>
 
