@@ -77,10 +77,10 @@ class CheckoutController extends Controller
                 foreach($carts as $key => $cart){
                     $order_detail = new Detail_order;
                     $order_detail->order_code = $checkout_code;
-                    $order_detail->product_id = $cart['product_id'];
-                    $order_detail->product_name	 = $cart['product_name'];
-                    $order_detail->product_price = $cart['product_price'];
-                    $order_detail->product_qty = $cart['product_qty'];
+                    $order_detail->product_id = $cart->product_id;
+                    $order_detail->product_name	 = $cart->product_name;
+                    $order_detail->product_price = $cart->product_price;
+                    $order_detail->product_qty = $cart->product_qty;
                     $order_detail->coupon_code = $data['order_coupon'];
                     $order_detail->save();
                 }
