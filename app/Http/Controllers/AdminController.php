@@ -189,14 +189,26 @@ class AdminController extends Controller
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////
-
+    //get staff token by id
+    function get_token_sfaff_by_id()
+    {
+        $id_staff = Session::get('staff_id');
+        if ($id_staff) {
+            $staff = Staff::find($id_staff);
+            $token = $staff->token;
+            return $token . $id_staff;
+        } else
+            return null;
+    }
 
     /*----- Show Products -----*/
     function show_all_products()
     {
         $this->StaffLogin();
         $show_Allproducts = Product::all();
-        return view('admin.products')->with('show_Allproducts', $show_Allproducts);
+        $staff_token = $this->get_token_sfaff_by_id();
+        return view('admin.products')->with('show_Allproducts', $show_Allproducts)
+            ->with('staff_token', $staff_token);
     }
 
     //Edit Product
@@ -258,9 +270,14 @@ class AdminController extends Controller
     function delete_product($product_id)
     {
         $this->StaffLogin();
+        $token = md5($this->get_token_sfaff_by_id());
+        $delete_product = DB::table('products')->where('product_id', $product_id)->where('token', $token)->delete();
         $show_Allproducts = Product::all();
-        DB::table('products')->where('product_id', $product_id)->delete();
-        Session::put('message_deleteProduct', 'Xóa Sản Phẩm Thành Công!');
+        if ($delete_product == true) {
+            Session::put('message_deleteProduct', 'Xóa Sản Phẩm Thành Công!');
+        } else {
+            Session::put('message_deleteProduct', 'Xóa Sản Phẩm Không Thực Hiện Được! (Sản phẩm không tồn tại hoặc người nào tạo người đó xóa)');
+        }
         return view('admin.products')->with('show_Allproducts', $show_Allproducts);
     }
 
@@ -271,15 +288,18 @@ class AdminController extends Controller
         $getProtypes = DB::table('protypes')->get();
         $getManufactures = DB::table('manufactures')->get();
         $getFeatures = DB::table('features')->get();
+        $staff_token = $this->get_token_sfaff_by_id();
         return view('admin.addproduct')->with('getProtypes', $getProtypes)
             ->with('getManufactures', $getManufactures)
-            ->with('getFeatures', $getFeatures);
+            ->with('getFeatures', $getFeatures)
+            ->with('staff_token', $staff_token);
     }
 
     //Save Product
     function save_product(Request $request)
     {
         $this->StaffLogin();
+        $staff_token = $this->get_token_sfaff_by_id();
         $data = array();
         $data['product_name'] = $request->product_name;
         $data['product_price'] = $request->product_price;
@@ -290,6 +310,7 @@ class AdminController extends Controller
         $data['product_description'] = $request->product_description;
         $data['product_img'] = $request->product_img;
         $data['product_sold'] = $request->product_sold;
+        $data['token'] = $request->product_token;
         $get_image = $request->file('product_img');
 
         /*-----Fix Undefined variable-----*/
@@ -308,7 +329,8 @@ class AdminController extends Controller
             Session::put('message_add', 'THÊM THÀNH CÔNG!');
             return view('admin.addproduct')->with('getProtypes', $getProtypes)
                 ->with('getManufactures', $getManufactures)
-                ->with('getFeatures', $getFeatures);
+                ->with('getFeatures', $getFeatures)
+                ->with('staff_token', $staff_token);
         }
         $data['product_img'] = '';
         $data['product_sold'] = 0;
@@ -316,7 +338,8 @@ class AdminController extends Controller
         Session::put('message_add', 'THÊM THÀNH CÔNG!');
         return view('admin.addproduct')->with('getProtypes', $getProtypes)
             ->with('getManufactures', $getManufactures)
-            ->with('getFeatures', $getFeatures);
+            ->with('getFeatures', $getFeatures)
+            ->with('staff_token', $staff_token);
     }
 
     /*----- Show Orders -----*/
