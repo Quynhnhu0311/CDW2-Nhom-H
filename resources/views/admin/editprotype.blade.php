@@ -18,7 +18,12 @@
         </div>
       </div><!-- /.container-fluid -->
     </section>
-
+    <section class="content">
+    @if (session('error'))
+    <div class="popup">
+        <p style="color:#e47878;font-weight:bold;margin-left: 10px;">{{ session('error') }}</p>
+    </div>
+    @endif
     <!-- Main content -->
     <section class="content">
       @foreach($protypes as $row => $protypes)
