@@ -35,15 +35,15 @@
                             </div>
                         </div>
                         @if(session()->has('message_add'))
-                            <div class="alert text-alert">
-                                {{ session()->get('message_add') }}
-                            </div>
-                            <?php session()->forget(['message_add']); ?>
+                        <div class="alert text-alert">
+                            {{ session()->get('message_add') }}
+                        </div>
+                        <?php session()->forget(['message_add']); ?>
                         @elseif(session()->has('message_err'))
-                            <div class="alert alert-danger">
-                                {{ session()->get('message_err') }}
-                            </div>
-                            <?php session()->forget(['message_err']); ?>
+                        <div class="alert alert-danger">
+                            {{ session()->get('message_err') }}
+                        </div>
+                        <?php session()->forget(['message_err']); ?>
                         @endif
                         <div class="card-body">
                             <div class="form-group">
@@ -61,9 +61,10 @@
                                 <label for="inputQty">Product Quantity</label>
                                 <input type="number" min="1" value="1" id="inputQty" class="form-control" name="product_qty">
                             </div>
-                                <input type="hidden" value="0" id="inputQty" class="form-control" name="product_sold">
+                            <input type="hidden" value="0" id="inputQty" class="form-control" name="product_sold">
                             <div class="form-group">
                                 <label for="inputDe cription">Product Description</label>
+                                <input type="hidden" id="inputToken" class="form-control" name="product_token" value="{{md5($staff_token)}}">
                                 <input type="text" id="inputDescription" class="form-control" name="product_description" required>
                             </div>
                             <div class="form-group">
@@ -74,7 +75,7 @@
                                 <label for="inputManu">Manufacture</label><br>
                                 <select id="inputManu" class="form-control custom-select" name="manufacture">
                                     @foreach($getManufactures as $key => $getManufactures)
-                                        <option value="{{ $getManufactures->manu_id }}">{{ $getManufactures->manu_name }}</option>
+                                    <option value="{{ $getManufactures->manu_id }}">{{ $getManufactures->manu_name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -82,7 +83,7 @@
                                 <label for="inputType">Protype</label><br>
                                 <select id="inputType" class="form-control custom-select" name="protype">
                                     @foreach($getProtypes as $key => $getProtypes)
-                                        <option value="{{ $getProtypes->type_id }}">{{ $getProtypes->type_name }}</option>
+                                    <option value="{{ $getProtypes->type_id }}">{{ $getProtypes->type_name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -90,7 +91,7 @@
                                 <label for="inputFeature">Feature</label><br>
                                 <select id="inputFeature" class="form-control custom-select" name="feature">
                                     @foreach($getFeatures as $key => $getFeatures)
-                                        <option value="{{ $getFeatures->feature_id }}">{{ $getFeatures->feature_name }}</option>
+                                    <option value="{{ $getFeatures->feature_id }}">{{ $getFeatures->feature_name }}</option>
                                     @endforeach
                                 </select>
                             </div>
