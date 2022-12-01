@@ -90,8 +90,8 @@
                         <div class="header__top__right">
                             <div class="header__top__links">
                                 <?php
-                                $name = Session::get('customer_name');
-                                $id = Session::get('customer_id');
+                                $name = Session::get('name');
+                                $id = Session::get('id');
                                 if ($name) {
                                     echo '<div class="header__top__hover">
                                                 <span>' . $name . '<i class="arrow_carrot-down"></i></span>
@@ -135,7 +135,7 @@
                 <div class="col-lg-3 col-md-3">
                     <div class="header__nav__option">
                         <a href="#" class="search-switch"><img src="{{ asset ('img/icon/search.png') }}" alt=""></a>
-                        <?php $id = Session::get('customer_id'); ?>
+                        <?php $id = Session::get('id'); ?>
                         <a href="/favorite/<?php echo $id ?>"><img src="{{ asset ('img/icon/heart.png') }}" alt=""></a>
                         <a href="/gio-hang"><img src="{{ asset ('img/icon/cart.png') }}" alt=""> <span>0</span></a>
                     </div>
