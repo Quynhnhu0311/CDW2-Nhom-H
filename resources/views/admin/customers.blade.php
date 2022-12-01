@@ -53,23 +53,23 @@
                     @foreach($show_customers as $customer)
                     <tr>
                         <td>
-                            {{ $customer->customer_id }}
+                            {{ $customer->id }}
                         </td>
                         <td>
-                            {{ $customer->customer_name }}
+                            {{ $customer->name }}
                         </td>
                         <td>
-                            {{ $customer->customer_email }}
+                            {{ $customer->email }}
                         </td>
                         <td>
-                            <input type="password" style="background: none; color: white;border:none" disabled value="{{ $customer->customer_password }}">
+                            <input type="password" style="background: none; color: white;border:none" disabled value="{{ $customer->password }}">
                         </td>
                         <td class="project-actions text-right">
-                            <a class="btn btn-info btn-sm edit-coupon" href="admin.editcustomer/{{$customer->customer_id}}">
+                            <a class="btn btn-info btn-sm edit-coupon" href="admin.editcustomer/{{$customer->id}}">
                                 <i class="fas fa-pencil-alt"></i>
                                 Edit
                             </a>
-                            <a class="btn btn-danger btn-sm delete-coupon" onclick="location.href='delete-customer/{{$customer->customer_id}}'">
+                            <a class="btn btn-danger btn-sm delete-coupon" onclick="location.href='delete-customer/{{$customer->id}}'">
                                 <i class="fas fa-trash"></i>
                                 Delete
                             </a>
