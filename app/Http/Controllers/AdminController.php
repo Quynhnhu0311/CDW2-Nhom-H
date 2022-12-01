@@ -466,7 +466,7 @@ class AdminController extends Controller
     {
         $this->AuthLogin();
         $comment = DB::table('comments')->join('products', 'comments.product_id', '=', 'products.product_id')
-            ->join('customers', 'comments.comment_id', '=', 'customers.customer_id')->get();
+            ->join('customers', 'comments.id', '=', 'customers.id')->get();
         return view('admin.comment', compact('comment'));
     }
 
