@@ -466,7 +466,7 @@ class AdminController extends Controller
     {
         $this->AuthLogin();
         $comment = DB::table('comments')->join('products', 'comments.product_id', '=', 'products.product_id')
-            ->join('customers', 'comments.comment_id', '=', 'customers.customer_id')->get();
+            ->join('customers', 'comments.comment_id', '=', 'customers.id')->get();
         return view('admin.comment', compact('comment'));
     }
 
@@ -622,7 +622,7 @@ class AdminController extends Controller
     {
         $this->AuthLogin();
         $key = request('key');
-        $edit_customer = Customer::where('customer_id', $key)->get();
+        $edit_customer = Customer::where('id', $key)->get();
         return view('admin.editcustomer', compact('edit_customer'));
     }
     function update_customer(Request $request)
@@ -630,8 +630,8 @@ class AdminController extends Controller
         $this->AuthLogin();
         $id = $request->customer_id;
         //Check_email
-        $input['customer_email'] = $request->customer_email;
-        $rules = array('customer_email' => 'unique:customers,customer_email');
+        $input['email'] = $request->customer_email;
+        $rules = array('email' => 'unique:customers,email');
         $validator = Validator::make($input, $rules);
         if ($validator->fails()) {
             Session::put('message', 'Tài khoản này đã tồn tại. Vui lòng nhập lại!');
@@ -639,9 +639,9 @@ class AdminController extends Controller
         } else {
             // Update customer.
             $customer = Customer::find($id);
-            $customer->customer_name = $request->customer_name;
-            $customer->customer_email = $request->customer_email;
-            $customer->customer_password = md5($request->customer_password);
+            $customer->name = $request->customer_name;
+            $customer->email = $request->customer_email;
+            $customer->password = md5($request->customer_password);
             $customer->status = 0;
             $customer->save();
             return Redirect::to('admin.customers');
