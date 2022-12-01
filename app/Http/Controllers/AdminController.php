@@ -28,14 +28,7 @@ class AdminController extends Controller
     {
         $id_admin = Session::get('admin_id');
         $id_staff = Session::get('staff_id');
-<<<<<<< HEAD
-        if($id_admin){
-            return Redirect::to('admin.dashboard');
-        }
-        elseif ($id_staff){
-=======
         if ($id_admin || $id_staff) {
->>>>>>> c880f04bb66e98145a83523f7fb983864a3409d2
             return Redirect::to('admin.dashboard');
         } else {
             return Redirect::to('login')->send();
