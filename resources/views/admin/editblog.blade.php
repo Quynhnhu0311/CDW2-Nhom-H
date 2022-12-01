@@ -37,7 +37,6 @@
                                     </button>
                                 </div>
                             </div>
-                            
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="inputName">Blog Title</label>
@@ -46,17 +45,15 @@
                                 <div class="form-group">
                                     <label for="inputPrice">Blog Description</label>
                                         <input type="textarea" id="inputDescription" class="form-control" name="blog_description" value="{{ $data->blog_description }}">
-                                    
                                 </div>
                                 <div class="form-group qty">
                                     <label for="inputAuthor">Author</label>
                                     
                                         <input type="text" min="1" id="inputAuthor" class="form-control" name="blog_author" value="{{ $data->blog_author }}">
-                                    
                                 </div>
                                 <div class="form-group">
                                     <label for="inputImage">Blog Image</label>
-                                    <input type="file" id="inputImage" class="form-control" name="product_img">
+                                    <input type="file" id="inputImage" class="form-control" name="blog_img">
                                     <img src="{{ asset('/img/blog/'.$data->blog_img) }}" alt="">
                                 </div>
                             </div>

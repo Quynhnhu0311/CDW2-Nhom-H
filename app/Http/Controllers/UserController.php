@@ -30,16 +30,16 @@ class UserController extends Controller
         $user_pass = md5($request->pass);
 
         //Account Customer
-        $result = DB::table('customers')->where('email', $user_email)
-                                    ->where('password', $user_pass)->first();
+        $result = DB::table('customers')->where('customer_email', $user_email)
+            ->where('customer_password', $user_pass)->first();
 
         //Account Admin
         $admin_result = DB::table('admins')->where('admin_email', $user_email)
-                                            ->where('admin_password', $user_pass)->first();
+            ->where('admin_password', $user_pass)->first();
 
         //Account Staff
         $staff_result = DB::table('staffs')->where('staff_email', $user_email)
-                                            ->where('staff_password', $user_pass)->first();
+            ->where('staff_password', $user_pass)->first();
 
         //Required Captcha
         $request->validate(
@@ -52,8 +52,8 @@ class UserController extends Controller
         );
 
         if ($result) {
-            Session::put('customer_name', $result->name);
-            Session::put('customer_id', $result->id);
+            Session::put('customer_name', $result->customer_name);
+            Session::put('customer_id', $result->customer_id);
             return Redirect::to('/');
         } elseif ($admin_result) {
             Session::put('admin_name', $admin_result->admin_name);
