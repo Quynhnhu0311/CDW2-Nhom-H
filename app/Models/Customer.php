@@ -10,8 +10,8 @@ class Customer extends Model
     use HasFactory;
 
     protected $fillable = [
-        'customer_name', 'customer_email ', 'customer_password'
+        'name', 'email ', 'password'
     ];
-    protected $primaryKey = 'customer_id';
+    protected $primaryKey = 'id';
     protected $table = 'customers';
 }

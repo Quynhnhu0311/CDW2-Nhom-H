@@ -17,7 +17,7 @@ class CustomerController extends Controller
     {
         $user_email = $request->email;
         $array_email['customer_email'] = $request->email;
-        $rules = array('customer_email' => 'unique:customers,customer_email');
+        $rules = array('customer_email' => 'unique:customers,email');
         $validator = Validator::make($array_email, $rules);
         if ($validator->fails()) {
             Session::put('message', 'Tài khoản này đã tồn tại. Vui lòng nhập lại!');
@@ -27,9 +27,9 @@ class CustomerController extends Controller
             $user_pass = md5($request->pass);
             $user_name = $request->name;
             DB::table('customers')->insert([
-                'customer_email' => $user_email,
-                'customer_name' => $user_name,
-                'customer_password' => $user_pass,
+                'email' => $user_email,
+                'name' => $user_name,
+                'password' => $user_pass,
                 'status' => 0,
             ]);
         }
@@ -39,7 +39,7 @@ class CustomerController extends Controller
     {
         $user_email = $request->email;
         $array_email['customer_email'] = $request->email;
-        $rules = array('customer_email' => 'unique:customers,customer_email');
+        $rules = array('customer_email' => 'unique:customers,email');
         $validator = Validator::make($array_email, $rules);
         if ($validator->fails()) {
             Session::put('message', 'Tài khoản này đã tồn tại. Vui lòng nhập lại!');
@@ -48,9 +48,9 @@ class CustomerController extends Controller
             $user_pass = md5($request->pass);
             $user_name = $request->name;
             DB::table('customers')->insert([
-                'customer_email' => $user_email,
-                'customer_name' => $user_name,
-                'customer_password' => $user_pass,
+                'email' => $user_email,
+                'name' => $user_name,
+                'password' => $user_pass,
                 'status' => 0,
             ]);
             return Redirect::to('/login');
@@ -69,7 +69,7 @@ class CustomerController extends Controller
         if ($request->name == '' || $request->pass == '') {
             $user_email = $request->email;
             $array_email['customer_email'] = $request->email;
-            $rules = array('customer_email' => 'unique:customers,customer_email');
+            $rules = array('customer_email' => 'unique:customers,email');
             $validator = Validator::make($array_email, $rules);
             if ($validator->fails()) {
                 Session::put('message', 'Tài khoản này đã tồn tại. Vui lòng nhập lại!');

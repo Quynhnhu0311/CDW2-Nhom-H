@@ -37,14 +37,14 @@
             </div>
             @foreach($edit_customer as $customer)
             <div class="card-body">
-              <input type="hidden" id="inputName" class="form-control" name="customer_id" value="{{$customer->customer_id}}" required>
+              <input type="hidden" id="inputName" class="form-control" name="customer_id" value="{{$customer->id}}" required>
               <div class="form-group">
                 <label for="inputName">customer Name</label>
-                <input type="text" id="inputName" class="form-control" name="customer_name" value="{{$customer->customer_name}}" required>
+                <input type="text" id="inputName" class="form-control" name="customer_name" value="{{$customer->name}}" required>
               </div>
               <div class="form-group">
                 <label for="inputName">customer Email</label>
-                <input type="email" id="inputName" class="form-control" name="customer_email" value="{{$customer->customer_email}}" required>
+                <input type="email" id="inputName" class="form-control" name="customer_email" value="{{$customer->email}}" required>
                 <?php
                 $message = Session::get('message');
                 if ($message) {
@@ -55,7 +55,7 @@
               </div>
               <div class="form-group">
                 <label for="inputName">customer Password</label>
-                <input type="password" id="inputName" class="form-control" name="customer_password" value="{{$customer->customer_password}}" required>
+                <input type="password" id="inputName" class="form-control" name="customer_password" value="{{$customer->password}}" required>
               </div>
             </div>
             @endforeach

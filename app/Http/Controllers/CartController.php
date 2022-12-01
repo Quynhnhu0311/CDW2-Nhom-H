@@ -18,7 +18,7 @@ session_start();
 class CartController extends Controller
 {
     function AuthLogin() {
-        $customer_id = Session::get('customer_id');
+        $customer_id = Session::get('id');
         if($customer_id){
             return Redirect::to('/');
         }
@@ -30,7 +30,6 @@ class CartController extends Controller
     function gio_hang(Request $request) {
         $this->AuthLogin();
         $manufactures = DB::table('manufactures')->get();
-        //$show_Carts = Order::where('customer_id',$id)->get();
         $meta_desc = "Giỏ hàng của bạn";
         $meta_keywords = "Giỏ hàng Ajax";
         $meta_title = "Giỏ hàng Ajax";
@@ -46,8 +45,8 @@ class CartController extends Controller
         $data = $request->all();
         $session_id = substr(md5(microtime()),rand(0,26),5);
         $product_id = $data['cart_product_id'];
-        $customer_id = Session::get('customer_id');
-        $cart_prod = Carts::all();
+        $customer_id = Session::get('id');
+        $cart_prod = Carts::get();
 
         foreach($cart_prod as $key => $value){
             $cart_product_id = $value['product_id'];
@@ -57,6 +56,7 @@ class CartController extends Controller
             $new_cart = $value->product_qty +1;
             DB::update('update carts set product_qty = ? where product_id = ?',[$new_cart,$product_id]);
         }
+        
         else{
             $cart[] = array(
                 'customer_id' => $customer_id,
@@ -81,7 +81,6 @@ class CartController extends Controller
                     unset($cart[$key]);
                 }
             }
-            Session::put('cart',$cart);
             return redirect()->back()->with('message_delete','Xóa sản phẩm thành công!');
         }
         else{
