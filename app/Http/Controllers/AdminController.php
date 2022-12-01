@@ -160,7 +160,7 @@ class AdminController extends Controller
         $data['type_qty'] = $request->type_qty;
         $char = strlen($request->type_name);
         if ($char > 101) {
-            return Redirect::to('admin.addprotype')->with('error', 'Type name không được nhập quá 100 ký tự');
+            return Redirect::to('admin.editprotype/'.$type_id)->with('error', 'Type name không được nhập quá 100 ký tự');
         } else {
             DB::table('protypes')->where('type_id', $type_id)->update($data);
             return Redirect::to('admin.protype')->with("status", "Update Protype Successfully");
@@ -466,7 +466,7 @@ class AdminController extends Controller
     {
         $this->AuthLogin();
         $comment = DB::table('comments')->join('products', 'comments.product_id', '=', 'products.product_id')
-            ->join('customers', 'comments.comment_id', '=', 'customers.customer_id')->get();
+            ->join('customers', 'comments.id', '=', 'customers.id')->get();
         return view('admin.comment', compact('comment'));
     }
 
@@ -503,19 +503,28 @@ class AdminController extends Controller
         $data['blog_description'] = $request->blog_description;
         $data['blog_author'] = $request->blog_author;
         $get_image = $request->file('blog_img');
-        if ($get_image) {
-            $get_name_image = $get_image->getClientOriginalName();
-            $name_image = current(explode('.', $get_name_image));
-            $new_image = $name_image . rand(0, 99) . '.' . $get_image->getClientOriginalExtension();
-            $get_image->move('./img/blog/', $new_image);
-            $data['blog_img'] = $new_image;
-            DB::table('blog')->where('blog_id', $blog_id)->update($data);
-            Session::put('message_image', 'Cập Nhật Hình Ảnh Thành Công!');
-            return Redirect::to('admin.blog');
+        $char_title = strlen($request->blog_title);
+        $char_description = strlen($request->blog_description);
+        $char_author = strlen($request->blog_author);
+        if($char_title > 100 || $char_description > 10000 || $char_author > 30){
+            return Redirect::to('admin.editblog/'.$blog_id)->with('error','bạn đã nhập quá ký tự. Bạn hãy nhập lại.');
         }
-        DB::table('blog')->where('blog_id', $blog_id)->update($data);
-        Session::put('message_update', 'Cập Nhật Thành Công!');
-        return Redirect::to('admin.blog');
+        else{
+            if ($get_image) {
+                $get_name_image = $get_image->getClientOriginalName();
+                $name_image = current(explode('.', $get_name_image));
+                $new_image = $name_image . rand(0, 99) . '.' . $get_image->getClientOriginalExtension();
+                $get_image->move('./img/blog/', $new_image);
+                $data['blog_img'] = $new_image;
+                DB::table('blog')->where('blog_id', $blog_id)->update($data);
+                Session::put('message_image', 'Cập Nhật Hình Ảnh Thành Công!');
+                return Redirect::to('admin.blog');
+            }
+                DB::table('blog')->where('blog_id', $blog_id)->update($data);
+                Session::put('message_update', 'Cập Nhật Thành Công!');
+                return Redirect::to('admin.blog');
+        }
+        
     }
 
     //delete blog
@@ -535,15 +544,23 @@ class AdminController extends Controller
         $data['blog_description'] = $request->blog_description;
         $data['blog_Author'] = $request->blog_author;
         $get_image = $request->file('blog_img');
-        if ($get_image) {
-            $get_name_image = $get_image->getClientOriginalName();
-            $name_image = current(explode('.', $get_name_image));
-            $new_image = $name_image . rand(0, 99) . '.' . $get_image->getClientOriginalExtension();
-            $get_image->move('./img/blog', $new_image);
-            $data['blog_img'] = $new_image;
-            DB::table('blog')->insert($data);
-            Session::put('message_image', 'Thêm Hình Ảnh Thành Công!');
-            return Redirect::to('admin.addblog');
+        $char_title = strlen($request->blog_title);
+        $char_description = strlen($request->blog_description);
+        $char_author = strlen($request->blog_author);
+        if($char_title > 100 || $char_description > 10000 || $char_author > 30){
+            return Redirect::to('admin.addblog')->with('error','bạn đã nhập quá ký tự. Bạn hãy nhập lại.');
+        }
+        else{
+            if ($get_image) {
+                $get_name_image = $get_image->getClientOriginalName();
+                $name_image = current(explode('.', $get_name_image));
+                $new_image = $name_image . rand(0, 99) . '.' . $get_image->getClientOriginalExtension();
+                $get_image->move('./img/blog', $new_image);
+                $data['blog_img'] = $new_image;
+                DB::table('blog')->insert($data);
+                Session::put('message_image', 'Thêm Hình Ảnh Thành Công!');
+                return Redirect::to('admin.blog');
+            }
         }
     }
     /*----- Show Staff -----*/
