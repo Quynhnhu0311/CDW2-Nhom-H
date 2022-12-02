@@ -66,7 +66,7 @@ class HomeController extends Controller
             ->where('comments.product_id',$comment_id)->get();
             return view('shop-details',compact('detail','related_product','comment_all'));
         }else{
-            return Redirect::to('/');
+            return Redirect::to('/')->with('error-detail', 'Sản Phẩm không tồn tại !');;
         }
 
     }
