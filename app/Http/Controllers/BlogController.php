@@ -17,9 +17,22 @@ class BlogController extends Controller
                             ->with('manufactures',$manufactures);
     }
     function blog_detail($id) {
-        $blog_detail = DB::table('blog')->where('blog.blog_id',$id)->get();
-        $manufactures = DB::table('manufactures')->get();
-        return view('/blog-details')->with('blog_detail',$blog_detail)
-                                    ->with('manufactures',$manufactures);
+        if($id){
+            $manufactures = DB::table('manufactures')->get();
+            //Show detail Blog
+            $blog_detail = DB::table('blog')->where('blog.blog_id',$id)->get();
+            //Lấy ra Category Blog
+            foreach($blog_detail as $category) {
+                $category_id = $category->category_id;
+            }
+            $category_blog = DB::table('blog')->join('categorys', 'categorys.category_id', '=', 'blog.category_id')->where('categorys.category_id', $category_id)->get();
+
+            return view('/blog-details')->with('blog_detail',$blog_detail)
+                                        ->with('manufactures',$manufactures)
+                                        ->with('category_blog',$category_blog);
+        }
+        else{
+            return Redirect::to('/');
+        }
     }
 }

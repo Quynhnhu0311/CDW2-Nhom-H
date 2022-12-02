@@ -38,6 +38,7 @@ class Blog extends Seeder
             mong bài viết trên sẽ giúp bạn bớt khó khăn hơn trong việc lựa chọn và phối đồ cho mình. Các bạn cũng có thể ghé
              tới shop lựa chọn cho mình những bộ đồ ưng ý nhất',
             'blog_img'=>'cach-phoi-do-cho-nguoi-gay-la-nu231020202101587369.jpg',
+            'category_id'=>2,
             'blog_author'=>'Nguyễn Tấn Dũng'
         ]);
         \DB::table('blog')->insert([
@@ -53,6 +54,7 @@ class Blog extends Seeder
             gian sử dụng. Sau này, những quần jean được sản xuất với vải Denim cao cấp từ cotton – spandex giúp quần co giãn tốt hơn, 
             vải mềm, mặc cảm giác thoải mái hơn. Bên cạnh đó, chất liệu mới còn giúp quần giữ màu tốt hơn, lâu bị phai màu hơn.',
             'blog_img'=>'bj004_1_51782956277_oa.jpg',
+            'category_id'=>1,
             'blog_author'=>'Nguyễn Tấn Dũng'
         ]);
         \DB::table('blog')->insert([
@@ -76,6 +78,7 @@ class Blog extends Seeder
              mà chúng tôi nghĩ rằng sẽ vừa đủ để ai cũng có thể dễ dàng ghi nhớ. Nếu các bạn quan tâm, chúng tôi sẽ chia sẻ thêm
               về cách phối đồ cụ thể đối với từng loại màu sắc, họa tiết.',
             'blog_img'=>'phongvan.jpg',
+            'category_id'=>2,
             'blog_author'=>'Nguyễn Tấn Dũng'
         ]);
         \DB::table('blog')->insert([
@@ -99,6 +102,7 @@ class Blog extends Seeder
             hàng đóng vào công chở đi nước ngoài, hải quan sẽ lấy mẫu vài chục chiếc để kiểm tra hàng hóa. Những chiếc quần áo
             xuất xịn này sau đó sẽ chuyển đến shop. Khách hàng có thể tìm mua tại đây những món hàng chính hãng ưng ý nhất!',
             'blog_img'=>'dia-chi-ban-buon-quan-ao-vnxk-tai-ha-noi.jpg',
+            'category_id'=>1,
             'blog_author'=>'Nguyễn Tấn Dũng'
         ]);
         \DB::table('blog')->insert([
@@ -117,6 +121,7 @@ class Blog extends Seeder
             đều được Toson tỉ mỉ lựa chọn giúp nâng tầm trang, thần thái của nàng. Nếu nàng vẫn đang đắn đo tìm kiếm một trang phục cho 
             những ngày đầu hạ này. Thì đừng quên tham khảo những thiết kế trên đây của Toson nhé!',
             'blog_img'=>'49149x640-9eefbcfc-6dc2-4b6b-b3c5-d5853d00499f.jpg',
+            'category_id'=>1,
             'blog_author'=>'Nguyễn Tấn Dũng'
         ]);
     }

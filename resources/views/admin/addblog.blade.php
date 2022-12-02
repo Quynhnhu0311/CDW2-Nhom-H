@@ -48,18 +48,23 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="inputDes">Blog Description</label>
-                                        <input type="textarea" id="inputDescription" class="form-control" name="blog_description">
-                                    
+                                    <input type="textarea" id="inputDescription" class="form-control" name="blog_description">
                                 </div>
                                 <div class="form-group qty">
                                     <label for="inputAuthor">Author</label>
-                                    
-                                        <input type="text" min="1" id="inputAuthor" class="form-control" name="blog_author">
-                                    
+                                    <input type="text" min="1" id="inputAuthor" class="form-control" name="blog_author">
                                 </div>
                                 <div class="form-group">
                                     <label for="inputImage">Blog Image</label>
                                     <input type="file" id="inputImage" class="form-control" name="blog_img" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputCategory">Category</label><br>
+                                    <select id="inputCategory" class="form-control custom-select" name="category">
+                                        @foreach($getCategory as $key => $getCategory)
+                                        <option value="{{ $getCategory->category_id  }}">{{ $getCategory->category_name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                         </div>
