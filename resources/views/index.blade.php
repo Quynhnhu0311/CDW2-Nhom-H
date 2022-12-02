@@ -1,6 +1,12 @@
 @extends('layout')
 @section('content')
     <!-- Hero Section Begin -->
+    @if (session('error-detail'))
+    <div class="popup">
+        <p style="color:#e47878;font-weight:bold;margin-left: 10px;">{{ session('error-detail') }}</p>
+        <span class="close-favorite">OK</span>
+    </div>
+    @endif
     <section class="hero">
         <div class="hero__slider owl-carousel">
             <div class="hero__items set-bg" data-setbg="{{ asset ('img/hero/hero-1.jpg') }}">
