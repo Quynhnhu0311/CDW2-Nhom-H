@@ -51,7 +51,7 @@
                                 <th style="width: 20%">Action</th>
                             </tr>
                         </thead>
-                        @if(Session::get('id'))
+                        @if(Session::get('admin_id'))
                             @foreach($show_AllOrders as $key => $show_Order)
                                 <tbody>
                                     <tr>

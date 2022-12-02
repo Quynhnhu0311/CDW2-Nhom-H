@@ -23,6 +23,11 @@
                 {{ session()->get('status') }}
             </div>
             <?php session()->forget(['status']); ?>
+            @elseif(session()->has('message_update'))
+            <div class="alert text-alert">
+                {{ session()->get('message_update') }}
+            </div>
+            <?php session()->forget(['message_update']); ?>
         @endif
 
     <!-- Main content -->

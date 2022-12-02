@@ -40,7 +40,6 @@ class UserController extends Controller
         //Account Staff
         $staff_result = DB::table('staffs')->where('staff_email', $user_email)
             ->where('staff_password', $user_pass)->first();
-
         //Required Captcha
         $request->validate(
             [

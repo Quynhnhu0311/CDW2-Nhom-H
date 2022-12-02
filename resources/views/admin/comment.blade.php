@@ -21,7 +21,12 @@
 
     <!-- Main content -->
     <section class="content">
-
+      @if(session()->has('message_update'))
+            <div class="alert text-alert">
+                {{ session()->get('message_update') }}
+            </div>
+            <?php session()->forget(['message_update']); ?>
+      @endif
       <!-- Default box -->
       <div class="card">
         <div class="card-header">

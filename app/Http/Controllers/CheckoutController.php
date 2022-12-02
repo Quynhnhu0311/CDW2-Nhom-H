@@ -18,7 +18,7 @@ session_start();
 class CheckoutController extends Controller
 {
     function AuthLogin() {
-        $customer_id = Session::get('customer_id');
+        $customer_id = Session::get('id');
         if($customer_id){
             return Redirect::to('/');
         }
@@ -57,7 +57,7 @@ class CheckoutController extends Controller
 
         //Thông tin Order
         $order = new Order;
-        $order->customer_id = Session::get('customer_id');
+        $order->customer_id = Session::get('id');
         $order->shipping_id = $id_shipping;
         $order->order_code = $checkout_code;
         $order->order_status = 1;
@@ -98,7 +98,7 @@ class CheckoutController extends Controller
 
         //Send Mail
         $title_mail = "Đơn hàng xác nhận";
-        $customer = DB::table('customers')->find(Session::get('customer_id'));
+        $customer = DB::table('customers')->find(Session::get('id'));
         $data['email'][] = $customer->email;
 
             foreach($carts as $key => $cart_mail){

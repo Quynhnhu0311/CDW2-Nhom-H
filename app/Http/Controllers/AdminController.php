@@ -36,7 +36,7 @@ class AdminController extends Controller
             return Redirect::to('login')->send();
         }
     }
-    public function  AuthLogin()
+    public function AuthLogin()
     {
         $id_admin = Session::get('admin_id');
         if ($id_admin) {
@@ -62,8 +62,12 @@ class AdminController extends Controller
     {
         Session::put('admin_name', null);
         Session::put('admin_id', null);
+        Session::put('staff_name', null);
+        Session::put('staff_id', null);
         $request->session()->forget(['admin_id']);
         $request->session()->forget(['admin_name']);
+        $request->session()->forget(['staff_name']);
+        $request->session()->forget(['staff_id']);
         return Redirect::to('/login');
     }
 
@@ -131,8 +135,15 @@ class AdminController extends Controller
     public function destroy_manu($manu_id)
     {
         $this->AuthLogin();
-        DB::table('manufactures')->where('manu_id', $manu_id)->delete();
-        return Redirect::to('admin.manufacture');
+        $id_manu = DB::table('manufactures')->where('manu_id', $manu_id)->delete();
+        if($id_manu){
+            Session::put('message_update', 'Xóa Thành Công!');
+            return Redirect::to('admin.manufacture');
+        }else{
+            Session::put('message_update', 'Manufacture Không Tồn Tại!');
+            return Redirect::to('admin.manufacture');
+        }
+        
     }
     ////////////////////////////////////////// PROTYPES /////////////////////////////////////////
 
@@ -184,8 +195,14 @@ class AdminController extends Controller
     public function delete_admin_protype($type_id)
     {
         $this->AuthLogin();
-        DB::table('protypes')->where('type_id', $type_id)->delete();
-        return Redirect::to('admin.protype');
+        $id_type = DB::table('protypes')->where('type_id', $type_id)->delete();
+        if($id_type){
+            Session::put('message_update', 'Xóa Thành Công!');
+            return Redirect::to('admin.protype');
+        }else{
+            Session::put('message_update', 'Protype Không Tồn Tại!');
+            return Redirect::to('admin.protype');
+        }
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////
@@ -455,9 +472,14 @@ class AdminController extends Controller
     {
         $this->AuthLogin();
         $get_all_coupon = DB::table('coupons')->get();
-        DB::table('coupons')->where('coupon_id', $coupon_id)->delete();
-        Session::put('message_deleteCoupon', 'Xóa Coupon Thành Công!');
-        return view('admin.coupons')->with('get_all_coupon', $get_all_coupon);
+        $id_coupon = DB::table('coupons')->where('coupon_id', $coupon_id)->delete();
+        if($id_coupon){
+            Session::put('message_deleteCoupon', 'Xóa Thành Công!');
+            return Redirect::to('admin.coupons');
+        }else{
+            Session::put('message_deleteCoupon', 'Coupon Không Tồn Tại!');
+            return Redirect::to('admin.coupons');
+        }
         //return Redirect::to('admin.coupons');
     }
 
@@ -474,8 +496,14 @@ class AdminController extends Controller
     public function delete_admin_comment($comment_id)
     {
         $this->AuthLogin();
-        DB::table('comments')->where('comment_id', $comment_id)->delete();
-        return Redirect::to('admin.comment');
+        $id_comment = DB::table('comments')->where('comment_id', $comment_id)->delete();
+        if($id_comment){
+            Session::put('message_update', 'Xóa Thành Công!');
+            return Redirect::to('admin.comment');
+        }else{
+            Session::put('message_update', 'Comment Không Tồn Tại!');
+            return Redirect::to('admin.comment');
+        }
     }
 
     //Show Admin Blog
@@ -531,8 +559,14 @@ class AdminController extends Controller
     function delete_admin_blog($blog_id)
     {
         $this->AuthLogin();
-        DB::table('blog')->where('blog_id', $blog_id)->delete();
-        return Redirect::to('admin.blog');
+        $id_blog = DB::table('blog')->where('blog_id', $blog_id)->delete();
+        if($id_blog){
+            Session::put('message_update', 'Xóa Thành Công!');
+            return Redirect::to('admin.blog');
+        }else{
+            Session::put('message_update', 'Blog Không Tồn Tại!');
+            return Redirect::to('admin.blog');
+        }
     }
 
     //Add Admin Blog
@@ -603,14 +637,7 @@ class AdminController extends Controller
     {
         $this->AuthLogin();
         $id = $request->staff_id;
-        //Check_email
-        $input['staff_email'] = $request->staff_email;
-        $rules = array('staff_email' => 'unique:staffs,staff_email');
-        $validator = Validator::make($input, $rules);
-        if ($validator->fails()) {
-            Session::put('message', 'Tài khoản này đã tồn tại. Vui lòng nhập lại!');
-            return Redirect::to('admin.editstaff/' . $id);
-        } else {
+        
             // Register the new staff.
             $staff = Staff::find($id);
             $staff->staff_name = $request->staff_name;
@@ -619,7 +646,7 @@ class AdminController extends Controller
             $staff->status = 0;
             $staff->save();
             return Redirect::to('admin.staffs');
-        }
+        
     }
     public function delete_staff()
     {
@@ -646,14 +673,7 @@ class AdminController extends Controller
     {
         $this->AuthLogin();
         $id = $request->customer_id;
-        //Check_email
-        $input['email'] = $request->customer_email;
-        $rules = array('email' => 'unique:customers,email');
-        $validator = Validator::make($input, $rules);
-        if ($validator->fails()) {
-            Session::put('message', 'Tài khoản này đã tồn tại. Vui lòng nhập lại!');
-            return Redirect::to('admin.editcustomer/' . $id);
-        } else {
+       
             // Update customer.
             $customer = Customer::find($id);
             $customer->name = $request->customer_name;
@@ -662,7 +682,7 @@ class AdminController extends Controller
             $customer->status = 0;
             $customer->save();
             return Redirect::to('admin.customers');
-        }
+        
     }
     function delete_customer()
     {

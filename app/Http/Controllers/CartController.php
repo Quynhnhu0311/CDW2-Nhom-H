@@ -56,7 +56,6 @@ class CartController extends Controller
             $new_cart = $value->product_qty +1;
             DB::update('update carts set product_qty = ? where product_id = ?',[$new_cart,$product_id]);
         }
-        
         else{
             $cart[] = array(
                 'customer_id' => $customer_id,
