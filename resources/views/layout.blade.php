@@ -429,6 +429,11 @@ x`
         comment_content = '';
     });
 </script>
+<script>
+    $('.btn-comment-rep').click(function() {
+        $(this).css('display','none');
+    });
+</script>
 </body>
 
 </html>

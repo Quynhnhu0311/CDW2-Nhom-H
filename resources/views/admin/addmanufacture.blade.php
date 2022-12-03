@@ -57,7 +57,7 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <input name="submit" type="submit" value="Create new Manufacture" class="btn btn-success float-right">
+            <input name="submit" type="submit" value="Create new Manufacture" class="btn-manu btn btn-success float-right">
           </div>
         </div>
       </form>

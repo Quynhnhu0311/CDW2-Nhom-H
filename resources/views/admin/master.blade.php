@@ -631,6 +631,11 @@
             });
         });
     </script>
+    <script>
+    $('.btn-manu').click(function() {
+        $(this).css('display','none');
+    });
+</script>
 </body>
 
 </html>
