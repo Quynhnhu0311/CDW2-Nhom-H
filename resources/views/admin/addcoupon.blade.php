@@ -35,20 +35,20 @@
                             </div>
                         </div>
                         @if(session()->has('message_add'))
-                            <div class="alert text-alert">
-                                {{ session()->get('message_add') }}
-                            </div>
-                            <?php session()->forget(['message_add']); ?>
+                        <div class="alert text-alert">
+                            {{ session()->get('message_add') }}
+                        </div>
+                        <?php session()->forget(['message_add']); ?>
                         @elseif(session()->has('message_kitu_error'))
-                            <div class="alert alert-danger">
-                                {{ session()->get('message_kitu_error') }}
-                            </div>
-                            <?php session()->forget(['message_kitu_error']); ?>
+                        <div class="alert alert-danger">
+                            {{ session()->get('message_kitu_error') }}
+                        </div>
+                        <?php session()->forget(['message_kitu_error']); ?>
                         @elseif(session()->has('message_add_error'))
-                            <div class="alert alert-danger">
-                                {{ session()->get('message_add_error') }}
-                            </div>
-                            <?php session()->forget(['message_add_error']); ?>
+                        <div class="alert alert-danger">
+                            {{ session()->get('message_add_error') }}
+                        </div>
+                        <?php session()->forget(['message_add_error']); ?>
                         @endif
                         <div class="card-body">
                             <div class="form-group">
@@ -62,6 +62,7 @@
                             <div class="form-group">
                                 <label for="inputCoupon">Coupon Quantity</label>
                                 <input type="number" min="1" id="inputQty" value="1" class="form-control" name="coupon_qty" required>
+                                <input type="hidden" value="{{$staff_token}}" class="form-control" name="token">
                             </div>
                             <div class="form-group">
                                 <label for="inputManu">Coupon Condition</label><br>

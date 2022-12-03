@@ -16,13 +16,13 @@ class CreateBlogTable extends Migration
         Schema::create('blog', function (Blueprint $table) {
             $table->id("blog_id");
             $table->string("blog_title");
-            $table->string("blog_description",10000);
-            $table->string('blog_img',150);
+            $table->string("blog_description", 10000);
+            $table->string('blog_img', 150);
             $table->string("blog_author");
             $table->integer("category_id");
+            $table->string('blog_token')->nullable();
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
-
         });
     }
 
