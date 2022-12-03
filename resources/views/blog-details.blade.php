@@ -98,24 +98,36 @@
                         </div> -->
                         <div class="blog__details__comment">
                             <h4>Leave A Comment</h4>
-                            <form action="#">
+                            <form action="{{ url('comment-blog') }}" method="POST" enctype="multipart/form-data">
+                            {{ csrf_field() }}   
                                 <div class="row">
-                                    <div class="col-lg-4 col-md-4">
-                                        <input type="text" placeholder="Name">
+                                    @foreach($blog_detail as $row => $data)
+                                    <input type="hidden" name="id_blog" value="{{ $data->blog_id }}">
+                                    @endforeach
+                                    <div class="col-lg-6 col-md-6">
+                                        <input type="text" name="name_comment_blog" placeholder="Name">
                                     </div>
-                                    <div class="col-lg-4 col-md-4">
-                                        <input type="text" placeholder="Email">
-                                    </div>
-                                    <div class="col-lg-4 col-md-4">
-                                        <input type="text" placeholder="Phone">
+                                    <div class="col-lg-6 col-md-6">
+                                        <input type="text" name="email_comment_blog" placeholder="Email">
                                     </div>
                                     <div class="col-lg-12 text-center">
-                                        <textarea placeholder="Comment"></textarea>
+                                        <textarea name="content_comment_blog" placeholder="Comment"></textarea>
                                         <button type="submit" class="site-btn">Post Comment</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
+                        @foreach($data->commentblogs as $blog_comment)
+                        <div class="show-comment-blog">
+                            <div class="avatar">
+                                <img src="{{ asset ('img/avatar.jpg') }}" alt="">
+                            </div>
+                            <div>
+                                <h2>{{ $blog_comment->name_comment_blog}}</h2>
+                                <p>{{ $blog_comment->comment_content_blog }}</p>
+                            </div>
+                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

@@ -13,4 +13,7 @@ class Blog extends Model
     ];
     protected $primaryKey = 'blog_id ';
     protected $table = 'blog';
+    public function commentblogs() {
+        return $this->hasMany(Commentblog::class,'blog_id','blog_id');
+    }
 }
