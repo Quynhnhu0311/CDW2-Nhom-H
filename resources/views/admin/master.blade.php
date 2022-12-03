@@ -428,7 +428,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{ url ('/admin.addblog')}}" class="nav-link">
+                                    <a href="/admin.addblog" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Add Blog</p>
                                     </a>

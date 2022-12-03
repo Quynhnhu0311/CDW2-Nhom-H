@@ -9,8 +9,16 @@ class Blog extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'blog_title','blog_description','blog_img','blog_author'
+        'blog_title','blog_description','blog_img','blog_author','category_id'
     ];
     protected $primaryKey = 'blog_id ';
     protected $table = 'blog';
+
+    function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id');
+    }
+    public function commentblog() {
+        return $this->hasMany(Commentblog::class,'blog_id');
+    }
 }

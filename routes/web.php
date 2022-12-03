@@ -105,8 +105,12 @@ Route::get('/admin.blog', [AdminController::class, 'show_admin_blog']);
 Route::get('/admin.editblog/{blog_id}', [AdminController::class, 'edit_admin_blog']);
 //Update Blog in Admin
 Route::post('admin.updateblog/{blog_id}', [AdminController::class, 'update_admin_blog']);
+//Show Add Blog
+Route::get('admin.addblog', [AdminController::class, 'show_addBlog']);
 //Add Blog in Admin
 Route::post('admin.addblog', [AdminController::class, 'add_admin_blog']);
+//Send Mail 
+Route::get('/sendMailAuto', [AdminController::class, 'mail_auto']);
 //Delete Blog in Admin
 Route::DELETE('deleteblog/{blog_id}', [AdminController::class, 'delete_admin_blog']);
 
@@ -122,9 +126,8 @@ Route::get('/feature/{feature_id}', [HomeController::class, 'show_product_home']
 //Products
 Route::get('/tat-ca-san-pham', [ProductController::class, 'all_products']);
 
-//Comment Product
-// Route::post('/shop-details/{id}', [HomeController::class, 'comment_product'])->name('comment-product');;
-//Comment-Ajax//
+//Comment-Ajax
+Route::post('comment-blog', [BlogController::class, 'add_comment_blog'])->name('comment_blog');
 Route::post('send-comment-rep', [HomeController::class, 'rep_comment_product_ajax'])->name('ajax.comment');
 Route::post('send-comment', [HomeController::class, 'comment_product_ajax'])->name('ajax.comment');
 Route::get('show_comment/{id}', [HomeController::class, 'show_comment'])->name('ajax.show-comment');
@@ -148,7 +151,6 @@ Route::post('/update-cart', [CartController::class, 'update_cart']);
 //Order
 Route::get('/view-order/{id}', [CartController::class, 'view_order']);
 Route::get('/view-detail-order/{order_code}', [CartController::class, 'view_detail_order']);
-
 
 //Coupon
 Route::post('/check-coupon', [CouponController::class, 'check_coupon']);

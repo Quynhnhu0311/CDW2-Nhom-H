@@ -15,6 +15,7 @@ use App\Models\Staff;
 use App\Models\Admin;
 use App\Models\Customer;
 use DB;
+use Mail;
 use Illuminate\Support\Facades\DB as FacadesDB;
 use Illuminate\Support\Facades\Validator;
 use Session;
@@ -548,9 +549,9 @@ class AdminController extends Controller
                 Session::put('message_image', 'Cập Nhật Hình Ảnh Thành Công!');
                 return Redirect::to('admin.blog');
             }
-                DB::table('blog')->where('blog_id', $blog_id)->update($data);
-                Session::put('message_update', 'Cập Nhật Thành Công!');
-                return Redirect::to('admin.blog');
+            DB::table('blog')->where('blog_id', $blog_id)->update($data);
+            Session::put('message_update', 'Cập Nhật Thành Công!');
+            return Redirect::to('admin.blog');
         }
         
     }
@@ -569,14 +570,27 @@ class AdminController extends Controller
         }
     }
 
+    function show_addBlog()
+    {
+        $getCategory = DB::table('categorys')->get();
+        return view('admin.addblog')->with('getCategory',$getCategory);
+    }
+
     //Add Admin Blog
     function add_admin_blog(Request $request)
     {
         $this->AuthLogin();
         $data = array();
+        $tenTin = $request->blog_title;
         $data['blog_title'] = $request->blog_title;
         $data['blog_description'] = $request->blog_description;
         $data['blog_Author'] = $request->blog_author;
+        $data['category_id'] = $request->category;
+        $blog_array = array(
+            'tenTin' => $data['blog_title'],
+            'moTa' => $data['blog_description'],
+            'tacGia' => $data['blog_Author']
+        );
         $get_image = $request->file('blog_img');
         $char_title = strlen($request->blog_title);
         $char_description = strlen($request->blog_description);
@@ -593,6 +607,16 @@ class AdminController extends Controller
                 $data['blog_img'] = $new_image;
                 DB::table('blog')->insert($data);
                 Session::put('message_image', 'Thêm Hình Ảnh Thành Công!');
+                
+            $title_mail = "Bài viết mới";
+            // $customer = DB::table('customers')->find(Session::get('id'));
+            // $data['email'][] = $customer->email;
+            Mail::send('sendMailAuto', ['blog_array' => $blog_array], 
+                function($message) use ($title_mail,$data){
+                    $message->to('15911hth@gmail.com')->subject($title_mail);
+                    $message->from('15911hth@gmail.com',$title_mail);
+                }
+            );
                 return Redirect::to('admin.blog');
             }
         }
