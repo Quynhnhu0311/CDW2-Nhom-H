@@ -127,6 +127,7 @@ Route::get('/feature/{feature_id}', [HomeController::class, 'show_product_home']
 Route::get('/tat-ca-san-pham', [ProductController::class, 'all_products']);
 
 //Comment-Ajax
+Route::post('comment-blog', [BlogController::class, 'add_comment_blog'])->name('comment_blog');
 Route::post('send-comment-rep', [HomeController::class, 'rep_comment_product_ajax'])->name('ajax.comment');
 Route::post('send-comment', [HomeController::class, 'comment_product_ajax'])->name('ajax.comment');
 Route::get('show_comment/{id}', [HomeController::class, 'show_comment'])->name('ajax.show-comment');
