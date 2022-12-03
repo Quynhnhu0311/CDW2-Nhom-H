@@ -123,4 +123,30 @@
     </section>
     @endforeach
     <!-- Blog Details Section End -->
+
+    <!-- Category Section Begin -->
+    <section class="related spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="related-title">Category Blog</h3>
+                </div>
+            </div>
+            <div class="row">
+                @foreach($category_blog as $category)
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="blog__item">
+                        <div class="blog__item__pic set-bg" data-setbg="{{ asset('./img/blog/'.$category->blog_img) }}"></div>
+                        <div class="blog__item__text">
+                            <span><img src="img/icon/calendar.png" alt="">{{ $category->created_at }}</span>
+                            <h5>{{ $category->blog_title }}</h5>
+                            <a href="/blog-detail/{{$category->blog_id}}">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    <!-- Category Section End -->
 @endsection

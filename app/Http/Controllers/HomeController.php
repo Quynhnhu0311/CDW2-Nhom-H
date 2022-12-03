@@ -46,23 +46,29 @@ class HomeController extends Controller
         return view('/index', compact('bestSellers', 'features', 'products_feature', 'duplicate', 'manufactures'));
     }
     //Detail Product and Related Product and Comment
-    public function show_details($id)
-    {
-        $manufactures = DB::table('manufactures')->get();
-        $detail = DB::table('products')->join('protypes','protypes.type_id','=','products.type_id')
-        ->join('manufactures','manufactures.manu_id','=','products.manu_id')->where('products.product_id',$id)->get();
-        foreach($detail as $related) {
-            $type_id = $related->type_id;
+    public function show_details($id){
+
+        $product = Product::find($id);
+        if($product){
+            $detail = DB::table('products')->join('protypes','protypes.type_id','=','products.type_id')
+            ->join('manufactures','manufactures.manu_id','=','products.manu_id')->where('products.product_id',$id)->get();
+    
+            foreach($detail as $related) {
+                $type_id = $related->type_id;
+            }
+            /* Realated Product */
+            $related_product = DB::table('products')->join('protypes', 'protypes.type_id', '=', 'products.type_id')->where('protypes.type_id', $type_id)->paginate(8);
+            foreach ($detail as $comment) {
+                $comment_id = $comment->product_id;
+            }
+            /* Show Comment and Rating Product */
+            $comment_all = Comment::join('products','products.product_id','=','comments.product_id')
+            ->where('comments.product_id',$comment_id)->get();
+            return view('shop-details',compact('detail','related_product','comment_all'));
+        }else{
+            return Redirect::to('/')->with('error-detail', 'Sản Phẩm không tồn tại !');;
         }
-        /* Realated Product */
-        $related_product = DB::table('products')->join('protypes', 'protypes.type_id', '=', 'products.type_id')->where('protypes.type_id', $type_id)->paginate(8);
-        foreach ($detail as $comment) {
-            $comment_id = $comment->product_id;
-        }
-        /* Show Comment and Rating Product */
-        $comment_all = Comment::join('products','products.product_id','=','comments.product_id')
-        ->where('comments.product_id',$comment_id)->get();
-        return view('shop-details',compact('detail','related_product','comment_all'));
+
     }
     //Add Comment Product
     public function comment_product_ajax(Request $request)

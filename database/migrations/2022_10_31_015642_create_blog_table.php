@@ -19,6 +19,7 @@ class CreateBlogTable extends Migration
             $table->string("blog_description",10000);
             $table->string('blog_img',150);
             $table->string("blog_author");
+            $table->integer("category_id");
             $table->timestamp('created_at')->default(\DB::raw('CURRENT_TIMESTAMP'));
             $table->timestamp('updated_at')->default(\DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
 

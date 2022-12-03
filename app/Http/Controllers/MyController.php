@@ -17,6 +17,7 @@ class MyController extends Controller
      */
     public function index($name = 'index')
     {
+        $blogs = DB::table('blog')->get();
         $get_all_coupon = DB::table('coupons')->get();
         $manufactures = DB::table('manufactures')->get();
         $getProtypes = DB::table('protypes')->get();
@@ -25,7 +26,7 @@ class MyController extends Controller
         $getFeatures = DB::table('features')->get();
         $type_product = Protype::orderby('type_id', 'desc')->get();
         $manu_product = Manufacture::orderby('manu_id', 'desc')->get();
-        return view($name, compact('manufactures','getProtypes','getManufactures','getFeatures','type_product','manu_product','get_all_coupon','manufactures'));
+        return view($name, compact('blogs','manufactures','getProtypes','getManufactures','getFeatures','type_product','manu_product','get_all_coupon','manufactures'));
     }
 
     /**

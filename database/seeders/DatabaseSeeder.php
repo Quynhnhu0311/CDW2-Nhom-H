@@ -17,12 +17,11 @@ class DatabaseSeeder extends Seeder
         $this->call([Protypes::class]);
         $this->call([Manufactures::class]);
         $this->call([Features::class]);
-        $this->call([Users::class]);
         $this->call([Coupons::class]);
         $this->call([Blog::class]);
         $this->call([Admins::class]);
         $this->call([Customers::class]);
-        // $this->call([Info::class]);
+        $this->call([Categorys::class]);
         $this->call([Staffs::class]);
     }
 }

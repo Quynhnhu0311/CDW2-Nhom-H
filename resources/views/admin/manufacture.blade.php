@@ -26,7 +26,12 @@
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">Manufactures</h3>
-
+            @if(session()->has('message_update'))
+            <div class="alert text-alert">
+                {{ session()->get('message_update') }}
+            </div>
+            <?php session()->forget(['message_update']); ?>
+            @endif
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
               <i class="fas fa-minus"></i>
