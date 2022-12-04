@@ -48,26 +48,17 @@ class CartController extends Controller
         $customer_id = Session::get('id');
         $cart_prod = Carts::get();
 
-        foreach($cart_prod as $key => $value){
-            $cart_product_id = $value['product_id'];
-        }
-
-        if($cart_product_id == $data['cart_product_id']){
-            $new_cart = $value->product_qty +1;
-            DB::update('update carts set product_qty = ? where product_id = ?',[$new_cart,$product_id]);
-        }
-        else{
-            $cart[] = array(
-                'customer_id' => $customer_id,
-                'product_id' => $data['cart_product_id'],
-                'product_qty' => $data['cart_product_qty'],
-                'product_image' => $data['cart_product_image'],
-                'product_name' => $data['cart_product_name'],
-                'product_price' => $data['cart_product_price'],
-                'session_id' => $session_id
+       
+        $cart[] = array(
+            'customer_id' => $customer_id,
+            'product_id' => $data['cart_product_id'],
+            'product_qty' => $data['cart_product_qty'],
+            'product_image' => $data['cart_product_image'],
+            'product_name' => $data['cart_product_name'],
+            'product_price' => $data['cart_product_price'],
+            'session_id' => $session_id
             );
             DB::table('carts')->insert($cart);
-        }
     }
 
     function delete_product_cart($session_id) {

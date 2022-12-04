@@ -223,10 +223,12 @@ class AdminController extends Controller
     function show_all_products()
     {
         $this->StaffLogin();
-        $show_Allproducts = Product::all();
+        $sum = Product::count();
+        $show_Allproducts = Product::orderBy('product_id','ASC')->search()->paginate(4);
         $staff_token = $this->get_token_sfaff_by_id();
         return view('admin.products')->with('show_Allproducts', $show_Allproducts)
-            ->with('staff_token', $staff_token);
+            ->with('staff_token', $staff_token)
+            ->with('sum', $sum);
     }
 
     //Edit Product
@@ -511,9 +513,9 @@ class AdminController extends Controller
     public function show_admin_blog()
     {
         $this->AuthLogin();
-        $blogs = DB::table('blog')->get();
-
-        return view('admin.blog')->with('blogs', $blogs);
+        $sum = Blog::count();
+        $blogs = Blog::orderBy('blog_id','ASC')->search()->paginate(3);
+        return view('admin.blog')->with('blogs', $blogs)->with('sum', $sum);
     }
     //Show Edit Blog
     function edit_admin_blog($blog_id)

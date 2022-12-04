@@ -23,6 +23,17 @@
             </div>
             <?php session()->forget(['message_update']); ?>
         @endif
+        <div class="form-search" style="margin-bottom:20px;margin-left:10px">
+            <form action="" method="GET" class="form-inline" role="form">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="key" placeholder="Search By Name">
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+        <h3 style="margin-left:10px">Số lượng Blogs : {{ $sum }}</h3>
         <!-- Main content -->
         <section class="content">
             <!-- Default box -->
@@ -89,6 +100,11 @@
                             @endforeach
                         </tbody>
                     </table>
+                </div>
+                <div class="store-filter clearfix">
+                    <ul class="store-pagination">
+                        {{ $blogs->appends(request()->all())->links() }}
+                    </ul>
                 </div>
                 <!-- /.card-body -->
             </div>

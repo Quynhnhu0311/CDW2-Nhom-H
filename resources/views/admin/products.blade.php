@@ -24,6 +24,17 @@
     </div>
     <?php session()->forget(['message_deleteProduct']); ?>
     @endif
+    <div class="form-search" style="margin-bottom:20px;margin-left:10px">
+        <form action="" method="GET" class="form-inline" role="form">
+            <div class="form-group">
+                <input type="text" class="form-control" name="key" placeholder="Search By Name">
+            </div>
+            <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-search"></i>
+            </button>
+        </form>
+    </div>
+    <h3 style="margin-left:10px">Số lượng sản phẩm : {{ $sum }}</h3>
     <!-- Main content -->
     <section class="content">
         <!-- Default box -->
@@ -57,36 +68,36 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($show_Allproducts as $key => $show_Allproducts)
+                        @foreach($show_Allproducts as $key => $show_Allproduct)
                         <tr>
-                            <td>{{ $show_Allproducts->product_id }}</td>
+                            <td>{{ $show_Allproduct->product_id }}</td>
                             <td>
-                                <img src="{{ asset('/img/product/'.$show_Allproducts->product_img) }}" alt=""><br />
+                                <img src="{{ asset('/img/product/'.$show_Allproduct->product_img) }}" alt=""><br />
                             </td>
                             <td>
-                                {{ $show_Allproducts->product_name }}
+                                {{ $show_Allproduct->product_name }}
                             </td>
                             <td>
-                                {{ number_format($show_Allproducts->product_price) }}đ
+                                {{ number_format($show_Allproduct->product_price) }}đ
                             </td>
                             <td>
-                                {{ $show_Allproducts->product_qty }}
+                                {{ $show_Allproduct->product_qty }}
                             </td>
                             <td>
-                                {{ $show_Allproducts->product_sold }}
+                                {{ $show_Allproduct->product_sold }}
                             </td>
                             <td>
-                                {{ $show_Allproducts->type_name }}
+                                {{ $show_Allproduct->type_name }}
                             </td>
                             <td>
-                                {{ $show_Allproducts->manufacture->manu_name }}
+                                {{ $show_Allproduct->manufacture->manu_name }}
                             </td>
                             <td class="project-actions text-right">
-                                <a class="btn btn-info btn-sm product" href="/edit-product/{{ $show_Allproducts->product_id }}">
+                                <a class="btn btn-info btn-sm product" href="/edit-product/{{ $show_Allproduct->product_id }}">
                                     <i class="fas fa-pencil-alt"></i>
                                     Edit
                                 </a>
-                                <a onclick="return confirm('Bạn có chắc muốn xóa product này không?')" class="btn btn-danger btn-sm" href="/delete-product/{{ $show_Allproducts->product_id }}">
+                                <a onclick="return confirm('Bạn có chắc muốn xóa product này không?')" class="btn btn-danger btn-sm" href="/delete-product/{{ $show_Allproduct->product_id }}">
                                     <i class="fas fa-trash"></i>
                                     Delete
                                 </a>
@@ -95,6 +106,11 @@
                         @endforeach
                     </tbody>
                 </table>
+            </div>
+            <div class="store-filter clearfix">
+                <ul class="store-pagination">
+                    {{ $show_Allproducts->appends(request()->all())->links() }}
+                </ul>
             </div>
             <!-- /.card-body -->
         </div>
