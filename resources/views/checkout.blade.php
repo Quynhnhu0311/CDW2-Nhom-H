@@ -56,20 +56,30 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="checkout__input">
-                            <input type="text" placeholder="Street Address" class="checkout__input__add" name="shipping_address" required>
-                        </div>
+                        <select class="checkout__input"  name="shipping_address" id="cars">
+                            @foreach($customer as $row)
+                                @foreach($row->addresscustomers as $address)
+                                <option value="{{ $address->address }}">{{ $address->address }}</option>
+                                @endforeach
+                            @endforeach
+                        </select>
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="checkout__input">
                                     <p>Phone<span>*</span></p>
-                                    <input type="text" name="shipping_phone" required>
+                                    @foreach($customer as $row)
+                                    @foreach($row->infocustomers as $info)
+                                    <input type="text" value="{{ $info->phone }}" name="shipping_phone" disabled>
+                                    @endforeach
+                                    @endforeach
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="checkout__input">
                                     <p>Email<span>*</span></p>
-                                    <input type="text" name="shipping_email" required>
+                                    @foreach($customer as $row)
+                                    <input type="text" value="{{ $row->email }}" name="shipping_email"  disabled>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>

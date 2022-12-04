@@ -9,6 +9,7 @@ use App\Models\Shipping;
 use App\Models\Detail_order;
 use App\Models\Coupon;
 use App\Models\Product;
+use App\Models\Customer;
 use Cart;
 use DB;
 use Session;
@@ -28,10 +29,13 @@ class CheckoutController extends Controller
     }
 
     function checkout_page() {
+        $customer_id = Session::get('id');
+        $customer = Customer::Where('id',$customer_id)->get();
         $cart = DB::table('carts')->get();
         $manufactures = DB::table('manufactures')->get();
         return view('checkout')->with('cart',$cart)
-                                ->with('manufactures',$manufactures);
+                                ->with('manufactures',$manufactures)
+                                ->with('customer',$customer);
     }
 
     function confirm_order(Request $request) {

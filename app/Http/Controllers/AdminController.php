@@ -137,13 +137,14 @@ class AdminController extends Controller
     {
         $this->AuthLogin();
         $id_manu = DB::table('manufactures')->where('manu_id', $manu_id)->delete();
-        if ($id_manu) {
+        if($id_manu){
             Session::put('message_update', 'Xóa Thành Công!');
             return Redirect::to('admin.manufacture');
-        } else {
+        }else{
             Session::put('message_update', 'Manufacture Không Tồn Tại!');
             return Redirect::to('admin.manufacture');
         }
+        
     }
     ////////////////////////////////////////// PROTYPES /////////////////////////////////////////
 
@@ -171,7 +172,7 @@ class AdminController extends Controller
         $data['type_qty'] = $request->type_qty;
         $char = strlen($request->type_name);
         if ($char > 101) {
-            return Redirect::to('admin.editprotype/' . $type_id)->with('error', 'Type name không được nhập quá 100 ký tự');
+            return Redirect::to('admin.editprotype/'.$type_id)->with('error', 'Type name không được nhập quá 100 ký tự');
         } else {
             DB::table('protypes')->where('type_id', $type_id)->update($data);
             return Redirect::to('admin.protype')->with("status", "Update Protype Successfully");
@@ -196,10 +197,10 @@ class AdminController extends Controller
     {
         $this->AuthLogin();
         $id_type = DB::table('protypes')->where('type_id', $type_id)->delete();
-        if ($id_type) {
+        if($id_type){
             Session::put('message_update', 'Xóa Thành Công!');
             return Redirect::to('admin.protype');
-        } else {
+        }else{
             Session::put('message_update', 'Protype Không Tồn Tại!');
             return Redirect::to('admin.protype');
         }
@@ -222,10 +223,12 @@ class AdminController extends Controller
     function show_all_products()
     {
         $this->StaffLogin();
-        $show_Allproducts = Product::all();
+        $sum = Product::count();
+        $show_Allproducts = Product::orderBy('product_id','ASC')->search()->paginate(4);
         $staff_token = $this->get_token_sfaff_by_id();
         return view('admin.products')->with('show_Allproducts', $show_Allproducts)
-            ->with('staff_token', $staff_token);
+            ->with('staff_token', $staff_token)
+            ->with('sum', $sum);
     }
 
     //Edit Product
@@ -406,7 +409,6 @@ class AdminController extends Controller
     //Show All Coupon
     function show_all_coupons()
     {
-        $this->StaffLogin();
         $get_all_coupon = DB::table('coupons')->get();
         return view('admin.coupons')->with('get_all_coupon', $get_all_coupon);
     }
@@ -414,40 +416,37 @@ class AdminController extends Controller
     //New Coupon
     function add_coupon()
     {
-        $staff_token = $this->get_token_sfaff_by_id();
-        return view('admin.addcoupon', compact('staff_token'));
+        return view('admin.addcoupon');
     }
 
     //Save Coupon
     function save_coupon(Request $request)
     {
-        $this->StaffLogin();
+        $this->AuthLogin();
         $data = array();
-        $staff_token = $this->get_token_sfaff_by_id();
         $data['coupon_name'] = $request->coupon_name;
         $data['coupon_code'] = $request->coupon_code;
         $data['coupon_qty'] = $request->coupon_qty;
         $data['coupon_condition'] = $request->coupon_condition;
         $data['coupon_number'] = $request->coupon_number;
-        $data['coupon_token'] = $request->token;
 
         if ($data['coupon_condition'] == 1 && $data['coupon_number'] < 1000) {
             Session::put('message_add_error', 'Thêm Coupon Không Thành Công!');
-            return view('admin.addcoupon')->with('staff_token', $staff_token);
+            return view('admin.addcoupon');
         } elseif ($data['coupon_condition'] == 2 && $data['coupon_number'] > 100) {
             Session::put('message_add_error', 'Thêm Coupon Không Thành Công!');
-            return view('admin.addcoupon')->with('staff_token', $staff_token);
+            return view('admin.addcoupon');
         } else {
             DB::table('coupons')->insert($data);
             Session::put('message_add', 'Thêm Coupon Thành Công!');
-            return view('admin.addcoupon')->with('staff_token', $staff_token);
+            return view('admin.addcoupon');
         }
     }
 
     //Edit Coupon
     function edit_coupon($coupon_id)
     {
-        $this->StaffLogin();
+        $this->AuthLogin();
         $get_all_coupon = Coupon::all();
         $edit_coupon = Coupon::where('coupon_id', $coupon_id)->get();
         return view('admin.editcoupon')->with('edit_coupon', $edit_coupon);
@@ -456,7 +455,7 @@ class AdminController extends Controller
     //Update Coupon
     function update_coupon(Request $request, $coupon_id)
     {
-        $this->StaffLogin();
+        $this->AuthLogin();
         $data = array();
         $edit_coupon = Coupon::where('coupon_id', $coupon_id)->get();
 
@@ -474,14 +473,13 @@ class AdminController extends Controller
     //Delete Coupon
     public function delete_coupon($coupon_id)
     {
-        $this->StaffLogin();
-        $staff_token = $this->get_token_sfaff_by_id();
+        $this->AuthLogin();
         $get_all_coupon = DB::table('coupons')->get();
-        $id_coupon = DB::table('coupons')->where('coupon_id', $coupon_id)->where('coupon_token', $staff_token)->delete();
-        if ($id_coupon) {
+        $id_coupon = DB::table('coupons')->where('coupon_id', $coupon_id)->delete();
+        if($id_coupon){
             Session::put('message_deleteCoupon', 'Xóa Thành Công!');
             return Redirect::to('admin.coupons');
-        } else {
+        }else{
             Session::put('message_deleteCoupon', 'Coupon Không Tồn Tại!');
             return Redirect::to('admin.coupons');
         }
@@ -502,10 +500,10 @@ class AdminController extends Controller
     {
         $this->AuthLogin();
         $id_comment = DB::table('comments')->where('comment_id', $comment_id)->delete();
-        if ($id_comment) {
+        if($id_comment){
             Session::put('message_update', 'Xóa Thành Công!');
             return Redirect::to('admin.comment');
-        } else {
+        }else{
             Session::put('message_update', 'Comment Không Tồn Tại!');
             return Redirect::to('admin.comment');
         }
@@ -514,15 +512,15 @@ class AdminController extends Controller
     //Show Admin Blog
     public function show_admin_blog()
     {
-        $this->StaffLogin();
-        $blogs = DB::table('blog')->get();
-
-        return view('admin.blog')->with('blogs', $blogs);
+        $this->AuthLogin();
+        $sum = Blog::count();
+        $blogs = Blog::orderBy('blog_id','ASC')->search()->paginate(3);
+        return view('admin.blog')->with('blogs', $blogs)->with('sum', $sum);
     }
     //Show Edit Blog
     function edit_admin_blog($blog_id)
     {
-        $this->StaffLogin();
+        $this->AuthLogin();
         $blogs = DB::table('blog')->where('blog_id', $blog_id)->get();
         return view('admin.editblog')->with('blogs', $blogs);
     }
@@ -530,7 +528,7 @@ class AdminController extends Controller
     //Update Blog
     function update_admin_blog(Request $request, $blog_id)
     {
-        $this->StaffLogin();
+        $this->AuthLogin();
         $data = array();
         $data['blog_title'] = $request->blog_title;
         $data['blog_description'] = $request->blog_description;
@@ -539,9 +537,10 @@ class AdminController extends Controller
         $char_title = strlen($request->blog_title);
         $char_description = strlen($request->blog_description);
         $char_author = strlen($request->blog_author);
-        if ($char_title > 100 || $char_description > 10000 || $char_author > 30) {
-            return Redirect::to('admin.editblog/' . $blog_id)->with('error', 'bạn đã nhập quá ký tự. Bạn hãy nhập lại.');
-        } else {
+        if($char_title > 100 || $char_description > 10000 || $char_author > 30){
+            return Redirect::to('admin.editblog/'.$blog_id)->with('error','bạn đã nhập quá ký tự. Bạn hãy nhập lại.');
+        }
+        else{
             if ($get_image) {
                 $get_name_image = $get_image->getClientOriginalName();
                 $name_image = current(explode('.', $get_name_image));
@@ -556,18 +555,18 @@ class AdminController extends Controller
             Session::put('message_update', 'Cập Nhật Thành Công!');
             return Redirect::to('admin.blog');
         }
+        
     }
 
     //delete blog
     function delete_admin_blog($blog_id)
     {
-        $this->StaffLogin();
-        $staff_token = $this->get_token_sfaff_by_id();
-        $id_blog = DB::table('blog')->where('blog_id', $blog_id)->where('blog_token', $staff_token)->delete();
-        if ($id_blog) {
+        $this->AuthLogin();
+        $id_blog = DB::table('blog')->where('blog_id', $blog_id)->delete();
+        if($id_blog){
             Session::put('message_update', 'Xóa Thành Công!');
             return Redirect::to('admin.blog');
-        } else {
+        }else{
             Session::put('message_update', 'Blog Không Tồn Tại!');
             return Redirect::to('admin.blog');
         }
@@ -575,24 +574,20 @@ class AdminController extends Controller
 
     function show_addBlog()
     {
-        $staff_token = $this->get_token_sfaff_by_id();
         $getCategory = DB::table('categorys')->get();
-        return view('admin.addblog')->with('getCategory', $getCategory)
-            ->with('staff_token', $staff_token);
+        return view('admin.addblog')->with('getCategory',$getCategory);
     }
 
     //Add Admin Blog
     function add_admin_blog(Request $request)
     {
-        $this->StaffLogin();
+        $this->AuthLogin();
         $data = array();
-        // $staff_token = $this->get_token_sfaff_by_id();
         $tenTin = $request->blog_title;
         $data['blog_title'] = $request->blog_title;
         $data['blog_description'] = $request->blog_description;
         $data['blog_Author'] = $request->blog_author;
         $data['category_id'] = $request->category;
-        $data['blog_token'] = $request->token;
         $blog_array = array(
             'tenTin' => $data['blog_title'],
             'moTa' => $data['blog_description'],
@@ -602,9 +597,10 @@ class AdminController extends Controller
         $char_title = strlen($request->blog_title);
         $char_description = strlen($request->blog_description);
         $char_author = strlen($request->blog_author);
-        if ($char_title > 100 || $char_description > 10000 || $char_author > 30) {
-            return Redirect::to('admin.addblog')->with('error', 'bạn đã nhập quá ký tự. Bạn hãy nhập lại.');
-        } else {
+        if($char_title > 100 || $char_description > 10000 || $char_author > 30){
+            return Redirect::to('admin.addblog')->with('error','bạn đã nhập quá ký tự. Bạn hãy nhập lại.');
+        }
+        else{
             if ($get_image) {
                 $get_name_image = $get_image->getClientOriginalName();
                 $name_image = current(explode('.', $get_name_image));
@@ -613,18 +609,16 @@ class AdminController extends Controller
                 $data['blog_img'] = $new_image;
                 DB::table('blog')->insert($data);
                 Session::put('message_image', 'Thêm Hình Ảnh Thành Công!');
-
-                $title_mail = "Bài viết mới";
-                // $customer = DB::table('customers')->find(Session::get('id'));
-                // $data['email'][] = $customer->email;
-                Mail::send(
-                    'sendMailAuto',
-                    ['blog_array' => $blog_array],
-                    function ($message) use ($title_mail, $data) {
-                        $message->to('15911hth@gmail.com')->subject($title_mail);
-                        $message->from('15911hth@gmail.com', $title_mail);
-                    }
-                );
+                
+            $title_mail = "Bài viết mới";
+            // $customer = DB::table('customers')->find(Session::get('id'));
+            // $data['email'][] = $customer->email;
+            Mail::send('sendMailAuto', ['blog_array' => $blog_array], 
+                function($message) use ($title_mail,$data){
+                    $message->to('15911hth@gmail.com')->subject($title_mail);
+                    $message->from('15911hth@gmail.com',$title_mail);
+                }
+            );
                 return Redirect::to('admin.blog');
             }
         }
@@ -669,15 +663,16 @@ class AdminController extends Controller
     {
         $this->AuthLogin();
         $id = $request->staff_id;
-
-        // Register the new staff.
-        $staff = Staff::find($id);
-        $staff->staff_name = $request->staff_name;
-        $staff->staff_email = $request->staff_email;
-        $staff->staff_password = md5($request->staff_password);
-        $staff->status = 0;
-        $staff->save();
-        return Redirect::to('admin.staffs');
+        
+            // Register the new staff.
+            $staff = Staff::find($id);
+            $staff->staff_name = $request->staff_name;
+            $staff->staff_email = $request->staff_email;
+            $staff->staff_password = md5($request->staff_password);
+            $staff->status = 0;
+            $staff->save();
+            return Redirect::to('admin.staffs');
+        
     }
     public function delete_staff()
     {
@@ -704,15 +699,16 @@ class AdminController extends Controller
     {
         $this->AuthLogin();
         $id = $request->customer_id;
-
-        // Update customer.
-        $customer = Customer::find($id);
-        $customer->name = $request->customer_name;
-        $customer->email = $request->customer_email;
-        $customer->password = md5($request->customer_password);
-        $customer->status = 0;
-        $customer->save();
-        return Redirect::to('admin.customers');
+       
+            // Update customer.
+            $customer = Customer::find($id);
+            $customer->name = $request->customer_name;
+            $customer->email = $request->customer_email;
+            $customer->password = md5($request->customer_password);
+            $customer->status = 0;
+            $customer->save();
+            return Redirect::to('admin.customers');
+        
     }
     function delete_customer()
     {

@@ -14,4 +14,12 @@ class Customer extends Model
     ];
     protected $primaryKey = 'id';
     protected $table = 'customers';
+
+    public function infocustomers() {
+        return $this->hasMany(Infocustomer::class,'id' , 'id');
+    }
+    public function addresscustomers() {
+        return $this->hasMany(Addresscustomer::class,'id' , 'id');
+    }
+
 }

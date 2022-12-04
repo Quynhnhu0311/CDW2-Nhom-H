@@ -45,8 +45,10 @@
             <div class="offcanvas__links">
                 <?php
                 $name = Session::get('name');
-                if ($name) {
-                    echo $name;
+                $id = Session::get('id');
+                if ($name) { ?> 
+                    <a href="{{ url('customer-detail')}}.$id"></a>
+                <?php 
                     echo '<li><a href="/logout-user">Log out</a></li>';
                 } else {
                     echo '<a href="#">Sign in</a>';
@@ -92,13 +94,14 @@
                                 <?php
                                 $name = Session::get('name');
                                 $id = Session::get('id');
-                                if ($name) {
-                                    echo '<div class="header__top__hover">
-                                                <span>' . $name . '<i class="arrow_carrot-down"></i></span>
+                                if ($name) { ?>
+                                    '<div class="header__top__hover">
+                                                <a  href="/file-customer/<?php echo $id ?>"><?php echo $name ?><i class="arrow_carrot-down"></i></a>
                                                 <ul>
                                                     <a href="/logout-user"><li>LOG OUT</li></a>
                                                 </ul>
                                             </div>';
+                                            <?php 
                                 } else {
                                     echo '<a href="/login">Sign in</a>';
                                 }
@@ -431,6 +434,11 @@ x`
 </script>
 <script>
     $('.btn-comment-rep').click(function() {
+        $(this).css('display','none');
+    });
+</script>
+<script>
+    $('.btn-add').click(function() {
         $(this).css('display','none');
     });
 </script>

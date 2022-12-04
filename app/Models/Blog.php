@@ -21,4 +21,11 @@ class Blog extends Model
     public function commentblog() {
         return $this->hasMany(Commentblog::class,'blog_id');
     }
+    //thêm localScope
+    public function scopeSearch($query){
+        if($key = request()->key){
+            $query = $query->where('blog_title','like','%'.$key.'%');
+        }
+        return $query;
+    }
 }

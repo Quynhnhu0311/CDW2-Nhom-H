@@ -132,6 +132,17 @@ Route::post('send-comment-rep', [HomeController::class, 'rep_comment_product_aja
 Route::post('send-comment', [HomeController::class, 'comment_product_ajax'])->name('ajax.comment');
 Route::get('show_comment/{id}', [HomeController::class, 'show_comment'])->name('ajax.show-comment');
 Route::get('shop-details/show_comment_rep/{id}', [HomeController::class, 'show_comment_rep'])->name('ajax.show-comment');
+Route::get('file-customer/{id}', [HomeController::class, 'detail_customer'])->name('');
+Route::get('address-customer/{id}', [HomeController::class, 'address_customer'])->name('');
+Route::get('editcustomer/{id}', [HomeController::class, 'edit_customer']);
+Route::get('edit-add-customer/{id}', [HomeController::class, 'edit_address']);
+Route::get('edit-pass-customer/{id}', [HomeController::class, 'edit_pass_customer']);
+Route::put('update_info_customer/{id}', [HomeController::class, 'update_info_customer']);
+Route::put('update-address/{id}', [HomeController::class, 'update_address_customer']);
+Route::put('update-password/{id}', [HomeController::class, 'update_password_customer']);
+Route::post('add-info-customer', [HomeController::class, 'update_info']);
+Route::post('add-address-customer', [HomeController::class, 'add_address']);
+Route::DELETE('/delete-address-customer/{id_address_customer}', [HomeController::class, 'destroy_address']);
 
 //Favorite Product
 Route::post('/favorite', [FavoriteController::class, 'add_favorite'])->name('add-favorite');
