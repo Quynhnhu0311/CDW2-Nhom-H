@@ -73,12 +73,14 @@
                             <div class="product__details__text">
                                 <h4>{{ $product_detail->product_name}}</h4>
                                 <div class="rating">
+                                    @for($i = 1;$i <= round($tbReview);$i++)
+                                    <i class="fa fa-star"></i>
+                                    @endfor
+                                    <!-- <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <span> - 5 Reviews</span>
+                                    <i class="fa fa-star-o"></i> -->
+                                    <span> - {{  round($tbReview); }} Reviews</span>
                                 </div>
                                 <h3>{{ number_format($product_detail->product_price) }} VND</h3>
                                 <p>{{ $product_detail->product_description }}</p>
@@ -150,11 +152,6 @@
                             <input type="hidden" value="1" class="cart_product_qty_{{ $related->product_id }}">
                             <button type="button" class="add-to-cart-btn" data-id="{{ $related->product_id }}" name="add-cart">+ Add To Cart</button>
                             <div class="rating">
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
                             </div>
                             <h5>{{ number_format($related->product_price) }} VND</h5>
                         </div>
@@ -195,7 +192,7 @@
                     <?php
                          $id = Session::get('id');
                     ?>
-                    @if($id != $comment_all->id)
+                    @if($id != $comment_all->id && $id)
                     <button class="btn-rep-comment">Rep Comment</button>
                     @endif
                     <div class="show-comment-rep">

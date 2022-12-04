@@ -22,7 +22,9 @@ class Product extends Model
     {
         return $this->belongsTo(Manufacture::class, 'manu_id');
     }
-
+    public function comments() {
+        return $this->hasMany(Comment::class, 'product_id','product_id');
+    }
     function protype()
     {
         return $this->belongsTo(Protype::class, 'type_id');
