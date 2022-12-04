@@ -47,9 +47,9 @@ class HomeController extends Controller
     }
     //Detail Product and Related Product and Comment
     public function show_details($id){
-
         $product = Product::find($id);
         if($product){
+            $tbReview = Comment::where('product_id',$id)->avg('rating_value');
             $detail = DB::table('products')->join('protypes','protypes.type_id','=','products.type_id')
             ->join('manufactures','manufactures.manu_id','=','products.manu_id')->where('products.product_id',$id)->get();
     
@@ -57,14 +57,11 @@ class HomeController extends Controller
                 $type_id = $related->type_id;
             }
             /* Realated Product */
-            $related_product = DB::table('products')->join('protypes', 'protypes.type_id', '=', 'products.type_id')->where('protypes.type_id', $type_id)->paginate(8);
-            foreach ($detail as $comment) {
-                $comment_id = $comment->product_id;
-            }
+            $related_product = Product::where('type_id', $type_id)->paginate(8);;
             /* Show Comment and Rating Product */
             $comment_all = Comment::join('products','products.product_id','=','comments.product_id')
-            ->where('comments.product_id',$comment_id)->get();
-            return view('shop-details',compact('detail','related_product','comment_all'));
+            ->where('comments.product_id',$id)->get();
+            return view('shop-details',compact('detail','related_product','comment_all','tbReview'));
         }else{
             return Redirect::to('/')->with('error-detail', 'Sản Phẩm không tồn tại !');;
         }
